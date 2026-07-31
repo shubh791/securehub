@@ -224,7 +224,7 @@ function renderHeader() {
           <!-- Nav Right Action Buttons (Search Bar removed as requested) -->
           <div class="sh-nav-right">
             <a href="#inquiry-form" class="sh-btn-outline">Enquire Now</a>
-            <a href="#inquiry-form" class="sh-btn-primary">Book Free Demo</a>
+            <a href="#inquiry-form" class="sh-btn-primary">Talk to Counselor</a>
 
             <button class="sh-mobile-toggle" id="sh-mobile-toggle" aria-label="Toggle Navigation">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
