@@ -281,7 +281,7 @@
                   <strong>₹8.5 LPA - ₹15.0 LPA</strong>
                 </div>
 
-                <div style="display:flex; gap:14px;">
+                <div style="display:flex; gap:14px; flex-wrap:wrap;">
                   <a href="#inquiry-form" class="btn-hero-primary" style="padding:12px 24px; font-size:14.5px;">Enroll In Master Track &rsaquo;</a>
                   <a href="#inquiry-form" class="sh-btn-outline" style="padding:11px 18px; font-size:13.5px;">Get Curriculum PDF</a>
                 </div>
@@ -335,7 +335,7 @@
                   <strong>₹9.0 LPA - ₹18.5 LPA</strong>
                 </div>
 
-                <div style="display:flex; gap:14px;">
+                <div style="display:flex; gap:14px; flex-wrap:wrap;">
                   <a href="#inquiry-form" class="btn-hero-primary" style="padding:12px 24px; font-size:14.5px; background:linear-gradient(135deg, #0284c7, #0f172a);">Enroll In Cloud Track &rsaquo;</a>
                   <a href="#inquiry-form" class="sh-btn-outline" style="padding:11px 18px; font-size:13.5px;">Get Curriculum PDF</a>
                 </div>
@@ -390,7 +390,7 @@
                   <strong>₹7.5 LPA - ₹16.0 LPA</strong>
                 </div>
 
-                <div style="display:flex; gap:14px;">
+                <div style="display:flex; gap:14px; flex-wrap:wrap;">
                   <a href="#inquiry-form" class="btn-hero-primary" style="padding:12px 24px; font-size:14.5px; background:linear-gradient(135deg, #059669, #0f172a);">Enroll In Full Stack &rsaquo;</a>
                   <a href="#inquiry-form" class="sh-btn-outline" style="padding:11px 18px; font-size:13.5px;">Get Curriculum PDF</a>
                 </div>
@@ -458,7 +458,7 @@
           </div>
 
           <div class="workshop-footer">
-            <span style="font-size:13px; font-weight:800; color:#34d399;">⚡ Free 2-Hour Live Pass</span>
+            <span class="workshop-pass-label">⚡ Free 2-Hour Live Pass</span>
             <a href="#inquiry-form" class="btn-hero-primary" style="padding:10px 22px; font-size:14px;">Reserve Free Seat &rsaquo;</a>
           </div>
         </div>
@@ -487,7 +487,7 @@
           </div>
 
           <div class="workshop-footer">
-            <span style="font-size:13px; font-weight:800; color:#34d399;">⚡ Free 2-Hour Live Pass</span>
+            <span class="workshop-pass-label">⚡ Free 2-Hour Live Pass</span>
             <a href="#inquiry-form" class="btn-hero-primary" style="padding:10px 22px; font-size:14px; background:linear-gradient(135deg, #0284c7, #0f172a);">Reserve Free Seat &rsaquo;</a>
           </div>
         </div>
@@ -995,101 +995,108 @@
     </div>
   </section>
 
-  <!-- 9. Upgraded FAQ Section (Left Questions List -> Right Answer Box) -->
+  <!-- 9. Upgraded FAQ Accordion List Section (Clean Expandable Drawer UI) -->
   <section class="faq-section" id="faq-section">
     <div class="sh-container">
       <div class="section-header-center">
         <span class="section-tag">Got Questions?</span>
         <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-subtitle">Click on any question on the left to instantly view its detailed answer on the right.</p>
+        <p class="section-subtitle">Click any question below to instantly view its detailed answer right beneath it.</p>
       </div>
 
-      <div class="faq-split-container">
-        <!-- Left Questions Tab List -->
-        <div class="faq-questions-list">
-          <button class="faq-tab-btn active" data-target="faq-pane-1">
-            <span>Eligibility criteria for joining Cyber & Cloud courses?</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      <!-- Native Accordion List Grid Container -->
+      <div class="faq-accordion-container">
+        
+        <!-- Accordion Item 1 -->
+        <div class="faq-accordion-item active">
+          <button class="faq-accordion-header">
+            <span class="faq-q-text">What are the eligibility criteria for joining Cyber & Cloud courses?</span>
+            <svg class="faq-chevron-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-
-          <button class="faq-tab-btn" data-target="faq-pane-2">
-            <span>How does the 100% Placement Support program work?</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-
-          <button class="faq-tab-btn" data-target="faq-pane-3">
-            <span>Do I get 24/7 practical lab access outside class hours?</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-
-          <button class="faq-tab-btn" data-target="faq-pane-4">
-            <span>Are both Online Live & In-Person Classroom options available?</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-
-          <button class="faq-tab-btn" data-target="faq-pane-5">
-            <span>Are official exam vouchers included with the master tracks?</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-        </div>
-
-        <!-- Right Answer Display Box -->
-        <div class="faq-answer-box">
-          <!-- Answer Pane 1 -->
-          <div class="faq-answer-pane active" id="faq-pane-1">
-            <span class="faq-answer-badge">Eligibility & Prerequisites</span>
-            <h4>What are the eligibility criteria for joining Cybersecurity & Cloud courses at SecureHub?</h4>
-            <p>Our courses start right from foundational concepts up to advanced enterprise levels. Anyone with a basic computer background (B.Tech, BCA, B.Sc, Diploma, or working IT professionals looking for upskilling) can join. No prior coding expertise is mandatory for entry-level cybersecurity or system administration courses.</p>
-            <div class="faq-answer-footer">
-              <span>Need custom advice?</span>
-              <a href="#inquiry-form" style="color:var(--sh-primary); font-weight:700;">Talk to Counselor &rsaquo;</a>
-            </div>
-          </div>
-
-          <!-- Answer Pane 2 -->
-          <div class="faq-answer-pane" id="faq-pane-2">
-            <span class="faq-answer-badge">Job Placement Assistance</span>
-            <h4>How does the 100% Placement Support program work?</h4>
-            <p>Once you complete 75% of your course modules, our dedicated placement cell assists you with resume building, LinkedIn optimization, mock technical interview rounds, and schedules interview opportunities with our 500+ hiring partner companies until you get placed.</p>
-            <div class="faq-answer-footer">
-              <span>Explore Hiring Partners</span>
-              <a href="#placements-section" style="color:var(--sh-primary); font-weight:700;">View 500+ MNCs &rsaquo;</a>
-            </div>
-          </div>
-
-          <!-- Answer Pane 3 -->
-          <div class="faq-answer-pane" id="faq-pane-3">
-            <span class="faq-answer-badge">Practical Labs & Infrastructure</span>
-            <h4>Do I get access to practical lab environments outside class hours?</h4>
-            <p>Yes! Every enrolled student gets 24/7 remote cloud lab access to practice hands-on attack/defend scenarios, SIEM logging tools, AWS cloud consoles, and Linux terminals anywhere with an internet connection.</p>
-            <div class="faq-answer-footer">
-              <span>Practice Anytime</span>
-              <a href="#inquiry-form" style="color:var(--sh-primary); font-weight:700;">Test Drive Demo Lab &rsaquo;</a>
-            </div>
-          </div>
-
-          <!-- Answer Pane 4 -->
-          <div class="faq-answer-pane" id="faq-pane-4">
-            <span class="faq-answer-badge">Training Modes & Batches</span>
-            <h4>Are both Online Live Interactive and In-Person Classroom options available?</h4>
-            <p>Yes. We offer instructor-led live interactive online batches as well as full classroom lab training at our Jaipur center. All live sessions are recorded and made available in student portals for lifetime revision.</p>
-            <div class="faq-answer-footer">
-              <span>Flexible Schedule</span>
-              <a href="#inquiry-form" style="color:var(--sh-primary); font-weight:700;">Check Batch Timings &rsaquo;</a>
-            </div>
-          </div>
-
-          <!-- Answer Pane 5 -->
-          <div class="faq-answer-pane" id="faq-pane-5">
-            <span class="faq-answer-badge">Global Certifications</span>
-            <h4>Are official exam vouchers included with the master tracks?</h4>
-            <p>Yes, for our flagship programs (CEH v12 Master & RedHat RHCSA), official exam prep vouchers and simulated mock exam tests are included to ensure you clear your official vendor certification on the very first attempt.</p>
-            <div class="faq-answer-footer">
-              <span>Certified Growth</span>
-              <a href="#certifications-section" style="color:var(--sh-primary); font-weight:700;">View Accreditation &rsaquo;</a>
+          <div class="faq-accordion-body">
+            <div class="faq-accordion-content">
+              <span class="faq-answer-badge">Eligibility & Prerequisites</span>
+              <p>Our courses start right from foundational concepts up to advanced enterprise levels. Anyone with a basic computer background (B.Tech, BCA, B.Sc, Diploma, or working IT professionals looking for upskilling) can join. No prior coding expertise is mandatory for entry-level cybersecurity or system administration courses.</p>
+              <div class="faq-answer-footer">
+                <span>Need custom advice?</span>
+                <a href="#inquiry-form" style="color:var(--sh-primary); font-weight:700;">Talk to Counselor &rsaquo;</a>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- Accordion Item 2 -->
+        <div class="faq-accordion-item">
+          <button class="faq-accordion-header">
+            <span class="faq-q-text">How does the 100% Placement Support program work?</span>
+            <svg class="faq-chevron-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-accordion-body">
+            <div class="faq-accordion-content">
+              <span class="faq-answer-badge">Job Placement Assistance</span>
+              <p>Once you complete 75% of your course modules, our dedicated placement cell assists you with resume building, LinkedIn optimization, mock technical interview rounds, and schedules interview opportunities with our 500+ hiring partner companies until you get placed.</p>
+              <div class="faq-answer-footer">
+                <span>Explore Hiring Partners</span>
+                <a href="#placements-section" style="color:var(--sh-primary); font-weight:700;">View 500+ MNCs &rsaquo;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item 3 -->
+        <div class="faq-accordion-item">
+          <button class="faq-accordion-header">
+            <span class="faq-q-text">Do I get 24/7 practical lab access outside class hours?</span>
+            <svg class="faq-chevron-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-accordion-body">
+            <div class="faq-accordion-content">
+              <span class="faq-answer-badge">Practical Labs & Infrastructure</span>
+              <p>Yes! Every enrolled student gets 24/7 remote cloud lab access to practice hands-on attack/defend scenarios, SIEM logging tools, AWS cloud consoles, and Linux terminals anywhere with an internet connection.</p>
+              <div class="faq-answer-footer">
+                <span>Practice Anytime</span>
+                <a href="#inquiry-form" style="color:var(--sh-primary); font-weight:700;">Test Drive Demo Lab &rsaquo;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item 4 -->
+        <div class="faq-accordion-item">
+          <button class="faq-accordion-header">
+            <span class="faq-q-text">Are both Online Live & In-Person Classroom options available?</span>
+            <svg class="faq-chevron-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-accordion-body">
+            <div class="faq-accordion-content">
+              <span class="faq-answer-badge">Training Modes & Batches</span>
+              <p>Yes. We offer instructor-led live interactive online batches as well as full classroom lab training at our Jaipur center. All live sessions are recorded and made available in student portals for lifetime revision.</p>
+              <div class="faq-answer-footer">
+                <span>Flexible Schedule</span>
+                <a href="#inquiry-form" style="color:var(--sh-primary); font-weight:700;">Check Batch Timings &rsaquo;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item 5 -->
+        <div class="faq-accordion-item">
+          <button class="faq-accordion-header">
+            <span class="faq-q-text">Are official exam vouchers included with the master tracks?</span>
+            <svg class="faq-chevron-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-accordion-body">
+            <div class="faq-accordion-content">
+              <span class="faq-answer-badge">Global Certifications</span>
+              <p>Yes, for our flagship programs (CEH v12 Master & RedHat RHCSA), official exam prep vouchers and simulated mock exam tests are included to ensure you clear your official vendor certification on the very first attempt.</p>
+              <div class="faq-answer-footer">
+                <span>Certified Growth</span>
+                <a href="#certifications-section" style="color:var(--sh-primary); font-weight:700;">View Accreditation &rsaquo;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>

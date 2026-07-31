@@ -129,6 +129,7 @@
   gap: 18px;
   align-items: center;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .btn-hero-primary {
@@ -142,6 +143,7 @@
   transition: var(--sh-transition);
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -162,6 +164,7 @@
   transition: var(--sh-transition);
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -782,6 +785,13 @@
   align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 20px;
+  gap: 12px;
+}
+
+.workshop-pass-label {
+  font-size: 13px;
+  font-weight: 800;
+  color: #34d399;
 }
 
 /* ==========================================================================
@@ -1341,34 +1351,45 @@
 }
 
 /* ==========================================================================
-   9. UPGRADED FAQ SECTION (LEFT QUESTIONS LIST -> RIGHT ANSWER BOX)
+   9. NATIVE ACCORDION FAQ SECTION (EXPANDABLE DRAWER ON CLICK)
    ========================================================================== */
 .faq-section {
   padding: 95px 0;
   background: #f8fafc;
 }
 
-.faq-split-container {
-  display: grid;
-  grid-template-columns: 1fr 1.15fr;
-  gap: 36px;
-  align-items: flex-start;
-  margin-top: 40px;
-}
-
-.faq-questions-list {
+.faq-accordion-container {
+  max-width: 880px;
+  margin: 40px auto 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
-.faq-tab-btn {
-  width: 100%;
-  padding: 18px 24px;
+.faq-accordion-item {
   background: #ffffff;
   border: 1.5px solid var(--sh-border);
-  border-radius: 12px;
-  font-size: 15.5px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--sh-shadow-sm);
+  transition: var(--sh-transition);
+}
+
+.faq-accordion-item:hover {
+  border-color: var(--sh-primary);
+}
+
+.faq-accordion-item.active {
+  border-color: var(--sh-primary);
+  box-shadow: 0 10px 30px rgba(255, 107, 0, 0.12);
+}
+
+.faq-accordion-header {
+  width: 100%;
+  padding: 20px 24px;
+  background: #ffffff;
+  border: none;
+  font-size: 16.5px;
   font-weight: 700;
   color: var(--sh-secondary);
   text-align: left;
@@ -1377,58 +1398,41 @@
   align-items: center;
   cursor: pointer;
   transition: var(--sh-transition);
-  position: relative;
-  box-shadow: var(--sh-shadow-sm);
 }
 
-.faq-tab-btn:hover {
-  border-color: var(--sh-primary);
+.faq-accordion-item.active .faq-accordion-header {
+  background: #fff7ed;
   color: var(--sh-primary);
-  transform: translateX(4px);
 }
 
-.faq-tab-btn.active {
-  background: var(--sh-secondary);
-  color: #ffffff;
-  border-color: var(--sh-secondary);
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
-}
-
-.faq-tab-btn.active svg {
-  color: var(--sh-primary);
-  transform: translateX(4px);
-}
-
-.faq-tab-btn svg {
-  transition: var(--sh-transition);
+.faq-chevron-icon {
+  transition: transform 0.3s ease;
   color: #94a3b8;
   flex-shrink: 0;
+  margin-left: 14px;
 }
 
-.faq-answer-box {
+.faq-accordion-item.active .faq-chevron-icon {
+  transform: rotate(180deg);
+  color: var(--sh-primary);
+}
+
+.faq-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
   background: #ffffff;
-  border: 1.5px solid var(--sh-border);
-  border-radius: 16px;
-  padding: 38px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-  min-height: 380px;
-  position: relative;
-  display: flex;
-  align-items: center;
 }
 
-.faq-answer-pane {
-  display: none;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.35s ease-in-out;
-  width: 100%;
+.faq-accordion-item.active .faq-accordion-body {
+  max-height: 500px;
+  transition: max-height 0.45s ease-in-out;
 }
 
-.faq-answer-pane.active {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
+.faq-accordion-content {
+  padding: 0 24px 22px;
+  border-top: 1px dashed var(--sh-border);
+  padding-top: 18px;
 }
 
 .faq-answer-badge {
@@ -1436,37 +1440,28 @@
   background: #fff7ed;
   color: var(--sh-primary);
   border: 1px solid #ffedd5;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 800;
-  padding: 4px 12px;
+  padding: 3px 10px;
   border-radius: 20px;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
-.faq-answer-pane h4 {
-  font-family: 'Outfit', sans-serif;
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--sh-secondary);
-  line-height: 1.3;
-  margin-bottom: 18px;
-}
-
-.faq-answer-pane p {
-  font-size: 16px;
+.faq-accordion-content p {
+  font-size: 15px;
   color: var(--sh-text-muted);
-  line-height: 1.7;
-  margin-bottom: 24px;
+  line-height: 1.65;
+  margin-bottom: 18px;
 }
 
 .faq-answer-footer {
   border-top: 1px solid var(--sh-border);
-  padding-top: 18px;
+  padding-top: 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--sh-text);
   font-weight: 600;
 }
@@ -1510,77 +1505,359 @@
 }
 
 /* ==========================================================================
-   11. RESPONSIVE MEDIA QUERIES
+   11. ROCK-SOLID MEDIA BREAKPOINTS FOR PAGE SECTIONS (Laptops, Tablets, Mobile)
    ========================================================================== */
-@media (max-width: 1200px) {
+
+/* Laptops & Standard Monitors (Max 1280px) */
+@media (max-width: 1280px) {
   .cert-visual-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 1024px) {
+/* Tablets (Max 1100px - iPad Pro, iPad Air, Surface Pro) */
+@media (max-width: 1100px) {
   .hero-grid,
   .inquiry-grid,
-  .topchoice-card,
-  .courses-sidebar-layout,
-  .faq-split-container {
+  .courses-sidebar-layout {
     grid-template-columns: 1fr;
+    gap: 36px;
   }
 
-  .topchoice-header-flex {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+  .topchoice-card {
+    grid-template-columns: 1fr;
+    padding: 28px 24px;
+    gap: 24px;
+  }
+
+  .topchoice-illustration-box {
+    min-height: 190px;
+  }
+
+  .topchoice-vector-graphic {
+    max-width: 140px;
   }
 
   .courses-sidebar {
     position: static;
+    top: 0;
+  }
+
+  .sidebar-domain-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
 
   .hero-title {
-    font-size: 42px;
+    font-size: 40px;
   }
 
   .hero-metrics-bar {
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 24px;
   }
 
   .hero-metric-item {
     border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 15px;
+  }
+
+  .hero-metric-item:last-child {
+    border-bottom: none;
   }
 
   .courses-grid,
   .workshop-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
+/* Medium Tablets & Large Phones (Max 850px) */
+@media (max-width: 850px) {
+  .topchoice-header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .workshop-attention-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 16px;
+    padding: 14px 18px;
+  }
+
+  .courses-grid,
+  .workshop-grid {
+    grid-template-columns: 1fr;
   }
 }
 
+/* Standard Mobile Phones (Max 768px) */
 @media (max-width: 768px) {
+  .hero-section {
+    padding: 45px 0 55px;
+  }
+
+  .topchoice-section,
+  .workshop-section,
+  .courses-section,
+  .why-us-section,
+  .certifications-section,
+  .inquiry-section,
+  .faq-section {
+    padding: 55px 0;
+  }
+
+  .section-header-center {
+    margin-bottom: 30px;
+  }
+
   .hero-title {
-    font-size: 34px;
+    font-size: 32px;
+    line-height: 1.18;
+  }
+
+  .hero-description {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+
+  .hero-right-card {
+    padding: 24px 18px;
+    border-radius: 16px;
+  }
+
+  .hero-stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .hero-stat-box {
+    padding: 14px 12px;
+  }
+
+  .hero-stat-box .stat-val {
+    font-size: 24px;
+  }
+
+  .cert-visual-grid,
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .workshop-card {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+
+  .workshop-footer {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .workshop-footer .btn-hero-primary {
+    width: 100%;
+  }
+
+  .courses-sidebar {
+    padding: 20px 16px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+  }
+
+  .course-banner {
+    height: 155px;
+    padding: 18px 16px;
+  }
+
+  .course-body {
+    padding: 18px 16px;
+  }
+
+  .feature-box {
+    padding: 24px 20px;
+    border-radius: 14px;
+  }
+
+  .cert-visual-card {
+    padding: 24px 18px;
+    border-radius: 16px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .section-subtitle {
+    font-size: 14.5px;
+  }
+
+  .inquiry-card {
+    padding: 26px 20px;
+    border-radius: 16px;
+  }
+
+  .inquiry-info h3 {
+    font-size: 26px;
+  }
+
+  .faq-accordion-header {
+    padding: 16px 18px;
+    font-size: 15px;
+  }
+
+  .faq-accordion-content {
+    padding: 0 18px 18px;
+  }
+
+  .topchoice-highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .cert-trust-bar {
+    gap: 16px;
+    padding: 14px 20px;
+    border-radius: 20px;
+  }
+}
+
+/* Small Mobile Phones (Max 480px) */
+@media (max-width: 480px) {
+  .sh-container {
+    padding: 0 16px;
+  }
+
+  .sidebar-domain-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-section {
+    padding: 35px 0 45px;
+  }
+
+  .topchoice-section,
+  .workshop-section,
+  .courses-section,
+  .why-us-section,
+  .certifications-section,
+  .inquiry-section,
+  .faq-section {
+    padding: 45px 0;
+  }
+
+  .hero-title {
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+
+  .hero-badge-pill {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+
+  .hero-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .hero-metrics-bar {
     grid-template-columns: 1fr;
-  }
-
-  .courses-grid,
-  .workshop-grid,
-  .cert-visual-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;
+    margin-top: 40px;
+    padding-top: 25px;
   }
 
   .topchoice-card {
-    grid-template-columns: 1fr;
-    padding: 24px;
+    padding: 18px 14px;
+    border-radius: 14px;
+  }
+
+  .topchoice-content h3 {
+    font-size: 20px;
+  }
+
+  .topchoice-illustration-box {
+    min-height: 150px;
+    padding: 12px;
+  }
+
+  .topchoice-vector-graphic {
+    max-width: 110px;
+  }
+
+  .topchoice-salary-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 8px 12px;
+  }
+
+  .workshop-card {
+    padding: 18px 14px;
+    border-radius: 14px;
+  }
+
+  .workshop-card h3 {
+    font-size: 19px;
+  }
+
+  .course-banner {
+    height: 140px;
+    padding: 14px;
+  }
+
+  .course-banner-title {
+    font-size: 17px;
+  }
+
+  .course-body {
+    padding: 16px 14px;
+  }
+
+  .cert-visual-card {
+    padding: 18px 14px;
+    border-radius: 14px;
+  }
+
+  .cert-card-header h4 {
+    font-size: 16.5px;
+  }
+
+  .inquiry-card {
+    padding: 20px 14px;
+    border-radius: 14px;
+  }
+
+  .inquiry-info h3 {
+    font-size: 24px;
+  }
+
+  .faq-accordion-header {
+    padding: 14px 14px;
+    font-size: 14px;
   }
 }

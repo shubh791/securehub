@@ -1,7 +1,7 @@
 /* SecureHub Main Page Interactive JavaScript Logic */
 document.addEventListener('DOMContentLoaded', () => {
   initCoursesSidebarFilter();
-  initFaqSplitTabs();
+  initFaqAccordion();
   initCounterAnimation();
   initInquiryForm();
   initTopChoiceCarousel();
@@ -106,23 +106,25 @@ function initTopChoiceCarousel() {
   });
 }
 
-/* FAQ Split View (Left Questions List -> Right Answer Box) */
-function initFaqSplitTabs() {
-  const faqQuestionBtns = document.querySelectorAll('.faq-tab-btn');
-  const faqAnswerPanes = document.querySelectorAll('.faq-answer-pane');
+/* Native Accordion FAQ (Click to Toggle Answer Directly Inline) */
+function initFaqAccordion() {
+  const accordionHeaders = document.querySelectorAll('.faq-accordion-header');
 
-  faqQuestionBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.getAttribute('data-target');
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const parentItem = header.closest('.faq-accordion-item');
+      if (!parentItem) return;
 
-      faqQuestionBtns.forEach(b => b.classList.remove('active'));
-      faqAnswerPanes.forEach(pane => pane.classList.remove('active'));
+      const isAlreadyActive = parentItem.classList.contains('active');
 
-      btn.classList.add('active');
+      // Close all accordion items for clean accordion UX
+      document.querySelectorAll('.faq-accordion-item').forEach(item => {
+        item.classList.remove('active');
+      });
 
-      const targetPane = document.getElementById(targetId);
-      if (targetPane) {
-        targetPane.classList.add('active');
+      // If it wasn't active before, open it now
+      if (!isAlreadyActive) {
+        parentItem.classList.add('active');
       }
     });
   });
