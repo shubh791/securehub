@@ -1,19 +1,19 @@
-/* SecureHub Shared Header and Footer Styles (Light Executive Theme: White, Grey & Indigo Palette) */
+/* SecureHub Shared Header and Footer Styles (Premium Sky, Teal & Neutral Palette) */
 :root {
-  --sh-primary: #2563eb;
-  --sh-primary-hover: #1d4ed8;
-  --sh-secondary: #0f172a;
-  --sh-accent: #0284c7;
-  --sh-accent-light: #e0f2fe;
-  --sh-dark: #0f172a;
-  --sh-dark-card: #1e293b;
-  --sh-light-bg: #f8fafc;
-  --sh-text: #1e293b;
-  --sh-text-muted: #64748b;
-  --sh-border: #e2e8f0;
-  --sh-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --sh-shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.08);
-  --sh-radius: 8px;
+  --sh-primary: #1677ff;
+  --sh-primary-hover: #0c63d4;
+  --sh-secondary: #16283d;
+  --sh-accent: #0f9bb3;
+  --sh-accent-light: #e8f6fd;
+  --sh-dark: #1d3348;
+  --sh-dark-card: #29465f;
+  --sh-light-bg: #f6f8fb;
+  --sh-text: #35475a;
+  --sh-text-muted: #718096;
+  --sh-border: #e0e8f0;
+  --sh-shadow-sm: 0 3px 12px rgba(28, 57, 85, 0.06);
+  --sh-shadow-lg: 0 22px 48px rgba(28, 57, 85, 0.11);
+  --sh-radius: 10px;
   --sh-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -25,7 +25,7 @@
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Manrope', system-ui, -apple-system, sans-serif;
   color: var(--sh-text);
   background-color: #ffffff;
   line-height: 1.6;
@@ -87,8 +87,8 @@ ul {
 }
 
 .sh-topbar-badge {
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
+  background: #edf7ff;
+  border: 1px solid #cfe8fb;
   color: var(--sh-primary);
   padding: 3px 12px;
   border-radius: 20px;
@@ -143,14 +143,14 @@ ul {
 .sh-logo-icon {
   width: 44px;
   height: 44px;
-  background: linear-gradient(135deg, var(--sh-secondary), #1e293b);
+  background: linear-gradient(135deg, #1e596a, #277b86);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--sh-primary);
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
-  border: 1px solid rgba(37, 99, 235, 0.3);
+  border: 1px solid rgba(101, 189, 208, 0.55);
 }
 
 .sh-logo-text {
@@ -191,11 +191,11 @@ ul {
 .sh-nav-link:hover,
 .sh-nav-link.active {
   color: var(--sh-primary);
-  background-color: #eff6ff;
+  background-color: #edf7ff;
 }
 
 .sh-nav-link .sh-courses-badge {
-  background: linear-gradient(135deg, var(--sh-secondary), #1e293b);
+  background: linear-gradient(135deg, #1677ff, #318cf5);
   color: #ffffff;
   padding: 7px 14px;
   border-radius: 6px;
@@ -208,8 +208,8 @@ ul {
 }
 
 .sh-nav-link .sh-courses-badge:hover {
-  background: linear-gradient(135deg, var(--sh-primary), #1d4ed8);
-  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+  background: linear-gradient(135deg, #0c63d4, #1677ff);
+  box-shadow: 0 6px 18px rgba(22, 119, 255, 0.3);
 }
 
 /* Mega Menu Dropdown */
@@ -333,7 +333,7 @@ ul {
 .sh-mega-course-icon {
   width: 38px;
   height: 38px;
-  background: #eff6ff;
+  background: #edf7ff;
   color: var(--sh-primary);
   border-radius: 6px;
   display: flex;
@@ -376,12 +376,12 @@ ul {
 .sh-btn-outline:hover {
   background: var(--sh-primary);
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 4px 12px rgba(8, 127, 131, 0.25);
 }
 
 .sh-btn-primary {
   padding: 10px 18px;
-  background: linear-gradient(135deg, var(--sh-secondary), #1e293b);
+  background: linear-gradient(135deg, #1677ff, #318cf5);
   color: #ffffff;
   border: none;
   border-radius: 6px;
@@ -389,14 +389,14 @@ ul {
   font-size: 13.5px;
   cursor: pointer;
   transition: var(--sh-transition);
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+  box-shadow: 0 4px 12px rgba(22, 119, 255, 0.2);
   white-space: nowrap;
 }
 
 .sh-btn-primary:hover {
-  background: linear-gradient(135deg, var(--sh-primary), #1d4ed8);
+  background: linear-gradient(135deg, #0c63d4, #1677ff);
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 6px 16px rgba(22, 119, 255, 0.35);
 }
 
 /* Mobile Hamburger Toggle */
@@ -410,24 +410,37 @@ ul {
   padding: 6px;
 }
 
-/* Shared Footer (Dark Executive Footer with Slate & Grey Detail) */
+/* Shared Footer (Bright Premium Surface) */
 .sh-footer {
-  background: var(--sh-dark);
-  color: #cbd5e1;
+  background: #f2f6f9;
+  color: #526573;
   padding-top: 70px;
   padding-bottom: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid #dbe5ec;
 }
 
 .sh-footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr;
-  gap: 40px;
-  margin-bottom: 50px;
+  grid-template-columns: 1.7fr 1fr 1fr 1.35fr;
+  gap: 44px;
+  margin-bottom: 46px;
 }
 
+.sh-footer-logo { display: inline-flex; }
+
+.sh-footer-logo .sh-logo-icon {
+  background: linear-gradient(135deg, #1677ff, #318cf5);
+  color: #ffffff;
+  border-color: rgba(22, 119, 255, .18);
+  box-shadow: 0 8px 18px rgba(22, 119, 255, .18);
+}
+
+.sh-footer-logo .sh-logo-text { color: var(--sh-secondary); }
+
+.sh-footer-logo .sh-logo-text span { color: var(--sh-primary); }
+
 .sh-footer-brand p {
-  color: #94a3b8;
+  color: #6f8190;
   font-size: 14px;
   margin-top: 16px;
   margin-bottom: 24px;
@@ -437,7 +450,7 @@ ul {
 .sh-footer-title {
   font-size: 16px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--sh-secondary);
   margin-bottom: 20px;
   position: relative;
   padding-bottom: 10px;
@@ -459,7 +472,7 @@ ul {
 }
 
 .sh-footer-links a {
-  color: #94a3b8;
+  color: #667987;
   font-size: 14px;
   transition: var(--sh-transition);
   display: inline-flex;
@@ -468,7 +481,7 @@ ul {
 }
 
 .sh-footer-links a:hover {
-  color: #ffffff;
+  color: var(--sh-primary);
   transform: translateX(4px);
 }
 
@@ -477,7 +490,7 @@ ul {
   align-items: flex-start;
   gap: 12px;
   margin-bottom: 16px;
-  color: #94a3b8;
+  color: #667987;
   font-size: 14px;
 }
 
@@ -485,6 +498,13 @@ ul {
   color: var(--sh-primary);
   flex-shrink: 0;
   margin-top: 3px;
+}
+
+.sh-footer-newsletter-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #607787;
+  margin-top: 20px;
 }
 
 .sh-newsletter-box {
@@ -496,9 +516,9 @@ ul {
   flex: 1;
   padding: 12px 14px;
   border-radius: 6px 0 0 6px;
-  border: 1px solid #334155;
-  background: #1e293b;
-  color: #ffffff;
+  border: 1px solid #d4e0e8;
+  background: #ffffff;
+  color: var(--sh-text);
   font-size: 14px;
   outline: none;
 }
@@ -519,14 +539,27 @@ ul {
 }
 
 .sh-footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid #dbe5ec;
   padding-top: 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
-  color: #64748b;
+  color: #738594;
 }
+
+.sh-footer-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.sh-footer-legal-links a {
+  color: #738594;
+  transition: var(--sh-transition);
+}
+
+.sh-footer-legal-links a:hover { color: var(--sh-primary); }
 
 .sh-social-links {
   display: flex;
@@ -537,8 +570,9 @@ ul {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #1e293b;
-  color: #94a3b8;
+  background: #ffffff;
+  color: #607787;
+  border: 1px solid #dbe5ec;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -613,6 +647,11 @@ ul {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
   }
+
+  .sh-footer-brand {
+    grid-column: 1 / -1;
+    max-width: 620px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -632,12 +671,21 @@ ul {
 
   .sh-footer-grid {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
+
+  .sh-footer-brand { grid-column: auto; }
 
   .sh-footer-bottom {
     flex-direction: column;
     gap: 15px;
     text-align: center;
+  }
+
+  .sh-footer-legal-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 18px;
   }
 
   .sh-newsletter-box {
@@ -650,4 +698,25 @@ ul {
     border-radius: 6px;
     width: 100%;
   }
+}
+
+/* Footer-specific fluid breakpoints */
+@media (max-width: 1440px) and (min-width: 1101px) {
+  .sh-footer-grid { grid-template-columns: 1.45fr 1fr 1fr 1.25fr; gap: 30px; }
+}
+
+@media (max-width: 760px) {
+  .sh-footer { padding-top: 52px; padding-bottom: 24px; }
+  .sh-footer-grid { grid-template-columns: 1fr; gap: 28px; margin-bottom: 34px; }
+  .sh-footer-brand { grid-column: auto; max-width: none; }
+  .sh-footer-title { margin-bottom: 14px; }
+  .sh-footer-links li { margin-bottom: 9px; }
+  .sh-footer-bottom { padding-top: 20px; }
+}
+
+@media (max-width: 420px) {
+  .sh-footer .sh-logo-text { font-size: 22px; }
+  .sh-footer-logo .sh-logo-icon { width: 40px; height: 40px; }
+  .sh-footer-bottom { font-size: 12px; }
+  .sh-footer-legal-links { gap: 8px 14px; }
 }

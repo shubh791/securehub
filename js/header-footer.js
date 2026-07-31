@@ -246,11 +246,11 @@ function renderFooter() {
         <div class="sh-footer-grid">
           <!-- Brand Column -->
           <div class="sh-footer-brand">
-            <a href="index.html" class="sh-logo" style="color:#ffffff;">
+            <a href="index.html" class="sh-logo sh-footer-logo" title="SecureHub Home">
               <div class="sh-logo-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               </div>
-              <div class="sh-logo-text" style="color:#ffffff;">Secure<span style="color:var(--sh-primary);">Hub</span></div>
+              <div class="sh-logo-text">Secure<span>Hub</span></div>
             </a>
             <p>SecureHub is India's leading IT, Cloud & Cybersecurity skill development institute. Empowering students with hands-on lab training and 100% placement assistance.</p>
             <div class="sh-social-links">
@@ -299,7 +299,7 @@ function renderFooter() {
               <span>Helpline: +91 98765 43210</span>
             </div>
 
-            <p style="font-size:13px; color:#94a3b8; margin-top:20px;">Subscribe for course batch alerts:</p>
+            <p class="sh-footer-newsletter-label">Subscribe for course batch alerts:</p>
             <div class="sh-newsletter-box">
               <input type="email" class="sh-newsletter-input" placeholder="Enter your email">
               <button class="sh-newsletter-btn" onclick="alert('Thank you for subscribing to SecureHub updates!')">Subscribe</button>
@@ -310,10 +310,10 @@ function renderFooter() {
         <!-- Footer Bottom -->
         <div class="sh-footer-bottom">
           <p>&copy; 2026 SecureHub IT & Cybersecurity Training Institute. All rights reserved.</p>
-          <div style="display:flex; gap:20px;">
-            <a href="#" style="color:#64748b;">Privacy Policy</a>
-            <a href="#" style="color:#64748b;">Terms of Service</a>
-            <a href="#" style="color:#64748b;">Refund Policy</a>
+          <div class="sh-footer-legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Refund Policy</a>
           </div>
         </div>
       </div>

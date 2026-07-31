@@ -1,5 +1,5 @@
 /* SecureHub Main Page Stylesheet (Executive Light Theme: White & Grey Palette, Zero Dark Sections, Zero Orange) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap');
 
 /* ==========================================================================
    1. HERO SECTION (Light Executive Theme with Indian Students Photo Showcase)
@@ -70,7 +70,7 @@
 }
 
 .hero-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Sora', sans-serif;
   font-size: 52px;
   font-weight: 900;
   line-height: 1.12;
@@ -322,7 +322,7 @@
 }
 
 .hero-metric-num {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Sora', sans-serif;
   font-size: 34px;
   font-weight: 900;
   color: var(--sh-secondary);
@@ -581,7 +581,7 @@
 }
 
 .topchoice-content h3 {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Sora', sans-serif;
   font-size: 26px;
   font-weight: 800;
   color: var(--sh-secondary);
@@ -637,7 +637,7 @@
 .topchoice-salary-box strong {
   font-size: 15.5px;
   color: var(--sh-primary);
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Sora', sans-serif;
 }
 
 /* ==========================================================================
@@ -969,7 +969,7 @@
 .cert-trust-item.emerald {
   background: #ecfdf5;
   border: 1px solid #a7f3d0;
-  color: #047857;
+  color: #087f83;
 }
 
 .cert-trust-item.teal {
@@ -1027,12 +1027,12 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; height: 4px;
-  background: linear-gradient(90deg, #dc2626, #f43f5e);
+  background: linear-gradient(90deg, #087f83, #65bdd0);
 }
 .cert-visual-card.vendor-redhat:hover {
-  border-color: #dc2626;
+  border-color: #48aebe;
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(220, 38, 38, 0.18);
+  box-shadow: 0 20px 40px rgba(29, 116, 130, 0.14);
 }
 
 .cert-visual-card.vendor-cisco::before {
@@ -1062,7 +1062,7 @@
 
 .badge-eccouncil { background: #eff6ff; border: 1px solid #bfdbfe; color: #1d4ed8; }
 .badge-aws { background: #e0f2fe; border: 1px solid #7dd3fc; color: #0369a1; }
-.badge-redhat { background: #fff1f2; border: 1px solid #fecdd3; color: #e11d48; }
+.badge-redhat { background: #eaf7f6; border: 1px solid #bde5df; color: #087f83; }
 .badge-cisco { background: #f0fdfa; border: 1px solid #99f6e4; color: #0d9488; }
 
 .cert-card-header {
@@ -1084,11 +1084,11 @@
 
 .icon-eccouncil { background: linear-gradient(135deg, #eff6ff, #dbeafe); color: #2563eb; border: 1px solid #bfdbfe; }
 .icon-aws { background: linear-gradient(135deg, #e0f2fe, #bae6fd); color: #0284c7; border: 1px solid #7dd3fc; }
-.icon-redhat { background: linear-gradient(135deg, #fff1f2, #ffe4e6); color: #dc2626; border: 1px solid #fecdd3; }
+.icon-redhat { background: linear-gradient(135deg, #e6f5f7, #d5efea); color: #087f83; border: 1px solid #bde5df; }
 .icon-cisco { background: linear-gradient(135deg, #f0fdfa, #ccfbf1); color: #0d9488; border: 1px solid #99f6e4; }
 
 .cert-card-header h4 {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Sora', sans-serif;
   font-size: 18px;
   font-weight: 800;
   color: var(--sh-secondary);
@@ -1104,7 +1104,7 @@
 
 .code-eccouncil { color: #2563eb; }
 .code-aws { color: #0284c7; }
-.code-redhat { color: #dc2626; }
+.code-redhat { color: #087f83; }
 .code-cisco { color: #0d9488; }
 
 .cert-skills-list {
@@ -1144,7 +1144,7 @@
 
 .voucher-eccouncil { background: #ecfdf5; border: 1px solid #a7f3d0; color: #059669; }
 .voucher-aws { background: #eff6ff; border: 1px solid #bfdbfe; color: #1d4ed8; }
-.voucher-redhat { background: #fef2f2; border: 1px solid #fca5a5; color: #9f1239; }
+.voucher-redhat { background: #eaf7f6; border: 1px solid #bde5df; color: #087f83; }
 .voucher-cisco { background: #f0fdfa; border: 1px solid #99f6e4; color: #0d9488; }
 
 .cert-card-btn {
@@ -1162,7 +1162,7 @@
 
 .btn-eccouncil { background: linear-gradient(135deg, #2563eb, #1d4ed8); box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25); }
 .btn-aws { background: linear-gradient(135deg, #0284c7, #0369a1); box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25); }
-.btn-redhat { background: linear-gradient(135deg, #dc2626, #b91c1c); box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25); }
+.btn-redhat { background: linear-gradient(135deg, #087f83, #2c91a1); box-shadow: 0 4px 12px rgba(8, 127, 131, 0.20); }
 .btn-cisco { background: linear-gradient(135deg, #0d9488, #0f766e); box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25); }
 
 .cert-card-btn:hover {
@@ -1187,7 +1187,7 @@
 }
 
 .inquiry-info h3 {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Sora', sans-serif;
   font-size: 38px;
   font-weight: 800;
   color: var(--sh-secondary);
@@ -1411,7 +1411,7 @@
 }
 
 .section-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Sora', sans-serif;
   font-size: 38px;
   font-weight: 800;
   color: var(--sh-secondary);
@@ -1725,4 +1725,234 @@
     padding: 14px 14px;
     font-size: 14px;
   }
+}
+
+/* ===========================================================================
+   11. PREMIUM LIGHT EDTECH THEME REFINEMENT
+   A bright, current learning-platform system: white space, misty blue
+   surfaces, clear blue actions, neutral grey structure, and restrained green.
+   ========================================================================== */
+.hero-section {
+  background: #f7fbff;
+  background-image:
+    radial-gradient(at 8% 16%, rgba(116, 194, 255, .19) 0, transparent 39%),
+    radial-gradient(at 92% 82%, rgba(103, 217, 180, .13) 0, transparent 35%);
+  color: var(--sh-secondary);
+  border-bottom: 1px solid #e5edf4;
+}
+
+.hero-section::after {
+  background-image:
+    linear-gradient(to right, rgba(22, 119, 255, .035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(22, 119, 255, .035) 1px, transparent 1px);
+}
+
+.hero-badge-pill,
+.section-tag,
+.faq-answer-badge {
+  background: #edf7ff;
+  border-color: #cfe8fb;
+  color: #1677ff;
+  box-shadow: none;
+}
+
+.hero-badge-pill { background: #edf7ff; border-color: #cfe8fb; color: #1677ff; }
+
+.hero-badge-pulse { background: #1b9d91; box-shadow: 0 0 0 0 rgba(27, 157, 145, 0.48); }
+@keyframes pulse-blue {
+  0% { transform: scale(.95); box-shadow: 0 0 0 0 rgba(27, 157, 145, .48); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(27, 157, 145, 0); }
+  100% { transform: scale(.95); box-shadow: 0 0 0 0 rgba(27, 157, 145, 0); }
+}
+
+.hero-title .gradient-blue {
+  background: linear-gradient(135deg, #1677ff, #0f9bb3);
+  -webkit-background-clip: text;
+}
+.hero-title .gradient-slate {
+  background: linear-gradient(135deg, #16283d, #4c6478);
+  -webkit-background-clip: text;
+}
+
+.hero-description { color: var(--sh-text-muted); }
+.hero-chip { background: rgba(255, 255, 255, .82); border-color: #dbe8f2; color: var(--sh-text); }
+.hero-chip svg { color: #1677ff; }
+.node-icon, .feature-icon-wrapper, .inquiry-bullets li svg {
+  background: #edf8f8;
+  border-color: #c9e8e4;
+}
+
+.btn-hero-primary {
+  background: linear-gradient(135deg, #1677ff, #318cf5);
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(22, 119, 255, .22);
+}
+
+.btn-hero-primary:hover {
+  background: linear-gradient(135deg, #0c63d4, #1677ff);
+  color: #ffffff;
+  box-shadow: 0 14px 30px rgba(22, 119, 255, .3);
+}
+
+.visual-glow-backdrop { background: radial-gradient(circle, rgba(83, 183, 235, .20) 0%, rgba(105, 210, 181, .09) 50%, transparent 70%); }
+.hero-image-wrapper { border-color: #d8e7f1; box-shadow: 0 24px 54px rgba(35, 78, 112, .13); }
+.hero-metrics-bar, .hero-metric-item { border-color: #dce7ef; }
+.hero-metric-num { color: var(--sh-secondary); }
+.hero-metric-label { color: var(--sh-text-muted); }
+.hero-metric-num span { color: #1677ff; }
+.partner-logo-card:hover { border-color: var(--sh-primary); box-shadow: 0 12px 26px rgba(22, 119, 255, .12); }
+
+.topchoice-section, .faq-section { background: #f6f8fb; }
+.why-us-section { background: #ffffff; }
+.certifications-section { background: #f1f8ff; }
+.topchoice-arrow-btn:hover { background: var(--sh-primary); border-color: var(--sh-primary); }
+.topchoice-illustration-box,
+.course-banner,
+.topchoice-illustration-box[style],
+.course-banner[style] {
+  background: linear-gradient(135deg, #eaf5ff, #d9efff) !important;
+}
+.course-banner-title { color: #16283d; }
+.course-banner-icon { background: rgba(255, 255, 255, .72); border-color: #cfe3f2; color: #1677ff; }
+.topchoice-badge,
+.topchoice-badge[style],
+.course-tag-badge[style] { background: #1677ff !important; }
+.sidebar-domain-btn.active { background: #1677ff; border-color: #1677ff; box-shadow: 0 6px 16px rgba(22, 119, 255, .18); }
+.course-card:hover, .feature-box:hover { box-shadow: 0 18px 36px rgba(29, 86, 97, .10); }
+
+.cert-trust-item.blue, .cert-trust-item.emerald, .cert-trust-item.teal,
+.badge-eccouncil, .badge-aws, .badge-redhat, .badge-cisco,
+.voucher-eccouncil, .voucher-aws, .voucher-redhat, .voucher-cisco {
+  background: #edf7ff;
+  border-color: #cfe8fb;
+  color: #1677ff;
+}
+
+.cert-visual-card.vendor-eccouncil::before,
+.cert-visual-card.vendor-aws::before,
+.cert-visual-card.vendor-redhat::before,
+.cert-visual-card.vendor-cisco::before { background: linear-gradient(90deg, #1677ff, #69bdf4); }
+.cert-visual-card.vendor-eccouncil:hover,
+.cert-visual-card.vendor-aws:hover,
+.cert-visual-card.vendor-redhat:hover,
+.cert-visual-card.vendor-cisco:hover { border-color: #78c4f5; box-shadow: 0 20px 40px rgba(22, 119, 255, .14); }
+.icon-eccouncil, .icon-aws, .icon-redhat, .icon-cisco { background: linear-gradient(135deg, #edf7ff, #dcefff); color: #1677ff; border-color: #cfe8fb; }
+.code-eccouncil, .code-aws, .code-redhat, .code-cisco { color: #1677ff; }
+.btn-eccouncil, .btn-aws, .btn-redhat, .btn-cisco { background: linear-gradient(135deg, #1677ff, #4ea4ed); box-shadow: 0 4px 12px rgba(22, 119, 255, .20); }
+
+.inquiry-section { background: #ffffff; border-bottom: 1px solid var(--sh-border); }
+.inquiry-info h3, .inquiry-bullets li { color: var(--sh-secondary); }
+.inquiry-info p { color: var(--sh-text-muted); }
+.inquiry-card { box-shadow: 0 22px 48px rgba(32, 72, 105, .10); }
+.inquiry-card::before { background: linear-gradient(90deg, #1677ff, #54bad1); }
+.sidebar-search-input:focus, .inquiry-form-control:focus { box-shadow: 0 0 0 4px rgba(22, 119, 255, .12); }
+.faq-accordion-item.active { box-shadow: 0 10px 30px rgba(22, 119, 255, .12); }
+.faq-accordion-item.active .faq-accordion-header { background: #edf7ff; }
+
+/* Image-led hero attraction section */
+.hero-attraction {
+  min-height: 690px;
+  padding: 80px 0 54px;
+  background-color: #0c1822;
+  background-image:
+    linear-gradient(90deg, rgba(7, 17, 27, .96) 0%, rgba(8, 23, 34, .88) 34%, rgba(8, 24, 35, .37) 64%, rgba(8, 21, 30, .16) 100%),
+    url('../assets/images/hero/securehub-edtech-hero.png');
+  background-size: cover;
+  background-position: center;
+  border: 0;
+}
+
+.hero-attraction::after {
+  background-image:
+    linear-gradient(to right, rgba(172, 223, 255, .055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(172, 223, 255, .04) 1px, transparent 1px);
+}
+
+.hero-attraction .hero-grid {
+  grid-template-columns: minmax(0, 700px);
+  min-height: 435px;
+  gap: 0;
+}
+
+.hero-attraction .hero-copy { max-width: 700px; }
+.hero-attraction .hero-badge-pill { background: rgba(134, 205, 255, .12); border-color: rgba(169, 220, 255, .28); color: #c8eaff; }
+.hero-attraction .hero-badge-pulse { background: #72c7ff; box-shadow: 0 0 0 0 rgba(114, 199, 255, .52); }
+.hero-attraction .hero-title { color: #ffffff; font-size: clamp(43px, 4.2vw, 60px); letter-spacing: -2px; margin-bottom: 20px; }
+.hero-attraction .hero-title .gradient-blue { background: linear-gradient(135deg, #ffffff, #a7dcff); -webkit-background-clip: text; }
+.hero-attraction .hero-title .gradient-slate { background: linear-gradient(135deg, #76d7d0, #c3f1ec); -webkit-background-clip: text; }
+.hero-attraction .hero-description { max-width: 640px; color: #d3e3ee; font-size: 17px; }
+.hero-attraction .hero-chip { background: rgba(255, 255, 255, .09); border-color: rgba(226, 245, 255, .16); color: #f1f8fc; backdrop-filter: blur(8px); }
+.hero-attraction .hero-chip svg { color: #76d7d0; }
+.hero-attraction .btn-hero-primary { background: #ffffff; color: #133951; box-shadow: 0 12px 28px rgba(0, 0, 0, .22); }
+.hero-attraction .btn-hero-primary:hover { background: #dff3ff; color: #0c63d4; }
+.hero-attraction .btn-hero-secondary { background: rgba(255, 255, 255, .08); border-color: rgba(230, 246, 255, .32); color: #ffffff; box-shadow: none; backdrop-filter: blur(8px); }
+.hero-attraction .btn-hero-secondary:hover { background: rgba(255, 255, 255, .16); border-color: #a9dcff; color: #ffffff; }
+.hero-attraction .hero-metrics-bar { margin-top: 26px; padding: 22px 28px; background: rgba(255, 255, 255, .08); border: 1px solid rgba(228, 246, 255, .16); border-radius: 16px; backdrop-filter: blur(12px); }
+.hero-attraction .hero-metric-item { border-color: rgba(228, 246, 255, .16); }
+.hero-attraction .hero-metric-num { color: #ffffff; }
+.hero-attraction .hero-metric-num span { color: #8bdfff; }
+.hero-attraction .hero-metric-label { color: #c6d9e5; }
+
+@media (max-width: 768px) {
+  .hero-attraction { min-height: auto; padding: 60px 0 42px; background-position: 62% center; }
+  .hero-attraction .hero-grid { min-height: auto; }
+  .hero-attraction .hero-title { font-size: 36px; letter-spacing: -1.3px; }
+  .hero-attraction .hero-metrics-bar { padding: 18px 12px; }
+}
+
+/* Hero hierarchy and varied light surfaces */
+.hero-attraction {
+  min-height: 730px;
+  padding: 94px 0 56px;
+  background-image:
+    linear-gradient(90deg, rgba(6, 15, 24, .98) 0%, rgba(8, 22, 33, .91) 35%, rgba(8, 24, 35, .43) 64%, rgba(8, 21, 30, .12) 100%),
+    url('../assets/images/hero/securehub-edtech-hero.png');
+}
+
+.hero-attraction .sh-container { max-width: 1660px; padding-left: 40px; padding-right: 40px; }
+.hero-attraction .hero-grid { grid-template-columns: minmax(0, 590px); min-height: 465px; padding-left: 0; }
+.hero-attraction .hero-copy { max-width: 560px; }
+.hero-attraction .hero-badge-pill { margin-bottom: 28px; padding: 7px 15px; font-size: 12px; letter-spacing: .15px; }
+.hero-attraction .hero-title { max-width: 560px; font-size: clamp(48px, 4.3vw, 64px); line-height: 1.08; letter-spacing: -2.6px; margin-bottom: 24px; }
+.hero-attraction .hero-description { max-width: 525px; font-size: 17px; line-height: 1.72; margin-bottom: 28px; }
+.hero-attraction .hero-chips-flex { gap: 9px; margin-bottom: 32px; }
+.hero-attraction .hero-chip { padding: 8px 13px; font-size: 12px; font-weight: 700; }
+.hero-attraction .hero-actions { gap: 12px; margin-bottom: 0; }
+.hero-attraction .btn-hero-primary, .hero-attraction .btn-hero-secondary { padding: 14px 22px; border-radius: 10px; font-size: 14px; }
+.hero-attraction .hero-metrics-bar { margin-top: 34px; padding: 20px 24px; border-radius: 14px; }
+.hero-attraction .hero-metric-num { font-size: 30px; }
+.hero-attraction .hero-metric-label { font-size: 12px; }
+
+.partners-section { background: #ffffff; }
+.topchoice-section { background: #f8f8f6; }
+.topchoice-section .section-tag { background: #f0f3f4; border-color: #dce4e6; color: #45606a; }
+.topchoice-section .topchoice-illustration-box,
+.topchoice-section .topchoice-illustration-box[style] { background: linear-gradient(145deg, #16344a, #245f74) !important; }
+
+.courses-section { background: #ffffff; }
+.courses-section .section-tag { background: #edf7ff; border-color: #cfe8fb; color: #1677ff; }
+.courses-sidebar { background: #f7fafb; }
+
+.why-us-section { background: #f2faf7; }
+.why-us-section .section-tag { background: #e7f6ef; border-color: #c7e9d9; color: #17855a; }
+.why-us-section .feature-icon-wrapper { background: #e7f6ef; border-color: #c7e9d9; color: #17855a; }
+.why-us-section .feature-box { border-color: #dceae4; }
+.why-us-section .feature-box:hover { border-color: #5ab98c; box-shadow: 0 18px 36px rgba(23, 133, 90, .10); }
+
+.certifications-section { background: #f3f7fc; }
+.certifications-section .section-tag { background: #eceffc; border-color: #d9def8; color: #5362b8; }
+
+.inquiry-section { background: #fffdf9; }
+.inquiry-section .section-tag { background: #fff4df; border-color: #f5dfb9; color: #a46d16; }
+
+.faq-section { background: #f6f8fa; }
+.faq-section .section-tag { background: #eef2f5; border-color: #dce5eb; color: #526573; }
+
+@media (max-width: 768px) {
+  .hero-attraction { min-height: auto; padding: 64px 0 44px; }
+  .hero-attraction .sh-container { padding-left: 20px; padding-right: 20px; }
+  .hero-attraction .hero-grid { grid-template-columns: 1fr; padding-left: 0; }
+  .hero-attraction .hero-title { font-size: 40px; letter-spacing: -1.8px; }
+  .hero-attraction .hero-description { font-size: 15px; }
+  .hero-attraction .hero-chip { width: 100%; }
 }
