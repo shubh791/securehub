@@ -1,10 +1,32 @@
 /* SecureHub Shared Header and Footer Injector & Logic */
 document.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('service-page')) {
+    const serviceMotion = document.createElement('link');
+    serviceMotion.rel = 'stylesheet';
+    serviceMotion.href = 'css/services-motion.css';
+    document.head.appendChild(serviceMotion);
+    const serviceEnhancements = document.createElement('link');
+    serviceEnhancements.rel = 'stylesheet';
+    serviceEnhancements.href = 'css/services-enhancements.css';
+    document.head.appendChild(serviceEnhancements);
+    setTimeout(() => {
+      const serviceShell = document.querySelector('.service-section .service-shell');
+      if (!serviceShell || serviceShell.querySelector('.service-contact-card')) return;
+      serviceShell.insertAdjacentHTML('beforeend', '<form class="service-contact-card"><span>Talk to SecureHub</span><h3>Shape the right learning plan.</h3><p>Share your details and our team will respond with the next suitable option.</p><label>Name<input required name="name" placeholder="Your name"></label><label>Work email<input required name="email" type="email" placeholder="you@company.com"></label><label>Phone<input required name="phone" type="tel" placeholder="Your phone number"></label><button type="submit">Request a conversation</button><small aria-live="polite"></small></form>');
+      const form = serviceShell.querySelector('.service-contact-card');
+      form.addEventListener('submit', event => { event.preventDefault(); form.querySelector('small').textContent = 'Thanks. Our team will contact you shortly.'; form.reset(); });
+    }, 0);
+  }
+  document.documentElement.removeAttribute('data-theme-preview');
+  try {
+    localStorage.removeItem('securehub-theme-preview');
+  } catch (error) {
+    // The fixed Sky theme does not depend on browser storage.
+  }
   renderHeader();
   addExpandedCourseDomains();
   renderFooter();
   initHeaderInteractions();
-  initThemePreview();
 });
 
 document.addEventListener('securehub:course-sections-ready', syncCoursePageSectionLinks);
@@ -25,9 +47,9 @@ function renderHeader() {
   const isCoursePage = Boolean(document.getElementById('course-page'));
   const sectionLinks = isCoursePage
     ? { certifications: '#', about: '#course-about', faqs: '#course-faqs' }
-    : { certifications: '#', about: '#', faqs: '#' };
+    : { certifications: '#', about: 'about.html', faqs: '#' };
   const coursesLink = isCoursePage ? '#course-page' : '#';
-  const enquiryLink = isCoursePage ? '#course-enquiry' : '#';
+  const enquiryLink = isCoursePage ? '#course-enquiry' : 'enquiryform.html';
 
   headerContainer.innerHTML = `
     <!-- Top Contact & Announcement Bar -->
@@ -66,7 +88,7 @@ function renderHeader() {
           <ul class="sh-nav-menu" id="sh-nav-menu">
             <!-- Courses Dropdown with MegaMenu -->
             <li class="sh-nav-item has-megamenu">
-              <a href="${coursesLink}" class="sh-nav-link">
+              <a href="${coursesLink}" class="sh-nav-link sh-courses-toggle" aria-expanded="false" aria-controls="sh-courses-megamenu">
                 <span class="sh-courses-badge">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
                   Explore All Courses
@@ -75,7 +97,11 @@ function renderHeader() {
               </a>
 
               <!-- MegaMenu Dropdown -->
-              <div class="sh-megamenu">
+              <div class="sh-megamenu" id="sh-courses-megamenu">
+                <label class="sh-mobile-domain-select" for="sh-mobile-domain-select">
+                  <span>Select domain</span>
+                  <select id="sh-mobile-domain-select" aria-label="Select course domain"></select>
+                </label>
                 <div class="sh-megamenu-sidebar">
                   <div class="sh-megamenu-title">Training Domains</div>
                   <ul class="sh-domain-list">
@@ -242,9 +268,18 @@ function renderHeader() {
               </div>
             </li>
 
-            <li class="sh-nav-item"><a href="${sectionLinks.certifications}" class="sh-nav-link">Certifications</a></li>
+            <li class="sh-nav-item sh-services-menu">
+              <button type="button" class="sh-nav-link sh-services-toggle" aria-expanded="false" aria-controls="sh-services-dropdown">Services <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+              <div class="sh-services-dropdown" id="sh-services-dropdown">
+                <p>Career services</p>
+                <a href="services/service.html?type=corporate"><span>Corporate Training</span><small>Skill programs for teams</small></a>
+                <a href="services/service.html?type=programs"><span>Training Programs</span><small>Structured learning pathways</small></a>
+                <a href="services/service.html?type=internships"><span>Internships</span><small>Practice-led career exposure</small></a>
+                <a href="services/service.html?type=masterclasses"><span>Masterclasses</span><small>Focused expert sessions</small></a>
+              </div>
+            </li>
+            <li class="sh-nav-item"><a href="placementsupport.html" class="sh-nav-link">Placement Support</a></li>
             <li class="sh-nav-item"><a href="${sectionLinks.about}" class="sh-nav-link" data-course-section="about">About Us</a></li>
-            <li class="sh-nav-item"><a href="${sectionLinks.faqs}" class="sh-nav-link" data-course-section="faqs">FAQs</a></li>
           </ul>
 
           <!-- Nav Right Action Buttons (Search Bar removed as requested) -->
@@ -295,9 +330,11 @@ function addExpandedCourseDomains() {
 function renderFooter() {
   const footerContainer = document.getElementById('app-footer');
   if (!footerContainer) return;
-  const sectionLinks = document.getElementById('course-page')
+  const isCoursePage = Boolean(document.getElementById('course-page'));
+  const sectionLinks = isCoursePage
     ? { certifications: '#course-certifications', about: '#course-about' }
     : { certifications: '#certifications-section', about: '#about-section' };
+  const enquiryLink = isCoursePage ? '#course-enquiry' : 'enquiryform.html';
 
   footerContainer.innerHTML = `
     <footer class="sh-footer">
@@ -328,7 +365,7 @@ function renderFooter() {
               <li><a href="${sectionLinks.about}" data-course-section="about">&rsaquo; About SecureHub</a></li>
               <li><a href="#courses-section">&rsaquo; All Courses</a></li>
               <li><a href="${sectionLinks.certifications}">&rsaquo; Certifications</a></li>
-              <li><a href="#inquiry-form">&rsaquo; Contact & Admissions</a></li>
+              <li><a href="${enquiryLink}">&rsaquo; Contact & Admissions</a></li>
             </ul>
           </div>
 
@@ -415,22 +452,81 @@ function initHeaderInteractions() {
   // Mobile Nav Toggle
   const toggleBtn = document.getElementById('sh-mobile-toggle');
   const navMenu = document.getElementById('sh-nav-menu');
+  const setMobileNavState = (isOpen) => {
+    if (!navMenu || !toggleBtn) return;
+    navMenu.classList.toggle('active', isOpen);
+    navMenu.style.left = isOpen ? '0px' : '';
+    navMenu.style.visibility = isOpen ? 'visible' : '';
+    navMenu.style.pointerEvents = isOpen ? 'auto' : '';
+    document.body.classList.toggle('sh-nav-open', isOpen);
+    toggleBtn.setAttribute('aria-expanded', String(isOpen));
+    toggleBtn.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+  };
   
   if (toggleBtn && navMenu) {
     toggleBtn.addEventListener('click', () => {
-      const isOpen = navMenu.classList.toggle('active');
-      toggleBtn.setAttribute('aria-expanded', String(isOpen));
-      toggleBtn.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+      const isOpen = !navMenu.classList.contains('active');
+      setMobileNavState(isOpen);
+      if (!isOpen) closeMobilePanels();
     });
 
     navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        toggleBtn.setAttribute('aria-expanded', 'false');
-        toggleBtn.setAttribute('aria-label', 'Open navigation');
+        if (link.classList.contains('sh-courses-toggle') && window.matchMedia('(max-width: 1100px)').matches) return;
+        setMobileNavState(false);
       });
     });
+
   }
+
+  const closeMobilePanels = (except) => {
+    document.querySelectorAll('.has-megamenu.is-open, .sh-services-menu.is-open').forEach(panel => {
+      if (panel !== except) panel.classList.remove('is-open');
+    });
+    document.querySelectorAll('.sh-courses-toggle, .sh-services-toggle').forEach(trigger => {
+      const expanded = trigger.closest('.is-open') !== null;
+      trigger.setAttribute('aria-expanded', String(expanded));
+    });
+  };
+
+  const coursesMenu = document.querySelector('.has-megamenu');
+  const coursesToggle = document.querySelector('.sh-courses-toggle');
+  if (coursesMenu && coursesToggle) {
+    coursesToggle.addEventListener('click', event => {
+      if (!window.matchMedia('(max-width: 1100px)').matches) return;
+      event.preventDefault();
+      const willOpen = !coursesMenu.classList.contains('is-open');
+      closeMobilePanels(coursesMenu);
+      coursesMenu.classList.toggle('is-open', willOpen);
+      coursesToggle.setAttribute('aria-expanded', String(willOpen));
+    });
+  }
+
+  const servicesMenu = document.querySelector('.sh-services-menu');
+  const servicesToggle = document.querySelector('.sh-services-toggle');
+  if (servicesMenu && servicesToggle) {
+    servicesToggle.addEventListener('click', event => {
+      if (!window.matchMedia('(max-width: 1100px)').matches) return;
+      event.preventDefault();
+      const willOpen = !servicesMenu.classList.contains('is-open');
+      closeMobilePanels(servicesMenu);
+      servicesMenu.classList.toggle('is-open', willOpen);
+      servicesToggle.setAttribute('aria-expanded', String(willOpen));
+    });
+  }
+
+  window.addEventListener('resize', () => {
+    if (window.matchMedia('(max-width: 1100px)').matches) return;
+    setMobileNavState(false);
+    closeMobilePanels();
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape' || !navMenu?.classList.contains('active')) return;
+    setMobileNavState(false);
+    closeMobilePanels();
+    toggleBtn?.focus();
+  });
 
   // MegaMenu domain switching
   const domainBtns = document.querySelectorAll('.sh-domain-btn');
@@ -452,6 +548,24 @@ function initHeaderInteractions() {
     btn.addEventListener('focus', showDomain);
     btn.addEventListener('click', showDomain);
   });
+
+  const mobileDomainSelect = document.getElementById('sh-mobile-domain-select');
+  if (mobileDomainSelect) {
+    domainBtns.forEach(btn => {
+      const option = document.createElement('option');
+      option.value = btn.getAttribute('data-target');
+      option.textContent = btn.childNodes[0].textContent.trim();
+      option.selected = btn.classList.contains('active');
+      mobileDomainSelect.appendChild(option);
+    });
+    mobileDomainSelect.addEventListener('change', () => {
+      const selectedButton = document.querySelector(`.sh-domain-btn[data-target="${mobileDomainSelect.value}"]`);
+      selectedButton?.click();
+    });
+    domainBtns.forEach(btn => btn.addEventListener('click', () => {
+      mobileDomainSelect.value = btn.getAttribute('data-target');
+    }));
+  }
 }
 
 /* Temporary palette preview. It changes colours only and keeps the original theme available. */

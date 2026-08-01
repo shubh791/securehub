@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap');
+
 /* SecureHub Shared Header and Footer Styles (Premium Sky, Teal & Neutral Palette) */
 :root {
   --sh-primary: #1677ff;
@@ -194,6 +196,17 @@ ul {
   background-color: #edf7ff;
 }
 
+.sh-services-toggle { border: 0; background: transparent; cursor: pointer; font-family: inherit; }
+.sh-services-toggle svg { transition: transform .2s ease; }
+.sh-services-menu.is-open .sh-services-toggle svg { transform: rotate(180deg); }
+.sh-services-dropdown { position: absolute; top: 100%; left: 0; z-index: 1200; display: grid; width: 270px; padding: 10px; border: 1px solid var(--sh-border); border-radius: 12px; background: #fff; box-shadow: var(--sh-shadow-lg); opacity: 0; pointer-events: none; transform: translateY(8px); transition: opacity .2s ease, transform .2s ease; }
+.sh-services-menu:hover .sh-services-dropdown { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.sh-services-dropdown > p { margin: 5px 8px 8px; color: var(--sh-text-muted); font-size: 10px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.sh-services-dropdown a { display: grid; gap: 3px; padding: 10px 9px; border-radius: 8px; color: var(--sh-secondary); }
+.sh-services-dropdown a:hover { background: #edf7ff; color: var(--sh-primary); }
+.sh-services-dropdown span { font-size: 13px; font-weight: 800; }
+.sh-services-dropdown small { color: var(--sh-text-muted); font-size: 11px; }
+
 .sh-nav-link .sh-courses-badge {
   background: linear-gradient(135deg, #1677ff, #318cf5);
   color: #ffffff;
@@ -234,6 +247,8 @@ ul {
   height: min(620px, calc(100vh - 96px));
   overflow: hidden;
 }
+
+.sh-mobile-domain-select { display: none; }
 
 .sh-nav-item.has-megamenu:hover .sh-megamenu {
   opacity: 1;
@@ -624,6 +639,8 @@ ul {
     display: none !important;
   }
 
+  .sh-services-dropdown { display: none; }
+
   .sh-nav-menu {
     position: fixed;
     top: 76px;
@@ -824,3 +841,63 @@ ul {
   .sh-theme-grid { grid-template-columns: 1fr; }
   .sh-theme-card { min-height: 115px; }
 }
+
+/* Shared mobile navigation panels. Applies on every SecureHub page. */
+@media (max-width: 1100px) {
+  body.sh-nav-open { overflow: hidden; }
+  .sh-nav-menu { visibility: hidden; pointer-events: none; z-index: 2000; }
+  #sh-nav-menu.sh-nav-menu.active { left: 0 !important; display: flex !important; visibility: visible !important; pointer-events: auto !important; opacity: 1 !important; transform: none !important; }
+  .sh-nav-item.has-megamenu, .sh-services-menu { width: 100%; }
+  .sh-courses-toggle, .sh-services-toggle { justify-content: space-between; }
+  .sh-courses-toggle svg:last-child { transition: transform .2s ease; }
+  .has-megamenu.is-open .sh-courses-toggle svg:last-child { transform: rotate(180deg); }
+  .sh-megamenu { display: none !important; }
+  .has-megamenu.is-open .sh-megamenu {
+    position: static; display: grid !important; grid-template-columns: 1fr; width: 100%;
+    height: auto; max-height: none; margin-top: 8px; padding: 14px; border-radius: 14px;
+    background: #f7fbfd; box-shadow: none; opacity: 1; visibility: visible; transform: none; overflow: visible;
+  }
+  .has-megamenu.is-open .sh-mobile-domain-select { display: grid; gap: 7px; color: var(--sh-secondary); font-size: 12px; font-weight: 800; }
+  .has-megamenu.is-open .sh-mobile-domain-select select { width: 100%; min-height: 44px; padding: 0 34px 0 12px; border: 1px solid #cfe1e9; border-radius: 9px; outline: none; background: #ffffff; color: var(--sh-secondary); font: inherit; font-size: 14px; }
+  .has-megamenu.is-open .sh-megamenu-sidebar { display: none; }
+  .has-megamenu.is-open .sh-megamenu-sidebar { overflow-x: auto; padding: 0 0 8px; border-radius: 0; background: transparent; }
+  .has-megamenu.is-open .sh-megamenu-title { margin: 0 0 9px; }
+  .has-megamenu.is-open .sh-domain-list { display: flex; width: max-content; gap: 7px; }
+  .has-megamenu.is-open .sh-domain-list li { margin: 0; }
+  .has-megamenu.is-open .sh-domain-btn { width: auto; padding: 9px 11px; border: 1px solid #d4e6ee; border-radius: 9px; background: #ffffff; white-space: nowrap; }
+  .has-megamenu.is-open .sh-domain-btn span { display: none; }
+  .has-megamenu.is-open .sh-megamenu-panes { overflow: visible; padding: 0; }
+  .has-megamenu.is-open .sh-megamenu-header { margin: 8px 0 12px; }
+  .has-megamenu.is-open .sh-megamenu-header h4 { font-size: 16px; }
+  .has-megamenu.is-open .sh-mega-courses-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .has-megamenu.is-open .sh-mega-course-card { padding: 11px; }
+  .has-megamenu.is-open .sh-mega-course-info h5 { font-size: 13px; }
+  .has-megamenu.is-open .sh-mega-course-info p { font-size: 11px; }
+  .sh-services-dropdown { display: none !important; }
+  .sh-services-menu.is-open .sh-services-dropdown {
+    position: static; display: grid !important; width: 100%; margin-top: 8px; padding: 9px;
+    border-radius: 14px; box-shadow: none; opacity: 1; pointer-events: auto; transform: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .has-megamenu.is-open .sh-megamenu { padding: 12px; }
+  .has-megamenu.is-open .sh-mega-courses-grid { grid-template-columns: 1fr; }
+  .has-megamenu.is-open .sh-mega-course-card { gap: 10px; }
+}
+
+/* Unified site header: matches the full-width homepage navigation on every page. */
+:root { --sh-primary:#197ba9; --sh-primary-hover:#126488; --sh-secondary:#18394c; --sh-accent:#3b9c9b; --sh-accent-light:#e7f6f5; --sh-light-bg:#f6f9fb; --sh-text:#385363; --sh-text-muted:#718796; --sh-border:#dbe6ec; }
+body { padding-top:126px; }
+#app-header { position:fixed; inset:0 0 auto; z-index:1200; width:100%; }
+#app-header .sh-header { position:static; }
+.sh-topbar { min-height:38px; padding:8px 0; background:linear-gradient(90deg,#eef8fc 0%,#f9fcfd 100%); border-bottom:1px solid #dbeaf1; color:#557181; }
+.sh-topbar .sh-container { gap:20px; }.sh-topbar-left { gap:18px; }.sh-topbar-item { color:#547181; font-size:12.5px; font-weight:600; }.sh-topbar-item strong { color:#197ba9; font-weight:800; }.sh-topbar-item svg { color:#3b9c9b; }.sh-topbar-right { gap:12px; }.sh-topbar-badge { padding:4px 10px; border-radius:6px; background:#e4f3f9; border-color:#cae4ef; color:#197ba9; font-size:11px; letter-spacing:.1px; }.sh-topbar-link { padding:3px 0; border-bottom:1px solid rgba(18,100,136,.24); color:#126488; font-size:12px; }.sh-topbar-link:hover { border-bottom-color:#197ba9; color:#197ba9; }
+.sh-header { background:rgba(255,255,255,.94); border-bottom:1px solid #dbe7ed; box-shadow:0 8px 24px rgba(29,80,105,.07); }
+.sh-header .sh-container { max-width:none; padding-right:clamp(20px,4vw,72px); padding-left:clamp(20px,4vw,72px); }
+.sh-header .sh-navbar { width:100%; height:88px; margin:0; padding:0; border:0; border-radius:0; background:transparent; box-shadow:none; }
+.sh-logo { gap:13px; }.sh-logo-icon { width:48px; height:48px; border:1px solid #d5edf6; border-radius:14px; background:linear-gradient(145deg,#197ba9,#63b5d4); color:#fff; box-shadow:0 8px 18px rgba(25,123,169,.18); }.sh-logo-text { color:#18394c; font-size:27px; letter-spacing:-1px; }
+.sh-nav-menu { gap:12px; }.sh-nav-link { padding:10px 14px; border-radius:8px; font-size:14px; }.sh-nav-link:hover,.sh-nav-link.active { background:#eaf6fb; color:#197ba9; }.sh-nav-link .sh-courses-badge,.sh-nav-link .sh-courses-badge:hover { padding:10px 16px; border-radius:9px; background:#197ba9; box-shadow:0 6px 16px rgba(25,123,169,.18); }
+.sh-nav-right { gap:12px; }.sh-btn-primary { padding:11px 19px; border-radius:9px; background:#197ba9; box-shadow:0 6px 16px rgba(25,123,169,.18); }.sh-btn-primary:hover { background:#126488; }.sh-btn-outline { padding:10px 17px; border-color:#b9d9e8; border-radius:8px; color:#197ba9; }.sh-btn-outline:hover { background:#eaf6fb; color:#126488; }
+@media (max-width:1100px) { body { padding-top:78px; } #app-header .sh-topbar { display:none; } .sh-header .sh-navbar { height:78px; margin:0; border:0; border-radius:0; background:rgba(255,255,255,.97); box-shadow:none; } .sh-nav-menu { top:78px; height:calc(100dvh - 78px); } }
+@media (max-width:700px) { body { padding-top:68px; } .sh-header .sh-container { padding-right:14px; padding-left:14px; } .sh-header .sh-navbar { height:68px; padding:0; } .sh-logo { gap:9px; min-width:0; }.sh-logo-icon { width:39px; height:39px; border-radius:11px; }.sh-logo-text { font-size:clamp(20px,6vw,23px); }.sh-nav-menu { top:68px; height:calc(100dvh - 68px); } }

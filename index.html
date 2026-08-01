@@ -23,6 +23,7 @@
   <section class="hero-section hero-attraction">
     <div class="sh-container">
       <div class="hero-grid">
+        <div class="hero-mobile-image" aria-hidden="true"></div>
         <div class="hero-copy">
           <div class="hero-badge-pill">
             <span class="hero-badge-pulse"></span>
@@ -60,7 +61,7 @@
               Find Your Program
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
-            <a href="#inquiry-form" class="btn-hero-secondary">
+            <a href="enquiryform.html" class="btn-hero-secondary">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
               Book a Career Call
             </a>
@@ -210,8 +211,8 @@
                 </div>
 
                 <div style="display:flex; gap:14px; flex-wrap:wrap;">
-                  <a href="#inquiry-form" class="btn-hero-primary" style="padding:12px 24px; font-size:14.5px;">Enroll In Master Track &rsaquo;</a>
-                  <a href="#inquiry-form" class="sh-btn-outline" style="padding:11px 18px; font-size:13.5px;">Get Curriculum PDF</a>
+                  <a href="enquiryform.html" class="btn-hero-primary" style="padding:12px 24px; font-size:14.5px;">Enroll In Master Track &rsaquo;</a>
+                  <a href="enquiryform.html" class="sh-btn-outline" style="padding:11px 18px; font-size:13.5px;">Get Curriculum PDF</a>
                 </div>
               </div>
             </div>
@@ -264,8 +265,8 @@
                 </div>
 
                 <div style="display:flex; gap:14px; flex-wrap:wrap;">
-                  <a href="#inquiry-form" class="btn-hero-primary" style="padding:12px 24px; font-size:14.5px;">Enroll In Cloud Track &rsaquo;</a>
-                  <a href="#inquiry-form" class="sh-btn-outline" style="padding:11px 18px; font-size:13.5px;">Get Curriculum PDF</a>
+                  <a href="enquiryform.html" class="btn-hero-primary" style="padding:12px 24px; font-size:14.5px;">Enroll In Cloud Track &rsaquo;</a>
+                  <a href="enquiryform.html" class="sh-btn-outline" style="padding:11px 18px; font-size:13.5px;">Get Curriculum PDF</a>
                 </div>
               </div>
             </div>
@@ -319,8 +320,8 @@
                 </div>
 
                 <div style="display:flex; gap:14px; flex-wrap:wrap;">
-                  <a href="#inquiry-form" class="btn-hero-primary" style="padding:12px 24px; font-size:14.5px;">Enroll In Full Stack &rsaquo;</a>
-                  <a href="#inquiry-form" class="sh-btn-outline" style="padding:11px 18px; font-size:13.5px;">Get Curriculum PDF</a>
+                  <a href="enquiryform.html" class="btn-hero-primary" style="padding:12px 24px; font-size:14.5px;">Enroll In Full Stack &rsaquo;</a>
+                  <a href="enquiryform.html" class="sh-btn-outline" style="padding:11px 18px; font-size:13.5px;">Get Curriculum PDF</a>
                 </div>
               </div>
             </div>
@@ -360,6 +361,21 @@
 
           <div class="sidebar-title">Select Domain Category</div>
 
+          <label class="sidebar-domain-select-wrap" for="course-domain-select">
+            <span>Select domain</span>
+            <select id="course-domain-select" class="sidebar-domain-select">
+              <option value="all">All programs</option>
+              <option value="cybersecurity">Cyber Security</option>
+              <option value="devops">DevOps</option>
+              <option value="cloud">Cloud Computing</option>
+              <option value="docker">Docker &amp; Kubernetes</option>
+              <option value="web">Web Development</option>
+              <option value="programming">Programming Languages</option>
+              <option value="datascience">Data Science &amp; ML</option>
+              <option value="networking">Networking &amp; Linux</option>
+            </select>
+          </label>
+
           <div class="sidebar-domain-list">
             <button class="sidebar-domain-btn active" data-filter="all">
               <span>All Programs</span>
@@ -371,16 +387,8 @@
             <button class="sidebar-domain-btn" data-filter="docker"><span>Docker &amp; Kubernetes</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
             <button class="sidebar-domain-btn" data-filter="web"><span>Web Development</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
             <button class="sidebar-domain-btn" data-filter="programming"><span>Programming Languages</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <button class="sidebar-domain-btn" data-filter="graphic"><span>Graphic Designing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <button class="sidebar-domain-btn" data-filter="design"><span>UI/UX Design</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
             <button class="sidebar-domain-btn" data-filter="datascience"><span>Data Science &amp; ML</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <button class="sidebar-domain-btn" data-filter="dsa"><span>Data Structures &amp; Algorithms</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <button class="sidebar-domain-btn" data-filter="salesforce"><span>Salesforce</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <button class="sidebar-domain-btn" data-filter="redhat"><span>Red Hat &amp; Linux</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <button class="sidebar-domain-btn" data-filter="aws"><span>AWS Architect</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <button class="sidebar-domain-btn" data-filter="analytics"><span>Data Analytics</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <button class="sidebar-domain-btn" data-filter="softskills"><span>Soft Skills</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
-            <button class="sidebar-domain-btn" data-filter="marketing"><span>Digital Marketing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <button class="sidebar-domain-btn" data-filter="networking"><span>Networking &amp; Linux</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
           </div>
         </aside>
 
@@ -408,7 +416,7 @@
               </ul>
               <div class="course-footer">
                 <span class="course-cert-badge">CEH v12 Voucher</span>
-                <a href="#inquiry-form" class="sh-btn-outline" style="padding: 6px 14px; font-size:13px;">Enquire Now</a>
+                <a href="enquiryform.html" class="sh-btn-outline" style="padding: 6px 14px; font-size:13px;">Enquire Now</a>
               </div>
             </div>
           </div>
@@ -435,7 +443,7 @@
               </ul>
               <div class="course-footer">
                 <span class="course-cert-badge">SOC Level-1 Cert</span>
-                <a href="#inquiry-form" class="sh-btn-outline" style="padding: 6px 14px; font-size:13px;">Enquire Now</a>
+                <a href="enquiryform.html" class="sh-btn-outline" style="padding: 6px 14px; font-size:13px;">Enquire Now</a>
               </div>
             </div>
           </div>
@@ -462,7 +470,7 @@
               </ul>
               <div class="course-footer">
                 <span class="course-cert-badge">AWS SAA-C03 Prep</span>
-                <a href="#inquiry-form" class="sh-btn-outline" style="padding: 6px 14px; font-size:13px;">Enquire Now</a>
+                <a href="enquiryform.html" class="sh-btn-outline" style="padding: 6px 14px; font-size:13px;">Enquire Now</a>
               </div>
             </div>
           </div>
@@ -489,7 +497,7 @@
               </ul>
               <div class="course-footer">
                 <span class="course-cert-badge">CKA & Docker Cert</span>
-                <a href="#inquiry-form" class="sh-btn-outline" style="padding: 6px 14px; font-size:13px;">Enquire Now</a>
+                <a href="enquiryform.html" class="sh-btn-outline" style="padding: 6px 14px; font-size:13px;">Enquire Now</a>
               </div>
             </div>
           </div>
@@ -516,7 +524,7 @@
               </ul>
               <div class="course-footer">
                 <span class="course-cert-badge">Full Stack Certified</span>
-                <a href="#inquiry-form" class="sh-btn-outline" style="padding: 6px 14px; font-size:13px;">Enquire Now</a>
+                <a href="enquiryform.html" class="sh-btn-outline" style="padding: 6px 14px; font-size:13px;">Enquire Now</a>
               </div>
             </div>
           </div>
@@ -543,7 +551,7 @@
               </ul>
               <div class="course-footer">
                 <span class="course-cert-badge">RedHat Official Prep</span>
-                <a href="#inquiry-form" class="sh-btn-outline" style="padding: 6px 14px; font-size:13px;">Enquire Now</a>
+                <a href="enquiryform.html" class="sh-btn-outline" style="padding: 6px 14px; font-size:13px;">Enquire Now</a>
               </div>
             </div>
           </div>
@@ -684,7 +692,7 @@
 
           <div class="cert-card-footer">
             <span class="cert-voucher-pill">Exam Voucher</span>
-            <a href="#inquiry-form" style="font-size:12.5px; font-weight:700; color:var(--sh-primary); text-decoration:none;">Voucher Info &rsaquo;</a>
+            <a href="enquiryform.html" style="font-size:12.5px; font-weight:700; color:var(--sh-primary); text-decoration:none;">Voucher Info &rsaquo;</a>
           </div>
         </div>
 
@@ -714,7 +722,7 @@
 
           <div class="cert-card-footer">
             <span class="cert-voucher-pill">AWS Official</span>
-            <a href="#inquiry-form" style="font-size:12.5px; font-weight:700; color:var(--sh-primary); text-decoration:none;">Voucher Info &rsaquo;</a>
+            <a href="enquiryform.html" style="font-size:12.5px; font-weight:700; color:var(--sh-primary); text-decoration:none;">Voucher Info &rsaquo;</a>
           </div>
         </div>
 
@@ -744,7 +752,7 @@
 
           <div class="cert-card-footer">
             <span class="cert-voucher-pill">Lab Exam Prep</span>
-            <a href="#inquiry-form" style="font-size:12.5px; font-weight:700; color:var(--sh-primary); text-decoration:none;">Voucher Info &rsaquo;</a>
+            <a href="enquiryform.html" style="font-size:12.5px; font-weight:700; color:var(--sh-primary); text-decoration:none;">Voucher Info &rsaquo;</a>
           </div>
         </div>
 
@@ -774,7 +782,7 @@
 
           <div class="cert-card-footer">
             <span class="cert-voucher-pill">Cisco Official</span>
-            <a href="#inquiry-form" style="font-size:12.5px; font-weight:700; color:var(--sh-primary); text-decoration:none;">Voucher Info &rsaquo;</a>
+            <a href="enquiryform.html" style="font-size:12.5px; font-weight:700; color:var(--sh-primary); text-decoration:none;">Voucher Info &rsaquo;</a>
           </div>
         </div>
 
@@ -812,53 +820,17 @@
           </ul>
         </div>
 
-        <!-- Form Card Right -->
-        <div class="inquiry-card">
-          <h4 style="font-size:22px; font-weight:800; color:var(--sh-secondary); margin-bottom:20px;">Request Callback & Syllabus PDF</h4>
-          
-          <form id="sh-inquiry-form">
-            <div class="inquiry-form-group">
-              <label for="form-name">Full Name *</label>
-              <input type="text" id="form-name" class="inquiry-form-control" placeholder="e.g. Rahul Sharma" required>
-            </div>
-
-            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px;">
-              <div class="inquiry-form-group">
-                <label for="form-email">Email Address *</label>
-                <input type="email" id="form-email" class="inquiry-form-control" placeholder="rahul@gmail.com" required>
-              </div>
-
-              <div class="inquiry-form-group">
-                <label for="form-phone">Mobile Number *</label>
-                <input type="tel" id="form-phone" class="inquiry-form-control" placeholder="+91 98765 43210" required>
-              </div>
-            </div>
-
-            <div class="inquiry-form-group">
-              <label for="form-course">Interested Course Program *</label>
-              <select id="form-course" class="inquiry-form-control" required>
-                <option value="">-- Select Course Program --</option>
-                <option value="CEH v12 Ethical Hacking">CEH v12 Ethical Hacking Master</option>
-                <option value="SOC Analyst Specialist">SOC Analyst (L1/L2) Specialist</option>
-                <option value="AWS Solutions Architect">AWS Solutions Architect Associate</option>
-                <option value="DevOps Master">DevOps Master (Docker & Kubernetes)</option>
-                <option value="Full Stack MERN">MERN Stack Web Development</option>
-                <option value="RedHat RHCSA Linux">RHCSA & RHCE RedHat Linux</option>
-              </select>
-            </div>
-
-            <div class="inquiry-form-group">
-              <label for="form-mode">Preferred Training Mode</label>
-              <select id="form-mode" class="inquiry-form-control">
-                <option value="Online Live Interactive">Online Live Interactive</option>
-                <option value="Classroom Training (Jaipur Center)">Classroom Training Center</option>
-              </select>
-            </div>
-
-            <button type="submit" class="btn-hero-primary" style="width:100%; justify-content:center; border:none; cursor:pointer;">
-              Submit Inquiry & Download Syllabus &rsaquo;
-            </button>
-          </form>
+        <aside class="inquiry-card inquiry-cta-card" aria-label="Speak to a career advisor">
+          <span class="inquiry-card-kicker">Career advisor desk</span>
+          <h4>Make your next move with clarity.</h4>
+          <p>Share a few details and receive practical guidance on the course, schedule, learning mode and fee plan that suit you.</p>
+          <div class="inquiry-card-note">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 10h8M8 14h5"/></svg>
+            <span>Senior advisor response within 30 minutes</span>
+          </div>
+          <a href="enquiryform.html" class="btn-hero-primary inquiry-cta-button">Enquire Now <span aria-hidden="true">&rsaquo;</span></a>
+          <p class="inquiry-card-footnote">No obligation. Just the information you need to decide confidently.</p>
+        </aside>
         </div>
       </div>
     </div>
@@ -888,7 +860,7 @@
               <p>Our courses start right from foundational concepts up to advanced enterprise levels. Anyone with a basic computer background (B.Tech, BCA, B.Sc, Diploma, or working IT professionals looking for upskilling) can join. No prior coding expertise is mandatory for entry-level cybersecurity or system administration courses.</p>
               <div class="faq-answer-footer">
                 <span>Need custom advice?</span>
-                <a href="#inquiry-form" style="color:var(--sh-primary); font-weight:700;">Talk to Counselor &rsaquo;</a>
+                <a href="enquiryform.html" style="color:var(--sh-primary); font-weight:700;">Talk to Counselor &rsaquo;</a>
               </div>
             </div>
           </div>
@@ -906,7 +878,7 @@
               <p>Once you complete 75% of your course modules, our dedicated placement cell assists you with resume building, LinkedIn optimization, mock technical interview rounds, and schedules interview opportunities with our 500+ hiring partner companies until you get placed.</p>
               <div class="faq-answer-footer">
                 <span>Explore Hiring Partners</span>
-                <a href="#inquiry-form" style="color:var(--sh-primary); font-weight:700;">Talk to an advisor &rsaquo;</a>
+                <a href="enquiryform.html" style="color:var(--sh-primary); font-weight:700;">Talk to an advisor &rsaquo;</a>
               </div>
             </div>
           </div>
@@ -924,7 +896,7 @@
               <p>Yes! Every enrolled student gets 24/7 remote cloud lab access to practice hands-on attack/defend scenarios, SIEM logging tools, AWS cloud consoles, and Linux terminals anywhere with an internet connection.</p>
               <div class="faq-answer-footer">
                 <span>Practice Anytime</span>
-                <a href="#inquiry-form" style="color:var(--sh-primary); font-weight:700;">Learn More About Labs &rsaquo;</a>
+                <a href="enquiryform.html" style="color:var(--sh-primary); font-weight:700;">Learn More About Labs &rsaquo;</a>
               </div>
             </div>
           </div>
@@ -942,7 +914,7 @@
               <p>Yes. We offer instructor-led live interactive online batches as well as full classroom lab training at our Jaipur center. All live sessions are recorded and made available in student portals for lifetime revision.</p>
               <div class="faq-answer-footer">
                 <span>Flexible Schedule</span>
-                <a href="#inquiry-form" style="color:var(--sh-primary); font-weight:700;">Check Batch Timings &rsaquo;</a>
+                <a href="enquiryform.html" style="color:var(--sh-primary); font-weight:700;">Check Batch Timings &rsaquo;</a>
               </div>
             </div>
           </div>

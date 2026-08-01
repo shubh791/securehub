@@ -13,32 +13,47 @@ function initExpandedCourseCatalog() {
   const grid = document.querySelector('.courses-grid');
   if (!grid) return;
 
+  const courseIcons = {
+    cybersecurity: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>',
+    devops: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 19V5h12v14H6Z"/><path d="m9 9 2 2-2 2m4 0h2"/><path d="M3 7h3M18 17h3"/></svg>',
+    cloud: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10Z"/></svg>',
+    docker: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="9" y="14" width="6" height="6" rx="1"/><path d="M12 10v4M10 17h4"/></svg>',
+    web: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="8 9 4 12 8 15"/><polyline points="16 9 20 12 16 15"/><line x1="14" y1="5" x2="10" y2="19"/></svg>',
+    programming: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 9 4 12l4 3M16 9l4 3-4 3M14 5l-4 14"/></svg>',
+    datascience: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19V5h16v14H4Z"/><path d="M8 15v-3M12 15V8M16 15v-5"/></svg>',
+    networking: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="6" rx="2"/><rect x="3" y="15" width="18" height="6" rx="2"/><path d="M7 6h.01M7 18h.01M11 6h6M11 18h6"/></svg>'
+  };
+
   const courses = [
-    ['cybersecurity', 'Advanced Penetration Testing', '6 Months', 'VAPT Lab', 'Security', 'Web, network and cloud penetration testing with guided practice.'],
-    ['devops', 'Certified DevOps Engineer', '5 Months', 'CI/CD Lab', 'DevOps', 'Build delivery pipelines with Git, Jenkins, Ansible and Terraform.'],
-    ['cloud', 'Microsoft Azure Administrator', '3 Months', 'Azure Lab', 'Cloud', 'Manage Azure compute, identity, networking and storage.'],
-    ['cloud', 'Terraform Infrastructure as Code', '8 Weeks', 'IaC Lab', 'Cloud', 'Provision consistent cloud infrastructure with Terraform.'],
-    ['docker', 'Kubernetes Administration', '10 Weeks', 'Cluster Lab', 'K8s', 'Deploy, scale and observe containerised workloads in Kubernetes.'],
-    ['web', 'Frontend Development with React', '4 Months', 'Project Studio', 'Web', 'Create fast, accessible interfaces and production-ready applications.'],
-    ['programming', 'Python Programming Certificate', '10 Weeks', 'Coding Lab', 'Python', 'Build strong Python fundamentals through guided applications.'],
-    ['graphic', 'Graphic Design Essentials', '4 Months', 'Creative Studio', 'Design', 'Learn visual hierarchy, layout and practical Adobe workflows.'],
-    ['design', 'UI/UX Design and Figma', '4 Months', 'Design Studio', 'UI/UX', 'Research, prototype and test thoughtful digital products.'],
-    ['datascience', 'Data Science and GenAI', '6 Months', 'ML Lab', 'AI', 'Use Python, machine learning and GenAI workflows on real data.'],
-    ['dsa', 'Data Structures and Algorithms', '12 Weeks', 'Problem Lab', 'DSA', 'Practice problem solving for technical interviews and software roles.'],
-    ['salesforce', 'Salesforce Administrator', '3 Months', 'Salesforce Lab', 'CRM', 'Configure data, security and automation in Salesforce.'],
-    ['redhat', 'Linux System Administration', '12 Weeks', 'Linux Lab', 'Linux', 'Build hands-on administration skills for enterprise Linux environments.'],
-    ['aws', 'AWS DevOps Engineering', '5 Months', 'AWS Lab', 'AWS', 'Automate resilient AWS delivery pipelines and cloud operations.'],
-    ['analytics', 'Data Analytics and Power BI', '3 Months', 'Analytics Lab', 'Data', 'Turn business data into dashboards and clear decisions.'],
-    ['softskills', 'Communication for Technology Teams', '6 Weeks', 'Live Practice', 'Career', 'Build confident communication for interviews, teams and client work.'],
-    ['marketing', 'Digital Marketing Professional Program', '4 Months', 'Campaign Lab', 'Growth', 'Plan, run and measure SEO, social and paid digital campaigns.']
+    ['cybersecurity', 'CEH v12 Master Program', '6 months', 'Live lab', 'Cyber', 'Ethical hacking practice with guided lab scenarios.', 'courses/cybersecurity/ceh-v12-master-program.html'],
+    ['cybersecurity', 'SOC Analyst (L1/L2)', '4 months', 'SIEM lab', 'Cyber', 'Incident response, Splunk and threat-hunting practice.', 'courses/cybersecurity/soc-analyst-l1-l2.html'],
+    ['cybersecurity', 'Web Application VPT', '3 months', 'OWASP lab', 'Cyber', 'Practical web security assessment and testing workflows.', 'courses/cybersecurity/web-application-vpt.html'],
+    ['cybersecurity', 'CompTIA Security+', '3 months', 'Security lab', 'Cyber', 'Foundational enterprise security, controls and risk skills.', 'courses/cybersecurity/comptia-security-plus.html'],
+    ['devops', 'AWS DevOps Engineering', '5 months', 'AWS lab', 'DevOps', 'Cloud delivery pipelines, automation and operations.', 'courses/devops/aws-devops-engineering.html'],
+    ['devops', 'Certified DevOps Engineer', '5 months', 'CI/CD lab', 'DevOps', 'Delivery automation, containers and infrastructure practice.', 'courses/devops/certified-devops-engineer.html'],
+    ['devops', 'Master Azure DevOps', '4 months', 'Azure lab', 'DevOps', 'Azure Repos, Pipelines and release workflows.', 'courses/devops/master-azure-devops.html'],
+    ['cloud', 'Microsoft Azure Administrator', '3 months', 'Azure lab', 'Cloud', 'Azure compute, identity, networking and storage.', 'courses/cloud/microsoft-azure-administrator.html'],
+    ['cloud', 'Azure Infrastructure Solutions', '4 months', 'Cloud lab', 'Cloud', 'Architecture, governance and dependable Azure workloads.', 'courses/cloud/azure-infrastructure-solutions.html'],
+    ['cloud', 'Terraform Associate', '8 weeks', 'IaC lab', 'Cloud', 'Infrastructure as code and reusable cloud automation.', 'courses/cloud/terraform-associate.html'],
+    ['docker', 'Docker Containers Training', '8 weeks', 'Container lab', 'Docker', 'Images, registries, Compose and container workflows.', 'courses/docker-kubernetes/docker-containers-training.html'],
+    ['docker', 'Kubernetes Administration', '10 weeks', 'Cluster lab', 'K8s', 'Clusters, deployments, services and observability.', 'courses/docker-kubernetes/kubernetes-administration.html'],
+    ['web', 'MERN Stack Developer', '5 months', 'Project studio', 'Web', 'MongoDB, Express, React and Node.js development.', 'courses/web-development/mern-stack-developer.html'],
+    ['web', 'Python Django Web Dev', '4 months', 'Project studio', 'Web', 'Backend engineering, APIs and Django applications.', 'courses/web-development/django-full-stack.html'],
+    ['programming', 'Python Programming Certificate', '10 weeks', 'Coding lab', 'Code', 'Applied Python fundamentals and programming practice.', 'courses/programming/python-programming-certificate.html'],
+    ['programming', 'Java Programming', '10 weeks', 'Coding lab', 'Code', 'Object-oriented programming and backend foundations.', 'courses/programming/java-programming.html'],
+    ['datascience', 'Data Analytics & BI', '3 months', 'Analytics lab', 'Data', 'Python, SQL, Power BI and Tableau workflows.', 'courses/data-science/data-analytics-bi.html'],
+    ['datascience', 'Machine Learning & AI Master', '6 months', 'ML lab', 'AI', 'Machine learning and deep-learning practice on data.', 'courses/data-science/machine-learning-ai-master.html'],
+    ['networking', 'RHCSA & RHCE RedHat Linux', '3 months', 'Linux lab', 'Linux', 'Enterprise Linux administration and certification prep.', 'courses/networking/rhcsa-rhce-redhat-linux.html'],
+    ['networking', 'Cisco CCNA (200-301)', '3 months', 'Network lab', 'Network', 'Routing, switching and enterprise networking practice.', 'courses/networking/cisco-ccna-200-301.html']
   ];
 
-  courses.forEach(([category, title, duration, lab, label, description]) => {
+  grid.innerHTML = '';
+  courses.forEach(([category, title, duration, lab, label, description, href]) => {
     const card = document.createElement('article');
     card.className = 'course-card course-card-expanded';
     card.dataset.category = category;
     card.dataset.title = title;
-    card.innerHTML = `<div class="course-banner"><span class="course-tag-badge">${label}</span><div class="course-banner-icon course-banner-code">${label.slice(0, 2)}</div><h3 class="course-banner-title">${title}</h3></div><div class="course-body"><div class="course-meta"><span class="course-meta-item">${duration}</span><span class="course-meta-item">${lab}</span></div><p class="course-card-summary">${description}</p><a href="#inquiry-form" class="course-details-link">View program details <span>&rsaquo;</span></a></div>`;
+    card.innerHTML = `<div class="course-banner"><span class="course-tag-badge">${label}</span><div class="course-banner-icon">${courseIcons[category]}</div><h3 class="course-banner-title">${title}</h3></div><div class="course-body"><div class="course-meta"><span class="course-meta-item">${duration}</span><span class="course-meta-item">${lab}</span></div><p class="course-card-summary">${description}</p><a href="${href}" class="course-details-link">View program details <span>&rsaquo;</span></a></div>`;
     grid.appendChild(card);
   });
 }
@@ -46,6 +61,7 @@ function initExpandedCourseCatalog() {
 /* Sidebar Search & Domain Category Filter for Industry-Driven Courses */
 function initCoursesSidebarFilter() {
   const searchInput = document.getElementById('course-search-input');
+  const domainSelect = document.getElementById('course-domain-select');
   const sidebarCategoryBtns = document.querySelectorAll('.sidebar-domain-btn');
   const courseCards = document.querySelectorAll('.courses-grid .course-card');
 
@@ -77,6 +93,7 @@ function initCoursesSidebarFilter() {
 
       sidebarCategoryBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      if (domainSelect) domainSelect.value = activeCategory;
 
       filterCards();
     });
@@ -86,6 +103,14 @@ function initCoursesSidebarFilter() {
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       searchQuery = e.target.value.toLowerCase().trim();
+      filterCards();
+    });
+  }
+
+  if (domainSelect) {
+    domainSelect.addEventListener('change', event => {
+      activeCategory = event.target.value;
+      sidebarCategoryBtns.forEach(btn => btn.classList.toggle('active', btn.getAttribute('data-filter') === activeCategory));
       filterCards();
     });
   }

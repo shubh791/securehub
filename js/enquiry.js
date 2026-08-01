@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{const form=document.querySelector('.enquiry-form');form.addEventListener('submit',event=>{event.preventDefault();form.querySelector('small').textContent='Thanks. A senior career advisor will call you shortly.';form.reset()})});
