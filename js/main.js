@@ -13,15 +13,15 @@ function initExpandedCourseCatalog() {
   const grid = document.querySelector('.courses-grid');
   if (!grid) return;
 
-  const courseIcons = {
-    cybersecurity: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>',
-    devops: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 19V5h12v14H6Z"/><path d="m9 9 2 2-2 2m4 0h2"/><path d="M3 7h3M18 17h3"/></svg>',
-    cloud: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10Z"/></svg>',
-    docker: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="9" y="14" width="6" height="6" rx="1"/><path d="M12 10v4M10 17h4"/></svg>',
-    web: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="8 9 4 12 8 15"/><polyline points="16 9 20 12 16 15"/><line x1="14" y1="5" x2="10" y2="19"/></svg>',
-    programming: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 9 4 12l4 3M16 9l4 3-4 3M14 5l-4 14"/></svg>',
-    datascience: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19V5h16v14H4Z"/><path d="M8 15v-3M12 15V8M16 15v-5"/></svg>',
-    networking: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="6" rx="2"/><rect x="3" y="15" width="18" height="6" rx="2"/><path d="M7 6h.01M7 18h.01M11 6h6M11 18h6"/></svg>'
+  const courseImages = {
+    cybersecurity: 'assets/images/courses/cybersecurity-learning-card.png',
+    devops: 'assets/images/courses/devops-learning-card.png',
+    cloud: 'assets/images/courses/cloud-learning-card.png',
+    docker: 'assets/images/courses/docker-learning-card.png',
+    web: 'assets/images/courses/web-learning-card.png',
+    programming: 'assets/images/courses/programming-learning-card.png',
+    datascience: 'assets/images/courses/datascience-learning-card.png',
+    networking: 'assets/images/courses/networking-learning-card.png'
   };
 
   const courses = [
@@ -53,7 +53,7 @@ function initExpandedCourseCatalog() {
     card.className = 'course-card course-card-expanded';
     card.dataset.category = category;
     card.dataset.title = title;
-    card.innerHTML = `<div class="course-banner"><span class="course-tag-badge">${label}</span><div class="course-banner-icon">${courseIcons[category]}</div><h3 class="course-banner-title">${title}</h3></div><div class="course-body"><div class="course-meta"><span class="course-meta-item">${duration}</span><span class="course-meta-item">${lab}</span></div><p class="course-card-summary">${description}</p><a href="${href}" class="course-details-link">View program details <span>&rsaquo;</span></a></div>`;
+    card.innerHTML = `<div class="course-banner"><div class="course-banner-media"><img src="${courseImages[category]}" alt="" loading="lazy" decoding="async"></div><span class="course-tag-badge">${label}</span><h3 class="course-banner-title">${title}</h3></div><div class="course-body"><div class="course-meta"><span class="course-meta-item">${duration}</span><span class="course-meta-item">${lab}</span></div><p class="course-card-summary">${description}</p><a href="${href}" class="course-details-link">View program details <span>&rsaquo;</span></a></div>`;
     grid.appendChild(card);
   });
 }

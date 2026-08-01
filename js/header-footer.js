@@ -25,7 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   renderHeader();
   addExpandedCourseDomains();
+  hydrateMegaMenuVisuals();
   renderFooter();
+  initFooterNewsletter();
   initHeaderInteractions();
 });
 
@@ -45,10 +47,11 @@ function renderHeader() {
   const headerContainer = document.getElementById('app-header');
   if (!headerContainer) return;
   const isCoursePage = Boolean(document.getElementById('course-page'));
+  const isHomePage = /(?:^|\/)index\.html$/i.test(window.location.pathname) || window.location.pathname.endsWith('/');
   const sectionLinks = isCoursePage
     ? { certifications: '#', about: '#course-about', faqs: '#course-faqs' }
     : { certifications: '#', about: 'about.html', faqs: '#' };
-  const coursesLink = isCoursePage ? '#course-page' : '#';
+  const coursesLink = isCoursePage ? '#course-page' : (isHomePage ? '#courses-section' : 'index.html#courses-section');
   const enquiryLink = isCoursePage ? '#course-enquiry' : 'enquiryform.html';
 
   headerContainer.innerHTML = `
@@ -327,13 +330,43 @@ function addExpandedCourseDomains() {
   });
 }
 
+function hydrateMegaMenuVisuals() {
+  const visuals = {
+    cybersecurity: 'assets/images/courses/cybersecurity-learning-card.png',
+    'cloud-devops': 'assets/images/courses/devops-learning-card.png',
+    fullstack: 'assets/images/courses/web-learning-card.png',
+    datascience: 'assets/images/courses/datascience-learning-card.png',
+    networking: 'assets/images/courses/networking-learning-card.png',
+    'cloud-computing': 'assets/images/courses/cloud-learning-card.png',
+    'docker-kubernetes': 'assets/images/courses/docker-learning-card.png',
+    programming: 'assets/images/courses/programming-learning-card.png',
+    'graphic-design': 'assets/images/courses/graphic-design-menu.png',
+    uiux: 'assets/images/courses/uiux-menu.png',
+    dsa: 'assets/images/courses/dsa-menu.png',
+    salesforce: 'assets/images/courses/salesforce-menu.png',
+    'aws-solutions': 'assets/images/courses/aws-architecture-menu.png',
+    'data-analytics': 'assets/images/courses/datascience-learning-card.png',
+    'soft-skills': 'assets/images/courses/career-readiness-menu.png',
+    'digital-marketing': 'assets/images/courses/digital-marketing-menu.png'
+  };
+
+  document.querySelectorAll('.sh-megamenu-content').forEach((pane) => {
+    const imagePath = visuals[pane.id.replace('pane-', '')];
+    if (!imagePath) return;
+    pane.querySelectorAll('.sh-mega-course-icon').forEach((icon) => {
+      icon.innerHTML = `<img src="${imagePath}" alt="" loading="lazy" decoding="async">`;
+    });
+  });
+}
+
 function renderFooter() {
   const footerContainer = document.getElementById('app-footer');
   if (!footerContainer) return;
   const isCoursePage = Boolean(document.getElementById('course-page'));
+  const isHomePage = /(?:^|\/)index\.html$/i.test(window.location.pathname) || window.location.pathname.endsWith('/');
   const sectionLinks = isCoursePage
-    ? { certifications: '#course-certifications', about: '#course-about' }
-    : { certifications: '#certifications-section', about: '#about-section' };
+    ? { certifications: '#course-certifications', about: '#course-about', courses: '#course-page' }
+    : { certifications: isHomePage ? '#certifications-section' : 'index.html#certifications-section', about: 'about.html', courses: isHomePage ? '#courses-section' : 'index.html#courses-section' };
   const enquiryLink = isCoursePage ? '#course-enquiry' : 'enquiryform.html';
 
   footerContainer.innerHTML = `
@@ -348,13 +381,8 @@ function renderFooter() {
               </div>
               <div class="sh-logo-text">Secure<span>Hub</span></div>
             </a>
-            <p>SecureHub is India's leading IT, Cloud & Cybersecurity skill development institute. Empowering students with hands-on lab training and 100% placement assistance.</p>
-            <div class="sh-social-links">
-              <a href="#" class="sh-social-icon" aria-label="Facebook"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-              <a href="#" class="sh-social-icon" aria-label="Twitter"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
-              <a href="#" class="sh-social-icon" aria-label="LinkedIn"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-              <a href="#" class="sh-social-icon" aria-label="YouTube"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
-            </div>
+            <p>SecureHub helps learners build practical confidence in IT, cloud, cybersecurity, development and data roles. Our live instruction, guided labs and career-focused support help learners turn clear goals into work they can confidently show.</p>
+            <div class="sh-footer-brand-points" aria-label="SecureHub learning benefits"><span>Live expert sessions</span><span>Guided lab practice</span><span>Career-focused support</span></div>
           </div>
 
           <!-- Quick Links -->
@@ -363,7 +391,7 @@ function renderFooter() {
             <ul class="sh-footer-links">
               <li><a href="index.html">&rsaquo; SecureHub Home</a></li>
               <li><a href="${sectionLinks.about}" data-course-section="about">&rsaquo; About SecureHub</a></li>
-              <li><a href="#courses-section">&rsaquo; All Courses</a></li>
+              <li><a href="${sectionLinks.courses}">&rsaquo; All Courses</a></li>
               <li><a href="${sectionLinks.certifications}">&rsaquo; Certifications</a></li>
               <li><a href="${enquiryLink}">&rsaquo; Contact & Admissions</a></li>
             </ul>
@@ -373,12 +401,11 @@ function renderFooter() {
           <div>
             <h4 class="sh-footer-title">Training Domains</h4>
             <ul class="sh-footer-links">
-              <li><a href="#courses-section">&rsaquo; CEH v12 Ethical Hacking</a></li>
-              <li><a href="#courses-section">&rsaquo; SOC Analyst (L1/L2)</a></li>
-              <li><a href="#courses-section">&rsaquo; AWS Solutions Architect</a></li>
-              <li><a href="#courses-section">&rsaquo; DevOps Engineering</a></li>
-              <li><a href="#courses-section">&rsaquo; RedHat Linux (RHCSA)</a></li>
-              <li><a href="#courses-section">&rsaquo; Full Stack MERN Dev</a></li>
+              <li><a href="courses/cybersecurity/ceh-v12-master-program.html">&rsaquo; CEH v12 Ethical Hacking</a></li>
+              <li><a href="courses/cybersecurity/soc-analyst-l1-l2.html">&rsaquo; SOC Analyst (L1/L2)</a></li>
+              <li><a href="courses/devops/aws-devops-engineering.html">&rsaquo; AWS DevOps Engineering</a></li>
+              <li><a href="courses/networking/rhcsa-rhce-redhat-linux.html">&rsaquo; RedHat Linux (RHCSA)</a></li>
+              <li><a href="courses/web-development/mern-stack-developer.html">&rsaquo; Full Stack MERN Dev</a></li>
             </ul>
           </div>
 
@@ -394,11 +421,13 @@ function renderFooter() {
               <span>Helpline: +91 98765 43210</span>
             </div>
 
-            <p class="sh-footer-newsletter-label">Subscribe for course batch alerts:</p>
-            <div class="sh-newsletter-box">
-              <input type="email" class="sh-newsletter-input" placeholder="Enter your email">
-              <button class="sh-newsletter-btn" onclick="alert('Thank you for subscribing to SecureHub updates!')">Subscribe</button>
-            </div>
+            <form class="sh-footer-subscribe" data-footer-subscribe novalidate>
+              <span class="sh-footer-subscribe-kicker">Stay informed</span>
+              <p class="sh-footer-newsletter-label">Get practical batch alerts and course updates.</p>
+              <label class="sr-only" for="footer-subscribe-email">Email address</label>
+              <div class="sh-newsletter-box"><input id="footer-subscribe-email" type="email" class="sh-newsletter-input" placeholder="Enter your email" autocomplete="email" required><button class="sh-newsletter-btn" type="submit">Subscribe</button></div>
+              <p class="sh-footer-subscribe-status" aria-live="polite"></p>
+            </form>
           </div>
         </div>
 
@@ -406,9 +435,9 @@ function renderFooter() {
         <div class="sh-footer-bottom">
           <p>&copy; 2026 SecureHub IT & Cybersecurity Training Institute. All rights reserved.</p>
           <div class="sh-footer-legal-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Refund Policy</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="refund-policy.html">Refund Policy</a>
           </div>
         </div>
       </div>
@@ -418,19 +447,43 @@ function renderFooter() {
   normaliseNestedPageLinks(footerContainer);
 }
 
+function initFooterNewsletter() {
+  const form = document.querySelector('[data-footer-subscribe]');
+  if (!form) return;
+  const input = form.querySelector('input[type="email"]');
+  const status = form.querySelector('.sh-footer-subscribe-status');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!input.value.trim() || !input.validity.valid) {
+      status.textContent = 'Enter a valid email address to subscribe.';
+      input.focus();
+      return;
+    }
+    status.textContent = 'Thanks — you are on the SecureHub update list.';
+    form.reset();
+  });
+}
+
 function normaliseNestedPageLinks(container) {
-  if (!document.getElementById('course-page')) return;
-  container.querySelectorAll('a[href^="#"]').forEach(link => {
-    const target = link.getAttribute('href');
-    if (target.startsWith('#course-')) return;
-    const courseTargets = {
-      '#courses-section': '#course-page',
-      '#inquiry-form': '#course-enquiry',
-      '#certifications-section': '#course-certifications',
-      '#about-section': '#course-about',
-      '#faq-section': '#course-faqs'
-    };
-    link.setAttribute('href', courseTargets[target] || `index.html${target}`);
+  const isCoursePage = Boolean(document.getElementById('course-page'));
+  const courseTargets = {
+    '#courses-section': '#course-page',
+    '#inquiry-form': '#course-enquiry',
+    '#certifications-section': '#course-certifications',
+    '#about-section': '#course-about',
+    '#faq-section': '#course-faqs'
+  };
+  const currentPath = window.location.pathname.replace(/^\/+|\/+$/g, '');
+  const depth = Math.max(0, currentPath.split('/').length - 1);
+  const prefix = '../'.repeat(depth);
+
+  container.querySelectorAll('a[href]').forEach((link) => {
+    let target = link.getAttribute('href');
+    if (!target || /^(?:https?:|mailto:|tel:|#|\/)/.test(target)) {
+      if (isCoursePage && target && target.startsWith('#') && !target.startsWith('#course-')) link.setAttribute('href', courseTargets[target] || `index.html${target}`);
+      return;
+    }
+    if (depth && !target.startsWith('../')) link.setAttribute('href', `${prefix}${target}`);
   });
 }
 
