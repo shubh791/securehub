@@ -1,11 +1,47 @@
 /* SecureHub Main Page Interactive JavaScript Logic */
 document.addEventListener('DOMContentLoaded', () => {
+  initExpandedCourseCatalog();
   initCoursesSidebarFilter();
   initFaqAccordion();
   initCounterAnimation();
   initInquiryForm();
   initTopChoiceCarousel();
 });
+
+/* Additional catalogue paths for the expanded course directory */
+function initExpandedCourseCatalog() {
+  const grid = document.querySelector('.courses-grid');
+  if (!grid) return;
+
+  const courses = [
+    ['cybersecurity', 'Advanced Penetration Testing', '6 Months', 'VAPT Lab', 'Security', 'Web, network and cloud penetration testing with guided practice.'],
+    ['devops', 'Certified DevOps Engineer', '5 Months', 'CI/CD Lab', 'DevOps', 'Build delivery pipelines with Git, Jenkins, Ansible and Terraform.'],
+    ['cloud', 'Microsoft Azure Administrator', '3 Months', 'Azure Lab', 'Cloud', 'Manage Azure compute, identity, networking and storage.'],
+    ['cloud', 'Terraform Infrastructure as Code', '8 Weeks', 'IaC Lab', 'Cloud', 'Provision consistent cloud infrastructure with Terraform.'],
+    ['docker', 'Kubernetes Administration', '10 Weeks', 'Cluster Lab', 'K8s', 'Deploy, scale and observe containerised workloads in Kubernetes.'],
+    ['web', 'Frontend Development with React', '4 Months', 'Project Studio', 'Web', 'Create fast, accessible interfaces and production-ready applications.'],
+    ['programming', 'Python Programming Certificate', '10 Weeks', 'Coding Lab', 'Python', 'Build strong Python fundamentals through guided applications.'],
+    ['graphic', 'Graphic Design Essentials', '4 Months', 'Creative Studio', 'Design', 'Learn visual hierarchy, layout and practical Adobe workflows.'],
+    ['design', 'UI/UX Design and Figma', '4 Months', 'Design Studio', 'UI/UX', 'Research, prototype and test thoughtful digital products.'],
+    ['datascience', 'Data Science and GenAI', '6 Months', 'ML Lab', 'AI', 'Use Python, machine learning and GenAI workflows on real data.'],
+    ['dsa', 'Data Structures and Algorithms', '12 Weeks', 'Problem Lab', 'DSA', 'Practice problem solving for technical interviews and software roles.'],
+    ['salesforce', 'Salesforce Administrator', '3 Months', 'Salesforce Lab', 'CRM', 'Configure data, security and automation in Salesforce.'],
+    ['redhat', 'Linux System Administration', '12 Weeks', 'Linux Lab', 'Linux', 'Build hands-on administration skills for enterprise Linux environments.'],
+    ['aws', 'AWS DevOps Engineering', '5 Months', 'AWS Lab', 'AWS', 'Automate resilient AWS delivery pipelines and cloud operations.'],
+    ['analytics', 'Data Analytics and Power BI', '3 Months', 'Analytics Lab', 'Data', 'Turn business data into dashboards and clear decisions.'],
+    ['softskills', 'Communication for Technology Teams', '6 Weeks', 'Live Practice', 'Career', 'Build confident communication for interviews, teams and client work.'],
+    ['marketing', 'Digital Marketing Professional Program', '4 Months', 'Campaign Lab', 'Growth', 'Plan, run and measure SEO, social and paid digital campaigns.']
+  ];
+
+  courses.forEach(([category, title, duration, lab, label, description]) => {
+    const card = document.createElement('article');
+    card.className = 'course-card course-card-expanded';
+    card.dataset.category = category;
+    card.dataset.title = title;
+    card.innerHTML = `<div class="course-banner"><span class="course-tag-badge">${label}</span><div class="course-banner-icon course-banner-code">${label.slice(0, 2)}</div><h3 class="course-banner-title">${title}</h3></div><div class="course-body"><div class="course-meta"><span class="course-meta-item">${duration}</span><span class="course-meta-item">${lab}</span></div><p class="course-card-summary">${description}</p><a href="#inquiry-form" class="course-details-link">View program details <span>&rsaquo;</span></a></div>`;
+    grid.appendChild(card);
+  });
+}
 
 /* Sidebar Search & Domain Category Filter for Industry-Driven Courses */
 function initCoursesSidebarFilter() {

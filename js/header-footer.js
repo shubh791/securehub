@@ -1,13 +1,33 @@
 /* SecureHub Shared Header and Footer Injector & Logic */
 document.addEventListener('DOMContentLoaded', () => {
   renderHeader();
+  addExpandedCourseDomains();
   renderFooter();
   initHeaderInteractions();
+  initThemePreview();
+});
+
+document.addEventListener('securehub:course-sections-ready', syncCoursePageSectionLinks);
+document.addEventListener('click', event => {
+  const link = event.target.closest('a[data-course-section]');
+  if (!link || !document.getElementById('course-page')) return;
+  const targetId = link.dataset.courseSection === 'about' ? 'course-about' : link.dataset.courseSection === 'faqs' ? 'course-faqs' : '';
+  const target = targetId && document.getElementById(targetId);
+  if (!target) return;
+  event.preventDefault();
+  target.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+  window.history.replaceState(null, '', `#${targetId}`);
 });
 
 function renderHeader() {
   const headerContainer = document.getElementById('app-header');
   if (!headerContainer) return;
+  const isCoursePage = Boolean(document.getElementById('course-page'));
+  const sectionLinks = isCoursePage
+    ? { certifications: '#', about: '#course-about', faqs: '#course-faqs' }
+    : { certifications: '#', about: '#', faqs: '#' };
+  const coursesLink = isCoursePage ? '#course-page' : '#';
+  const enquiryLink = isCoursePage ? '#course-enquiry' : '#';
 
   headerContainer.innerHTML = `
     <!-- Top Contact & Announcement Bar -->
@@ -25,7 +45,7 @@ function renderHeader() {
         </div>
         <div class="sh-topbar-right">
           <span class="sh-topbar-badge">New practical batch starts Monday</span>
-          <a href="#inquiry-form" class="sh-topbar-link">Request Callback &rsaquo;</a>
+          <a href="${enquiryLink}" class="sh-topbar-link">Request Callback &rsaquo;</a>
         </div>
       </div>
     </div>
@@ -46,7 +66,7 @@ function renderHeader() {
           <ul class="sh-nav-menu" id="sh-nav-menu">
             <!-- Courses Dropdown with MegaMenu -->
             <li class="sh-nav-item has-megamenu">
-              <a href="#courses-section" class="sh-nav-link">
+              <a href="${coursesLink}" class="sh-nav-link">
                 <span class="sh-courses-badge">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
                   Explore All Courses
@@ -59,11 +79,11 @@ function renderHeader() {
                 <div class="sh-megamenu-sidebar">
                   <div class="sh-megamenu-title">Training Domains</div>
                   <ul class="sh-domain-list">
-                    <li><button class="sh-domain-btn active" data-target="cybersecurity">Cybersecurity & Hacking <span>&rsaquo;</span></button></li>
-                    <li><button class="sh-domain-btn" data-target="cloud-devops">Cloud & DevOps <span>&rsaquo;</span></button></li>
-                    <li><button class="sh-domain-btn" data-target="fullstack">Full Stack Development <span>&rsaquo;</span></button></li>
-                    <li><button class="sh-domain-btn" data-target="datascience">Data Science & AI <span>&rsaquo;</span></button></li>
-                    <li><button class="sh-domain-btn" data-target="networking">Network & Linux <span>&rsaquo;</span></button></li>
+                    <li><button class="sh-domain-btn active" data-target="cybersecurity">Cyber Security <span>&rsaquo;</span></button></li>
+                    <li><button class="sh-domain-btn" data-target="cloud-devops">DevOps <span>&rsaquo;</span></button></li>
+                    <li><button class="sh-domain-btn" data-target="fullstack">Web Development <span>&rsaquo;</span></button></li>
+                    <li><button class="sh-domain-btn" data-target="datascience">Data Science &amp; Machine Learning <span>&rsaquo;</span></button></li>
+                    <li><button class="sh-domain-btn" data-target="networking">Red Hat &amp; Linux <span>&rsaquo;</span></button></li>
                   </ul>
                 </div>
 
@@ -77,28 +97,28 @@ function renderHeader() {
                       </div>
                     </div>
                     <div class="sh-mega-courses-grid">
-                      <a href="#courses-section" class="sh-mega-course-card">
+                      <a href="courses/cybersecurity/ceh-v12-master-program.html" class="sh-mega-course-card">
                         <div class="sh-mega-course-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
                         <div class="sh-mega-course-info">
                           <h5>CEH v12 Master Program</h5>
                           <p>Certified Ethical Hacker - Live Lab Scenarios</p>
                         </div>
                       </a>
-                      <a href="#courses-section" class="sh-mega-course-card">
+                      <a href="courses/cybersecurity/soc-analyst-l1-l2.html" class="sh-mega-course-card">
                         <div class="sh-mega-course-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
                         <div class="sh-mega-course-info">
                           <h5>SOC Analyst (L1/L2)</h5>
                           <p>SIEM Tools, Splunk & Incident Response</p>
                         </div>
                       </a>
-                      <a href="#courses-section" class="sh-mega-course-card">
+                      <a href="courses/cybersecurity/web-application-vpt.html" class="sh-mega-course-card">
                         <div class="sh-mega-course-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div>
                         <div class="sh-mega-course-info">
                           <h5>Web Application VPT</h5>
                           <p>OWASP Top 10 & Bug Bounty Pentesting</p>
                         </div>
                       </a>
-                      <a href="#courses-section" class="sh-mega-course-card">
+                      <a href="courses/cybersecurity/comptia-security-plus.html" class="sh-mega-course-card">
                         <div class="sh-mega-course-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
                         <div class="sh-mega-course-info">
                           <h5>CompTIA Security+</h5>
@@ -108,27 +128,34 @@ function renderHeader() {
                     </div>
                   </div>
 
-                  <!-- Cloud & DevOps Pane -->
+                  <!-- DevOps Pane -->
                   <div class="sh-megamenu-content" id="pane-cloud-devops">
                     <div class="sh-megamenu-header">
                       <div>
-                        <h4>Cloud Computing & DevOps Engineering</h4>
-                        <p>Master AWS, Azure, Docker, Kubernetes & CI/CD Pipelines</p>
+                        <h4>DevOps Engineering</h4>
+                        <p>Build, automate and operate dependable cloud delivery workflows.</p>
                       </div>
                     </div>
                     <div class="sh-mega-courses-grid">
-                      <a href="#courses-section" class="sh-mega-course-card">
+                      <a href="courses/devops/aws-devops-engineering.html" class="sh-mega-course-card">
                         <div class="sh-mega-course-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
                         <div class="sh-mega-course-info">
-                          <h5>AWS Solutions Architect</h5>
-                          <p>Amazon Web Services Infrastructure</p>
+                          <h5>AWS DevOps Engineering</h5>
+                          <p>AWS pipelines, automation and cloud operations</p>
                         </div>
                       </a>
-                      <a href="#courses-section" class="sh-mega-course-card">
+                      <a href="courses/devops/certified-devops-engineer.html" class="sh-mega-course-card">
                         <div class="sh-mega-course-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
                         <div class="sh-mega-course-info">
-                          <h5>DevOps Master (Docker & K8s)</h5>
-                          <p>Automation, CI/CD, Terraform & Ansible</p>
+                          <h5>Certified DevOps Engineer</h5>
+                          <p>CI/CD, automation, containers and infrastructure</p>
+                        </div>
+                      </a>
+                      <a href="courses/devops/master-azure-devops.html" class="sh-mega-course-card">
+                        <div class="sh-mega-course-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 19h20L12 2z"/><path d="m8 13 2 2 4-5"/></svg></div>
+                        <div class="sh-mega-course-info">
+                          <h5>Master Azure DevOps</h5>
+                          <p>Azure Repos, Pipelines and release workflows</p>
                         </div>
                       </a>
                     </div>
@@ -143,14 +170,14 @@ function renderHeader() {
                       </div>
                     </div>
                     <div class="sh-mega-courses-grid">
-                      <a href="#courses-section" class="sh-mega-course-card">
+                      <a href="courses/web-development/mern-stack-developer.html" class="sh-mega-course-card">
                         <div class="sh-mega-course-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
                         <div class="sh-mega-course-info">
                           <h5>MERN Stack Developer</h5>
                           <p>MongoDB, Express, React & Node.js</p>
                         </div>
                       </a>
-                      <a href="#courses-section" class="sh-mega-course-card">
+                      <a href="courses/web-development/django-full-stack.html" class="sh-mega-course-card">
                         <div class="sh-mega-course-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
                         <div class="sh-mega-course-info">
                           <h5>Python Django Web Dev</h5>
@@ -169,14 +196,14 @@ function renderHeader() {
                       </div>
                     </div>
                     <div class="sh-mega-courses-grid">
-                      <a href="#courses-section" class="sh-mega-course-card">
+                      <a href="courses/data-science/data-analytics-bi.html" class="sh-mega-course-card">
                         <div class="sh-mega-course-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
                         <div class="sh-mega-course-info">
                           <h5>Data Analytics & BI</h5>
                           <p>Python, SQL, PowerBI & Tableau</p>
                         </div>
                       </a>
-                      <a href="#courses-section" class="sh-mega-course-card">
+                      <a href="courses/data-science/machine-learning-ai-master.html" class="sh-mega-course-card">
                         <div class="sh-mega-course-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
                         <div class="sh-mega-course-info">
                           <h5>Machine Learning & AI Master</h5>
@@ -195,14 +222,14 @@ function renderHeader() {
                       </div>
                     </div>
                     <div class="sh-mega-courses-grid">
-                      <a href="#courses-section" class="sh-mega-course-card">
+                      <a href="courses/networking/rhcsa-rhce-redhat-linux.html" class="sh-mega-course-card">
                         <div class="sh-mega-course-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
                         <div class="sh-mega-course-info">
                           <h5>RHCSA & RHCE RedHat Linux</h5>
                           <p>Enterprise RedHat Admin Certification</p>
                         </div>
                       </a>
-                      <a href="#courses-section" class="sh-mega-course-card">
+                      <a href="courses/networking/cisco-ccna-200-301.html" class="sh-mega-course-card">
                         <div class="sh-mega-course-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></div>
                         <div class="sh-mega-course-info">
                           <h5>Cisco CCNA (200-301)</h5>
@@ -215,16 +242,15 @@ function renderHeader() {
               </div>
             </li>
 
-            <li class="sh-nav-item"><a href="#certifications-section" class="sh-nav-link">Certifications</a></li>
-            <li class="sh-nav-item"><a href="#about-section" class="sh-nav-link">Learning model</a></li>
-            <li class="sh-nav-item"><a href="#about-section" class="sh-nav-link">About Us</a></li>
-            <li class="sh-nav-item"><a href="#faq-section" class="sh-nav-link">FAQs</a></li>
+            <li class="sh-nav-item"><a href="${sectionLinks.certifications}" class="sh-nav-link">Certifications</a></li>
+            <li class="sh-nav-item"><a href="${sectionLinks.about}" class="sh-nav-link" data-course-section="about">About Us</a></li>
+            <li class="sh-nav-item"><a href="${sectionLinks.faqs}" class="sh-nav-link" data-course-section="faqs">FAQs</a></li>
           </ul>
 
           <!-- Nav Right Action Buttons (Search Bar removed as requested) -->
           <div class="sh-nav-right">
-            <a href="#inquiry-form" class="sh-btn-outline">Enquire Now</a>
-            <a href="#inquiry-form" class="sh-btn-primary">Talk to Counselor</a>
+            <a href="${enquiryLink}" class="sh-btn-outline">Enquire Now</a>
+            <a href="${enquiryLink}" class="sh-btn-primary">Talk to Counselor</a>
 
             <button class="sh-mobile-toggle" id="sh-mobile-toggle" aria-label="Open navigation" aria-controls="sh-nav-menu" aria-expanded="false">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -234,11 +260,44 @@ function renderHeader() {
       </div>
     </header>
   `;
+
+  normaliseNestedPageLinks(headerContainer);
+}
+
+function addExpandedCourseDomains() {
+  const domainList = document.querySelector('.sh-domain-list');
+  const panes = document.querySelector('.sh-megamenu-panes');
+  if (!domainList || !panes) return;
+  const courseFallback = document.getElementById('course-page') ? '#course-page' : '#';
+
+  const domains = [
+    { id: 'cloud-computing', label: 'Cloud Computing', heading: 'Cloud Computing', copy: 'Build, secure and manage reliable infrastructure across leading cloud platforms.', courses: [['Microsoft Azure Administrator', 'Azure compute, identity, networking and storage', 'courses/cloud/microsoft-azure-administrator.html'], ['Azure Infrastructure Solutions', 'Architecture, governance and resilient Azure workloads', 'courses/cloud/azure-infrastructure-solutions.html'], ['Terraform Associate', 'Infrastructure as code and reusable cloud automation', 'courses/cloud/terraform-associate.html']] },
+    { id: 'docker-kubernetes', label: 'Docker & Kubernetes', heading: 'Docker & Kubernetes', copy: 'Containerise applications and run dependable production clusters.', courses: [['Docker Containers Training', 'Images, registries, compose and container workflows', 'courses/docker-kubernetes/docker-containers-training.html'], ['Kubernetes Administration', 'Clusters, deployments, services and observability', 'courses/docker-kubernetes/kubernetes-administration.html']] },
+    { id: 'programming', label: 'Programming Languages', heading: 'Programming Languages', copy: 'Build durable coding fundamentals through applied programming practice.', courses: [['Python Programming Certificate', 'Core Python, data structures and application practice', 'courses/programming/python-programming-certificate.html'], ['Java Programming', 'Object-oriented programming and backend foundations', 'courses/programming/java-programming.html']] },
+    { id: 'graphic-design', label: 'Graphic Designing', heading: 'Graphic Designing', copy: 'Create clear visual communication for digital brands and campaigns.', courses: [['Graphic Design Essentials', 'Layout, visual hierarchy and Adobe workflow basics', 'courses/catalog/course.html?course=graphic'], ['Multimedia & Motion Graphics', 'Motion principles, editing and campaign assets', 'courses/catalog/course.html?course=motion']] },
+    { id: 'uiux', label: 'UI/UX Design', heading: 'UI/UX Design & Product Thinking', copy: 'Research, prototype and validate better digital experiences.', courses: [['UI/UX Design & Figma', 'User journeys, wireframes and high-fidelity prototypes', 'courses/catalog/course.html?course=uiux'], ['Frontend Design Systems', 'Responsive interfaces and reusable component patterns', 'courses/catalog/course.html?course=designsystems']] },
+    { id: 'dsa', label: 'Data Structures & Algorithms', heading: 'Data Structures & Algorithms', copy: 'Strengthen problem solving for technical interviews and software roles.', courses: [['DSA Bootcamp', 'Arrays, trees, graphs and algorithmic patterns', 'courses/catalog/course.html?course=dsa'], ['Interview Problem Solving', 'Timed coding practice and technical interview preparation', 'courses/catalog/course.html?course=interviews']] },
+    { id: 'salesforce', label: 'Salesforce', heading: 'Salesforce Career Paths', copy: 'Build CRM administration and development capabilities.', courses: [['Salesforce Administrator', 'Data models, security and workflow automation', 'courses/catalog/course.html?course=salesforceadmin'], ['Salesforce Development', 'Apex, Lightning components and integrations', 'courses/catalog/course.html?course=salesforcedev']] },
+    { id: 'aws-solutions', label: 'AWS Solutions Architect', heading: 'AWS Solutions Architect Pathway', copy: 'Architect secure, cost-aware and highly available AWS workloads.', courses: [['AWS Solutions Architect Associate', 'Architecture patterns and guided exam preparation', 'courses/catalog/course.html?course=awsarchitect'], ['AWS DevOps Engineering', 'Automated delivery pipelines and cloud operations', 'courses/devops/aws-devops-engineering.html']] },
+    { id: 'data-analytics', label: 'Data Analytics & Visualisation', heading: 'Data Analytics & Visualisation', copy: 'Turn business data into trustworthy dashboards and decisions.', courses: [['Data Analytics & Power BI', 'SQL, Excel, Power BI and reporting workflows', 'courses/catalog/course.html?course=powerbi'], ['Tableau Data Visualisation', 'Dashboards, storytelling and stakeholder-ready reporting', 'courses/catalog/course.html?course=tableau']] },
+    { id: 'soft-skills', label: 'Soft Skills', heading: 'Soft Skills & Career Readiness', copy: 'Communicate with confidence in interviews, teams and client conversations.', courses: [['Communication for Technology Teams', 'Professional writing, speaking and collaboration', 'courses/catalog/course.html?course=communication'], ['Interview & Workplace Readiness', 'Structured interviews, presentations and career practice', 'courses/catalog/course.html?course=workplace']] },
+    { id: 'digital-marketing', label: 'Digital Marketing', heading: 'Digital Marketing', copy: 'Plan, measure and improve practical digital growth campaigns.', courses: [['Digital Marketing Professional Program', 'SEO, paid media, social and campaign measurement', 'courses/catalog/course.html?course=marketing'], ['Performance Marketing Foundations', 'Audience targeting, analytics and optimisation', 'courses/catalog/course.html?course=performance']] }
+  ];
+
+  domains.forEach(domain => {
+    domainList.insertAdjacentHTML('beforeend', `<li><button class="sh-domain-btn" data-target="${domain.id}">${domain.label} <span>&rsaquo;</span></button></li>`);
+    const icon = `<div class="sh-mega-course-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5h16v14H4Z"/><path d="M8 9h8M8 13h5M16.5 17.5l1.5 1.5 3-3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`;
+    const cards = domain.courses.map(([title, copy, href]) => `<a href="${href || courseFallback}" class="sh-mega-course-card">${icon}<div class="sh-mega-course-info"><h5>${title}</h5><p>${copy}</p></div></a>`).join('');
+    panes.insertAdjacentHTML('beforeend', `<div class="sh-megamenu-content" id="pane-${domain.id}"><div class="sh-megamenu-header"><div><h4>${domain.heading}</h4><p>${domain.copy}</p></div></div><div class="sh-mega-courses-grid">${cards}</div></div>`);
+  });
 }
 
 function renderFooter() {
   const footerContainer = document.getElementById('app-footer');
   if (!footerContainer) return;
+  const sectionLinks = document.getElementById('course-page')
+    ? { certifications: '#course-certifications', about: '#course-about' }
+    : { certifications: '#certifications-section', about: '#about-section' };
 
   footerContainer.innerHTML = `
     <footer class="sh-footer">
@@ -266,10 +325,9 @@ function renderFooter() {
             <h4 class="sh-footer-title">Navigation</h4>
             <ul class="sh-footer-links">
               <li><a href="index.html">&rsaquo; SecureHub Home</a></li>
-              <li><a href="#about-section">&rsaquo; About SecureHub</a></li>
+              <li><a href="${sectionLinks.about}" data-course-section="about">&rsaquo; About SecureHub</a></li>
               <li><a href="#courses-section">&rsaquo; All Courses</a></li>
-              <li><a href="#certifications-section">&rsaquo; Certifications</a></li>
-              <li><a href="#about-section">&rsaquo; Learning model</a></li>
+              <li><a href="${sectionLinks.certifications}">&rsaquo; Certifications</a></li>
               <li><a href="#inquiry-form">&rsaquo; Contact & Admissions</a></li>
             </ul>
           </div>
@@ -319,6 +377,38 @@ function renderFooter() {
       </div>
     </footer>
   `;
+
+  normaliseNestedPageLinks(footerContainer);
+}
+
+function normaliseNestedPageLinks(container) {
+  if (!document.getElementById('course-page')) return;
+  container.querySelectorAll('a[href^="#"]').forEach(link => {
+    const target = link.getAttribute('href');
+    if (target.startsWith('#course-')) return;
+    const courseTargets = {
+      '#courses-section': '#course-page',
+      '#inquiry-form': '#course-enquiry',
+      '#certifications-section': '#course-certifications',
+      '#about-section': '#course-about',
+      '#faq-section': '#course-faqs'
+    };
+    link.setAttribute('href', courseTargets[target] || `index.html${target}`);
+  });
+}
+
+function syncCoursePageSectionLinks() {
+  if (!document.getElementById('course-page')) return;
+  const targets = {
+    about: 'course-about',
+    faqs: 'course-faqs'
+  };
+  document.querySelectorAll('[data-course-section]').forEach(link => {
+    const targetId = targets[link.dataset.courseSection];
+    if (targetId && document.getElementById(targetId)) {
+      link.setAttribute('href', `#${targetId}`);
+    }
+  });
 }
 
 function initHeaderInteractions() {
@@ -347,7 +437,7 @@ function initHeaderInteractions() {
   const contentPanes = document.querySelectorAll('.sh-megamenu-content');
 
   domainBtns.forEach(btn => {
-    btn.addEventListener('mouseenter', () => {
+    const showDomain = () => {
       const targetId = btn.getAttribute('data-target');
       
       domainBtns.forEach(b => b.classList.remove('active'));
@@ -356,6 +446,105 @@ function initHeaderInteractions() {
       btn.classList.add('active');
       const targetPane = document.getElementById(`pane-${targetId}`);
       if (targetPane) targetPane.classList.add('active');
+    };
+
+    btn.addEventListener('mouseenter', showDomain);
+    btn.addEventListener('focus', showDomain);
+    btn.addEventListener('click', showDomain);
+  });
+}
+
+/* Temporary palette preview. It changes colours only and keeps the original theme available. */
+function initThemePreview() {
+  if (document.getElementById('course-page')) return;
+  const preview = document.createElement('aside');
+  preview.className = 'sh-theme-preview';
+  preview.setAttribute('aria-label', 'Colour theme preview');
+  preview.innerHTML = `
+    <span class="sh-theme-preview-label">Theme preview</span>
+    <button type="button" class="sh-theme-launch" aria-haspopup="dialog" aria-controls="sh-theme-dialog">Choose colours</button>
+  `;
+  document.body.appendChild(preview);
+
+  const dialog = document.createElement('dialog');
+  dialog.className = 'sh-theme-dialog';
+  dialog.id = 'sh-theme-dialog';
+  dialog.setAttribute('aria-labelledby', 'sh-theme-dialog-title');
+  dialog.innerHTML = `
+    <form method="dialog" class="sh-theme-window">
+      <div class="sh-theme-window-header">
+        <div>
+          <p class="sh-theme-window-kicker">Homepage colour preview</p>
+          <h2 id="sh-theme-dialog-title">Choose a light palette</h2>
+        </div>
+        <button class="sh-theme-close" type="submit" value="cancel" aria-label="Close colour themes">&times;</button>
+      </div>
+      <p class="sh-theme-window-copy">Pick a palette, then apply it to the homepage. You can reopen this window and change it at any time.</p>
+      <div class="sh-theme-grid" role="radiogroup" aria-label="Available colour palettes">
+        <button type="button" class="sh-theme-card" data-theme-choice="original" role="radio" aria-checked="false">
+          <span class="sh-theme-swatches"><i style="background:#1677ff"></i><i style="background:#0f9bb3"></i><i style="background:#f6f8fb"></i><i style="background:#ffffff"></i></span>
+          <strong>Original sky</strong><small>Current blue and cool-grey palette</small>
+        </button>
+        <button type="button" class="sh-theme-card" data-theme-choice="teal" role="radio" aria-checked="false">
+          <span class="sh-theme-swatches"><i style="background:#148c87"></i><i style="background:#5b9bb2"></i><i style="background:#eaf8f6"></i><i style="background:#fffefd"></i></span>
+          <strong>Teal light</strong><small>Teal, sky, mint and warm white</small>
+        </button>
+        <button type="button" class="sh-theme-card" data-theme-choice="ocean" role="radio" aria-checked="false">
+          <span class="sh-theme-swatches"><i style="background:#287ea1"></i><i style="background:#65aeba"></i><i style="background:#eaf6f8"></i><i style="background:#fbfdfd"></i></span>
+          <strong>Ocean calm</strong><small>Muted ocean blue with airy blue-greys</small>
+        </button>
+        <button type="button" class="sh-theme-card" data-theme-choice="sage" role="radio" aria-checked="false">
+          <span class="sh-theme-swatches"><i style="background:#4e9278"></i><i style="background:#82ad98"></i><i style="background:#eff8f2"></i><i style="background:#fffefd"></i></span>
+          <strong>Sage growth</strong><small>Soft green with a calm learning focus</small>
+        </button>
+      </div>
+      <div class="sh-theme-window-actions">
+        <button type="submit" class="sh-theme-cancel" value="cancel">Cancel</button>
+        <button type="button" class="sh-theme-apply">Apply palette</button>
+      </div>
+    </form>
+  `;
+  document.body.appendChild(dialog);
+
+  const launchButton = preview.querySelector('.sh-theme-launch');
+  const cards = dialog.querySelectorAll('.sh-theme-card');
+  const applyButton = dialog.querySelector('.sh-theme-apply');
+  let selectedTheme = 'original';
+  let savedTheme = 'original';
+  try {
+    savedTheme = localStorage.getItem('securehub-theme-preview') || 'original';
+  } catch (error) {
+    savedTheme = 'original';
+  }
+
+  const applyTheme = (theme) => {
+    document.documentElement.dataset.themePreview = theme;
+    try {
+      localStorage.setItem('securehub-theme-preview', theme);
+    } catch (error) {
+      // The preview remains usable when browser storage is unavailable.
+    }
+  };
+
+  applyTheme(savedTheme);
+  selectedTheme = savedTheme;
+
+  const setSelection = (theme) => {
+    selectedTheme = theme;
+    cards.forEach(card => {
+      const selected = card.dataset.themeChoice === theme;
+      card.classList.toggle('selected', selected);
+      card.setAttribute('aria-checked', String(selected));
     });
+  };
+
+  launchButton.addEventListener('click', () => {
+    setSelection(document.documentElement.dataset.themePreview || 'original');
+    dialog.showModal();
+  });
+  cards.forEach(card => card.addEventListener('click', () => setSelection(card.dataset.themeChoice)));
+  applyButton.addEventListener('click', () => {
+    applyTheme(selectedTheme);
+    dialog.close('applied');
   });
 }
