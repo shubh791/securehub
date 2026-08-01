@@ -24,7 +24,7 @@ function renderHeader() {
           </div>
         </div>
         <div class="sh-topbar-right">
-          <span class="sh-topbar-badge">🔥 New Practical Batch Starts Monday</span>
+          <span class="sh-topbar-badge">New practical batch starts Monday</span>
           <a href="#inquiry-form" class="sh-topbar-link">Request Callback &rsaquo;</a>
         </div>
       </div>
@@ -216,7 +216,7 @@ function renderHeader() {
             </li>
 
             <li class="sh-nav-item"><a href="#certifications-section" class="sh-nav-link">Certifications</a></li>
-            <li class="sh-nav-item"><a href="#placements-section" class="sh-nav-link">Placements</a></li>
+            <li class="sh-nav-item"><a href="#about-section" class="sh-nav-link">Learning model</a></li>
             <li class="sh-nav-item"><a href="#about-section" class="sh-nav-link">About Us</a></li>
             <li class="sh-nav-item"><a href="#faq-section" class="sh-nav-link">FAQs</a></li>
           </ul>
@@ -226,7 +226,7 @@ function renderHeader() {
             <a href="#inquiry-form" class="sh-btn-outline">Enquire Now</a>
             <a href="#inquiry-form" class="sh-btn-primary">Talk to Counselor</a>
 
-            <button class="sh-mobile-toggle" id="sh-mobile-toggle" aria-label="Toggle Navigation">
+            <button class="sh-mobile-toggle" id="sh-mobile-toggle" aria-label="Open navigation" aria-controls="sh-nav-menu" aria-expanded="false">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
             </button>
           </div>
@@ -269,7 +269,7 @@ function renderFooter() {
               <li><a href="#about-section">&rsaquo; About SecureHub</a></li>
               <li><a href="#courses-section">&rsaquo; All Courses</a></li>
               <li><a href="#certifications-section">&rsaquo; Certifications</a></li>
-              <li><a href="#placements-section">&rsaquo; Placements</a></li>
+              <li><a href="#about-section">&rsaquo; Learning model</a></li>
               <li><a href="#inquiry-form">&rsaquo; Contact & Admissions</a></li>
             </ul>
           </div>
@@ -328,7 +328,17 @@ function initHeaderInteractions() {
   
   if (toggleBtn && navMenu) {
     toggleBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
+      const isOpen = navMenu.classList.toggle('active');
+      toggleBtn.setAttribute('aria-expanded', String(isOpen));
+      toggleBtn.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.setAttribute('aria-label', 'Open navigation');
+      });
     });
   }
 

@@ -1,5 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" rx="14" fill="#0F172A"/>
-  <path d="M32 54S52 44 52 29V14L32 7 12 14v15c0 15 20 25 20 25z" fill="#1E293B" stroke="#FF6B00" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M32 20v22M21 31h22" stroke="#38BDF8" stroke-width="4" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="securehub-mark" x1="8" y1="6" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#197BA9"/>
+      <stop offset="1" stop-color="#63B5D4"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#securehub-mark)"/>
+  <path d="M32 51S47 43.2 47 30.4V18.1L32 12 17 18.1v12.3C17 43.2 32 51 32 51Z" fill="none" stroke="#FFF" stroke-width="4" stroke-linejoin="round"/>
+  <path d="m24.5 31.6 5 5 10.3-11.3" fill="none" stroke="#FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
