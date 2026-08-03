@@ -357,6 +357,36 @@ function hydrateMegaMenuVisuals() {
       icon.innerHTML = `<img src="${imagePath}" alt="" loading="lazy" decoding="async">`;
     });
   });
+
+  const courseCardImages = {
+    'CEH v12 Master Program': 'assets/images/courses/cybersecurity/cehv12.png',
+    'SOC Analyst (L1/L2)': 'assets/images/courses/cybersecurity/socanalyst.png',
+    'Web Application VPT': 'assets/images/courses/cybersecurity/webapplicationvpt.png',
+    'CompTIA Security+': 'assets/images/courses/cybersecurity/compatia.png',
+    'AWS DevOps Engineering': 'assets/images/courses/devops/awsdevops.png',
+    'Certified DevOps Engineer': 'assets/images/courses/devops/certified%20devops.png',
+    'Master Azure DevOps': 'assets/images/courses/devops/masterdevops.png',
+    'Microsoft Azure Administrator': 'assets/images/courses/cloud/azureadministration.png',
+    'Azure Infrastructure Solutions': 'assets/images/courses/cloud/azureinfrastructure.png',
+    'Terraform Associate': 'assets/images/courses/cloud/terraformassociate.png',
+    'MERN Stack Developer': 'assets/images/courses/web-development/mernstack%20developer.png',
+    'Python Django Web Dev': 'assets/images/courses/web-development/pythondjango.png',
+    'Docker Containers Training': 'assets/images/courses/docker-kubernetes/dockercontainer.png',
+    'Kubernetes Administration': 'assets/images/courses/docker-kubernetes/kubernetes.png',
+    'Python Programming Certificate': 'assets/images/courses/programming/python%20programming.png',
+    'Java Programming': 'assets/images/courses/programming/javaprogramming.png',
+    'Data Analytics & BI': 'assets/images/courses/data-science/dataanalyticsandbi.png',
+    'Machine Learning & AI Master': 'assets/images/courses/data-science/machine%20learning%20and%20ia.png',
+    'RHCSA & RHCE RedHat Linux': 'assets/images/courses/networking/redhatlinux.png',
+    'Cisco CCNA (200-301)': 'assets/images/courses/networking/cisco.png'
+  };
+
+  document.querySelectorAll('.sh-mega-course-card').forEach(card => {
+    const title = card.querySelector('h5')?.textContent.trim();
+    const imagePath = courseCardImages[title];
+    const icon = card.querySelector('.sh-mega-course-icon');
+    if (imagePath && icon) icon.innerHTML = `<img src="${imagePath}" alt="" loading="lazy" decoding="async">`;
+  });
 }
 
 function renderFooter() {

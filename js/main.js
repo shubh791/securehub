@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initCounterAnimation();
   initInquiryForm();
+  initTopChoiceCourseImages();
   initTopChoiceCarousel();
 });
 
@@ -25,36 +26,56 @@ function initExpandedCourseCatalog() {
   };
 
   const courses = [
-    ['cybersecurity', 'CEH v12 Master Program', '6 months', 'Live lab', 'Cyber', 'Ethical hacking practice with guided lab scenarios.', 'courses/cybersecurity/ceh-v12-master-program.html'],
-    ['cybersecurity', 'SOC Analyst (L1/L2)', '4 months', 'SIEM lab', 'Cyber', 'Incident response, Splunk and threat-hunting practice.', 'courses/cybersecurity/soc-analyst-l1-l2.html'],
-    ['cybersecurity', 'Web Application VPT', '3 months', 'OWASP lab', 'Cyber', 'Practical web security assessment and testing workflows.', 'courses/cybersecurity/web-application-vpt.html'],
-    ['cybersecurity', 'CompTIA Security+', '3 months', 'Security lab', 'Cyber', 'Foundational enterprise security, controls and risk skills.', 'courses/cybersecurity/comptia-security-plus.html'],
-    ['devops', 'AWS DevOps Engineering', '5 months', 'AWS lab', 'DevOps', 'Cloud delivery pipelines, automation and operations.', 'courses/devops/aws-devops-engineering.html'],
-    ['devops', 'Certified DevOps Engineer', '5 months', 'CI/CD lab', 'DevOps', 'Delivery automation, containers and infrastructure practice.', 'courses/devops/certified-devops-engineer.html'],
-    ['devops', 'Master Azure DevOps', '4 months', 'Azure lab', 'DevOps', 'Azure Repos, Pipelines and release workflows.', 'courses/devops/master-azure-devops.html'],
-    ['cloud', 'Microsoft Azure Administrator', '3 months', 'Azure lab', 'Cloud', 'Azure compute, identity, networking and storage.', 'courses/cloud/microsoft-azure-administrator.html'],
-    ['cloud', 'Azure Infrastructure Solutions', '4 months', 'Cloud lab', 'Cloud', 'Architecture, governance and dependable Azure workloads.', 'courses/cloud/azure-infrastructure-solutions.html'],
-    ['cloud', 'Terraform Associate', '8 weeks', 'IaC lab', 'Cloud', 'Infrastructure as code and reusable cloud automation.', 'courses/cloud/terraform-associate.html'],
-    ['docker', 'Docker Containers Training', '8 weeks', 'Container lab', 'Docker', 'Images, registries, Compose and container workflows.', 'courses/docker-kubernetes/docker-containers-training.html'],
-    ['docker', 'Kubernetes Administration', '10 weeks', 'Cluster lab', 'K8s', 'Clusters, deployments, services and observability.', 'courses/docker-kubernetes/kubernetes-administration.html'],
-    ['web', 'MERN Stack Developer', '5 months', 'Project studio', 'Web', 'MongoDB, Express, React and Node.js development.', 'courses/web-development/mern-stack-developer.html'],
-    ['web', 'Python Django Web Dev', '4 months', 'Project studio', 'Web', 'Backend engineering, APIs and Django applications.', 'courses/web-development/django-full-stack.html'],
-    ['programming', 'Python Programming Certificate', '10 weeks', 'Coding lab', 'Code', 'Applied Python fundamentals and programming practice.', 'courses/programming/python-programming-certificate.html'],
-    ['programming', 'Java Programming', '10 weeks', 'Coding lab', 'Code', 'Object-oriented programming and backend foundations.', 'courses/programming/java-programming.html'],
-    ['datascience', 'Data Analytics & BI', '3 months', 'Analytics lab', 'Data', 'Python, SQL, Power BI and Tableau workflows.', 'courses/data-science/data-analytics-bi.html'],
-    ['datascience', 'Machine Learning & AI Master', '6 months', 'ML lab', 'AI', 'Machine learning and deep-learning practice on data.', 'courses/data-science/machine-learning-ai-master.html'],
-    ['networking', 'RHCSA & RHCE RedHat Linux', '3 months', 'Linux lab', 'Linux', 'Enterprise Linux administration and certification prep.', 'courses/networking/rhcsa-rhce-redhat-linux.html'],
-    ['networking', 'Cisco CCNA (200-301)', '3 months', 'Network lab', 'Network', 'Routing, switching and enterprise networking practice.', 'courses/networking/cisco-ccna-200-301.html']
+    ['cybersecurity', 'CEH v12 Master Program', '6 months', 'Live lab', 'Cyber', 'Ethical hacking practice with guided lab scenarios.', 'courses/cybersecurity/ceh-v12-master-program.html', 'assets/images/courses/cybersecurity/cehv12.png'],
+    ['cybersecurity', 'SOC Analyst (L1/L2)', '4 months', 'SIEM lab', 'Cyber', 'Incident response, Splunk and threat-hunting practice.', 'courses/cybersecurity/soc-analyst-l1-l2.html', 'assets/images/courses/cybersecurity/socanalyst.png'],
+    ['cybersecurity', 'Web Application VPT', '3 months', 'OWASP lab', 'Cyber', 'Practical web security assessment and testing workflows.', 'courses/cybersecurity/web-application-vpt.html', 'assets/images/courses/cybersecurity/webapplicationvpt.png'],
+    ['cybersecurity', 'CompTIA Security+', '3 months', 'Security lab', 'Cyber', 'Foundational enterprise security, controls and risk skills.', 'courses/cybersecurity/comptia-security-plus.html', 'assets/images/courses/cybersecurity/compatia.png'],
+    ['devops', 'AWS DevOps Engineering', '5 months', 'AWS lab', 'DevOps', 'Cloud delivery pipelines, automation and operations.', 'courses/devops/aws-devops-engineering.html', 'assets/images/courses/devops/awsdevops.png'],
+    ['devops', 'Certified DevOps Engineer', '5 months', 'CI/CD lab', 'DevOps', 'Delivery automation, containers and infrastructure practice.', 'courses/devops/certified-devops-engineer.html', 'assets/images/courses/devops/certified%20devops.png'],
+    ['devops', 'Master Azure DevOps', '4 months', 'Azure lab', 'DevOps', 'Azure Repos, Pipelines and release workflows.', 'courses/devops/master-azure-devops.html', 'assets/images/courses/devops/masterdevops.png'],
+    ['cloud', 'Microsoft Azure Administrator', '3 months', 'Azure lab', 'Cloud', 'Azure compute, identity, networking and storage.', 'courses/cloud/microsoft-azure-administrator.html', 'assets/images/courses/cloud/azureadministration.png'],
+    ['cloud', 'Azure Infrastructure Solutions', '4 months', 'Cloud lab', 'Cloud', 'Architecture, governance and dependable Azure workloads.', 'courses/cloud/azure-infrastructure-solutions.html', 'assets/images/courses/cloud/azureinfrastructure.png'],
+    ['cloud', 'Terraform Associate', '8 weeks', 'IaC lab', 'Cloud', 'Infrastructure as code and reusable cloud automation.', 'courses/cloud/terraform-associate.html', 'assets/images/courses/cloud/terraformassociate.png'],
+    ['docker', 'Docker Containers Training', '8 weeks', 'Container lab', 'Docker', 'Images, registries, Compose and container workflows.', 'courses/docker-kubernetes/docker-containers-training.html', 'assets/images/courses/docker-kubernetes/dockercontainer.png'],
+    ['docker', 'Kubernetes Administration', '10 weeks', 'Cluster lab', 'K8s', 'Clusters, deployments, services and observability.', 'courses/docker-kubernetes/kubernetes-administration.html', 'assets/images/courses/docker-kubernetes/kubernetes.png'],
+    ['web', 'MERN Stack Developer', '5 months', 'Project studio', 'Web', 'MongoDB, Express, React and Node.js development.', 'courses/web-development/mern-stack-developer.html', 'assets/images/courses/web-development/mernstack%20developer.png'],
+    ['web', 'Python Django Web Dev', '4 months', 'Project studio', 'Web', 'Backend engineering, APIs and Django applications.', 'courses/web-development/django-full-stack.html', 'assets/images/courses/web-development/pythondjango.png'],
+    ['programming', 'Python Programming Certificate', '10 weeks', 'Coding lab', 'Code', 'Applied Python fundamentals and programming practice.', 'courses/programming/python-programming-certificate.html', 'assets/images/courses/programming/python%20programming.png'],
+    ['programming', 'Java Programming', '10 weeks', 'Coding lab', 'Code', 'Object-oriented programming and backend foundations.', 'courses/programming/java-programming.html', 'assets/images/courses/programming/javaprogramming.png'],
+    ['datascience', 'Data Analytics & BI', '3 months', 'Analytics lab', 'Data', 'Python, SQL, Power BI and Tableau workflows.', 'courses/data-science/data-analytics-bi.html', 'assets/images/courses/data-science/dataanalyticsandbi.png'],
+    ['datascience', 'Machine Learning & AI Master', '6 months', 'ML lab', 'AI', 'Machine learning and deep-learning practice on data.', 'courses/data-science/machine-learning-ai-master.html', 'assets/images/courses/data-science/machine%20learning%20and%20ia.png'],
+    ['networking', 'RHCSA & RHCE RedHat Linux', '3 months', 'Linux lab', 'Linux', 'Enterprise Linux administration and certification prep.', 'courses/networking/rhcsa-rhce-redhat-linux.html', 'assets/images/courses/networking/redhatlinux.png'],
+    ['networking', 'Cisco CCNA (200-301)', '3 months', 'Network lab', 'Network', 'Routing, switching and enterprise networking practice.', 'courses/networking/cisco-ccna-200-301.html', 'assets/images/courses/networking/cisco.png']
   ];
 
   grid.innerHTML = '';
-  courses.forEach(([category, title, duration, lab, label, description, href]) => {
+  courses.forEach(([category, title, duration, lab, _label, description, href, coverImage]) => {
     const card = document.createElement('article');
-    card.className = 'course-card course-card-expanded';
+    card.className = `course-card course-card-expanded${coverImage ? ' course-card--cover-layout' : ''}`;
     card.dataset.category = category;
     card.dataset.title = title;
-    card.innerHTML = `<div class="course-banner"><div class="course-banner-media"><img src="${courseImages[category]}" alt="" loading="lazy" decoding="async"></div><span class="course-tag-badge">${label}</span><h3 class="course-banner-title">${title}</h3></div><div class="course-body"><div class="course-meta"><span class="course-meta-item">${duration}</span><span class="course-meta-item">${lab}</span></div><p class="course-card-summary">${description}</p><a href="${href}" class="course-details-link">View program details <span>&rsaquo;</span></a></div>`;
+    const banner = coverImage
+      ? `<div class="course-banner"><div class="course-banner-media"><img src="${coverImage}" alt="Cybersecurity training lab illustration" loading="lazy" decoding="async"></div></div>`
+      : `<div class="course-banner"><div class="course-banner-media"><img src="${courseImages[category]}" alt="" loading="lazy" decoding="async"></div></div>`;
+    const contentTitle = `<h3 class="course-card-content-title">${title}</h3>`;
+    card.innerHTML = `${banner}<div class="course-body">${contentTitle}<div class="course-meta"><span class="course-meta-item"><span class="course-meta-label">Duration</span><strong>${duration}</strong></span><span class="course-meta-item"><span class="course-meta-label">Learning format</span><strong>${lab}</strong></span></div><p class="course-card-summary">${description}</p><a href="${href}" class="course-details-link">View program details <span>&rsaquo;</span></a></div>`;
     grid.appendChild(card);
+  });
+}
+
+function initTopChoiceCourseImages() {
+  document.querySelectorAll('.topchoice-illustration-box[data-course-image]').forEach(box => {
+    const source = box.dataset.courseImage;
+    const illustration = box.querySelector('.topchoice-vector-graphic');
+    if (!source || !illustration) return;
+
+    const image = document.createElement('img');
+    image.className = 'topchoice-course-image';
+    image.src = source;
+    image.alt = '';
+    image.loading = 'lazy';
+    image.decoding = 'async';
+    illustration.replaceWith(image);
   });
 }
 
@@ -64,6 +85,7 @@ function initCoursesSidebarFilter() {
   const domainSelect = document.getElementById('course-domain-select');
   const sidebarCategoryBtns = document.querySelectorAll('.sidebar-domain-btn');
   const courseCards = document.querySelectorAll('.courses-grid .course-card');
+  const coursesResults = document.querySelector('.courses-results');
 
   let activeCategory = 'all';
   let searchQuery = '';
@@ -86,6 +108,17 @@ function initCoursesSidebarFilter() {
     });
   }
 
+  function showCatalogueResults() {
+    if (!coursesResults) return;
+
+    const header = document.querySelector('.sh-header');
+    const headerOffset = header ? header.getBoundingClientRect().height + 24 : 24;
+    const targetTop = Math.max(0, coursesResults.getBoundingClientRect().top + window.scrollY - headerOffset);
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    window.scrollTo({ top: targetTop, behavior: reduceMotion ? 'auto' : 'smooth' });
+  }
+
   // Sidebar Category Buttons Click Event
   sidebarCategoryBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -96,6 +129,7 @@ function initCoursesSidebarFilter() {
       if (domainSelect) domainSelect.value = activeCategory;
 
       filterCards();
+      showCatalogueResults();
     });
   });
 
@@ -112,6 +146,7 @@ function initCoursesSidebarFilter() {
       activeCategory = event.target.value;
       sidebarCategoryBtns.forEach(btn => btn.classList.toggle('active', btn.getAttribute('data-filter') === activeCategory));
       filterCards();
+      showCatalogueResults();
     });
   }
 }
