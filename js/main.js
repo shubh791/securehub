@@ -41,14 +41,14 @@ function initExpandedCourseCatalog() {
     ['devops', 'Master Azure DevOps', '4 months', 'Azure lab', 'DevOps', 'Build release workflows with Azure Repos, Pipelines, and Kubernetes.', 'courses/devops/master-azure-devops.html', 'assets/images/courses/devops/master-azure-devops.jpg'],
     ['cloud', 'AZ-204: Azure Developer Associate', '3 months', 'Azure lab', 'Cloud', 'Develop cloud applications and services on Microsoft Azure.', 'courses/cloud/az-204-azure-developer-associate.html', 'assets/images/courses/cloud/az-204-azure-developer-associate.png'],
     ['cloud', 'AZ-305: Azure Infrastructure Solutions', '4 months', 'Cloud lab', 'Cloud', 'Design dependable Azure infrastructure, governance, and workloads.', 'courses/cloud/az-305-azure-infrastructure-solutions.html', 'assets/images/courses/cloud/az-305-azure-infrastructure-solutions.jpg'],
-    ['cloud', 'Certified Terraform Associate Course', '8 weeks', 'IaC lab', 'Cloud', 'Create reusable cloud infrastructure with Terraform and automation.', 'courses/cloud/certified-terraform-associate.html', 'assets/images/courses/cloud/certified-terraform-associate-course.png'],
+    ['cloud', 'Certified Terraform Associate Course', '8 weeks', 'IaC lab', 'Cloud', 'Create reusable cloud infrastructure with Terraform and automation.', 'courses/cloud/certified-terraform-associate.html', 'assets/images/courses/official-logos/terraform-official.svg'],
     ['cloud', 'AZ-104: Microsoft Azure Administrator Associate', '3 months', 'Azure lab', 'Cloud', 'Manage Azure compute, identity, networking, and storage services.', 'courses/cloud/az-104-azure-administrator.html', 'assets/images/courses/cloud/az-104-azure-administrator-associate.jpg'],
-    ['docker', 'Docker Containers Training Course', '8 weeks', 'Container lab', 'Docker', 'Build, ship, and run containers with Docker workflows and registries.', 'courses/docker-kubernetes/docker-containers-training.html', 'assets/images/courses/docker-kubernetes/docker-containers-training-course.png'],
+    ['docker', 'Docker Containers Training Course', '8 weeks', 'Container lab', 'Docker', 'Build, ship, and run containers with Docker workflows and registries.', 'courses/docker-kubernetes/docker-containers-training.html', 'assets/images/courses/official-logos/docker-official.svg'],
     ['docker', 'Certified Kubernetes Security Specialist (CKS)', '10 weeks', 'Security lab', 'K8s', 'Secure Kubernetes workloads, policies, clusters, and runtime environments.', 'courses/docker-kubernetes/certified-kubernetes-security-specialist.html', 'assets/images/courses/docker-kubernetes/certified-kubernetes-security-specialist.png'],
     ['docker', 'Certified Kubernetes Administrator (CKA)', '10 weeks', 'Cluster lab', 'K8s', 'Administer clusters, deployments, services, and cloud-native operations.', 'courses/docker-kubernetes/certified-kubernetes-administrator.html', 'assets/images/courses/docker-kubernetes/certified-kubernetes-administrator.png'],
     ['cybersecurity', 'Ethical Hacking & Cyber Security', '6 months', 'Live lab', 'Cyber', 'Learn ethical hacking, penetration testing, and cyber defence strategies.', 'courses/cybersecurity/ethical-hacking-cyber-security.html', 'assets/images/courses/cybersecurity/ethical-hacking-cyber-security.jpg'],
     ['cybersecurity', 'Advanced Penetration Testing', '4 months', 'Security lab', 'Cyber', 'Advance practical testing skills for networks, systems, and web applications.', 'courses/cybersecurity/advanced-penetration-testing.html', 'assets/images/courses/cybersecurity/advanced-penetration-testing.jpg'],
-    ['programming', 'Python Programming Certificate', '10 weeks', 'Coding lab', 'Code', 'Build practical Python programming skills for real-world applications.', 'courses/programming/python-programming-certificate.html', 'assets/images/courses/programming/python-programming-certificate.png'],
+    ['programming', 'Python Programming Certificate', '10 weeks', 'Coding lab', 'Code', 'Build practical Python programming skills for real-world applications.', 'courses/programming/python-programming-certificate.html', 'assets/images/courses/official-logos/python-official.svg'],
     ['graphic', 'Multimedia & Motion Graphics', '4 months', 'Design studio', 'Design', 'Create engaging visual stories with multimedia and motion design tools.', 'courses/graphic-designing/multimedia-motion-graphics.html', 'assets/images/courses/graphic-design/multimedia-motion-graphics.jpg'],
     ['graphic', 'Graphic Design Essentials', '3 months', 'Design studio', 'Design', 'Build core visual design skills for modern creative work.', 'courses/graphic-designing/graphic-design-essentials.html', 'assets/images/courses/graphic-design/graphic-design-essentials.jpg'],
     ['graphic', 'Graphic Design Mastery Program', '5 months', 'Design studio', 'Design', 'Develop an advanced, portfolio-ready graphic design practice.', 'courses/graphic-designing/graphic-design-mastery.html', 'assets/images/courses/graphic-design/graphic-design-mastery-program.jpg'],
@@ -64,16 +64,15 @@ function initExpandedCourseCatalog() {
   ];
 
   grid.innerHTML = '';
-  courses.forEach(([category, title, duration, lab, _label, description, href, coverImage]) => {
+  courses.forEach(([category, title, duration, lab, label, description, href, coverImage]) => {
     const card = document.createElement('article');
     card.className = `course-card course-card-expanded${coverImage ? ' course-card--cover-layout' : ''}`;
     card.dataset.category = category;
     card.dataset.title = title;
-    const banner = coverImage
-      ? `<div class="course-banner"><div class="course-banner-media"><img src="${coverImage}" alt="Cybersecurity training lab illustration" loading="lazy" decoding="async"></div></div>`
-      : `<div class="course-banner"><div class="course-banner-media"><img src="${courseImages[category] || courseImages.programming}" alt="" loading="lazy" decoding="async"></div></div>`;
-    const contentTitle = `<h3 class="course-card-content-title">${title}</h3>`;
-    card.innerHTML = `${banner}<div class="course-body">${contentTitle}<div class="course-meta"><span class="course-meta-item"><span class="course-meta-label">Duration</span><strong>${duration}</strong></span><span class="course-meta-item"><span class="course-meta-label">Learning format</span><strong>${lab}</strong></span></div><p class="course-card-summary">${description}</p><a href="${href}" class="course-details-link">View program details <span>&rsaquo;</span></a></div>`;
+    const mediaSource = coverImage || courseImages[category] || courseImages.programming;
+    const mediaAlt = `${title} course logo`;
+    const banner = `<header class="course-banner course-card__banner"><img class="course-card__logo" src="${mediaSource}" alt="${mediaAlt}" loading="lazy" decoding="async"><div class="course-card__heading"><span class="course-card__category">${label}</span><h3 class="course-banner-title course-card__title">${title}</h3></div></header>`;
+    card.innerHTML = `${banner}<div class="course-body"><div class="course-meta"><span class="course-meta-item"><span class="course-meta-label">Duration</span><strong>${duration}</strong></span><span class="course-meta-item"><span class="course-meta-label">Learning format</span><strong>${lab}</strong></span></div><p class="course-card-summary">${description}</p><a href="${href}" class="course-details-link">View program details <span>&rsaquo;</span></a></div>`;
     grid.appendChild(card);
   });
 }

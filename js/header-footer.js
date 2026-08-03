@@ -310,19 +310,37 @@ function addExpandedCourseDomains() {
   domainList.innerHTML = '';
   panes.innerHTML = '';
 
-  const legacyDomains = [
-    { id: 'cloud-computing', label: 'Cloud Computing', heading: 'Cloud Computing', copy: 'Build, secure and manage reliable infrastructure across leading cloud platforms.', courses: [['Microsoft Azure Administrator', 'Azure compute, identity, networking and storage', 'courses/cloud/microsoft-azure-administrator.html'], ['Azure Infrastructure Solutions', 'Architecture, governance and resilient Azure workloads', 'courses/cloud/azure-infrastructure-solutions.html'], ['Terraform Associate', 'Infrastructure as code and reusable cloud automation', 'courses/cloud/terraform-associate.html']] },
-    { id: 'docker-kubernetes', label: 'Docker & Kubernetes', heading: 'Docker & Kubernetes', copy: 'Containerise applications and run dependable production clusters.', courses: [['Docker Containers Training', 'Images, registries, compose and container workflows', 'courses/docker-kubernetes/docker-containers-training.html'], ['Kubernetes Administration', 'Clusters, deployments, services and observability', 'courses/docker-kubernetes/kubernetes-administration.html']] },
-    { id: 'programming', label: 'Programming Languages', heading: 'Programming Languages', copy: 'Build durable coding fundamentals through applied programming practice.', courses: [['Python Programming Certificate', 'Core Python, data structures and application practice', 'courses/programming/python-programming-certificate.html'], ['Java Programming', 'Object-oriented programming and backend foundations', 'courses/programming/java-programming.html']] },
-    { id: 'graphic-design', label: 'Graphic Designing', heading: 'Graphic Designing', copy: 'Create clear visual communication for digital brands and campaigns.', courses: [['Graphic Design Essentials', 'Layout, visual hierarchy and Adobe workflow basics', 'courses/catalog/course.html?course=graphic'], ['Multimedia & Motion Graphics', 'Motion principles, editing and campaign assets', 'courses/catalog/course.html?course=motion']] },
-    { id: 'uiux', label: 'UI/UX Design', heading: 'UI/UX Design & Product Thinking', copy: 'Research, prototype and validate better digital experiences.', courses: [['UI/UX Design & Figma', 'User journeys, wireframes and high-fidelity prototypes', 'courses/catalog/course.html?course=uiux'], ['Frontend Design Systems', 'Responsive interfaces and reusable component patterns', 'courses/catalog/course.html?course=designsystems']] },
-    { id: 'dsa', label: 'Data Structures & Algorithms', heading: 'Data Structures & Algorithms', copy: 'Strengthen problem solving for technical interviews and software roles.', courses: [['DSA Bootcamp', 'Arrays, trees, graphs and algorithmic patterns', 'courses/catalog/course.html?course=dsa'], ['Interview Problem Solving', 'Timed coding practice and technical interview preparation', 'courses/catalog/course.html?course=interviews']] },
-    { id: 'salesforce', label: 'Salesforce', heading: 'Salesforce Career Paths', copy: 'Build CRM administration and development capabilities.', courses: [['Salesforce Administrator', 'Data models, security and workflow automation', 'courses/catalog/course.html?course=salesforceadmin'], ['Salesforce Development', 'Apex, Lightning components and integrations', 'courses/catalog/course.html?course=salesforcedev']] },
-    { id: 'aws-solutions', label: 'AWS Solutions Architect', heading: 'AWS Solutions Architect Pathway', copy: 'Architect secure, cost-aware and highly available AWS workloads.', courses: [['AWS Solutions Architect Associate', 'Architecture patterns and guided exam preparation', 'courses/catalog/course.html?course=awsarchitect'], ['AWS DevOps Engineering', 'Automated delivery pipelines and cloud operations', 'courses/devops/aws-devops-engineering.html']] },
-    { id: 'data-analytics', label: 'Data Analytics & Visualisation', heading: 'Data Analytics & Visualisation', copy: 'Turn business data into trustworthy dashboards and decisions.', courses: [['Data Analytics & Power BI', 'SQL, Excel, Power BI and reporting workflows', 'courses/catalog/course.html?course=powerbi'], ['Tableau Data Visualisation', 'Dashboards, storytelling and stakeholder-ready reporting', 'courses/catalog/course.html?course=tableau']] },
-    { id: 'soft-skills', label: 'Soft Skills', heading: 'Soft Skills & Career Readiness', copy: 'Communicate with confidence in interviews, teams and client conversations.', courses: [['Communication for Technology Teams', 'Professional writing, speaking and collaboration', 'courses/catalog/course.html?course=communication'], ['Interview & Workplace Readiness', 'Structured interviews, presentations and career practice', 'courses/catalog/course.html?course=workplace']] },
-    { id: 'digital-marketing', label: 'Digital Marketing', heading: 'Digital Marketing', copy: 'Plan, measure and improve practical digital growth campaigns.', courses: [['Digital Marketing Professional Program', 'SEO, paid media, social and campaign measurement', 'courses/catalog/course.html?course=marketing'], ['Performance Marketing Foundations', 'Audience targeting, analytics and optimisation', 'courses/catalog/course.html?course=performance']] }
-  ];
+  const courseCardImages = {
+    'Advanced MERN Stack Development Program': 'assets/images/courses/web-development/advanced-mern-stack-development-program.webp',
+    'Java Training and Certification': 'assets/images/courses/web-development/java-training-and-certification.webp',
+    'Frontend Development with React.js': 'assets/images/courses/web-development/frontend-development-with-react.jpg',
+    'Full Stack Web Development using Python & Django': 'assets/images/courses/web-development/full-stack-python-django.jpg',
+    'Certified AWS DevOps Course': 'assets/images/courses/devops/certified-aws-devops-course.jpg',
+    'Certified DevOps Engineer Course': 'assets/images/courses/devops/certified-devops-engineer-course.jpg',
+    'Master Azure DevOps': 'assets/images/courses/devops/master-azure-devops.jpg',
+    'AZ-204: Azure Developer Associate': 'assets/images/courses/cloud/az-204-azure-developer-associate.png',
+    'AZ-305: Azure Infrastructure Solutions': 'assets/images/courses/cloud/az-305-azure-infrastructure-solutions.jpg',
+    'Certified Terraform Associate Course': 'assets/images/courses/official-logos/terraform-official.svg',
+    'AZ-104: Microsoft Azure Administrator Associate': 'assets/images/courses/cloud/az-104-azure-administrator-associate.jpg',
+    'Docker Containers Training Course': 'assets/images/courses/official-logos/docker-official.svg',
+    'Certified Kubernetes Security Specialist (CKS)': 'assets/images/courses/official-logos/docker-official.svg',
+    'Certified Kubernetes Administrator (CKA)': 'assets/images/courses/official-logos/docker-official.svg',
+    'Ethical Hacking & Cyber Security': 'assets/images/courses/cybersecurity/ethical-hacking-cyber-security.jpg',
+    'Advanced Penetration Testing': 'assets/images/courses/cybersecurity/advanced-penetration-testing.jpg',
+    'Python Programming Certificate': 'assets/images/courses/official-logos/python-official.svg',
+    'Multimedia & Motion Graphics': 'assets/images/courses/graphic-design/multimedia-motion-graphics.jpg',
+    'Graphic Design Essentials': 'assets/images/courses/graphic-design/graphic-design-essentials.jpg',
+    'Graphic Design Mastery Program': 'assets/images/courses/graphic-design/graphic-design-mastery-program.jpg',
+    'UI/UX Design & Front-End Integration Mastery': 'assets/images/courses/uiux/ui-ux-design-front-end-integration-mastery.png',
+    'Data Science & Machine Learning with GenAI': 'assets/images/courses/data-science/data-science-machine-learning-genai.webp',
+    'Data Structures & Algorithms Bootcamp': 'assets/images/courses/dsa/data-structures-algorithms-bootcamp.png',
+    'Salesforce Admin': 'assets/images/courses/salesforce/salesforce-admin.jpg',
+    'Salesforce Development': 'assets/images/courses/salesforce/salesforce-development.jpg',
+    'Salesforce Admin & Development': 'assets/images/courses/salesforce/salesforce-admin-development.jpg',
+    'AI-Powered Data Analytics & Automation Master Program': 'assets/images/courses/data-analytics/ai-powered-data-analytics-automation.jpg',
+    'Soft Skill and Communication Training': 'assets/images/courses/soft-skills/soft-skill-communication-training.jpg',
+    '360° Digital Marketing Professional Program': 'assets/images/courses/digital-marketing/digital-marketing-professional-program.jpg'
+  };
 
   const domains = [
     { id: 'web', label: 'Web Development', heading: 'Web Development', copy: 'Build practical, modern web applications.', courses: [['Advanced MERN Stack Development Program', 'Full-stack JavaScript development', 'courses/web-development/advanced-mern-stack.html'], ['Java Training and Certification', 'Java and backend foundations', 'courses/web-development/java-training.html'], ['Frontend Development with React.js', 'Modern front-end development', 'courses/web-development/react-development.html'], ['Full Stack Web Development using Python & Django', 'Python web applications', 'courses/web-development/python-django.html']] },
@@ -341,42 +359,44 @@ function addExpandedCourseDomains() {
     { id: 'digital-marketing', label: 'Digital Marketing', heading: 'Digital Marketing', copy: 'Plan and measure digital growth campaigns.', courses: [['360° Digital Marketing Professional Program', 'Complete digital marketing practice', 'courses/digital-marketing/digital-marketing-professional.html']] }
   ];
 
-  domains.forEach(domain => {
-    domainList.insertAdjacentHTML('beforeend', `<li><button class="sh-domain-btn" data-target="${domain.id}">${domain.label} <span>&rsaquo;</span></button></li>`);
-    const icon = `<div class="sh-mega-course-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5h16v14H4Z"/><path d="M8 9h8M8 13h5M16.5 17.5l1.5 1.5 3-3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`;
-    const cards = domain.courses.map(([title, copy, href]) => `<a href="${href || courseFallback}" class="sh-mega-course-card">${icon}<div class="sh-mega-course-info"><h5>${title}</h5><p>${copy}</p></div></a>`).join('');
-    panes.insertAdjacentHTML('beforeend', `<div class="sh-megamenu-content" id="pane-${domain.id}"><div class="sh-megamenu-header"><div><h4>${domain.heading}</h4><p>${domain.copy}</p></div></div><div class="sh-mega-courses-grid">${cards}</div></div>`);
+  domains.forEach((domain, idx) => {
+    const activeClass = idx === 0 ? ' active' : '';
+    domainList.insertAdjacentHTML('beforeend', `<li><button class="sh-domain-btn${activeClass}" data-target="${domain.id}">${domain.label} <span>&rsaquo;</span></button></li>`);
+    const cards = domain.courses.map(([title, copy, href]) => {
+      const cardImg = courseCardImages[title] || 'assets/images/courses/web-development/advanced-mern-stack-development-program.webp';
+      return `<a href="${href || courseFallback}" class="sh-mega-course-card">
+        <div class="sh-mega-course-icon">
+          <img src="${cardImg}" alt="${title}" class="sh-mega-course-img" />
+        </div>
+        <div class="sh-mega-course-info">
+          <span class="sh-mega-course-category">${domain.label}</span>
+          <h5 class="sh-mega-course-title">${title}</h5>
+        </div>
+      </a>`;
+    }).join('');
+    panes.insertAdjacentHTML('beforeend', `<div class="sh-megamenu-content${activeClass}" id="pane-${domain.id}"><div class="sh-megamenu-header"><div><h4>${domain.heading}</h4><p>${domain.copy}</p></div></div><div class="sh-mega-courses-grid">${cards}</div></div>`);
+  });
+
+  // Re-bind domain switching event listeners to newly generated buttons and panes
+  const newDomainBtns = domainList.querySelectorAll('.sh-domain-btn');
+  const newContentPanes = panes.querySelectorAll('.sh-megamenu-content');
+
+  newDomainBtns.forEach(btn => {
+    const showDomain = () => {
+      const targetId = btn.getAttribute('data-target');
+      newDomainBtns.forEach(b => b.classList.remove('active'));
+      newContentPanes.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      const targetPane = document.getElementById(`pane-${targetId}`);
+      if (targetPane) targetPane.classList.add('active');
+    };
+    btn.addEventListener('mouseenter', showDomain);
+    btn.addEventListener('focus', showDomain);
+    btn.addEventListener('click', showDomain);
   });
 }
 
 function hydrateMegaMenuVisuals() {
-  const visuals = {
-    cybersecurity: 'assets/images/courses/cybersecurity-learning-card.png',
-    'cloud-devops': 'assets/images/courses/devops-learning-card.png',
-    fullstack: 'assets/images/courses/web-learning-card.png',
-    datascience: 'assets/images/courses/datascience-learning-card.png',
-    networking: 'assets/images/courses/networking-learning-card.png',
-    'cloud-computing': 'assets/images/courses/cloud-learning-card.png',
-    'docker-kubernetes': 'assets/images/courses/docker-learning-card.png',
-    programming: 'assets/images/courses/programming-learning-card.png',
-    'graphic-design': 'assets/images/courses/graphic-design-menu.png',
-    uiux: 'assets/images/courses/uiux-menu.png',
-    dsa: 'assets/images/courses/dsa-menu.png',
-    salesforce: 'assets/images/courses/salesforce-menu.png',
-    'aws-solutions': 'assets/images/courses/aws-architecture-menu.png',
-    'data-analytics': 'assets/images/courses/datascience-learning-card.png',
-    'soft-skills': 'assets/images/courses/career-readiness-menu.png',
-    'digital-marketing': 'assets/images/courses/digital-marketing-menu.png'
-  };
-
-  document.querySelectorAll('.sh-megamenu-content').forEach((pane) => {
-    const imagePath = visuals[pane.id.replace('pane-', '')];
-    if (!imagePath) return;
-    pane.querySelectorAll('.sh-mega-course-icon').forEach((icon) => {
-      icon.innerHTML = `<img src="${imagePath}" alt="" loading="lazy" decoding="async">`;
-    });
-  });
-
   const courseCardImages = {
     'Advanced MERN Stack Development Program': 'assets/images/courses/web-development/advanced-mern-stack-development-program.webp',
     'Java Training and Certification': 'assets/images/courses/web-development/java-training-and-certification.webp',
@@ -387,14 +407,14 @@ function hydrateMegaMenuVisuals() {
     'Master Azure DevOps': 'assets/images/courses/devops/master-azure-devops.jpg',
     'AZ-204: Azure Developer Associate': 'assets/images/courses/cloud/az-204-azure-developer-associate.png',
     'AZ-305: Azure Infrastructure Solutions': 'assets/images/courses/cloud/az-305-azure-infrastructure-solutions.jpg',
-    'Certified Terraform Associate Course': 'assets/images/courses/cloud/certified-terraform-associate-course.png',
+    'Certified Terraform Associate Course': 'assets/images/courses/official-logos/terraform-official.svg',
     'AZ-104: Microsoft Azure Administrator Associate': 'assets/images/courses/cloud/az-104-azure-administrator-associate.jpg',
-    'Docker Containers Training Course': 'assets/images/courses/docker-kubernetes/docker-containers-training-course.png',
-    'Certified Kubernetes Security Specialist (CKS)': 'assets/images/courses/docker-kubernetes/certified-kubernetes-security-specialist.png',
-    'Certified Kubernetes Administrator (CKA)': 'assets/images/courses/docker-kubernetes/certified-kubernetes-administrator.png',
+    'Docker Containers Training Course': 'assets/images/courses/official-logos/docker-official.svg',
+    'Certified Kubernetes Security Specialist (CKS)': 'assets/images/courses/official-logos/docker-official.svg',
+    'Certified Kubernetes Administrator (CKA)': 'assets/images/courses/official-logos/docker-official.svg',
     'Ethical Hacking & Cyber Security': 'assets/images/courses/cybersecurity/ethical-hacking-cyber-security.jpg',
     'Advanced Penetration Testing': 'assets/images/courses/cybersecurity/advanced-penetration-testing.jpg',
-    'Python Programming Certificate': 'assets/images/courses/programming/python-programming-certificate.png',
+    'Python Programming Certificate': 'assets/images/courses/official-logos/python-official.svg',
     'Multimedia & Motion Graphics': 'assets/images/courses/graphic-design/multimedia-motion-graphics.jpg',
     'Graphic Design Essentials': 'assets/images/courses/graphic-design/graphic-design-essentials.jpg',
     'Graphic Design Mastery Program': 'assets/images/courses/graphic-design/graphic-design-mastery-program.jpg',
@@ -406,14 +426,25 @@ function hydrateMegaMenuVisuals() {
     'Salesforce Admin & Development': 'assets/images/courses/salesforce/salesforce-admin-development.jpg',
     'AI-Powered Data Analytics & Automation Master Program': 'assets/images/courses/data-analytics/ai-powered-data-analytics-automation.jpg',
     'Soft Skill and Communication Training': 'assets/images/courses/soft-skills/soft-skill-communication-training.jpg',
-    '360° Digital Marketing Professional Program': 'assets/images/courses/digital-marketing/digital-marketing-professional-program.jpg'
+    '360° Digital Marketing Professional Program': 'assets/images/courses/digital-marketing/digital-marketing-professional-program.jpg',
+    'CEH v12 Master Program': 'assets/images/courses/cybersecurity/ethical-hacking-cyber-security.jpg',
+    'SOC Analyst (L1/L2)': 'assets/images/courses/cybersecurity/ethical-hacking-cyber-security.jpg',
+    'Web Application VPT': 'assets/images/courses/cybersecurity/advanced-penetration-testing.jpg',
+    'CompTIA Security+': 'assets/images/courses/cybersecurity/ethical-hacking-cyber-security.jpg',
+    'AWS DevOps Engineering': 'assets/images/courses/devops/certified-aws-devops-course.jpg',
+    'Certified DevOps Engineer': 'assets/images/courses/devops/certified-devops-engineer-course.jpg',
+    'Master Azure DevOps': 'assets/images/courses/devops/master-azure-devops.jpg'
   };
 
   document.querySelectorAll('.sh-mega-course-card').forEach(card => {
-    const title = card.querySelector('h5')?.textContent.trim();
+    const titleEl = card.querySelector('h5, .sh-mega-course-title');
+    if (!titleEl) return;
+    const title = titleEl.textContent.trim();
     const imagePath = courseCardImages[title];
     const icon = card.querySelector('.sh-mega-course-icon');
-    if (imagePath && icon) icon.innerHTML = `<img src="${imagePath}" alt="" loading="lazy" decoding="async">`;
+    if (imagePath && icon) {
+      icon.innerHTML = `<img src="${imagePath}" alt="${title}" class="sh-mega-course-img" loading="lazy" decoding="async">`;
+    }
   });
 }
 
