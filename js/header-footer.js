@@ -307,8 +307,10 @@ function addExpandedCourseDomains() {
   const panes = document.querySelector('.sh-megamenu-panes');
   if (!domainList || !panes) return;
   const courseFallback = document.getElementById('course-page') ? '#course-page' : '#';
+  domainList.innerHTML = '';
+  panes.innerHTML = '';
 
-  const domains = [
+  const legacyDomains = [
     { id: 'cloud-computing', label: 'Cloud Computing', heading: 'Cloud Computing', copy: 'Build, secure and manage reliable infrastructure across leading cloud platforms.', courses: [['Microsoft Azure Administrator', 'Azure compute, identity, networking and storage', 'courses/cloud/microsoft-azure-administrator.html'], ['Azure Infrastructure Solutions', 'Architecture, governance and resilient Azure workloads', 'courses/cloud/azure-infrastructure-solutions.html'], ['Terraform Associate', 'Infrastructure as code and reusable cloud automation', 'courses/cloud/terraform-associate.html']] },
     { id: 'docker-kubernetes', label: 'Docker & Kubernetes', heading: 'Docker & Kubernetes', copy: 'Containerise applications and run dependable production clusters.', courses: [['Docker Containers Training', 'Images, registries, compose and container workflows', 'courses/docker-kubernetes/docker-containers-training.html'], ['Kubernetes Administration', 'Clusters, deployments, services and observability', 'courses/docker-kubernetes/kubernetes-administration.html']] },
     { id: 'programming', label: 'Programming Languages', heading: 'Programming Languages', copy: 'Build durable coding fundamentals through applied programming practice.', courses: [['Python Programming Certificate', 'Core Python, data structures and application practice', 'courses/programming/python-programming-certificate.html'], ['Java Programming', 'Object-oriented programming and backend foundations', 'courses/programming/java-programming.html']] },
@@ -320,6 +322,23 @@ function addExpandedCourseDomains() {
     { id: 'data-analytics', label: 'Data Analytics & Visualisation', heading: 'Data Analytics & Visualisation', copy: 'Turn business data into trustworthy dashboards and decisions.', courses: [['Data Analytics & Power BI', 'SQL, Excel, Power BI and reporting workflows', 'courses/catalog/course.html?course=powerbi'], ['Tableau Data Visualisation', 'Dashboards, storytelling and stakeholder-ready reporting', 'courses/catalog/course.html?course=tableau']] },
     { id: 'soft-skills', label: 'Soft Skills', heading: 'Soft Skills & Career Readiness', copy: 'Communicate with confidence in interviews, teams and client conversations.', courses: [['Communication for Technology Teams', 'Professional writing, speaking and collaboration', 'courses/catalog/course.html?course=communication'], ['Interview & Workplace Readiness', 'Structured interviews, presentations and career practice', 'courses/catalog/course.html?course=workplace']] },
     { id: 'digital-marketing', label: 'Digital Marketing', heading: 'Digital Marketing', copy: 'Plan, measure and improve practical digital growth campaigns.', courses: [['Digital Marketing Professional Program', 'SEO, paid media, social and campaign measurement', 'courses/catalog/course.html?course=marketing'], ['Performance Marketing Foundations', 'Audience targeting, analytics and optimisation', 'courses/catalog/course.html?course=performance']] }
+  ];
+
+  const domains = [
+    { id: 'web', label: 'Web Development', heading: 'Web Development', copy: 'Build practical, modern web applications.', courses: [['Advanced MERN Stack Development Program', 'Full-stack JavaScript development', 'courses/web-development/advanced-mern-stack.html'], ['Java Training and Certification', 'Java and backend foundations', 'courses/web-development/java-training.html'], ['Frontend Development with React.js', 'Modern front-end development', 'courses/web-development/react-development.html'], ['Full Stack Web Development using Python & Django', 'Python web applications', 'courses/web-development/python-django.html']] },
+    { id: 'devops', label: 'DevOps', heading: 'DevOps', copy: 'Automate, operate, and deliver reliable software.', courses: [['Certified AWS DevOps Course', 'AWS delivery and automation', 'courses/devops/certified-aws-devops.html'], ['Certified DevOps Engineer Course', 'CI/CD and infrastructure practice', 'courses/devops/certified-devops-engineer.html'], ['Master Azure DevOps', 'Azure release workflows', 'courses/devops/master-azure-devops.html']] },
+    { id: 'cloud-computing', label: 'Cloud Computing', heading: 'Cloud Computing', copy: 'Build, secure, and manage modern cloud infrastructure.', courses: [['AZ-204: Azure Developer Associate', 'Azure application development', 'courses/cloud/az-204-azure-developer-associate.html'], ['AZ-305: Azure Infrastructure Solutions', 'Azure solution architecture', 'courses/cloud/az-305-azure-infrastructure-solutions.html'], ['Certified Terraform Associate Course', 'Infrastructure as code', 'courses/cloud/certified-terraform-associate.html'], ['AZ-104: Microsoft Azure Administrator Associate', 'Azure administration', 'courses/cloud/az-104-azure-administrator.html']] },
+    { id: 'docker-kubernetes', label: 'Docker & Kubernetes', heading: 'Docker & Kubernetes', copy: 'Containerise applications and operate production clusters.', courses: [['Docker Containers Training Course', 'Docker workflows and registries', 'courses/docker-kubernetes/docker-containers-training.html'], ['Certified Kubernetes Security Specialist (CKS)', 'Kubernetes security practice', 'courses/docker-kubernetes/certified-kubernetes-security-specialist.html'], ['Certified Kubernetes Administrator (CKA)', 'Cluster administration', 'courses/docker-kubernetes/certified-kubernetes-administrator.html']] },
+    { id: 'cybersecurity', label: 'Cyber Security', heading: 'Cyber Security', copy: 'Develop ethical hacking and cyber defence capabilities.', courses: [['Ethical Hacking & Cyber Security', 'Hacking and cyber defence', 'courses/cybersecurity/ethical-hacking-cyber-security.html'], ['Advanced Penetration Testing', 'Advanced security testing', 'courses/cybersecurity/advanced-penetration-testing.html']] },
+    { id: 'programming', label: 'Programming Languages', heading: 'Programming Languages', copy: 'Build practical coding foundations.', courses: [['Python Programming Certificate', 'Applied Python development', 'courses/programming/python-programming-certificate.html']] },
+    { id: 'graphic-design', label: 'Graphic Designing', heading: 'Graphic Designing', copy: 'Create compelling visual communication.', courses: [['Multimedia & Motion Graphics', 'Motion and multimedia design', 'courses/graphic-designing/multimedia-motion-graphics.html'], ['Graphic Design Essentials', 'Core visual design skills', 'courses/graphic-designing/graphic-design-essentials.html'], ['Graphic Design Mastery Program', 'Portfolio-ready design practice', 'courses/graphic-designing/graphic-design-mastery.html']] },
+    { id: 'uiux', label: 'UI/UX Design', heading: 'UI/UX Design', copy: 'Design thoughtful, usable digital products.', courses: [['UI/UX Design & Front-End Integration Mastery', 'Product and interface design', 'courses/uiux/ui-ux-front-end-integration.html']] },
+    { id: 'datascience', label: 'Data Science & ML', heading: 'Data Science & Machine Learning', copy: 'Use data and AI to solve real problems.', courses: [['Data Science & Machine Learning with GenAI', 'Machine learning and generative AI', 'courses/data-science/data-science-machine-learning-genai.html']] },
+    { id: 'dsa', label: 'DSA', heading: 'Data Structures & Algorithms', copy: 'Build interview-ready problem-solving skills.', courses: [['Data Structures & Algorithms Bootcamp', 'Algorithms and coding practice', 'courses/dsa/data-structures-algorithms-bootcamp.html']] },
+    { id: 'salesforce', label: 'Salesforce', heading: 'Salesforce', copy: 'Build CRM administration and development skills.', courses: [['Salesforce Admin', 'Administration and configuration', 'courses/salesforce/salesforce-admin.html'], ['Salesforce Development', 'Apex and Lightning development', 'courses/salesforce/salesforce-development.html'], ['Salesforce Admin & Development', 'End-to-end Salesforce skills', 'courses/salesforce/salesforce-admin-development.html']] },
+    { id: 'data-analytics', label: 'Data Analytics', heading: 'Data Analytics & Automation', copy: 'Turn data into useful business decisions.', courses: [['AI-Powered Data Analytics & Automation Master Program', 'Analytics and automation', 'courses/data-analytics/ai-powered-data-analytics.html']] },
+    { id: 'soft-skills', label: 'Soft Skill', heading: 'Soft Skill & Communication', copy: 'Communicate with confidence at work.', courses: [['Soft Skill and Communication Training', 'Professional communication', 'courses/soft-skills/communication-training.html']] },
+    { id: 'digital-marketing', label: 'Digital Marketing', heading: 'Digital Marketing', copy: 'Plan and measure digital growth campaigns.', courses: [['360° Digital Marketing Professional Program', 'Complete digital marketing practice', 'courses/digital-marketing/digital-marketing-professional.html']] }
   ];
 
   domains.forEach(domain => {
@@ -359,26 +378,35 @@ function hydrateMegaMenuVisuals() {
   });
 
   const courseCardImages = {
-    'CEH v12 Master Program': 'assets/images/courses/cybersecurity/cehv12.png',
-    'SOC Analyst (L1/L2)': 'assets/images/courses/cybersecurity/socanalyst.png',
-    'Web Application VPT': 'assets/images/courses/cybersecurity/webapplicationvpt.png',
-    'CompTIA Security+': 'assets/images/courses/cybersecurity/compatia.png',
-    'AWS DevOps Engineering': 'assets/images/courses/devops/awsdevops.png',
-    'Certified DevOps Engineer': 'assets/images/courses/devops/certified%20devops.png',
-    'Master Azure DevOps': 'assets/images/courses/devops/masterdevops.png',
-    'Microsoft Azure Administrator': 'assets/images/courses/cloud/azureadministration.png',
-    'Azure Infrastructure Solutions': 'assets/images/courses/cloud/azureinfrastructure.png',
-    'Terraform Associate': 'assets/images/courses/cloud/terraformassociate.png',
-    'MERN Stack Developer': 'assets/images/courses/web-development/mernstack%20developer.png',
-    'Python Django Web Dev': 'assets/images/courses/web-development/pythondjango.png',
-    'Docker Containers Training': 'assets/images/courses/docker-kubernetes/dockercontainer.png',
-    'Kubernetes Administration': 'assets/images/courses/docker-kubernetes/kubernetes.png',
-    'Python Programming Certificate': 'assets/images/courses/programming/python%20programming.png',
-    'Java Programming': 'assets/images/courses/programming/javaprogramming.png',
-    'Data Analytics & BI': 'assets/images/courses/data-science/dataanalyticsandbi.png',
-    'Machine Learning & AI Master': 'assets/images/courses/data-science/machine%20learning%20and%20ia.png',
-    'RHCSA & RHCE RedHat Linux': 'assets/images/courses/networking/redhatlinux.png',
-    'Cisco CCNA (200-301)': 'assets/images/courses/networking/cisco.png'
+    'Advanced MERN Stack Development Program': 'assets/images/courses/web-development/advanced-mern-stack-development-program.webp',
+    'Java Training and Certification': 'assets/images/courses/web-development/java-training-and-certification.webp',
+    'Frontend Development with React.js': 'assets/images/courses/web-development/frontend-development-with-react.jpg',
+    'Full Stack Web Development using Python & Django': 'assets/images/courses/web-development/full-stack-python-django.jpg',
+    'Certified AWS DevOps Course': 'assets/images/courses/devops/certified-aws-devops-course.jpg',
+    'Certified DevOps Engineer Course': 'assets/images/courses/devops/certified-devops-engineer-course.jpg',
+    'Master Azure DevOps': 'assets/images/courses/devops/master-azure-devops.jpg',
+    'AZ-204: Azure Developer Associate': 'assets/images/courses/cloud/az-204-azure-developer-associate.png',
+    'AZ-305: Azure Infrastructure Solutions': 'assets/images/courses/cloud/az-305-azure-infrastructure-solutions.jpg',
+    'Certified Terraform Associate Course': 'assets/images/courses/cloud/certified-terraform-associate-course.png',
+    'AZ-104: Microsoft Azure Administrator Associate': 'assets/images/courses/cloud/az-104-azure-administrator-associate.jpg',
+    'Docker Containers Training Course': 'assets/images/courses/docker-kubernetes/docker-containers-training-course.png',
+    'Certified Kubernetes Security Specialist (CKS)': 'assets/images/courses/docker-kubernetes/certified-kubernetes-security-specialist.png',
+    'Certified Kubernetes Administrator (CKA)': 'assets/images/courses/docker-kubernetes/certified-kubernetes-administrator.png',
+    'Ethical Hacking & Cyber Security': 'assets/images/courses/cybersecurity/ethical-hacking-cyber-security.jpg',
+    'Advanced Penetration Testing': 'assets/images/courses/cybersecurity/advanced-penetration-testing.jpg',
+    'Python Programming Certificate': 'assets/images/courses/programming/python-programming-certificate.png',
+    'Multimedia & Motion Graphics': 'assets/images/courses/graphic-design/multimedia-motion-graphics.jpg',
+    'Graphic Design Essentials': 'assets/images/courses/graphic-design/graphic-design-essentials.jpg',
+    'Graphic Design Mastery Program': 'assets/images/courses/graphic-design/graphic-design-mastery-program.jpg',
+    'UI/UX Design & Front-End Integration Mastery': 'assets/images/courses/uiux/ui-ux-design-front-end-integration-mastery.png',
+    'Data Science & Machine Learning with GenAI': 'assets/images/courses/data-science/data-science-machine-learning-genai.webp',
+    'Data Structures & Algorithms Bootcamp': 'assets/images/courses/dsa/data-structures-algorithms-bootcamp.png',
+    'Salesforce Admin': 'assets/images/courses/salesforce/salesforce-admin.jpg',
+    'Salesforce Development': 'assets/images/courses/salesforce/salesforce-development.jpg',
+    'Salesforce Admin & Development': 'assets/images/courses/salesforce/salesforce-admin-development.jpg',
+    'AI-Powered Data Analytics & Automation Master Program': 'assets/images/courses/data-analytics/ai-powered-data-analytics-automation.jpg',
+    'Soft Skill and Communication Training': 'assets/images/courses/soft-skills/soft-skill-communication-training.jpg',
+    '360° Digital Marketing Professional Program': 'assets/images/courses/digital-marketing/digital-marketing-professional-program.jpg'
   };
 
   document.querySelectorAll('.sh-mega-course-card').forEach(card => {

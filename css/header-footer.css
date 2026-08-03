@@ -928,3 +928,11 @@ body { padding-top:126px; }
 .sh-mega-course-info p{margin:0;color:#617987;font-size:11px;line-height:1.38}
 @media(max-width:1100px){.has-megamenu.is-open .sh-mega-course-card{display:grid;grid-template-rows:78px auto;gap:0;padding:0}.has-megamenu.is-open .sh-mega-course-icon{width:100%;height:78px;flex-basis:auto;padding:7px}.has-megamenu.is-open .sh-mega-course-info{min-height:70px;padding:9px 10px 11px}.has-megamenu.is-open .sh-mega-course-info h5{font-size:12.5px}.has-megamenu.is-open .sh-mega-course-info p{font-size:10.5px}}
 @media(max-width:600px){.has-megamenu.is-open .sh-mega-course-card{grid-template-rows:94px auto}.has-megamenu.is-open .sh-mega-course-icon{width:100%;height:94px;padding:8px}.has-megamenu.is-open .sh-mega-course-info{min-height:0;padding:11px 12px 13px}}
+
+/* Course dropdown: compact left media with clear right-side course information. */
+.sh-mega-course-card{display:grid;grid-template-columns:88px minmax(0,1fr);grid-template-rows:1fr;align-items:stretch;min-height:94px}
+.sh-mega-course-icon{width:88px;height:auto;min-height:92px;padding:7px;border:0;border-right:1px solid #dcebf0;border-bottom:0;border-radius:0;background:#eef6f8}
+.sh-mega-course-icon img{width:100%;height:100%;object-fit:contain;background:transparent}
+.sh-mega-course-info{min-height:0;padding:12px 13px;align-content:center}
+@media(max-width:1100px){.has-megamenu.is-open .sh-mega-course-card{grid-template-columns:82px minmax(0,1fr);grid-template-rows:1fr;min-height:88px}.has-megamenu.is-open .sh-mega-course-icon{width:82px;height:auto;min-height:86px;padding:6px;border-right:1px solid #dcebf0;border-bottom:0}.has-megamenu.is-open .sh-mega-course-info{min-height:0;padding:10px 12px}}
+@media(max-width:600px){.has-megamenu.is-open .sh-mega-course-card{grid-template-columns:78px minmax(0,1fr);grid-template-rows:1fr}.has-megamenu.is-open .sh-mega-course-icon{width:78px;height:auto;min-height:82px;padding:6px;border-right:1px solid #dcebf0;border-bottom:0}.has-megamenu.is-open .sh-mega-course-info{padding:10px 11px}}
