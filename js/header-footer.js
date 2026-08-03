@@ -804,3 +804,11 @@ function initThemePreview() {
     dialog.close('applied');
   });
 }
+
+  // Close megamenu when clicking outside
+  document.addEventListener('click', (e) => {
+    const megamenu = document.querySelector('.has-megamenu');
+    if (megamenu && !megamenu.contains(e.target)) {
+      megamenu.classList.remove('is-open');
+    }
+  });

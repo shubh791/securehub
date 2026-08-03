@@ -1,4 +1,4 @@
-const cybersecurityCourses = {
+const courseData = {
   ceh: {
     title: 'CEH v12 Master Program', shortTitle: 'CEH v12 Master', label: 'Cyber Security', duration: '6 months', level: 'Intermediate', lab: 'Ethical hacking lab', practicalWork: '8 guided labs',
     subtitle: 'Learn ethical hacking through controlled live-lab scenarios, guided attack paths and the defensive practices that protect modern organisations.',
@@ -45,10 +45,37 @@ const cybersecurityCourses = {
   }
 };
 
+function getCourse(key) {
+  if (courseData[key]) return courseData[key];
+  const title = key.replace(/[-_]/g, ' ').replace(/\w/g, c => c.toUpperCase());
+  return {
+    title: title,
+    shortTitle: title,
+    label: 'Professional Certification',
+    duration: '3 to 4 months',
+    level: 'Intermediate',
+    lab: 'Live lab practice',
+    practicalWork: '4 practical projects',
+    subtitle: `Learn ${title} through controlled live-lab scenarios, guided practice and industry workflows.`,
+    overview: `A practical program for learners who want to understand real workflows, build hands-on skills and document meaningful results.`,
+    outcomes: [
+      `Master core methodologies and practical workflows of ${title}`,
+      'Build hands-on project experience in guided lab environments',
+      'Prepare for technical interviews and professional role scenarios'
+    ],
+    modules: [
+      ['Foundations', `Core concepts, terminology and essential tools behind ${title}.`],
+      ['Practical Skills', `Guided exercises and hands-on workflow execution in controlled environments.`],
+      ['Advanced Assessment', `Work with complex scenarios, troubleshooting and industry standards.`],
+      ['Capstone Review', `Plan, execute and present a guided practical project with feedback.`]
+    ]
+  };
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const page = document.getElementById('course-page');
   if (!page) return;
-  const course = cybersecurityCourses[page.dataset.course];
+  const course = getCourse(page.dataset.course);
   if (!course) return;
 
   document.title = `${course.title} | SecureHub`;
@@ -85,9 +112,12 @@ function initCourseInteractions(page) {
     body.hidden = expanded;
   }));
   const form = page.querySelector('.course-enquiry-form');
-  form.addEventListener('submit', event => {
-    event.preventDefault();
-    form.querySelector('.course-form-message').textContent = 'Thanks. Our admissions team will contact you shortly.';
-    form.reset();
-  });
+  if (form) {
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const msg = form.querySelector('.course-form-message');
+      if (msg) msg.textContent = 'Thanks. Our admissions team will contact you shortly.';
+      form.reset();
+    });
+  }
 }

@@ -1086,19 +1086,7 @@ body { padding-top:126px; }
 }
 
 
-/* Guarantee Mega Menu Dropdown Visibility on Hover and Click */
-.sh-nav-item.has-megamenu:hover .sh-megamenu,
-.sh-nav-item.has-megamenu.is-open .sh-megamenu,
-.has-megamenu:hover .sh-megamenu,
-.has-megamenu.is-open .sh-megamenu,
-#sh-courses-megamenu.is-open {
-  display: grid !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-  transform: translateY(0) !important;
-  z-index: 99999 !important;
-}
+
 
 .sh-megamenu-content {
   display: none;
@@ -1145,4 +1133,24 @@ body { padding-top:126px; }
   object-fit: contain !important;
   display: block !important;
   margin: auto !important;
+}
+
+
+/* Mega Menu Strict Default Hidden & Hover/Click Reveal */
+.sh-megamenu {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(12px) !important;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease !important;
+}
+
+.sh-nav-item.has-megamenu:hover .sh-megamenu,
+.sh-nav-item.has-megamenu.is-open .sh-megamenu,
+.has-megamenu.is-open .sh-megamenu {
+  display: grid !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
 }
