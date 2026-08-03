@@ -76,6 +76,8 @@ function initTopChoiceCourseImages() {
     image.loading = 'lazy';
     image.decoding = 'async';
     illustration.replaceWith(image);
+    const caption = box.querySelector('div');
+    if (caption) caption.remove();
   });
 }
 
@@ -154,15 +156,19 @@ function initCoursesSidebarFilter() {
 /* Top Choice Programs Manual Carousel Slider */
 function initTopChoiceCarousel() {
   const track = document.getElementById('topchoice-track');
+  const carousel = track?.closest('.topchoice-section');
   const slides = document.querySelectorAll('.topchoice-slide');
   const prevBtn = document.getElementById('topchoice-prev');
   const nextBtn = document.getElementById('topchoice-next');
   const dots = document.querySelectorAll('.carousel-dots .dot');
 
-  if (!track || slides.length === 0) return;
+  if (!track || !carousel || slides.length === 0) return;
 
   let currentSlide = 0;
   const totalSlides = slides.length;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let autoplayId = null;
+  let isVisible = false;
 
   function updateCarousel(index) {
     currentSlide = (index + totalSlides) % totalSlides;
@@ -178,28 +184,62 @@ function initTopChoiceCarousel() {
     });
 
     dots.forEach((dot, i) => {
-      if (i === currentSlide) {
-        dot.classList.add('active');
-      } else {
-        dot.classList.remove('active');
-      }
+      const isActive = i === currentSlide;
+      dot.classList.toggle('active', isActive);
+      dot.setAttribute('aria-current', String(isActive));
     });
   }
 
+  function stopAutoplay() {
+    if (!autoplayId) return;
+    window.clearInterval(autoplayId);
+    autoplayId = null;
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    if (prefersReducedMotion || !isVisible || document.hidden) return;
+    autoplayId = window.setInterval(() => updateCarousel(currentSlide + 1), 4000);
+  }
+
+  function moveCarousel(index) {
+    updateCarousel(index);
+    startAutoplay();
+  }
+
   if (nextBtn) {
-    nextBtn.addEventListener('click', () => updateCarousel(currentSlide + 1));
+    nextBtn.addEventListener('click', () => moveCarousel(currentSlide + 1));
   }
 
   if (prevBtn) {
-    prevBtn.addEventListener('click', () => updateCarousel(currentSlide - 1));
+    prevBtn.addEventListener('click', () => moveCarousel(currentSlide - 1));
   }
 
   dots.forEach(dot => {
     dot.addEventListener('click', () => {
       const slideIndex = parseInt(dot.getAttribute('data-slide'));
-      updateCarousel(slideIndex);
+      moveCarousel(slideIndex);
     });
   });
+
+  carousel.addEventListener('mouseenter', stopAutoplay);
+  carousel.addEventListener('mouseleave', startAutoplay);
+  carousel.addEventListener('focusin', stopAutoplay);
+  carousel.addEventListener('focusout', () => {
+    window.setTimeout(() => {
+      if (!carousel.contains(document.activeElement)) startAutoplay();
+    }, 0);
+  });
+  document.addEventListener('visibilitychange', () => document.hidden ? stopAutoplay() : startAutoplay());
+
+  const observer = new IntersectionObserver(entries => {
+    isVisible = entries[0]?.isIntersecting ?? false;
+    if (isVisible) startAutoplay();
+    else stopAutoplay();
+  }, { threshold: 0.25 });
+
+  observer.observe(carousel);
+  updateCarousel(0);
 }
 
 /* Native Accordion FAQ (Click to Toggle Answer Directly Inline) */

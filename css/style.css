@@ -505,6 +505,8 @@
 .carousel-dots .dot {
   width: 12px;
   height: 12px;
+  padding: 0;
+  border: 0;
   border-radius: 50%;
   background: #cbd5e1;
   cursor: pointer;
@@ -518,15 +520,20 @@
   border-radius: 10px;
 }
 
+.carousel-dots .dot:focus-visible {
+  outline: 3px solid rgba(22, 119, 255, .32);
+  outline-offset: 4px;
+}
+
 .topchoice-card {
   background: #ffffff;
   border: 1.5px solid var(--sh-border);
   border-radius: 20px;
-  padding: 32px 36px;
+  padding: 0;
   display: grid;
-  grid-template-columns: 230px 1fr;
-  gap: 32px;
-  align-items: center;
+  grid-template-columns: minmax(260px, .82fr) minmax(0, 1.18fr);
+  gap: 0;
+  align-items: stretch;
   box-shadow: var(--sh-shadow-sm);
   box-sizing: border-box;
   width: 100%;
@@ -534,17 +541,15 @@
 }
 
 .topchoice-illustration-box {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  border-radius: 14px;
-  padding: 20px 15px;
+  background: #eaf4f7;
+  border-radius: 18px 0 0 18px;
+  padding: 0;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  min-height: 240px;
+  display: block;
+  overflow: hidden;
+  box-shadow: none;
+  border: 0;
+  min-height: 100%;
   width: 100%;
   box-sizing: border-box;
   min-width: 0;
@@ -559,8 +564,10 @@
 .topchoice-course-image {
   display: block;
   width: 100%;
-  height: 174px;
+  height: 100%;
   object-fit: contain;
+  object-position: center;
+  background: #eaf4f7;
 }
 
 .vector-pulse-circle {
@@ -575,6 +582,7 @@
 .topchoice-content {
   min-width: 0;
   flex: 1;
+  padding: 36px 40px;
   box-sizing: border-box;
 }
 
@@ -2910,8 +2918,10 @@ img, svg { max-width: 100%; }
   .topchoice-header-flex { align-items: flex-start; }
   .topchoice-nav-buttons { width: 100%; }
   .topchoice-arrow-btn { width: 46px; height: 46px; }
-  .topchoice-card { grid-template-columns: 1fr; padding: 24px; }
-  .topchoice-illustration-box { min-height: 205px; }
+  .topchoice-card { grid-template-columns: 1fr; padding: 0; }
+  .topchoice-illustration-box { min-height: 220px; border-radius: 18px 18px 0 0; }
+  .topchoice-course-image { height: 220px; }
+  .topchoice-content { padding: 28px 24px 30px; }
   .why-us-section { padding-top: 66px; padding-bottom: 76px; }
   .why-us-layout { gap: 34px; }
   .why-us-intro .section-title { font-size: clamp(31px, 8vw, 41px); }
@@ -2927,7 +2937,10 @@ img, svg { max-width: 100%; }
   .sh-container { padding-right: 16px; padding-left: 16px; }
   .industry-partners-section .partner-logo-card { flex-basis: 188px; }
   .partners-intro h2 { letter-spacing: -.045em; }
-  .topchoice-card { padding: 18px; border-radius: 16px; }
+  .topchoice-card { padding: 0; border-radius: 16px; }
+  .topchoice-illustration-box { min-height: 190px; border-radius: 16px 16px 0 0; }
+  .topchoice-course-image { height: 190px; }
+  .topchoice-content { padding: 24px 18px 26px; }
   .topchoice-content h3 { font-size: 23px; }
   .why-us-section .features-grid { grid-template-columns: 1fr; }
   .why-us-section .feature-box,
@@ -3261,6 +3274,18 @@ html[data-theme-preview]:not([data-theme-preview="original"]) .sh-theme-apply { 
 .course-card-expanded .course-card-summary{display:-webkit-box;min-height:4.8em;margin:0 0 15px;overflow:hidden;padding-left:11px;border-left:2px solid #8fd1ca;color:#5f7782;font-size:13px;line-height:1.6;-webkit-box-orient:vertical;-webkit-line-clamp:3}
 @media(max-width:700px){.course-card-expanded .course-banner{min-height:150px}.course-card-expanded .course-tag-badge{top:.8rem;left:.8rem}.course-card-expanded .course-banner-title{right:.8rem;bottom:.85rem;left:.8rem}}
 @media(max-width:700px){.course-card-expanded .course-body{padding:16px}.course-card-content-title{font-size:20px}}
+
+/* Recommended course media is a full card-side panel, not a nested illustration. */
+.topchoice-card{grid-template-columns:minmax(360px,.95fr) minmax(0,1.05fr)}
+.topchoice-section .topchoice-illustration-box,
+.topchoice-section .topchoice-illustration-box[style],
+html[data-theme-preview] .topchoice-illustration-box,
+html[data-theme-preview] .topchoice-illustration-box[style]{background:#080b10!important}
+.topchoice-section .topchoice-course-image{height:100%;min-height:100%;background:#080b10}
+
+@media(max-width:1100px){.topchoice-card{grid-template-columns:minmax(250px,.9fr) minmax(0,1.1fr)}}
+@media(max-width:780px){.topchoice-card{grid-template-columns:1fr}.topchoice-section .topchoice-course-image{height:220px;min-height:220px}}
+@media(max-width:560px){.topchoice-section .topchoice-course-image{height:190px;min-height:190px}}
 
 /* Integrated mobile hero image: a visual layer inside the blue content surface. */
 @media(max-width:600px){

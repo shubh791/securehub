@@ -156,8 +156,8 @@
       </div>
 
       <!-- Carousel Wrapper -->
-      <div class="topchoice-carousel-wrapper">
-        <div class="topchoice-carousel-track" id="topchoice-track">
+      <div class="topchoice-carousel-wrapper" role="region" aria-roledescription="carousel" aria-label="Highly recommended courses">
+        <div class="topchoice-carousel-track" id="topchoice-track" aria-live="polite">
           
           <!-- Slide 1: Ethical Hacking -->
           <div class="topchoice-slide">
@@ -425,13 +425,13 @@
       </div>
 
       <!-- Pagination Dots -->
-      <div class="carousel-dots" id="topchoice-dots">
-        <span class="dot active" data-slide="0"></span>
-        <span class="dot" data-slide="1"></span>
-        <span class="dot" data-slide="2"></span>
-        <span class="dot" data-slide="3"></span>
-        <span class="dot" data-slide="4"></span>
-        <span class="dot" data-slide="5"></span>
+      <div class="carousel-dots" id="topchoice-dots" aria-label="Choose a recommended course">
+        <button class="dot active" type="button" data-slide="0" aria-label="Show course 1" aria-current="true"></button>
+        <button class="dot" type="button" data-slide="1" aria-label="Show course 2"></button>
+        <button class="dot" type="button" data-slide="2" aria-label="Show course 3"></button>
+        <button class="dot" type="button" data-slide="3" aria-label="Show course 4"></button>
+        <button class="dot" type="button" data-slide="4" aria-label="Show course 5"></button>
+        <button class="dot" type="button" data-slide="5" aria-label="Show course 6"></button>
       </div>
     </div>
   </section>
