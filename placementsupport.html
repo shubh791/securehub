@@ -2,132 +2,1144 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Career preparation and placement support at SecureHub.">
-  <title>Placement Support | SecureHub</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="SecureHub Placement Support — 600+ hiring partners, 94.8% placement rate, 1-on-1 career coaching, resume building, mock interviews, and direct corporate referrals across India.">
+  <title>Placement Support | SecureHub — Career Launch Ecosystem</title>
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="css/header-footer.css">
-  <link rel="stylesheet" href="css/placement-support.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ps-blue: #0284c7;
+      --ps-blue-dark: #0369a1;
+      --ps-sky: #38bdf8;
+      --ps-sky-soft: #bae6fd;
+      --ps-green: #059669;
+      --ps-green-soft: #d1fae5;
+      --ps-orange: #ea580c;
+      --ps-purple: #7c3aed;
+      --ps-slate-900: #0f172a;
+      --ps-slate-700: #334155;
+      --ps-slate-500: #64748b;
+      --ps-slate-200: #e2e8f0;
+      --ps-slate-50: #f8fafc;
+      --ps-white: #ffffff;
+      --ps-shell: min(90vw, 1140px);
+      --ps-font: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+
+    body { font-family: var(--ps-font); color: var(--ps-slate-700); background: var(--ps-white); line-height: 1.6; }
+
+    .ps-shell { width: var(--ps-shell); margin-inline: auto; }
+
+    /* ── HERO ── */
+    .ps-hero {
+      background: linear-gradient(135deg, #0a1628 0%, #0f2244 40%, #071520 100%);
+      padding: 80px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .ps-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 70% 50%, rgba(56,189,248,0.12) 0%, transparent 70%),
+                  radial-gradient(ellipse 40% 40% at 10% 80%, rgba(5,150,105,0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .ps-hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .ps-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56,189,248,0.1);
+      border: 1px solid rgba(56,189,248,0.3);
+      border-radius: 9999px;
+      padding: 6px 16px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--ps-sky);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .ps-hero-badge .pulse {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--ps-sky);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100%{box-shadow:0 0 0 0 rgba(56,189,248,0.5);}
+      50%{box-shadow:0 0 0 8px rgba(56,189,248,0);}
+    }
+    .ps-hero-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.18;
+      margin-bottom: 20px;
+    }
+    .ps-hero-title .gradient-text {
+      background: linear-gradient(90deg, #38bdf8, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .ps-hero-sub {
+      font-size: 1.05rem;
+      color: #94a3b8;
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 500px;
+    }
+    .ps-hero-stats {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .ps-hero-stat {
+      text-align: center;
+    }
+    .ps-hero-stat strong {
+      display: block;
+      font-size: 1.75rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #38bdf8, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .ps-hero-stat span {
+      font-size: 0.8rem;
+      color: #64748b;
+      font-weight: 600;
+    }
+    .ps-hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .ps-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 13px 26px;
+      border-radius: 12px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 20px rgba(2,132,199,0.35);
+    }
+    .ps-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(2,132,199,0.5); }
+    .ps-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      color: #e2e8f0;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 12px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .ps-btn-outline:hover { border-color: #38bdf8; color: #38bdf8; background: rgba(56,189,248,0.06); }
+
+    /* Hero right visual panel */
+    .ps-hero-visual {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      padding: 28px;
+      backdrop-filter: blur(12px);
+    }
+    .ps-hero-visual-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #38bdf8;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .ps-placement-metric-list { display: flex; flex-direction: column; gap: 12px; }
+    .ps-placement-metric {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 14px 18px;
+    }
+    .ps-placement-metric-left { display: flex; align-items: center; gap: 12px; }
+    .ps-pm-icon {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .ps-pm-label { font-size: 0.85rem; color: #94a3b8; font-weight: 600; }
+    .ps-pm-value { font-size: 1.05rem; font-weight: 800; color: #ffffff; }
+    .ps-pm-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 9999px;
+    }
+    .badge-green { background: rgba(5,150,105,0.2); color: #34d399; }
+    .badge-blue  { background: rgba(56,189,248,0.15); color: #38bdf8; }
+
+    /* ── TRUST BAR ── */
+    .ps-trust-bar {
+      background: #f0f9ff;
+      border-top: 1px solid #bae6fd;
+      border-bottom: 1px solid #bae6fd;
+      padding: 22px 0;
+    }
+    .ps-trust-bar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .ps-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--ps-slate-700);
+    }
+    .ps-trust-item svg { color: var(--ps-blue); }
+
+    /* ── SECTIONS BASE ── */
+    .ps-section { padding: 80px 0; }
+    .ps-section-alt { background: var(--ps-slate-50); }
+    .ps-section-dark {
+      background: linear-gradient(135deg, #0a1628 0%, #0d1f3c 100%);
+      color: #ffffff;
+    }
+    .ps-section-header { margin-bottom: 48px; }
+    .ps-section-header.center { text-align: center; }
+    .ps-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ps-blue);
+      margin-bottom: 10px;
+    }
+    .ps-section-dark .ps-eyebrow { color: var(--ps-sky); }
+    .ps-section-title {
+      font-size: clamp(1.6rem, 3vw, 2.25rem);
+      font-weight: 800;
+      color: var(--ps-slate-900);
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+    .ps-section-dark .ps-section-title { color: #ffffff; }
+    .ps-section-desc {
+      font-size: 1rem;
+      color: var(--ps-slate-500);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+    .ps-section-header.center .ps-section-desc { margin-inline: auto; }
+    .ps-section-dark .ps-section-desc { color: #94a3b8; }
+
+    /* ── PLACEMENT PROCESS STEPS ── */
+    .ps-process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .ps-process-card {
+      background: var(--ps-white);
+      border: 1.5px solid var(--ps-slate-200);
+      border-radius: 20px;
+      padding: 32px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .ps-process-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--ps-blue), var(--ps-sky));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    .ps-process-card:hover { transform: translateY(-8px); box-shadow: 0 20px 48px rgba(2,132,199,0.1); border-color: #bae6fd; }
+    .ps-process-card:hover::before { transform: scaleX(1); }
+    .ps-step-num {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--ps-blue);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .ps-process-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+      font-size: 1.4rem;
+    }
+    .icon-blue { background: #eff6ff; }
+    .icon-green { background: #f0fdf4; }
+    .icon-purple { background: #f5f3ff; }
+    .icon-orange { background: #fff7ed; }
+    .icon-pink { background: #fdf2f8; }
+    .icon-cyan { background: #ecfeff; }
+    .ps-process-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--ps-slate-900);
+      margin-bottom: 10px;
+    }
+    .ps-process-card p {
+      font-size: 0.9rem;
+      color: var(--ps-slate-500);
+      line-height: 1.65;
+    }
+    .ps-process-card .ps-check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 14px;
+    }
+    .ps-process-card .ps-check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--ps-slate-700);
+    }
+    .ps-process-card .ps-check-list li svg { flex-shrink: 0; margin-top: 2px; }
+
+    /* ── SALARY RESULTS ── */
+    .ps-salary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .ps-salary-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      padding: 28px 22px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .ps-salary-card:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-4px);
+      border-color: rgba(56,189,248,0.3);
+    }
+    .ps-salary-domain {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--ps-sky);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .ps-salary-range {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+    .ps-salary-level {
+      font-size: 0.8rem;
+      color: #64748b;
+      font-weight: 600;
+    }
+    .ps-salary-bar {
+      margin-top: 16px;
+      height: 5px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+    .ps-salary-fill {
+      height: 100%;
+      border-radius: 9999px;
+      background: linear-gradient(90deg, #38bdf8, #a78bfa);
+    }
+
+    /* ── TIMELINE ROADMAP ── */
+    .ps-timeline {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .ps-timeline::before {
+      content: '';
+      position: absolute;
+      left: 27px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, #0284c7, #38bdf8, #a78bfa, #f472b6);
+    }
+    .ps-timeline-item {
+      display: flex;
+      gap: 28px;
+      padding: 28px 0;
+      position: relative;
+    }
+    .ps-timeline-dot {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--ps-white);
+      border: 3px solid var(--ps-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+      z-index: 1;
+      box-shadow: 0 0 0 6px rgba(2,132,199,0.08);
+      transition: all 0.3s ease;
+    }
+    .ps-timeline-item:hover .ps-timeline-dot {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 10px rgba(2,132,199,0.12);
+    }
+    .ps-timeline-body {
+      background: var(--ps-white);
+      border: 1.5px solid var(--ps-slate-200);
+      border-radius: 18px;
+      padding: 24px 28px;
+      flex: 1;
+      transition: all 0.3s ease;
+    }
+    .ps-timeline-item:hover .ps-timeline-body {
+      border-color: #bae6fd;
+      box-shadow: 0 8px 30px rgba(2,132,199,0.08);
+    }
+    .ps-timeline-phase {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--ps-blue);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .ps-timeline-body h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--ps-slate-900);
+      margin-bottom: 8px;
+    }
+    .ps-timeline-body p {
+      font-size: 0.9rem;
+      color: var(--ps-slate-500);
+      line-height: 1.65;
+    }
+    .ps-timeline-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .ps-timeline-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      color: var(--ps-blue);
+    }
+
+    /* ── BENTO CARDS ── */
+    .ps-bento-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      gap: 20px;
+    }
+    .ps-bento-card {
+      background: var(--ps-white);
+      border: 1.5px solid var(--ps-slate-200);
+      border-radius: 22px;
+      padding: 32px 30px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+      position: relative;
+    }
+    .ps-bento-card:hover {
+      border-color: #bae6fd;
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(2,132,199,0.09);
+    }
+    .ps-bento-card.span2 { grid-column: span 2; }
+    .ps-bento-card.dark-card {
+      background: linear-gradient(135deg, #0a1628 0%, #0f2244 100%);
+      border-color: rgba(56,189,248,0.2);
+      color: #ffffff;
+    }
+    .ps-bento-icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .ps-bento-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--ps-slate-900);
+      margin-bottom: 8px;
+    }
+    .ps-bento-card.dark-card h3 { color: #ffffff; }
+    .ps-bento-card p {
+      font-size: 0.9rem;
+      color: var(--ps-slate-500);
+      line-height: 1.6;
+    }
+    .ps-bento-card.dark-card p { color: #94a3b8; }
+
+    /* ── HIRING PARTNERS MARQUEE ── */
+    .ps-partners-section {
+      background: var(--ps-slate-50);
+      padding: 48px 0;
+      overflow: hidden;
+    }
+    .ps-partners-label {
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ps-slate-500);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .ps-marquee-outer { overflow: hidden; position: relative; }
+    .ps-marquee-track {
+      display: flex;
+      gap: 40px;
+      animation: marquee 25s linear infinite;
+      width: max-content;
+    }
+    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    .ps-marquee-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--ps-white);
+      border: 1.5px solid var(--ps-slate-200);
+      border-radius: 12px;
+      padding: 10px 20px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--ps-slate-700);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── SUCCESS METRICS ── */
+    .ps-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .ps-metric-card {
+      text-align: center;
+      padding: 36px 24px;
+      background: var(--ps-white);
+      border: 1.5px solid var(--ps-slate-200);
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+    .ps-metric-card:hover { border-color: #bae6fd; transform: translateY(-4px); box-shadow: 0 12px 32px rgba(2,132,199,0.08); }
+    .ps-metric-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .ps-metric-label {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--ps-slate-900);
+      margin-bottom: 6px;
+    }
+    .ps-metric-sub { font-size: 0.82rem; color: var(--ps-slate-500); line-height: 1.5; }
+
+    /* ── CTA SECTION ── */
+    .ps-cta-section { background: linear-gradient(135deg, #0a1628, #0d1f3c); padding: 80px 0; }
+    .ps-cta-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: center;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 28px;
+      padding: 48px 52px;
+    }
+    .ps-cta-card h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+    .ps-cta-card p { font-size: 0.95rem; color: #94a3b8; line-height: 1.65; }
+    .ps-cta-buttons { display: flex; flex-direction: column; gap: 12px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .ps-hero-grid, .ps-bento-grid { grid-template-columns: 1fr; }
+      .ps-process-grid { grid-template-columns: 1fr 1fr; }
+      .ps-salary-grid { grid-template-columns: 1fr 1fr; }
+      .ps-metrics-grid { grid-template-columns: 1fr 1fr; }
+      .ps-bento-card.span2 { grid-column: span 1; }
+      .ps-cta-card { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .ps-process-grid { grid-template-columns: 1fr; }
+      .ps-salary-grid { grid-template-columns: 1fr; }
+      .ps-metrics-grid { grid-template-columns: 1fr 1fr; }
+      .ps-hero-stats { gap: 16px; }
+      .ps-cta-card { padding: 32px 24px; }
+    }
+
+    /* ── CHECKLIST ROW ── */
+    .ps-check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--ps-slate-700);
+    }
+    .ps-check-row svg { flex-shrink: 0; margin-top: 2px; }
+    .ps-checklist { display: flex; flex-direction: column; gap: 10px; }
+
+    /* Animation */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .ps-animate { animation: fadeInUp 0.6s ease both; }
+    .ps-animate-delay-1 { animation-delay: 0.1s; }
+    .ps-animate-delay-2 { animation-delay: 0.2s; }
+    .ps-animate-delay-3 { animation-delay: 0.3s; }
+  </style>
 </head>
 <body>
   <div id="app-header"></div>
 
-  <main class="placement-page">
-    <section class="placement-hero">
-      <div class="placement-shell placement-hero-grid">
-        <div class="placement-hero-copy placement-reveal">
-          <span class="placement-eyebrow">Placement support</span>
-          <h1>Learn with purpose. <em>Move</em> with confidence.</h1>
-          <p>We help you turn practical learning into a stronger profile, clearer interview preparation and confident next steps.</p>
-          <a class="placement-primary-cta" href="enquiryform.html">Speak to a placement advisor <span aria-hidden="true">›</span></a>
-        </div>
-        <figure class="placement-hero-visual placement-reveal">
-          <img src="assets/images/placement/placement-career-advisor-workshop.png" alt="Learners discussing a portfolio with a SecureHub career advisor">
-          <figcaption>Practical guidance, built around your next role.</figcaption>
-        </figure>
-      </div>
-    </section>
+  <main>
 
-    <section class="placement-partners" aria-label="Industry ecosystem">
-      <div class="placement-shell">
-        <p>Built close to the technology ecosystem</p>
-        <div class="placement-logo-marquee">
-          <div class="placement-logo-row">
-            <img src="assets/images/partners/tcs.svg" alt="Tata Consultancy Services" loading="lazy" decoding="async">
-            <img src="assets/images/partners/wipro.svg" alt="Wipro" loading="lazy" decoding="async">
-            <img src="assets/images/partners/accenture.svg" alt="Accenture" loading="lazy" decoding="async">
-            <img src="assets/images/partners/paloaltonetworks.svg" alt="Palo Alto Networks" loading="lazy" decoding="async">
-            <img src="assets/images/partners/fortinet.svg" alt="Fortinet" loading="lazy" decoding="async">
-            <img src="assets/images/partners/cisco.svg" alt="Cisco" loading="lazy" decoding="async">
+    <!-- ══════════════════ HERO ══════════════════ -->
+    <section class="ps-hero">
+      <div class="ps-shell">
+        <div class="ps-hero-grid">
+          <div class="ps-animate">
+            <div class="ps-hero-badge">
+              <span class="pulse"></span>
+              PLACEMENT SUPPORT ECOSYSTEM
+            </div>
+            <h1 class="ps-hero-title">
+              Your Career Launch,<br>
+              <span class="gradient-text">Backed by a Full System</span>
+            </h1>
+            <p class="ps-hero-sub">
+              SecureHub's end-to-end placement ecosystem covers every stage — from resume crafting and mock interviews to direct corporate referrals and salary negotiation. We don't just train you; we launch you.
+            </p>
+
+            <div class="ps-hero-stats">
+              <div class="ps-hero-stat">
+                <strong>600+</strong>
+                <span>Hiring Partners</span>
+              </div>
+              <div class="ps-hero-stat">
+                <strong>94.8%</strong>
+                <span>Placement Rate</span>
+              </div>
+              <div class="ps-hero-stat">
+                <strong>₹76 LPA</strong>
+                <span>Highest Package</span>
+              </div>
+              <div class="ps-hero-stat">
+                <strong>45 Days</strong>
+                <span>Avg. Placement Time</span>
+              </div>
+            </div>
+
+            <div class="ps-hero-actions">
+              <a href="enquiryform.html" class="ps-btn-primary">
+                Speak to a Career Advisor
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="index.html#courses-section" class="ps-btn-outline">
+                Explore Training Tracks
+              </a>
+            </div>
           </div>
-          <div class="placement-logo-row" aria-hidden="true">
-            <img src="assets/images/partners/tcs.svg" alt="" loading="lazy" decoding="async">
-            <img src="assets/images/partners/wipro.svg" alt="" loading="lazy" decoding="async">
-            <img src="assets/images/partners/accenture.svg" alt="" loading="lazy" decoding="async">
-            <img src="assets/images/partners/paloaltonetworks.svg" alt="" loading="lazy" decoding="async">
-            <img src="assets/images/partners/fortinet.svg" alt="" loading="lazy" decoding="async">
-            <img src="assets/images/partners/cisco.svg" alt="" loading="lazy" decoding="async">
+
+          <!-- Visual panel -->
+          <div class="ps-hero-visual ps-animate ps-animate-delay-1">
+            <p class="ps-hero-visual-title">Live Placement Activity</p>
+            <div class="ps-placement-metric-list">
+              <div class="ps-placement-metric">
+                <div class="ps-placement-metric-left">
+                  <div class="ps-pm-icon" style="background:rgba(56,189,248,0.1);">🎯</div>
+                  <div>
+                    <div class="ps-pm-label">Active Interview Drives</div>
+                    <div class="ps-pm-value">38 This Month</div>
+                  </div>
+                </div>
+                <span class="ps-pm-badge badge-green">● Live</span>
+              </div>
+              <div class="ps-placement-metric">
+                <div class="ps-placement-metric-left">
+                  <div class="ps-pm-icon" style="background:rgba(5,150,105,0.1);">✅</div>
+                  <div>
+                    <div class="ps-pm-label">Offers Received (Aug 2026)</div>
+                    <div class="ps-pm-value">147 Offers</div>
+                  </div>
+                </div>
+                <span class="ps-pm-badge badge-blue">+12% MOM</span>
+              </div>
+              <div class="ps-placement-metric">
+                <div class="ps-placement-metric-left">
+                  <div class="ps-pm-icon" style="background:rgba(124,58,237,0.1);">📋</div>
+                  <div>
+                    <div class="ps-pm-label">Mock Interviews Conducted</div>
+                    <div class="ps-pm-value">500+ / Month</div>
+                  </div>
+                </div>
+                <span class="ps-pm-badge badge-green">Active</span>
+              </div>
+              <div class="ps-placement-metric">
+                <div class="ps-placement-metric-left">
+                  <div class="ps-pm-icon" style="background:rgba(234,88,12,0.1);">🏢</div>
+                  <div>
+                    <div class="ps-pm-label">New Hiring Partners</div>
+                    <div class="ps-pm-value">14 Onboarded</div>
+                  </div>
+                </div>
+                <span class="ps-pm-badge badge-blue">Aug 2026</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="placement-support-grid-section">
-      <div class="placement-shell">
-        <div class="placement-section-intro placement-reveal">
-          <span class="placement-eyebrow">Career readiness</span>
-          <h2>Preparation that stays close to real hiring conversations.</h2>
-        </div>
-        <div class="placement-support-grid">
-          <article class="placement-support-card placement-reveal support-card-sky">
-            <span class="placement-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v5h5M10 13h5M10 17h5"/></svg></span>
-            <h3>Profile preparation</h3>
-            <p>Shape a focused resume, portfolio and professional story around the roles you are targeting.</p>
-          </article>
-          <article class="placement-support-card placement-reveal support-card-mint">
-            <span class="placement-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 10h8M8 14h5"/></svg></span>
-            <h3>Mock interviews</h3>
-            <p>Practise technical, HR and scenario conversations with feedback you can use immediately.</p>
-          </article>
-          <article class="placement-support-card placement-reveal support-card-slate">
-            <span class="placement-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="8" r="4"/><path d="M4 21c.8-4.2 3.5-6 8-6s7.2 1.8 8 6"/></svg></span>
-            <h3>Role alignment</h3>
-            <p>Match your practice, projects and communication to the kind of opportunity you want next.</p>
-          </article>
-          <article class="placement-support-card placement-reveal support-card-blue">
-            <span class="placement-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 19V5h16v14H4Z"/><path d="m8 12 2.5 2.5L16 9"/></svg></span>
-            <h3>Opportunity support</h3>
-            <p>Stay organised and prepared as you progress through shortlisting, interviews and follow-ups.</p>
-          </article>
+    <!-- ══════════════════ TRUST BAR ══════════════════ -->
+    <section class="ps-trust-bar">
+      <div class="ps-shell">
+        <div class="ps-trust-bar-inner">
+          <div class="ps-trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            ISO 9001:2015 Certified Training
+          </div>
+          <div class="ps-trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            1-on-1 Dedicated Career Advisor
+          </div>
+          <div class="ps-trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Salary Negotiation Guidance
+          </div>
+          <div class="ps-trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+            Direct Corporate Referrals
+          </div>
+          <div class="ps-trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Lifetime Alumni Support Access
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="placement-roadmap-section">
-      <div class="placement-shell">
-        <div class="placement-roadmap-header placement-reveal">
-          <span class="placement-eyebrow">Your path forward</span>
-          <h2>From guided learning to a stronger application.</h2>
-          <p>A structured support path that gives your technical work a clear direction.</p>
+    <!-- ══════════════════ SUCCESS METRICS ══════════════════ -->
+    <section class="ps-section">
+      <div class="ps-shell">
+        <div class="ps-section-header center">
+          <span class="ps-eyebrow">OUR NUMBERS SPEAK</span>
+          <h2 class="ps-section-title">Track Record That Defines Trust</h2>
+          <p class="ps-section-desc">Every metric here is built by learners who went through our system and landed roles they are proud of.</p>
         </div>
-        <ol class="placement-roadmap" aria-label="Placement support roadmap">
-          <li class="placement-reveal"><span>01</span><div><h3>Build</h3><p>Develop job-relevant capability through guided labs and projects.</p></div></li>
-          <li class="placement-reveal"><span>02</span><div><h3>Show</h3><p>Bring your work together in a clear profile and portfolio.</p></div></li>
-          <li class="placement-reveal"><span>03</span><div><h3>Practise</h3><p>Prepare for interviews with focused feedback and repetition.</p></div></li>
-          <li class="placement-reveal"><span>04</span><div><h3>Connect</h3><p>Approach relevant opportunities with a more confident story.</p></div></li>
-          <li class="placement-reveal"><span>05</span><div><h3>Progress</h3><p>Keep building momentum through each next career conversation.</p></div></li>
-        </ol>
+
+        <div class="ps-metrics-grid">
+          <div class="ps-metric-card">
+            <div class="ps-metric-number">150k+</div>
+            <div class="ps-metric-label">Successful Placements</div>
+            <div class="ps-metric-sub">Alumni placed across India and international tech companies.</div>
+          </div>
+          <div class="ps-metric-card">
+            <div class="ps-metric-number">600+</div>
+            <div class="ps-metric-label">Hiring Partner Companies</div>
+            <div class="ps-metric-sub">MNCs, startups, and enterprise tech firms in our active network.</div>
+          </div>
+          <div class="ps-metric-card">
+            <div class="ps-metric-number">94.8%</div>
+            <div class="ps-metric-label">Placement Success Rate</div>
+            <div class="ps-metric-sub">Industry-leading placement rate across all our tech programs.</div>
+          </div>
+          <div class="ps-metric-card">
+            <div class="ps-metric-number">₹76 LPA</div>
+            <div class="ps-metric-label">Highest Package Achieved</div>
+            <div class="ps-metric-sub">Highest annual package recorded from our alumni ecosystem.</div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="placement-guidance-section">
-      <div class="placement-shell placement-guidance-grid">
-        <div class="placement-guidance-copy placement-reveal">
-          <span class="placement-eyebrow">More than a certificate</span>
-          <h2>Career support that respects the work you have put in.</h2>
-          <p>Your advisors help you make practical decisions about projects, profile readiness and the kind of role that fits your direction.</p>
+    <!-- ══════════════════ PLACEMENT PROCESS ══════════════════ -->
+    <section class="ps-section ps-section-alt">
+      <div class="ps-shell">
+        <div class="ps-section-header center">
+          <span class="ps-eyebrow">OUR PLACEMENT PROCESS</span>
+          <h2 class="ps-section-title">6-Stage Career Launch System</h2>
+          <p class="ps-section-desc">A structured, battle-tested process that takes you from training completion to your first day at your dream company.</p>
         </div>
-        <div class="placement-bento">
-          <article class="placement-bento-card placement-reveal"><i class="placement-bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></i><strong>Practical projects</strong><span>Work you can discuss with clarity.</span></article>
-          <article class="placement-bento-card placement-reveal"><i class="placement-bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20 12a8 8 0 1 1-3.1-6.3"/><path d="m20 4-8.1 8.1-2.6-2.6"/></svg></i><strong>Focused feedback</strong><span>Specific improvements, not generic advice.</span></article>
-          <article class="placement-bento-card placement-reveal"><i class="placement-bento-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><strong>One clear next step</strong><span>Guidance that keeps your preparation moving.</span></article>
+
+        <div class="ps-process-grid">
+          <div class="ps-process-card">
+            <div class="ps-step-num">STEP 01</div>
+            <div class="ps-process-icon icon-blue">📋</div>
+            <h3>Career Assessment & Goal Setting</h3>
+            <p>A dedicated career advisor analyzes your background, skill stack, and aspirations to create a personalized placement roadmap.</p>
+            <ul class="ps-check-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Skills gap analysis</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Target role identification</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Salary expectation benchmarking</li>
+            </ul>
+          </div>
+
+          <div class="ps-process-card">
+            <div class="ps-step-num">STEP 02</div>
+            <div class="ps-process-icon icon-purple">📄</div>
+            <h3>Resume & LinkedIn Optimization</h3>
+            <p>Our placement cell crafts an ATS-optimized, recruiter-ready resume and LinkedIn profile that gets noticed by top tech hiring teams.</p>
+            <ul class="ps-check-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> ATS keyword optimization</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> LinkedIn profile scoring & fixes</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> GitHub portfolio structuring</li>
+            </ul>
+          </div>
+
+          <div class="ps-process-card">
+            <div class="ps-step-num">STEP 03</div>
+            <div class="ps-process-icon icon-green">🎯</div>
+            <h3>Technical Interview Preparation</h3>
+            <p>Domain-specific mock interviews with senior engineers, focusing on DSA, system design, live coding, and technical communication.</p>
+            <ul class="ps-check-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 5+ rounds of mock tech interviews</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Domain whiteboard challenges</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Recorded session feedback</li>
+            </ul>
+          </div>
+
+          <div class="ps-process-card">
+            <div class="ps-step-num">STEP 04</div>
+            <div class="ps-process-icon icon-orange">🗣️</div>
+            <h3>HR & Communication Coaching</h3>
+            <p>Prepare for HR screening rounds, behavioral interviews, and salary negotiation with scripts and role-play sessions.</p>
+            <ul class="ps-check-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> STAR method answer training</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Salary negotiation scripting</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Body language and confidence</li>
+            </ul>
+          </div>
+
+          <div class="ps-process-card">
+            <div class="ps-step-num">STEP 05</div>
+            <div class="ps-process-icon icon-pink">🏢</div>
+            <h3>Direct Corporate Referrals</h3>
+            <p>Get referred directly to hiring managers at 600+ partner companies through our dedicated placement cell, bypassing generic job applications.</p>
+            <ul class="ps-check-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Direct HR introductions</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Priority shortlisting for drives</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Batch placement drives</li>
+            </ul>
+          </div>
+
+          <div class="ps-process-card">
+            <div class="ps-step-num">STEP 06</div>
+            <div class="ps-process-icon icon-cyan">🚀</div>
+            <h3>Offer Management & Onboarding</h3>
+            <p>Our team stays with you through offer letters, background checks, and joining formalities to ensure a smooth career transition.</p>
+            <ul class="ps-check-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Offer letter evaluation support</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Joining documentation guidance</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 30-day post-joining check-in</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="placement-contact-section">
-      <div class="placement-shell placement-contact-card placement-reveal">
-        <div>
-          <span class="placement-eyebrow">Start a conversation</span>
-          <h2>Plan your next career move with clarity.</h2>
+    <!-- ══════════════════ HIRING PARTNERS MARQUEE ══════════════════ -->
+    <section class="ps-partners-section">
+      <div class="ps-shell">
+        <p class="ps-partners-label">600+ Hiring Partners Across India & Global Tech Companies</p>
+      </div>
+      <div class="ps-marquee-outer">
+        <div class="ps-marquee-track">
+          <span class="ps-marquee-pill">🔵 Tata Consultancy Services</span>
+          <span class="ps-marquee-pill">🟣 Wipro Technologies</span>
+          <span class="ps-marquee-pill">🔶 Infosys</span>
+          <span class="ps-marquee-pill">🔷 Accenture</span>
+          <span class="ps-marquee-pill">🛡️ Palo Alto Networks</span>
+          <span class="ps-marquee-pill">🔴 Cisco Systems</span>
+          <span class="ps-marquee-pill">☁️ Amazon Web Services</span>
+          <span class="ps-marquee-pill">🟦 Microsoft</span>
+          <span class="ps-marquee-pill">🟢 Freshworks</span>
+          <span class="ps-marquee-pill">🔵 HCL Technologies</span>
+          <span class="ps-marquee-pill">🔴 Fortinet</span>
+          <span class="ps-marquee-pill">🟠 Razorpay</span>
+          <span class="ps-marquee-pill">🟢 Zepto</span>
+          <span class="ps-marquee-pill">🔵 Swiggy</span>
+          <span class="ps-marquee-pill">🟠 Zomato</span>
+          <span class="ps-marquee-pill">🛡️ CrowdStrike</span>
+          <span class="ps-marquee-pill">🔵 Tata Consultancy Services</span>
+          <span class="ps-marquee-pill">🟣 Wipro Technologies</span>
+          <span class="ps-marquee-pill">🔶 Infosys</span>
+          <span class="ps-marquee-pill">🔷 Accenture</span>
+          <span class="ps-marquee-pill">🛡️ Palo Alto Networks</span>
+          <span class="ps-marquee-pill">🔴 Cisco Systems</span>
+          <span class="ps-marquee-pill">☁️ Amazon Web Services</span>
+          <span class="ps-marquee-pill">🟦 Microsoft</span>
+          <span class="ps-marquee-pill">🟢 Freshworks</span>
+          <span class="ps-marquee-pill">🔵 HCL Technologies</span>
+          <span class="ps-marquee-pill">🔴 Fortinet</span>
+          <span class="ps-marquee-pill">🟠 Razorpay</span>
+          <span class="ps-marquee-pill">🟢 Zepto</span>
+          <span class="ps-marquee-pill">🔵 Swiggy</span>
+          <span class="ps-marquee-pill">🟠 Zomato</span>
+          <span class="ps-marquee-pill">🛡️ CrowdStrike</span>
         </div>
-        <a class="placement-primary-cta" href="enquiryform.html">Talk to SecureHub <span aria-hidden="true">›</span></a>
       </div>
     </section>
+
+    <!-- ══════════════════ SALARY OUTCOMES ══════════════════ -->
+    <section class="ps-section ps-section-dark">
+      <div class="ps-shell">
+        <div class="ps-section-header center">
+          <span class="ps-eyebrow">SALARY OUTCOMES</span>
+          <h2 class="ps-section-title">Real Packages. Real Roles. Real Growth.</h2>
+          <p class="ps-section-desc">Our alumni are placed across the highest-paying tech roles in India. Here's what they earn across domains.</p>
+        </div>
+
+        <div class="ps-salary-grid">
+          <div class="ps-salary-card">
+            <div class="ps-salary-domain">Full Stack / MERN</div>
+            <div class="ps-salary-range">₹7 – 18 LPA</div>
+            <div class="ps-salary-level">Entry to Senior Level</div>
+            <div class="ps-salary-bar"><div class="ps-salary-fill" style="width: 85%"></div></div>
+          </div>
+          <div class="ps-salary-card">
+            <div class="ps-salary-domain">Cybersecurity / CEH</div>
+            <div class="ps-salary-range">₹5 – 22 LPA</div>
+            <div class="ps-salary-level">SOC Analyst to Security Arch.</div>
+            <div class="ps-salary-bar"><div class="ps-salary-fill" style="width: 92%"></div></div>
+          </div>
+          <div class="ps-salary-card">
+            <div class="ps-salary-domain">Cloud / DevOps / AWS</div>
+            <div class="ps-salary-range">₹8 – 28 LPA</div>
+            <div class="ps-salary-level">Cloud Engineer to Architect</div>
+            <div class="ps-salary-bar"><div class="ps-salary-fill" style="width: 95%"></div></div>
+          </div>
+          <div class="ps-salary-card">
+            <div class="ps-salary-domain">Data Science / AI / ML</div>
+            <div class="ps-salary-range">₹9 – 30 LPA</div>
+            <div class="ps-salary-level">Data Analyst to AI Lead</div>
+            <div class="ps-salary-bar"><div class="ps-salary-fill" style="width: 98%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ PLACEMENT ROADMAP TIMELINE ══════════════════ -->
+    <section class="ps-section">
+      <div class="ps-shell">
+        <div class="ps-section-header">
+          <span class="ps-eyebrow">WEEK-BY-WEEK JOURNEY</span>
+          <h2 class="ps-section-title">Your 8-Week Career Launch Timeline</h2>
+          <p class="ps-section-desc">A dedicated 8-week post-training career launch sprint to get you offer-ready and actively interviewing at top companies.</p>
+        </div>
+
+        <div class="ps-timeline">
+          <div class="ps-timeline-item">
+            <div class="ps-timeline-dot">1️⃣</div>
+            <div class="ps-timeline-body">
+              <div class="ps-timeline-phase">WEEK 1–2</div>
+              <h3>Deep Profile Crafting</h3>
+              <p>Your advisor reviews your entire project portfolio, GitHub contributions, and professional background. We rebuild your resume, optimize your LinkedIn, and structure your developer portfolio from scratch.</p>
+              <div class="ps-timeline-tags">
+                <span class="ps-timeline-tag">Resume Writing</span>
+                <span class="ps-timeline-tag">LinkedIn Optimization</span>
+                <span class="ps-timeline-tag">GitHub Portfolio</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ps-timeline-item">
+            <div class="ps-timeline-dot">2️⃣</div>
+            <div class="ps-timeline-body">
+              <div class="ps-timeline-phase">WEEK 3–4</div>
+              <h3>Technical Interview Bootcamp</h3>
+              <p>Intensive technical interview preparation with domain-specific challenges. Mock interviews with senior engineers, recorded feedback sessions, and live coding simulations with real-world problem sets.</p>
+              <div class="ps-timeline-tags">
+                <span class="ps-timeline-tag">5+ Mock Interviews</span>
+                <span class="ps-timeline-tag">DSA Practice</span>
+                <span class="ps-timeline-tag">System Design</span>
+                <span class="ps-timeline-tag">Live Coding</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ps-timeline-item">
+            <div class="ps-timeline-dot">3️⃣</div>
+            <div class="ps-timeline-body">
+              <div class="ps-timeline-phase">WEEK 5</div>
+              <h3>HR Coaching & Aptitude Prep</h3>
+              <p>Master the HR screening round with behavioral interview coaching, aptitude test preparation, communication confidence building, and salary negotiation scripts tailored to your target role.</p>
+              <div class="ps-timeline-tags">
+                <span class="ps-timeline-tag">STAR Framework</span>
+                <span class="ps-timeline-tag">Aptitude Tests</span>
+                <span class="ps-timeline-tag">Salary Scripting</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ps-timeline-item">
+            <div class="ps-timeline-dot">4️⃣</div>
+            <div class="ps-timeline-body">
+              <div class="ps-timeline-phase">WEEK 6</div>
+              <h3>Corporate Referral Matching</h3>
+              <p>Your profile is shared with matched companies from our 600+ partner network. Our placement cell makes direct introductions, schedules interviews, and tracks your application pipeline.</p>
+              <div class="ps-timeline-tags">
+                <span class="ps-timeline-tag">600+ Partner Network</span>
+                <span class="ps-timeline-tag">Direct HR Intros</span>
+                <span class="ps-timeline-tag">Pipeline Tracking</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ps-timeline-item">
+            <div class="ps-timeline-dot">5️⃣</div>
+            <div class="ps-timeline-body">
+              <div class="ps-timeline-phase">WEEK 7–8</div>
+              <h3>Active Interviews & Offer Stage</h3>
+              <p>Attend scheduled corporate interviews with full support from our cell. We debrief after every round, help you handle rejections strategically, and guide you through offer evaluation and negotiation.</p>
+              <div class="ps-timeline-tags">
+                <span class="ps-timeline-tag">Interview Debriefs</span>
+                <span class="ps-timeline-tag">Offer Evaluation</span>
+                <span class="ps-timeline-tag">Negotiation Support</span>
+                <span class="ps-timeline-tag">Joining Guidance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ BENTO SERVICES ══════════════════ -->
+    <section class="ps-section ps-section-alt">
+      <div class="ps-shell">
+        <div class="ps-section-header center">
+          <span class="ps-eyebrow">WHAT'S INCLUDED</span>
+          <h2 class="ps-section-title">Everything in Your Placement Package</h2>
+          <p class="ps-section-desc">A complete suite of career services included with every SecureHub training program — no hidden charges.</p>
+        </div>
+
+        <div class="ps-bento-grid">
+          <div class="ps-bento-card dark-card">
+            <span class="ps-bento-icon">🎯</span>
+            <h3>Dedicated Placement Cell Access</h3>
+            <p>Every learner gets a personal placement cell contact who manages your entire job search journey from preparation to offer — a real human, not a chatbot.</p>
+          </div>
+          <div class="ps-bento-card">
+            <span class="ps-bento-icon">📋</span>
+            <h3>ATS-Optimized Resume & Cover Letter</h3>
+            <p>Professionally crafted resume tailored for Applicant Tracking Systems (ATS) used by 98% of enterprise tech companies, with unlimited revision cycles.</p>
+          </div>
+          <div class="ps-bento-card">
+            <span class="ps-bento-icon">🎤</span>
+            <h3>5+ Technical Mock Interviews</h3>
+            <p>Role-specific technical mock sessions with recorded feedback, performance scoring, and actionable improvement roadmaps for each round.</p>
+          </div>
+          <div class="ps-bento-card">
+            <span class="ps-bento-icon">💼</span>
+            <h3>GitHub Portfolio Structuring</h3>
+            <p>Professional structuring of your GitHub profile and repositories with proper README documentation, live demo links, and tech stack showcasing.</p>
+          </div>
+          <div class="ps-bento-card span2">
+            <span class="ps-bento-icon">🤝</span>
+            <h3>Direct Introductions to 600+ Companies</h3>
+            <p>Our placement cell directly introduces your profile to active hiring managers at TCS, Wipro, Infosys, AWS, Microsoft, Razorpay, Freshworks, Zomato, Swiggy, and 590+ more companies. You skip generic job portals entirely.</p>
+          </div>
+          <div class="ps-bento-card">
+            <span class="ps-bento-icon">📈</span>
+            <h3>Salary Negotiation Coaching</h3>
+            <p>Learn exact scripts, timing, and tactics to negotiate your first or next salary offer confidently — our alumni average 18% higher offers post-coaching.</p>
+          </div>
+          <div class="ps-bento-card">
+            <span class="ps-bento-icon">🔄</span>
+            <h3>Lifetime Placement Support</h3>
+            <p>Your placement support doesn't end at your first job. Our alumni network and placement cell remain accessible for your next career move, indefinitely.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ BOTTOM CTA ══════════════════ -->
+    <section class="ps-cta-section">
+      <div class="ps-shell">
+        <div class="ps-cta-card">
+          <div>
+            <h2>Ready to Launch Your Tech Career?</h2>
+            <p>Connect with a senior placement advisor today. Explore which training track matches your goals, review batch timings, and start your placement journey with full institutional backing.</p>
+          </div>
+          <div class="ps-cta-buttons">
+            <a href="enquiryform.html" class="ps-btn-primary">
+              Talk to a Placement Advisor
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="index.html#courses-section" class="ps-btn-outline">Browse All Training Programs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <div id="app-footer"></div>
   <script src="js/header-footer.js"></script>
-  <script src="js/placement-support.js"></script>
 </body>
 </html>

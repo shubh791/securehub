@@ -1,22 +1,6 @@
 /* SecureHub Shared Header and Footer Injector & Logic */
 document.addEventListener('DOMContentLoaded', () => {
-  if (document.getElementById('service-page')) {
-    const serviceMotion = document.createElement('link');
-    serviceMotion.rel = 'stylesheet';
-    serviceMotion.href = 'css/services-motion.css';
-    document.head.appendChild(serviceMotion);
-    const serviceEnhancements = document.createElement('link');
-    serviceEnhancements.rel = 'stylesheet';
-    serviceEnhancements.href = 'css/services-enhancements.css';
-    document.head.appendChild(serviceEnhancements);
-    setTimeout(() => {
-      const serviceShell = document.querySelector('.service-section .service-shell');
-      if (!serviceShell || serviceShell.querySelector('.service-contact-card')) return;
-      serviceShell.insertAdjacentHTML('beforeend', '<form class="service-contact-card"><span>Talk to SecureHub</span><h3>Shape the right learning plan.</h3><p>Share your details and our team will respond with the next suitable option.</p><label>Name<input required name="name" placeholder="Your name"></label><label>Work email<input required name="email" type="email" placeholder="you@company.com"></label><label>Phone<input required name="phone" type="tel" placeholder="Your phone number"></label><button type="submit">Request a conversation</button><small aria-live="polite"></small></form>');
-      const form = serviceShell.querySelector('.service-contact-card');
-      form.addEventListener('submit', event => { event.preventDefault(); form.querySelector('small').textContent = 'Thanks. Our team will contact you shortly.'; form.reset(); });
-    }, 0);
-  }
+  // Service page rendering is handled by services/service.js — no legacy form injection needed.
   document.documentElement.removeAttribute('data-theme-preview');
   try {
     localStorage.removeItem('securehub-theme-preview');

@@ -6477,3 +6477,1021 @@ html[data-theme-preview] .topchoice-illustration-box[style]{background:#080b10!i
     justify-content: center !important;
   }
 }
+
+
+/* Senior Product Designer Screenshot-Based Master Course Layout & Light Theme System */
+
+/* Hero Tags Row */
+.hero-tags-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-bottom: 12px !important;
+}
+
+.hero-tag-pill {
+  padding: 5px 14px !important;
+  background: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  font-size: 0.775rem !important;
+  font-weight: 800 !important;
+  color: #334155 !important;
+}
+
+.hero-tag-pill.ai-tag {
+  background: #f0f9ff !important;
+  border-color: #bae6fd !important;
+  color: #0284c7 !important;
+}
+
+/* Stat Pills Bar */
+.hero-stats-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  margin: 18px 0 20px !important;
+}
+
+.stat-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 8px 16px !important;
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 9999px !important;
+  font-size: 0.825rem !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03) !important;
+}
+
+.stat-pill.highlight-stat {
+  background: #ecfdf5 !important;
+  border-color: #a7f3d0 !important;
+  color: #059669 !important;
+}
+
+/* Rating Badge */
+.rating-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 8px 16px !important;
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+}
+
+/* Snapshot Section */
+.snapshot-container {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 28px !important;
+}
+
+.snapshot-skills-box {
+  background: #ffffff !important;
+  border: 1.5px solid #bae6fd !important;
+  border-radius: 20px !important;
+  padding: 24px !important;
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.05) !important;
+}
+
+.snapshot-box-title {
+  display: block !important;
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  color: #0284c7 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 14px !important;
+}
+
+.snapshot-details-grid {
+  display: grid !important;
+  grid-template-columns: 1.2fr 0.8fr !important;
+  gap: 32px !important;
+}
+
+/* Career Dashboard Grid */
+.career-dashboard-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr 1fr !important;
+  gap: 24px !important;
+  margin-top: 24px !important;
+}
+
+.career-designations-col, .career-salary-col, .career-scope-col {
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 20px !important;
+  padding: 24px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03) !important;
+}
+
+.career-designations-col h3, .career-salary-col h3, .career-scope-col h3 {
+  font-size: 1.1rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin-bottom: 16px !important;
+}
+
+.roles-pills-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.career-role-pill {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 10px 14px !important;
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+}
+
+.career-role-pill h4 {
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  margin: 0 !important;
+}
+
+.career-salary {
+  font-size: 0.8rem !important;
+  color: #059669 !important;
+  font-weight: 700 !important;
+}
+
+.salary-levels-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.salary-level-card {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 12px 16px !important;
+  background: #f0f9ff !important;
+  border: 1px solid #bae6fd !important;
+  border-radius: 12px !important;
+}
+
+.salary-level-name {
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  color: #0369a1 !important;
+}
+
+.salary-level-range {
+  font-size: 0.925rem !important;
+  font-weight: 800 !important;
+  color: #059669 !important;
+}
+
+.salary-note {
+  font-size: 0.775rem !important;
+  color: #94a3b8 !important;
+  margin-top: 14px !important;
+  text-align: center !important;
+}
+
+.hiring-scope-card p {
+  font-size: 0.9rem !important;
+  line-height: 1.6 !important;
+  color: #475569 !important;
+  margin-bottom: 16px !important;
+}
+
+.scope-badges {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+}
+
+.scope-badges span {
+  padding: 6px 12px !important;
+  background: #f1f5f9 !important;
+  border-radius: 8px !important;
+  font-size: 0.775rem !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+}
+
+/* Module Objectives & Bullets */
+.module-objective {
+  font-size: 0.925rem !important;
+  line-height: 1.6 !important;
+  color: #0284c7 !important;
+  background: #f0f9ff !important;
+  border: 1px solid #bae6fd !important;
+  border-radius: 10px !important;
+  padding: 12px 16px !important;
+  margin-bottom: 14px !important;
+}
+
+.module-bullets-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  padding-left: 20px !important;
+}
+
+.module-bullets-list li {
+  font-size: 0.9rem !important;
+  color: #334155 !important;
+  line-height: 1.55 !important;
+}
+
+@media (max-width: 1024px) {
+  .snapshot-details-grid, .career-dashboard-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* Senior Product Designer Complete 11-Section Screenshot Master Styling */
+
+/* Hands-On Real Projects Grid (Screenshot 1) */
+.real-projects-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+  margin-top: 28px !important;
+}
+
+.real-project-card {
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 20px !important;
+  padding: 28px 24px !important;
+  position: relative !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03) !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.real-project-card:hover {
+  border-color: #0284c7 !important;
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 36px rgba(2, 132, 199, 0.1) !important;
+}
+
+.project-num-badge {
+  position: absolute !important;
+  top: 24px !important;
+  right: 24px !important;
+  font-size: 1.4rem !important;
+  font-weight: 800 !important;
+  color: #cbd5e1 !important;
+}
+
+.real-project-card h3 {
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin-bottom: 10px !important;
+  padding-right: 40px !important;
+}
+
+.project-desc {
+  font-size: 0.875rem !important;
+  line-height: 1.55 !important;
+  color: #64748b !important;
+  margin-bottom: 16px !important;
+}
+
+.project-skills-list {
+  font-size: 0.825rem !important;
+  color: #334155 !important;
+  line-height: 1.5 !important;
+  margin-bottom: 16px !important;
+  padding-top: 12px !important;
+  border-top: 1px solid #f1f5f9 !important;
+}
+
+.project-tags-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+}
+
+.pj-tag {
+  padding: 4px 10px !important;
+  background: #f0f9ff !important;
+  border: 1px solid #bae6fd !important;
+  border-radius: 6px !important;
+  font-size: 0.775rem !important;
+  font-weight: 700 !important;
+  color: #0284c7 !important;
+}
+
+/* Professional Certification Section (Screenshot 2) */
+.certification-flex-card {
+  display: grid !important;
+  grid-template-columns: 1.1fr 0.9fr !important;
+  gap: 36px !important;
+  align-items: center !important;
+  background: #ffffff !important;
+  border: 1.5px solid #bae6fd !important;
+  border-radius: 24px !important;
+  padding: 40px !important;
+  box-shadow: 0 12px 36px rgba(2, 132, 199, 0.08) !important;
+}
+
+.cert-card-left h2 {
+  font-size: 1.85rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin: 10px 0 14px !important;
+}
+
+.cert-card-left p {
+  font-size: 0.95rem !important;
+  line-height: 1.65 !important;
+  color: #475569 !important;
+  margin-bottom: 24px !important;
+}
+
+.cert-stats-row {
+  display: flex !important;
+  gap: 24px !important;
+}
+
+.cert-stat-box strong {
+  display: block !important;
+  font-size: 1.5rem !important;
+  font-weight: 800 !important;
+  color: #0284c7 !important;
+}
+
+.cert-stat-box span {
+  font-size: 0.8rem !important;
+  color: #64748b !important;
+  font-weight: 600 !important;
+}
+
+.cert-mockup-frame {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%) !important;
+  border: 3px double #0284c7 !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06) !important;
+  text-align: center !important;
+}
+
+.cert-header-bar {
+  display: flex !important;
+  justify-content: space-between !important;
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  color: #0284c7 !important;
+  border-bottom: 1.5px solid #bae6fd !important;
+  padding-bottom: 12px !important;
+  margin-bottom: 20px !important;
+}
+
+.cert-body-preview h3 {
+  font-size: 1.4rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin: 10px 0 !important;
+  letter-spacing: 0.05em !important;
+}
+
+.cert-seal-row {
+  margin-top: 24px !important;
+  display: flex !important;
+  justify-content: space-around !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  color: #059669 !important;
+}
+
+/* Why Choose SecureHub Grid (Screenshot 3) */
+.why-us-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 20px !important;
+  margin-top: 28px !important;
+}
+
+.why-card {
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 20px !important;
+  padding: 28px !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02) !important;
+  transition: transform 0.25s ease !important;
+}
+
+.why-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: #bae6fd !important;
+}
+
+.why-card.full-width-why {
+  grid-column: 1 / -1 !important;
+  background: #f0f9ff !important;
+  border-color: #bae6fd !important;
+}
+
+.why-icon {
+  font-size: 2rem !important;
+  margin-bottom: 12px !important;
+}
+
+.why-card h3 {
+  font-size: 1.1rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin-bottom: 8px !important;
+}
+
+.why-card p {
+  font-size: 0.9rem !important;
+  line-height: 1.6 !important;
+  color: #475569 !important;
+  margin: 0 !important;
+}
+
+/* Roadmap to Success (Screenshot 4) */
+.roadmap-flex-layout {
+  display: grid !important;
+  grid-template-columns: 0.9fr 1.1fr !important;
+  gap: 32px !important;
+  margin-top: 28px !important;
+  align-items: center !important;
+}
+
+.roadmap-steps-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.roadmap-step-pill {
+  padding: 14px 20px !important;
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 14px !important;
+  font-size: 0.925rem !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+}
+
+.roadmap-step-pill.active {
+  background: #0284c7 !important;
+  color: #ffffff !important;
+  border-color: #0284c7 !important;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.3) !important;
+}
+
+.roadmap-step-pill span {
+  font-size: 0.8rem !important;
+  font-weight: 800 !important;
+  opacity: 0.8 !important;
+}
+
+.roadmap-details-pane {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+
+.roadmap-feature-box {
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 16px !important;
+  padding: 20px !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.02) !important;
+}
+
+.roadmap-feature-box h4 {
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin-bottom: 4px !important;
+}
+
+.roadmap-feature-box p {
+  font-size: 0.875rem !important;
+  color: #64748b !important;
+  margin: 0 !important;
+}
+
+/* Categorized FAQ Layout (Screenshot 5) */
+.faq-categorized-layout {
+  display: grid !important;
+  grid-template-columns: 0.75fr 1.25fr !important;
+  gap: 32px !important;
+  margin-top: 28px !important;
+}
+
+.faq-categories-sidebar {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.faq-cat-pill {
+  padding: 14px 20px !important;
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.faq-cat-pill.active, .faq-cat-pill:hover {
+  background: #f0f9ff !important;
+  border-color: #bae6fd !important;
+  color: #0284c7 !important;
+}
+
+@media (max-width: 1024px) {
+  .real-projects-grid, .why-us-grid, .roadmap-flex-layout, .certification-flex-card, .faq-categorized-layout {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* Senior Product Designer Micro-Animations & Premium Section CSS System */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatBadge {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(2, 132, 199, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(2, 132, 199, 0.35);
+  }
+}
+
+.course-hero-enhanced {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.course-hero-graphic-card {
+  animation: floatBadge 4s ease-in-out infinite !important;
+}
+
+.real-project-card, .mode-card, .why-card {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.real-project-card:hover, .mode-card:hover, .why-card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 20px 45px rgba(2, 132, 199, 0.12) !important;
+}
+
+.roadmap-step-pill {
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+}
+
+.roadmap-step-pill:hover {
+  border-color: #0284c7 !important;
+  color: #0284c7 !important;
+  transform: translateX(4px) !important;
+}
+
+.roadmap-feature-box {
+  animation: fadeInUp 0.4s ease-out !important;
+}
+
+
+/* Senior Product Designer Dark Cyber Hero & Salary Bar Chart Graph System */
+
+/* Dark Cyber Hero Section */
+.course-hero-dark-cyber {
+  padding: 60px 0 45px !important;
+  background: linear-gradient(135deg, #07192f 0%, #0f2b48 50%, #04101e 100%) !important;
+  color: #ffffff !important;
+  border-bottom: 1px solid #1e293b !important;
+}
+
+.course-breadcrumb-dark {
+  font-size: 0.85rem !important;
+  color: #94a3b8 !important;
+  margin-bottom: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.course-breadcrumb-dark a {
+  color: #38bdf8 !important;
+  text-decoration: none !important;
+}
+
+.dark-pill {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #e2e8f0 !important;
+}
+
+.ai-tag-dark {
+  background: rgba(56, 189, 248, 0.15) !important;
+  border: 1px solid #38bdf8 !important;
+  color: #38bdf8 !important;
+}
+
+.dark-logo-box {
+  background: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.25) !important;
+}
+
+.dark-hero-title {
+  color: #ffffff !important;
+}
+
+.dark-hero-sub {
+  color: #cbd5e1 !important;
+}
+
+.dark-stat {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #e2e8f0 !important;
+}
+
+.dark-highlight {
+  background: rgba(52, 211, 153, 0.15) !important;
+  border-color: #34d399 !important;
+  color: #34d399 !important;
+}
+
+.dark-rating, .dark-trust-pill {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(56, 189, 248, 0.3) !important;
+  color: #38bdf8 !important;
+}
+
+.dark-hero-graphic-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(2, 132, 199, 0.12) 100%) !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.35) !important;
+  box-shadow: 0 0 35px rgba(2, 132, 199, 0.25) !important;
+}
+
+.dark-graphic-tag {
+  background: rgba(15, 23, 42, 0.9) !important;
+  border: 1px solid #38bdf8 !important;
+  color: #38bdf8 !important;
+}
+
+.dark-facts-bar {
+  background: rgba(15, 23, 42, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+}
+
+.dark-facts-bar .fact-item span {
+  color: #94a3b8 !important;
+}
+
+.dark-facts-bar .fact-item strong {
+  color: #ffffff !important;
+}
+
+.salary-highlight-dark {
+  color: #34d399 !important;
+}
+
+/* Dark 4 Core Pillars Bar */
+.dark-pillars {
+  background: #0b1329 !important;
+  border-top: 1px solid #1e293b !important;
+  border-bottom: 1px solid #1e293b !important;
+}
+
+/* Course Snapshot Fieldset Legend Box (From Screenshot) */
+.skills-fieldset-box {
+  border: 1.5px solid #0284c7 !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  background: #ffffff !important;
+  margin-bottom: 28px !important;
+}
+
+.skills-fieldset-legend {
+  font-size: 0.9rem !important;
+  font-weight: 800 !important;
+  color: #0284c7 !important;
+  padding: 4px 16px !important;
+  background: #ffffff !important;
+  border: 1px solid #bae6fd !important;
+  border-radius: 9999px !important;
+}
+
+/* Annual Salary Dual Bar Chart Graph (From Screenshot 3) */
+.salary-graph-card {
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 16px !important;
+  padding: 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+
+.graph-legend-row {
+  display: flex !important;
+  gap: 16px !important;
+  justify-content: center !important;
+  font-size: 0.775rem !important;
+  font-weight: 700 !important;
+}
+
+.legend-box {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.legend-box::before {
+  content: '' !important;
+  display: inline-block !important;
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 3px !important;
+}
+
+.min-leg::before {
+  background: #ffedd5 !important;
+  border: 1px solid #fdba74 !important;
+}
+
+.max-leg::before {
+  background: #f97316 !important;
+}
+
+.salary-bar-chart {
+  display: flex !important;
+  align-items: flex-end !important;
+  gap: 16px !important;
+  height: 180px !important;
+  padding-bottom: 24px !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  border-left: 1px solid #cbd5e1 !important;
+  position: relative !important;
+
+}
+
+.chart-y-axis {
+  position: absolute !important;
+  left: -40px !important;
+  top: 0 !important;
+  bottom: 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  font-size: 0.7rem !important;
+  color: #64748b !important;
+}
+
+.chart-bars-container {
+  flex: 1 !important;
+  display: flex !important;
+  justify-content: space-around !important;
+  align-items: flex-end !important;
+  height: 100% !important;
+}
+
+.bar-group {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 8px !important;
+  height: 100% !important;
+  justify-content: flex-end !important;
+}
+
+.bars-pair {
+  display: flex !important;
+  align-items: flex-end !important;
+  gap: 4px !important;
+  height: 140px !important;
+}
+
+.bar {
+  width: 22px !important;
+  border-radius: 4px 4px 0 0 !important;
+  transition: height 0.5s ease !important;
+}
+
+.min-bar {
+  background: #ffedd5 !important;
+  border: 1px solid #fdba74 !important;
+}
+
+.max-bar {
+  background: linear-gradient(180deg, #ea580c 0%, #c2410c 100%) !important;
+}
+
+.group-label {
+  font-size: 0.775rem !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+}
+
+.salary-graph-footer {
+  font-size: 0.775rem !important;
+  color: #64748b !important;
+  text-align: center !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+}
+
+
+/* Senior Product Designer Unified Hero, Interactive Role Graph Switcher & Skill Icons */
+
+/* Unified Clean Light Hero */
+.course-hero-unified-light {
+  padding: 50px 0 36px !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%) !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.course-hero-grid {
+  display: grid !important;
+  grid-template-columns: 1.15fr 0.85fr !important;
+  gap: 36px !important;
+  align-items: center !important;
+}
+
+.course-hero-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.hero-balanced-title {
+  font-size: 2.1rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  line-height: 1.25 !important;
+  margin: 0 !important;
+}
+
+.balanced-hero-sub {
+  font-size: 1.025rem !important;
+  line-height: 1.65 !important;
+  color: #475569 !important;
+  margin-bottom: 22px !important;
+}
+
+/* Tool Tag with SVG Icon */
+.tool-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 7px 14px !important;
+  background: #ffffff !important;
+  border: 1.5px solid #bae6fd !important;
+  color: #0284c7 !important;
+  border-radius: 10px !important;
+  font-size: 0.825rem !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.04) !important;
+  transition: all 0.25s ease !important;
+}
+
+.tool-tag:hover {
+  background: #0284c7 !important;
+  color: #ffffff !important;
+  border-color: #0284c7 !important;
+  transform: translateY(-2px) !important;
+}
+
+.tool-tag svg {
+  flex-shrink: 0 !important;
+}
+
+.tool-tag:hover svg {
+  stroke: #ffffff !important;
+}
+
+/* Interactive Designation Role Pills (Clickable) */
+.career-role-pill {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 14px 18px !important;
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 14px !important;
+  cursor: pointer !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  user-select: none !important;
+}
+
+.career-role-pill:hover {
+  border-color: #0284c7 !important;
+  background: #f0f9ff !important;
+  transform: translateX(4px) !important;
+}
+
+.career-role-pill.active {
+  background: #fff7ed !important;
+  border-color: #ea580c !important;
+  box-shadow: 0 4px 16px rgba(234, 88, 12, 0.12) !important;
+}
+
+.career-role-pill.active h4 {
+  color: #ea580c !important;
+}
+
+.career-role-pill.active svg {
+  stroke: #ea580c !important;
+}
+
+/* Fieldset Skills Legend Box */
+.skills-fieldset-box {
+  border: 1.5px solid #bae6fd !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  background: #ffffff !important;
+  margin-bottom: 28px !important;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.04) !important;
+}
+
+.skills-fieldset-legend {
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  color: #0284c7 !important;
+  padding: 4px 16px !important;
+  background: #ffffff !important;
+  border: 1.5px solid #bae6fd !important;
+  border-radius: 9999px !important;
+  margin-left: 12px !important;
+}
+
+@media (max-width: 900px) {
+  .course-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}
+
+/* ── COURSE LOGO IMAGES (topchoice carousel) ─────────────────────── */
+/* White background on thumb-box when logo JPG is shown               */
+.topchoice-thumb-box:has(.topchoice-logo-img) {
+  background: #ffffff !important;
+}
+
+.topchoice-logo-img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 72% !important;
+  max-height: 72% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  border-radius: 18px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10) !important;
+  filter: none !important;
+  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease !important;
+}
+
+.topchoice-card:hover .topchoice-logo-img,
+.topchoice-card-layout-2col:hover .topchoice-logo-img {
+  transform: scale(1.06) !important;
+  box-shadow: 0 16px 48px rgba(2,132,199,0.18) !important;
+}
