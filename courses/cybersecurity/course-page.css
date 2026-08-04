@@ -1966,7 +1966,7 @@ body { background: #fffefd; color: var(--course-ink); }
   .recommended-carousel-button { transition: none; }
 }
 
-/* Ethical Hacking only: an image-led recommendation gallery and calm career-proof surfaces. */
+/* Shared course template: image-led recommendations and calm career-proof surfaces. */
 .course-page--ethical-hacking .recommended-courses-section {
   background: linear-gradient(180deg, #ffffff 0%, #f6f9fc 100%);
 }

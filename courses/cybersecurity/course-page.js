@@ -210,12 +210,21 @@ function getTechIcon(name) {
     'VeraCrypt': '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v2"/></svg>',
     'Wireshark': '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"><path d="M4 15c2-6 5-9 8-9s6 3 8 9"/><path d="M4 15h16M7 19h10"/></svg>'
   };
-  return iconMap[name] || cyberToolIcons[name] || '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"><polygon points="12 2 15 8 22 9 17 14 18 21 12 17 6 21 7 14 2 9 9 8 12 2"/></svg>';
+  if (iconMap[name] || cyberToolIcons[name]) return iconMap[name] || cyberToolIcons[name];
+  const label = name.toLowerCase();
+  if (/(azure|aws|cloud|google cloud|open stack)/.test(label)) return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"><path d="M7 18h10a4 4 0 0 0 .5-7.97A6 6 0 0 0 6 8.5 4.5 4.5 0 0 0 7 18z"/></svg>';
+  if (/(docker|kubernetes|container|terraform|devops|ansible)/.test(label)) return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1677ff" stroke-width="2"><rect x="4" y="8" width="16" height="10" rx="2"/><path d="M8 8V5h8v3M8 13h8M12 10v6"/></svg>';
+  if (/(data|analytics|powerbi|excel|pandas|numpy|sql|python|machine learning|chat-gpt|gemini)/.test(label)) return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M4 19V9m5 10V5m5 14v-7m5 7V3"/></svg>';
+  if (/(adobe|figma|invision|design|illustrator|photoshop|premiere|after effects)/.test(label)) return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="2"><path d="M5 19 18 6l2 2L7 21H5v-2z"/><path d="m14 7 3 3"/></svg>';
+  if (/(marketing|seo|content|email|social media)/.test(label)) return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2"><path d="m4 14 14-7v10L4 10v4zM8 14l1 5h4l-1-6"/></svg>';
+  if (/(communication|presentation|interpersonal|listening)/.test(label)) return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="2"><path d="M5 5h14v10H9l-4 4V5z"/><path d="M8 9h8"/></svg>';
+  return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg>';
 }
 
 const courseData = {
   'advanced-mern-stack': {
     title: 'Advanced MERN Stack Development Program',
+    metaTitle: 'Advanced Mern Stack Development Program in Jaipur | Grras Solutions - 9 Months Training certificate',
     shortTitle: 'MERN Stack',
     label: 'Full Stack Engineering',
     duration: '9 Months (36 Weeks)',
@@ -227,11 +236,11 @@ const courseData = {
     placements: '150k+ Placements till Date',
     partners: '600+ Hiring Partners',
     rating: '4.8 ★★★★★ (426 Student Reviews)',
-    subtitle: 'The Advanced MERN Stack Development program is designed to transform aspiring developers into industry-ready full-stack professionals. Build a strong GitHub portfolio and graduate ready for top tech challenges.',
-    overview: 'Complete MERN Stack Development Program is an intensive bootcamp designed to transform beginners into industry-ready full-stack software engineers capable of building, deploying, and scaling modern web applications.',
+    subtitle: 'Complete MERN Stack Developement Program is an intensive bootcamp designed to transform beginners into industry-ready full-stack engineers who can build, deploy, and scale modern web applications.',
+    overview: 'Complete MERN Stack Developement Program is an intensive bootcamp designed to transform beginners into industry-ready full-stack engineers who can build, deploy, and scale modern web applications.',
     careerIntro: 'Progress from full-stack foundations to production-ready MERN engineering through React, Node.js, Express, MongoDB, Next.js, GraphQL, cloud delivery, and a substantial project portfolio.',
-    tools: ['HTML5', 'CSS3', 'JavaScript ES6+', 'React 19', 'Next.js 15', 'Node.js', 'Express.js', 'MongoDB', 'TypeScript', 'Prisma ORM', 'Redux Toolkit', 'Tailwind CSS', 'GraphQL', 'AWS Cloud', 'Docker', 'WebSockets', 'VS Code', 'Git', 'GitHub'],
-    audience: ['College Students (CS/IT & related) aiming for tech roles', 'Career switchers from non-tech backgrounds entering software engineering', 'Frontend Engineers upgrading to Full-Stack Node.js & Architecture'],
+    tools: ['Angular', 'Bootstrap', 'CSS3', 'Express.js', 'Git', 'Git-Hub', 'GraphQL', 'HTML5', 'Mongo DB', 'MySQL', 'Next.js', 'Node.js', 'Prisma', 'React', 'Redux Toolkit', 'Tailwind CSS', 'VS Code', 'WebSockets'],
+    audience: ['College students (CS/IT & related) aiming for industry-ready skills', 'Career switchers from non-tech backgrounds entering software dev', 'Frontend developers expanding into full-stack with backend expertise', 'Backend developers mastering modern frontend frameworks', 'Working professionals upskilling in MERN + Cloud platforms', 'Aspiring entrepreneurs building web apps and SaaS products', 'Freelancers offering end-to-end web development services', 'Anyone with basic computer knowledge and strong determination', 'Prerequisites: Basic programming helps but isn’t mandatory — the course starts from fundamentals.'],
     projects: [
       {
         num: '#01',
@@ -294,10 +303,10 @@ const courseData = {
       }
     ],
     outcomes: [
-      'Build production-grade apps with React 19, Next.js 15 Server Components & Node.js microservices',
-      'Master RESTful & GraphQL APIs with JWT authentication, rate limiting, and role-based access control (RBAC)',
-      'Design optimized MongoDB & PostgreSQL schemas using Mongoose ORM and Prisma migrations',
-      'Deploy scalable cloud applications to Vercel, AWS, and Docker containers with automated CI/CD pipelines'
+      'Modern Frontend Development: Build React SPAs with TypeScript, Redux Toolkit, React Query; design UIs with Tailwind, Material UI, Shadcn.',
+      'Scalable Backend Architecture: Create REST APIs with Node & Express; master MySQL, MongoDB; implement JWT auth and Redis caching.',
+      'Interview-Ready DSA Expertise: Solve 150+ problems, master Big-O and data structures, crack top-tier interviews.',
+      'DevOps & Cloud Deployment: Containerize with Docker, build CI/CD pipelines, deploy on AWS, configure NGINX, monitor production apps.'
     ],
     modules: [
       {
@@ -824,22 +833,27 @@ function getCourse(key) {
 function getWebDevelopmentCourseProfile(key) {
   const profiles = {
     'react-development': {
+      title: 'Frontend Development with React.js',
+      metaTitle: 'Advanced REACT.JS Training and Certification Course - Grras Solutions',
       shortTitle: 'React.js',
       label: 'Web Development',
-      duration: '3 Months (12 Weeks)',
-      level: 'Beginner to Intermediate',
-      lab: 'Live Front-End Project Studio',
-      practicalWork: '8+ Interfaces & React Projects',
+      duration: '3-month intensive program',
+      level: 'No prerequisites required',
+      lab: 'Live online classes + Classroom training + Hands-on projects',
+      practicalWork: '6+ projects',
       salaryRange: '₹5.0 LPA - ₹13.0 LPA',
-      subtitle: 'Learn modern front-end engineering with JavaScript, React, reusable component architecture, state management, API integration, testing, and deployment.',
-      overview: 'A project-led React development program covering browser foundations, component thinking, application state, routing, APIs, accessibility, performance, testing, and production deployment. Learners progress from focused interface exercises to a complete portfolio-ready application.',
-      tools: ['HTML5', 'CSS3', 'JavaScript ES6+', 'React 19', 'TypeScript', 'Redux Toolkit', 'Tailwind CSS', 'REST APIs', 'Git', 'GitHub', 'VS Code'],
-      audience: ['Beginners who understand basic computer use and want to enter front-end development', 'Web designers or JavaScript learners moving into component-based UI engineering', 'Working professionals upgrading to modern React application workflows'],
-      outcomes: ['Build responsive, accessible interfaces with reusable React components', 'Manage local and application state with hooks and Redux Toolkit', 'Integrate REST APIs with loading, error, authentication, and form states', 'Test, optimize, document, and deploy a production-ready React application'],
+      subtitle: 'Frontend Development with React.js is a 3-month intensive program designed for BCA and B.Tech students aiming to become professional front-end developers.',
+      overview: 'Frontend Development with React.js is a 3-month intensive program designed for BCA and B.Tech students aiming to become professional front-end developers. This hands-on course combines foundational web technologies (HTML, CSS, JavaScript) with modern React.js development, UI frameworks, and deployment strategies. You’ll build 6+ projects, culminating in a production-ready capstone application hosted online.',
+      tools: ['Bootstrap', 'CSS3', 'HTML5', 'JavaScript', 'Mongo DB', 'Postman', 'React', 'REST API', 'Tailwind CSS'],
+      audience: ['BCA/B.Tech students preparing for internships and job placements', 'Career switchers transitioning into front-end development', 'Self-taught developers seeking structured, industry-standard training', 'Anyone passionate about building interactive, user-friendly web apps', 'Portfolio builders ready to showcase projects to employers', 'No prerequisites required. Course starts from HTML fundamentals.'],
+      outcomes: ['Hands-on from day one — every concept reinforced with real coding', 'Industry-standard stack — React 19, Redux Toolkit, modern tooling', 'Portfolio focus — deploy live projects employers actually review', '3-month intensive — fast-track to job-ready front-end developer', 'BCA/B.Tech optimized — structured for students, internship-focused', 'Deployment included — hosting from day one, not an afterthought'],
+      careerHeading: 'React JS Careers on the Rise',
+      curriculumHeading: 'React JS Training Course Curriculum',
       projects: [
-        { num: '#01', title: 'Responsive Product Discovery Interface', desc: 'Create a responsive catalog with filters, sorting, saved state, accessible controls, and reusable UI components.', skills: ['Responsive UI', 'Component Architecture', 'Filtering', 'Accessibility'], tags: ['React 19', 'CSS3', 'Git'] },
-        { num: '#02', title: 'API-Powered Analytics Workspace', desc: 'Build an authenticated dashboard with charts, route protection, asynchronous API states, and reusable data views.', skills: ['REST APIs', 'Authentication', 'State Management', 'Data Visualization'], tags: ['React 19', 'Redux Toolkit', 'TypeScript'] },
-        { num: '#03', title: 'Production React Capstone', desc: 'Plan, build, test, optimize, and deploy a complete React product with portfolio documentation.', skills: ['Testing', 'Performance', 'Deployment', 'Documentation'], tags: ['React 19', 'GitHub', 'Tailwind CSS'] }
+        { num: '#01', title: 'Portfolio Website', desc: 'Build and deploy a professional portfolio website.', skills: ['React', 'CSS3', 'GitHub'], tags: ['React', 'CSS3', 'GitHub'] },
+        { num: '#02', title: 'E-Commerce Frontend Platform', desc: 'Create an interactive e-commerce frontend platform.', skills: ['React', 'REST API', 'Tailwind CSS'], tags: ['React', 'REST API', 'Tailwind CSS'] },
+        { num: '#03', title: 'Expense Tracker Application', desc: 'Build an expense tracker application with React.', skills: ['React', 'JavaScript', 'Bootstrap'], tags: ['React', 'JavaScript', 'Bootstrap'] },
+        { num: '#04', title: 'Blogging Web Application', desc: 'Develop a blogging web application with React.', skills: ['React', 'Mongo DB', 'REST API'], tags: ['React', 'Mongo DB', 'REST API'] }
       ],
       careers: [
         { role: 'React Developer', range: '₹5.0 LPA - ₹12.0 LPA', salaryChart: { entryMin: 35, entryMax: 60, midMin: 60, midMax: 95, srMin: 95, srMax: 125 }, scopeText: 'Builds component-driven web applications, integrates APIs, manages application state, and maintains accessible responsive interfaces.' },
@@ -848,12 +862,14 @@ function getWebDevelopmentCourseProfile(key) {
         { role: 'JavaScript Application Developer', range: '₹5.5 LPA - ₹13.5 LPA', salaryChart: { entryMin: 36, entryMax: 64, midMin: 64, midMax: 102, srMin: 102, srMax: 135 }, scopeText: 'Develops interactive browser applications using modern JavaScript, modular architecture, API integrations, and automated quality checks.' }
       ],
       modules: [
-        { title: 'Module 1: Web, HTML & CSS Foundations', objective: 'Build responsive, semantic, accessible page foundations.', bullets: ['Semantic HTML structure and forms', 'Modern CSS layout with Flexbox and Grid', 'Responsive behavior, accessibility, and browser tools'] },
-        { title: 'Module 2: Modern JavaScript', objective: 'Develop reliable browser logic using contemporary JavaScript.', bullets: ['Variables, functions, arrays, objects, and modules', 'DOM events, forms, validation, and storage', 'Promises, async/await, fetch, and error handling'] },
-        { title: 'Module 3: React Components & Hooks', objective: 'Create reusable component systems and predictable interface behavior.', bullets: ['JSX, props, composition, and component boundaries', 'State, effects, refs, and custom hooks', 'Forms, validation, routing, and protected views'] },
-        { title: 'Module 4: State, APIs & Type Safety', objective: 'Connect applications to real services and manage shared state.', bullets: ['Redux Toolkit slices and asynchronous flows', 'REST API integration and authentication states', 'TypeScript interfaces, props, and API models'] },
-        { title: 'Module 5: Quality, Accessibility & Performance', objective: 'Prepare React applications for production use.', bullets: ['Component testing and user-flow checks', 'Accessible navigation, focus, and form feedback', 'Code splitting, rendering performance, and optimization'] },
-        { title: 'Module 6: Capstone & Deployment', objective: 'Ship and present a complete React portfolio project.', bullets: ['Application planning and repository workflow', 'Production build, environment settings, and deployment', 'README documentation, live demonstration, and review'] }
+        { title: 'Introduction to React & JavaScript Refresher', bullets: ['React and JavaScript fundamentals'] },
+        { title: 'React Components & Props', bullets: ['Components and props'] },
+        { title: 'State Management & Event Handling', bullets: ['State and events'] },
+        { title: 'React Hooks & Lifecycle', bullets: ['React hooks and lifecycle'] },
+        { title: 'Routing & Navigation', bullets: ['Routing and navigation'] },
+        { title: 'State Management with Context API & Redux', bullets: ['Context API and Redux'] },
+        { title: 'API Integration & Data Handling', bullets: ['REST API integration and data handling'] },
+        { title: 'Styling in React Applications', bullets: ['Styling React applications'] }
       ]
     },
     'python-django': {
@@ -1046,6 +1062,325 @@ function getWebDevelopmentCourseProfile(key) {
   return profiles[key] || {};
 }
 
+// Course-specific curriculum and FAQ text transcribed from the supplied source files.
+// Keeping it as data preserves the shared renderer, tabs, accordion behaviour, and layout.
+const sourceCourseOverrides = {
+  'advanced-mern-stack': {
+    modules: [
+      { title: 'Module 1: Web Fundamentals & Frontend Basics', bullets: ['Learn HTML5 semantic elements for clean and meaningful page structure', 'Create and manage HTML forms with proper input types and validation', 'Integrate multimedia elements (audio, video, iframe) effectively', 'Master CSS Flexbox for one-dimensional layouts', 'Master CSS Grid for complex two-dimensional layouts', 'Implement responsive design using media queries', 'Get introduced to Tailwind CSS and its utility-first approach', 'Build pixel-perfect, fully responsive web pages from scratch'] },
+      { title: 'Module 2: JavaScript, Typescript Mastery & DOM Manipulation', bullets: ['Learn JavaScript data types and core language fundamentals', 'Work with functions, arrays, and objects effectively', 'Master DOM manipulation for dynamic user interfaces', 'Handle events and user interactions efficiently', 'Understand asynchronous JavaScript using Promises', 'Implement Async/Await for clean and readable async code', 'Integrate external APIs into applications', 'Use TypeScript for scalable development', 'Work with interfaces, classes, and generics in TypeScript', 'Write production-ready, maintainable code'] },
+      { title: 'Module 3: Version Control & Backend Foundation', bullets: ['Master Git workflows for real-world projects', 'Understand branching strategies and version control best practices', 'Collaborate efficiently using GitHub', 'Understand the Node.js runtime and how it works internally', 'Learn the Node.js event loop in depth', 'Build RESTful APIs using Express.js', 'Implement middleware patterns in Express', 'Perform request validation for secure APIs', 'Handle errors using centralized error-handling mechanisms', 'Test APIs effectively using Postman'] },
+      { title: 'Module 4: Database Integration - MongoDB & MySQL', bullets: ['Learn MongoDB CRUD operations in depth', 'Design Mongoose schemas with proper validation', 'Implement relationships in MongoDB using Mongoose', 'Understand SQL fundamentals and relational concepts', 'Use Sequelize ORM with TypeScript for structured data handling', 'Handle database associations (one-to-many, many-to-many)', 'Design efficient and scalable database schemas'] },
+      { title: 'Module 5: Authentication, Security & Real-time Features', bullets: ['Learn password hashing using bcrypt', 'Implement JWT token generation and verification', 'Apply role-based access control (RBAC)', 'Secure applications with protected routes', 'Understand WebSocket communication fundamentals', 'Use Socket.io for real-time features', 'Implement real-time broadcasting', 'Work with rooms and namespaces in Socket.io', 'Handle real-time events for live applications'] },
+      { title: 'Module 6: React Development & State Management', bullets: ['Learn React functional components', 'Use core hooks like useState and useEffect', 'Build and use custom hooks', 'Implement client-side routing with React Router', 'Manage global state using Context API', 'Manage complex state with Redux Toolkit', 'Optimize performance using React.memo', 'Use useMemo for memoization and efficiency', 'Handle API calls with RTK Query'] },
+      { title: 'Module 7: GraphQL & Advanced React Projects', bullets: ['Understand GraphQL fundamentals: queries, mutations, and schema design', 'Design scalable GraphQL schemas', 'Implement Apollo Client in React applications', 'Manage data fetching and state with Apollo', 'Handle caching strategies effectively', 'Implement pagination in GraphQL', 'Integrate real-time features using Socket.io', 'Build production-ready full-stack applications', 'Follow modern full-stack architecture best practices'] },
+      { title: 'Module 8: Major MERN Project with GraphQL', bullets: ['Learn full-stack project architecture and planning', 'Implement role-based authentication (student / instructor / admin)', 'Build course management systems with video integration', 'Create enrollment workflows', 'Implement student progress tracking', 'Develop quiz and assessment modules', 'Integrate payment systems using Stripe'] },
+      { title: 'Module 9: Next.js 15 Full-Stack Development', bullets: ['Learn Next.js 15 App Router with file-based routing', 'Understand Server Components vs Client Components', 'Implement Server Actions for forms and data mutations', 'Use Prisma ORM with PostgreSQL', 'Set up authentication using NextAuth.js', 'Optimize applications with Next.js built-in features (Image, Font)'] },
+      { title: 'Module 10: GenAI Integration & Deployment', bullets: ['Learn OpenAI API integration (GPT-4, embeddings)', 'Master prompt engineering techniques', 'Build AI chatbots and content generation systems', 'Implement semantic search using vector databases', 'Use LangChain to build AI workflows and pipelines', 'Deploy applications on Vercel', 'Deploy on AWS (EC2, S3, RDS)', 'Deploy on free platforms like Render, Railway, and Netlify', 'Set up CI/CD pipelines for automated deployment'] }
+    ],
+    faqCategories: ['Support & Community', 'Certification & Careers', 'Projects & Hands', 'Learning Format & Flexibility', 'Tools & Technologies', 'Course Basics'],
+    preserveFaqCategoryLabels: true,
+    faqs: makeSourceFaqs(`
+Support & Community|Q1. Do I get mentorship during the course?|Yes, experienced MERN developers provide guidance and support throughout the program.
+Support & Community|Q2. Is there doubt-solving support?|Yes, live Q&A sessions, mentor assistance, and discussion forums are available.
+Support & Community|Q3. Will I join a developer community?|Yes, network with peers through webinars, hackathons, and collaborative projects.
+Support & Community|Q4. Do students get lifelong access to resources?|Yes, notes, project codes, and learning materials are accessible even after course completion.
+Support & Community|Q5. Why choose Grras Solutions?|Because of expert-led training, real-world MERN projects, flexible learning, cloud deployment guidance, and trusted placement support.
+Certification & Careers|Q1. Do I get a certificate after completing?|Yes, you’ll earn an industry-recognized MERN Stack Developer Certification.
+Certification & Careers|Q2. Is the certificate valuable for jobs?|Yes, it validates your full-stack development skills and practical expertise in building real-world web applications.
+Certification & Careers|Q3. What career roles can I pursue?|MERN Stack Developer, Full Stack JavaScript Developer, Frontend React Developer, Backend Node.js Developer, Web Application Engineer, Cloud-Ready Full Stack Developer.
+Certification & Careers|Q4. Do you provide placement assistance?|Yes, with resume building, mock interviews, portfolio guidance, and job portal access.
+Certification & Careers|Q5. Is MERN Stack a high-demand career?|Yes, MERN Stack developers are highly sought after in IT, fintech, SaaS, e-commerce, and tech startups.
+Projects & Hands|Q1. What projects will I complete in this course?|Projects include: E-Commerce Web App with shopping cart, checkout, and admin panel. Social Media Platform with posts, likes, comments, and real-time notifications. Job Portal / Dashboard with CRUD operations and REST API integration. Blogging Platform with content management and rich text editors. Booking / Task Management System with automated workflows and task schedulin
+Projects & Hands|Q2. Are these projects industry-relevant?|Yes, all projects simulate real-world MERN applications to prepare you for actual job scenarios.
+Projects & Hands|Q3. Can I showcase my projects in a portfolio?|Yes, projects can be shared on GitHub, LinkedIn, and during interviews to impress recruiters.
+Projects & Hands|Q4. Will I learn both frontend and backend integration?|Yes, the course teaches end-to-end development, connecting React.js frontend with Node.js & Express backend.
+Projects & Hands|Q5. Do we cover advanced MERN topics?|Yes, Redux state management, JWT Authentication, REST APIs, WebSockets, and cloud deployment are all included.
+Learning Format & Flexibility|Q1. Is the course online or offline?|Yes, both live online sessions and offline classroom training at Jaipur are available.
+Learning Format & Flexibility|Q2. Can working professionals take this course?|Yes, flexible schedules make it ideal for students, professionals, and career switchers.
+Learning Format & Flexibility|Q3. What if I miss a class?|All sessions are recorded, and you’ll get access to backup classes and resources anytime.
+Learning Format & Flexibility|Q4. Can beginners with no backend experience join?|Yes, even beginners can learn backend development with guided mentorship and practical exercises.
+Learning Format & Flexibility|Q5. Do I get lifetime access to materials?|Yes, all course notes, project codes, and learning resources remain accessible even after course completion.
+Tools & Technologies|Q1. What tools will I learn in this course?|You’ll master MongoDB, Express.js, React.js, Node.js, Redux, Git/GitHub, REST APIs, JWT Authentication, and WebSockets.
+Tools & Technologies|Q2. Will I learn frontend and backend development?|Yes, the course covers full-stack development, integrating React.js frontend with Node.js & Express APIs backend.
+Tools & Technologies|Q3. Is cloud deployment included?|Yes, you’ll learn to deploy full-stack MERN applications to cloud platforms.
+Tools & Technologies|Q4. Will I work on real-world projects?|Yes, you’ll create e-commerce apps, social media platforms, dashboards, blogging platforms, and booking/task management systems.
+Tools & Technologies|Q5. Do we practice authentication & real-time features?|Yes, you’ll implement JWT Authentication, real-time WebSocket features, and secure user management.
+Course Basics|Q1. What is this MERN Stack course about?|This course teaches full-stack JavaScript development using MongoDB, Express.js, React.js, and Node.js through hands-on projects and real-world deployment.
+Course Basics|Q2. Who can join this course?|Beginners, frontend developers, backend developers, students, and anyone aiming for a career as a MERN Stack or Full Stack JavaScript Developer.
+Course Basics|Q3. Do I need prior experience?|Basic knowledge of HTML, CSS, and JavaScript is recommended, but beginners can also start step by step with mentorship.
+Course Basics|Q4. How long does this course take?|The program includes 200+ hours of practical training, live projects, and portfolio building.
+Course Basics|Q5. What jobs can I get after completing?|You can work as a MERN Stack Developer, Full Stack JavaScript Developer, Frontend React Developer, Backend Node.js Developer, or Web Application Engineer.`)
+  },
+  'react-development': {
+    modules: [
+      { title: 'Introduction to React & JavaScript Refresher', bullets: ['ES6+ JavaScript Features', 'Introduction to React.js', 'Understanding Components & JSX', 'Virtual DOM & React Architecture', 'Setting up React with Create React App / Vite', 'Hello React App', 'Personal Portfolio Homepage'] },
+      { title: 'React Components & Props', bullets: ['Functional vs Class Components', 'Props & Default Props', 'Component Reusability', 'PropTypes Validation', 'Composition vs Inheritance', 'Product Card Component', 'Team Member Profile Card'] },
+      { title: 'State Management & Event Handling', bullets: ['useState Hook Basics', 'Event Handling in React', 'Conditional Rendering', 'Forms & Controlled Components', 'Lifting State Up', 'Counter Application', 'To-Do List App'] },
+      { title: 'React Hooks & Lifecycle', bullets: ['useEffect Hook', 'Component Lifecycle (Mount, Update, Unmount)', 'Custom Hooks', 'Rules of Hooks', 'Performance Considerations', 'Weather App with API Calls', 'Expense Tracker'] },
+      { title: 'Routing & Navigation', bullets: ['React Router Basics', 'Nested & Dynamic Routes', 'Navigation Links & Redirects', 'Protected Routes & Auth Guard', 'Route Parameters & Query Strings', 'Multi-Page Blog Website', 'E-commerce Product Pages'] },
+      { title: 'State Management with Context API & Redux', bullets: ['Context API Basics', 'useContext Hook', 'Introduction to Redux', 'Actions, Reducers & Store', 'Redux Middleware (Thunk, Saga basics)', 'Theme Switcher App', 'Shopping Cart with Redux'] },
+      { title: 'API Integration & Data Handling', bullets: ['Fetch API & Axios', 'Handling Async/Await in React', 'Error Handling & Loading States', 'GraphQL Basics with Apollo Client', 'Consuming External APIs', 'GitHub User Finder App', 'Movie Search App (API-based)'] },
+      { title: 'Styling in React Applications', bullets: ['Inline CSS & CSS Modules', 'Styled Components', 'Tailwind CSS Basics', 'Responsive Design with Flexbox & Grid', 'Best Practices for Theming', 'Styled Portfolio Site', 'Responsive Dashboard UI'] }
+    ],
+    faqCategories: ['Support & Community', 'Certification & Careers', 'Projects & Hands', 'Learning Format & Flexibility', 'Tools & Technologies', 'Course Basics'],
+    preserveFaqCategoryLabels: true,
+    faqs: makeSourceFaqs(`
+Support & Community|Q1. Will I have someone to help me and give me advice during the training?|Yes, throughout the course, mentors will give you feedback, help you with coding questions, and teach you the best ways to do things in the industry.
+Support & Community|Q2. Is it possible for me to connect with other students and developers?|Yes, you’ll be part of a strong learning community where you can work on coding challenges, have discussions, and do projects together.
+Support & Community|Q3. Will I still get help after I finish the course?|Yes, having access to resources and a community for life means you’ll always have help along the way as you learn React.
+Support & Community|Q4. Can people who want to change careers take this course?|Yes, it helps professionals move smoothly into React careers by giving them structured lessons and real-world projects.
+Support & Community|Q5. What are the benefits of choosing Grras Solutions for React Training?|because of the expert teachers, hands-on projects, flexible learning, certification, mentorship, community, and strong help with finding a job.
+Certification & Careers|Q1. Will I get a certificate after I finish the course?|Yes, you will get a React JS Training certification that is recognized by the industry and proves your skills as a front-end developer.
+Certification & Careers|Q2. Do employers accept this certification?|Yes, businesses see it as proof that you know how to use React, have worked with it before, and are ready for front-end development jobs.
+Certification & Careers|Q3.After training in React, what kinds of jobs can you get?|You can work as a UI Developer, Frontend Developer, React Developer, Full Stack Developer, or Web Application Engineer.
+Certification & Careers|Q4. Does the course help you find a job?|Yes, you will get help with your resume, preparing for interviews, building your portfolio, and getting into our exclusive job network.
+Certification & Careers|Q5: Is React a skill that is in high demand in the job market right now?|Yes, React is one of the most popular frameworks, and there are jobs in IT, e-commerce, SaaS, fintech, and startups.
+Projects & Hands|Q1. During training, what types of projects will I be working on?|To obtain hands-on React development experience, you will design dashboards, e-commerce platforms, dynamic forms, and real-time apps.
+Projects & Hands|Q2. Are these projects ready for a job portfolio?|Yes, each project is intended to highlight your abilities in a polished portfolio that hiring managers and recruiters will find impressive.
+Projects & Hands|Q3. Will real-world projects teach me how to integrate APIs?|Yes, projects involve creating dynamic, data-driven apps, integrating REST APIs, and using Redux to manage state.
+Projects & Hands|Q4. Is testing and debugging React apps covered in the course?|Yes, you will practice using contemporary tools for testing and debugging apps to make sure they are dependable, scalable, and ready for production.
+Projects & Hands|Q5. Will I use complex ideas in my projects?|Yes, projects use Redux and Context API for scalable state management, performance optimization, hooks, and routing.
+Learning Format & Flexibility|Q1. Is there an online or offline version of this course?|Yes, for flexible learning options, the course is offered in both live online sessions and offline classroom training.
+Learning Format & Flexibility|Q2. Is it possible for working professionals to enroll in the React training?|Yes, students and working professionals can learn React without interfering with their current obligations thanks to the flexible schedule.
+Learning Format & Flexibility|Q3. If I miss class, will I still have access to the recorded sessions?|Yes, all of the sessions are recorded. All of the recordings, notes, and practice files will be available to you for future use.
+Learning Format & Flexibility|Q4. Do I have access to learning materials for the rest of my life?|Yes, even after finishing the React JS course, all project files, recordings, and notes are still available.
+Learning Format & Flexibility|Q5. During the training, will I have a mentor?|Yes, throughout your journey, knowledgeable instructors provide you with individualized feedback, coding techniques, and real-world examples.
+Tools & Technologies|Q1. Which technologies will be covered in this React training?|JSX, React Components, Hooks, Redux, State Management, Context API, Routing, API Integration, and Deployment Techniques are among the things you will learn.
+Tools & Technologies|Q2. Will I also learn more complex React concepts?|Yes, you will learn Redux, performance optimization, reusable components, testing, and how to create scalable, production-ready apps in addition to the fundamentals.
+Tools & Technologies|Q3. Does this React course include real-world projects?|Yes, you will use contemporary React workflows to create dashboards, shopping carts, projects integrating APIs, and web applications that are ready for a portfolio.
+Tools & Technologies|Q4. Will React teach me mobile-friendly and responsive design?|Yes, you will design mobile-first, responsive interfaces that guarantee seamless use on tablets, smartphones, and PCs.
+Tools & Technologies|Q5. Are industry-standard tools covered in the training?|Yes, you will use Git, Redux DevTools, React Developer Tools, and contemporary workflows used by leading businesses.
+Course Basics|Q1. What is the purpose of this React JS training?|This course prepares you for careers in front-end development by teaching you everything from the basics of React to more complex ideas through practical projects.
+Course Basics|Q2. Who ought to sign up for this React course?|aspiring developers, learners, IT specialists, job changers, independent contractors, and business owners who want to become proficient in contemporary React development techniques.
+Course Basics|Q3. Is prior coding experience required for this course?|Although having a basic understanding of JavaScript is helpful, beginners can also begin. Using real-world examples and projects, React will be taught step-by-step.
+Course Basics|Q4. Following this training, what career roles can I obtain?|React developers, front-end engineers, full-stack developers, user interface developers, and software engineers with a focus on React are all possible career paths.
+Course Basics|Q5. Is this training appropriate for recent graduates and students?|Indeed, it helps students develop strong portfolios, obtain practical React experience, and become more employable in cutthroat job markets.`)
+  },
+  'certified-devops-engineer': {
+    title: 'Certified DevOps Engineer Course',
+    metaTitle: 'Best DevOps Course in India with Internship & Placement Support | GRRAS',
+    shortTitle: 'Certified DevOps Engineer',
+    label: 'Cloud & DevOps',
+    subtitle: 'Build a strong DevOps foundation with a curriculum that covers the complete DevOps lifecycle—from Linux and automation to CI/CD, containerization, Kubernetes, and cloud deployment.',
+    overview: 'Each module blends core concepts with hands-on practice, ensuring you gain real-world skills for modern DevOps environments and become job-ready as a Certified DevOps Engineer.',
+    modules: [
+      { title: 'Operating System Fundamentals for DevOps', bullets: ['Define SDLC models – Waterfall and Agile', 'Define DevOps, Why DevOps?', 'DevOps Principles', 'DevOps Lifecycle, Work Flow', 'DevOps Terminologies and goals', 'DevOps Tools', 'Configuration Management Tools', 'Continuous Integration and Deployment'] },
+      { title: 'Linux', bullets: ['About Linux', 'Why it is best approach for DevOps', 'Basic Commands and Linux file system', 'Redirection operators and piping', 'Understanding of symbolic links', 'User and group management', 'Understanding of permissions', 'Understanding of storage in Linux.', 'Process and Filesystem Management', 'About job scheduling – cronjob | at', 'Introduction about log messages, log monitoring commands', 'Software installation and package management.', 'Managing networking'] },
+      { title: 'Servers', bullets: ['About DNS (Domain name server)', 'Introduction to Apache and tomcat', 'Deployment of Apache and Tomcat on EC2 Instance using AWS.'] },
+      { title: 'Automation Engines', bullets: ['What is automation engine?', 'Difference between Ansible | puppet | chef | saltstack', 'Why Ansible is a better approach to do automation.', 'Introducing and deploying Ansible', 'Introduction to Ad-Hoc commands', 'Introduction to YAML', 'Implementing playbooks, variables and facts', 'Introduction to roles', 'Managing large projects with roles', 'Troubleshooting Ansible', 'Introduction about Ansible Tower and AWX.'] },
+      { title: 'Container Technology', bullets: ['Introduction to container engines ( Rocket | Docker | Podman )', 'Why Docker is better approach to handle containers.', 'What is Docker', 'Installation and configuration of Docker on – Linux | Windows | Unix', 'Introduction to Docker commands', 'Introduction to Docker images', 'Understanding of Docker file.', 'Build custom images with Docker file – Hands on exercise', 'Understanding what Docker compose is.'] },
+      { title: 'Jenkins', bullets: ['Use Jenkins to perform Continuous Integration within your Software Development Lifecycle', 'Install Jenkins using Docker', 'Configure Jenkins “The DevOps way”, using Docker, Jobs DSL and Jenkins Pipelines', 'Use plugins to integrate Jenkins with popular development software', 'Configure the authentication and authorization options to tighten security on your Jenkins UI'] },
+      { title: 'Git – Version Control', bullets: ['About version control systems and its types', 'Difference between CVCS and DVCS', 'Introduction to GIT', 'GIT installation on windows and linux platforms.', 'Managing GIT and GITHUB', 'Basic GIT commands', 'Branching and merging', 'Connect GIT to various platforms like Jenkins Ansible etc.'] },
+      { title: 'Nagios', bullets: ['Installation and updates', 'Administration (checking system status, managing users, cloning user accounts)', 'Managing plugins', 'Understanding of dashboards', 'Monitoring windows machines', 'Monitoring Linux machines', 'Running auto discovery jobs', 'Managing notifications', 'Scheduling downtime'] },
+      { title: 'AWS', bullets: ['What is cloud computing?', 'Types of models in cloud', 'Difference between Iaas | Paas | Saas', 'What is public, private and hybrid cloud.', 'Understanding of IAM', 'Understanding of EC2', 'Understanding of Load Balancer', 'Auto Scaling', 'Understanding of RDS', 'Understanding of Route53', 'Understanding of Volumes (EBS, S3)', 'Introduction to VPC'] },
+      { title: 'Python', bullets: ['Understanding of python rich data-types as Numbers, Strings, Lists, Tuples, Dictionaries Sets.', 'Introduction to Python Operators and their Precedence.', 'Understanding of Control Flow of programs with Flow charts, Algorithms and Control Statements (if-else, nested if-else).', 'Python Functions in deep to make code portable and reusable', 'Python Closure and Decorator to decorate any boring function to impressive Function.', 'Python Loops (For and While) to make interactive code as well as simply complex Code.'] },
+      { title: 'Kubernetes', bullets: ['Introduction to Kubernetes', 'Kubernetes overview', 'Setup Kubernetes', 'Kubernetes concepts – POD’s | ReplicaSets | Deployments', 'YAML Introduction', 'Networking in Kubernetes'] }
+    ],
+    faqCategories: ['Course Basics', 'Certification & Careers', 'Tools & Technologies', 'Projects & Hands', 'Learning Format & Flexibility', 'Support & Community'],
+    preserveFaqCategoryLabels: true,
+    faqs: makeSourceFaqs(`
+Course Basics|Q1.What is the DevOps Master course about?|This program teaches CI/CD pipelines, containerization, cloud deployments, infrastructure automation, and monitoring. This lets students use DevOps principles to make software development and operations more efficient.
+Course Basics|Q2. Who should sign up for this DevOps Master course?|People who want to learn more about DevOps automation and continuous delivery practices should sign up. This includes system administrators, IT professionals, developers, testers, cloud engineers, and people who want to change careers.
+Course Basics|Q3. Do I need to have worked in DevOps before to take this course?|No, even people who are new can join. It’s helpful to know some basic Linux, scripting, or cloud skills, but the course starts with the basics and then moves on to more advanced DevOps topics.
+Course Basics|Q4. What jobs can I get after I finish this course?|Learners can work as DevOps Engineers, Cloud Engineers, Site Reliability Engineers, Release Managers, Automation Specialists, or Build Engineers for some of the best companies in the world.
+Course Basics|Q5. Is this DevOps Master course good for people who are still in school or have just graduated?|Yes, it gives students and graduates a strong foundation, certifications, and real-world experience that makes them ready for jobs in DevOps and the cloud.
+Certification & Careers|Q1: Will I get a certificate after taking DevOps training?|Yes, students get the DevOps Master certification, which shows that they know how to use CI/CD, automation, containerization, and cloud deployment.
+Certification & Careers|Q2. Do employers value DevOps certifications?|Yes, DevOps certifications are very valuable because they show that you know how to work with pipelines, containers, and automation. This greatly increases your job prospects.
+Certification & Careers|Q3. What kinds of jobs can you get after getting certified?|After you get your certification, you can work as a Release Manager, Site Reliability Engineer, Cloud Engineer, or DevOps Engineer.
+Certification & Careers|Q4. Will this DevOps course help me find a job?|Yes, placement support includes help with writing a resume, optimizing your LinkedIn profile, doing mock interviews, and getting access to job portals.
+Certification & Careers|Q5. Is DevOps a skill that is in high demand right now?|Yes, DevOps is one of the most sought-after IT skills, and companies all over the world are hiring people who know it.
+Tools & Technologies|Q1.What tools will I learn in DevOps training?|You will learn how to use modern DevOps tools like Git, Jenkins, Docker, Kubernetes, Ansible, Terraform, AWS, Prometheus, Grafana, and CI/CD.
+Tools & Technologies|Q2. Will I learn how to do DevOps in the cloud?|Yes, the course teaches AWS and Azure DevOps practices, which let students deploy, automate, and manage cloud-native applications that can grow.
+Tools & Technologies|Q3. Do projects include tools that people use in real life?|Yes, students use Docker containers, Kubernetes clusters, automated pipelines, and Terraform or Ansible to manage infrastructure.
+Tools & Technologies|Q4. Does the class talk about tools for logging and monitoring?|Yes, you’ll learn how to use Prometheus, Grafana, and the ELK Stack to make sure that your applications are being monitored, your systems are being logged, and your performance is being improved.
+Tools & Technologies|Q5: Will I learn about Infrastructure as Code (IaC)?|Yes, students get to use Terraform and Ansible to set up, manage, and automate infrastructure in real life.
+Projects & Hands|Q1.What kinds of projects will I do during DevOps training?|Some of the projects are building CI/CD pipelines, putting applications in containers, automating cloud deployments, and using real-world DevOps tools to keep an eye on systems.
+Projects & Hands|Q2. Are these DevOps projects ready to be put in a portfolio?|Yes, projects are ready for portfolios, which helps students show off their skills in automation, pipelines, and deployments to clients and employers.
+Projects & Hands|Q3.Will I learn CI/CD pipelines in a hands-on way?|Yes, you’ll use Jenkins and GitHub to make CI/CD pipelines that automate code builds, tests, and deployments.
+Projects & Hands|Q4. Are there any projects in the course that involve containerization?|Yes, students learn how to build Docker containers and set up Kubernetes clusters that can grow to handle microservices applications.
+Projects & Hands|Q5. Will I get to practice automation on real projects?|Yes, you’ll use Ansible and Terraform to automate tasks, which will give you real-world experience with infrastructure automation.
+Learning Format & Flexibility|Q1. Is this DevOps training available in person or online?|Yes, students can choose to take interactive live online classes or go to offline classroom training, depending on what works best for their learning style and schedule.
+Learning Format & Flexibility|Q2. Is it possible for people who work to take this DevOps course?|Yes, flexible hours make it possible for working people to balance their jobs with their training, which helps them move up in their careers without giving up their current professional responsibilities.
+Learning Format & Flexibility|Q3. Can I get recordings of classes I missed?|Yes, every session is recorded, and students can review or learn missed material at any time by listening to the recordings, reading the notes, and doing the assignments.
+Learning Format & Flexibility|Q4: Do I have access to learning materials for the rest of my life?|Yes, students can access their notes, projects, practice files, and recordings for life, so they can always go back and review DevOps concepts.
+Learning Format & Flexibility|Q5. Will I have the chance to work with an expert during the training?|Yes, certified DevOps professionals help students with projects, coding, real-world best practices, and career advice that is tailored to their needs.
+Support & Community|Q1. Will I have a mentor while I learn DevOps?|Yes, DevOps experts give students ongoing help with both their technical skills and their careers.
+Support & Community|Q2. Is it possible for me to talk to other people who are learning DevOps or are experts in it?|Yes, you will be able to join active DevOps communities, webinars, and groups for networking.
+Support & Community|Q3. Will I still get help after I finish the course?|Yes, having access to resources and alumni communities for life means you will always have help.
+Support & Community|Q4.Is this DevOps course good for people who want to change careers?|Yes, it helps professionals move smoothly into DevOps jobs.
+Support & Community|Q5. What makes Grras Solutions the best choice for DevOps training?|Because of the success stories, certifications, placements, and hands-on projects that come with expert trainers.`)
+  },
+  'certified-aws-devops': {
+    title: 'Certified AWS DevOps Course',
+    metaTitle: 'DevOps with Azure Certification Training Course | Learn by Our Industry Experts',
+    shortTitle: 'AWS DevOps',
+    label: 'Cloud & DevOps',
+    subtitle: 'Our industry-aligned AWS DevOps Engineer (DOP-C02) curriculum is designed to build strong DevOps foundations and advanced AWS implementation skills.',
+    overview: 'The course emphasizes hands-on learning with AWS DevOps services, enabling you to design, automate, and manage end-to-end CI/CD pipelines, cloud infrastructure, and containerized applications.',
+    modules: [
+      { title: 'DevOps Foundations & Lifecycle', bullets: ['DevOps culture, principles, and real-world workflows', 'CI/CD lifecycle: Plan → Code → Build → Test → Release → Deploy → Monitor', 'Overview of DevOps tools: Jenkins, GitHub Actions, AWS CodePipeline'] },
+      { title: 'Source Code Management with Git & GitHub', bullets: ['Git fundamentals: clone, branch, merge, pull requests', 'GitHub repository setup and branching strategies', 'GitHub integration with AWS CI/CD pipelines'] },
+      { title: 'Agile Tracking & Jira Boards', bullets: ['Agile concepts: user stories, backlogs, and sprints', 'Jira/GitHub boards for DevOps teams', 'Linking issues with commits and pipelines'] },
+      { title: 'AWS DevOps Core Services', bullets: ['AWS CodePipeline for CI/CD orchestration', 'AWS CodeBuild and CodeDeploy for automated builds and deployments', 'Secrets management using AWS Secrets Manager and SSM Parameter Store'] },
+      { title: 'Multi-Technology Application Pipelines', bullets: ['CI/CD pipelines for Java, .NET Core, and Node.js applications', 'Frontend deployment using S3 and CloudFront', 'Lambda and API Gateway deployment automation'] },
+      { title: 'Infrastructure as Code (IaC)', bullets: ['AWS CLI usage for DevOps automation', 'CloudFormation concepts: stacks and templates', 'Infrastructure provisioning through CI/CD pipelines'] },
+      { title: 'Containers & Future DevOps Tools', bullets: ['Introduction to Docker, Kubernetes, and container concepts', 'Container image management using Amazon ECR', 'Deploying containerized applications on ECS'] },
+      { title: 'Monitoring, Security & Best Practices', bullets: ['Monitoring with AWS CloudWatch metrics, logs, and alarms', 'CI/CD pipeline security using IAM roles and approvals', 'Cost optimization and governance in DevOps workflows'] }
+    ]
+  },
+  'docker-containers': {
+    title: 'Docker Containers Training Course', shortTitle: 'Docker Containers', label: 'Docker & Kubernetes',
+    modules: sourceModuleHeadings('Introduction to Containerization|Docker Installation and Setup|Container Operations|Working with Docker Images|Docker Image Management|Dockerfile Concepts|Storage Management with Docker Volumes|Networking in Docker|Container Security Basics|Docker Workflow and Lifecycle|Docker Troubleshooting and Best Practices|Hands-On Docker Project')
+  },
+  'certified-terraform-associate': {
+    title: 'Certified Terraform Associate Course', shortTitle: 'Terraform Associate', label: 'Cloud Computing',
+    modules: sourceModuleHeadings('Introduction to Infrastructure as Code (IaC)|Terraform Basics & Core Workflow|Terraform Configuration Language (HCL)|Managing Terraform State|Working with Terraform Providers|Terraform Modules & Reusability|Input Variables, Outputs, and Data Sources|Terraform Provisioners & Cloud Init|Terraform Cloud & Collaboration|Terraform Debugging & Troubleshooting|Terraform Security & Best Practices|Mock Exam Preparation & Review')
+  },
+  'az-305-azure-infrastructure-solutions': {
+    title: 'AZ-305: Azure Infrastructure Solutions', shortTitle: 'Azure Infrastructure Solutions', label: 'Cloud Computing',
+    modules: sourceModuleHeadings('Design Governance and Compliance|Design Identity, Security, and Networking|Design for Data Storage|Design for Business Continuity|Design for High Availability and Scalability|Monitoring, Cost Optimization, and Automation|Case Study and Architecture Design|Hands-On Azure Infrastructure Project')
+  },
+  'az-204-azure-developer-associate': {
+    title: 'AZ-204: Azure Developer Associate', shortTitle: 'Azure Developer Associate', label: 'Cloud Computing',
+    modules: sourceModuleHeadings('Azure Compute Services|Azure Storage Services|Azure Security & Identity|Monitoring & Diagnostics|Messaging & Event-Based Services|API & Integration Services|DevOps & Deployment Tools|Networking for Developers|Application Configuration & Management|Authentication & Authorization Standards')
+  },
+  'advanced-penetration-testing': {
+    title: 'Advanced Penetration Testing', shortTitle: 'Advanced Penetration Testing', label: 'Cyber Security',
+    modules: sourceModuleHeadings('Cybersecurity Foundations & Hacker Mindset|Networking for Offensive Security|Linux Fundamentals|Bash Scripting for Penetration Testers|Python Scripting for Offensive Security|Windows & Active Directory Basics|Cryptography & Data Protection|Reconnaissance & OSINT|Network Scanning & Enumeration|Vulnerability Assessment & Risk Analysis|System Hacking & Privilege Escalation|Malware, Sniffing & Session Attacks|Reverse Engineering|IDS, Firewalls & Evasion Techniques|Web Application Penetration Testing|API Penetration Testing')
+  },
+  'certified-kubernetes-administrator': {
+    title: 'Kubernetes (CKA) Training & Certification Course', shortTitle: 'Kubernetes CKA', label: 'Docker & Kubernetes',
+    modules: sourceModuleHeadings('Foundations and Prerequisites|Docker Basics|Docker Images and Storage|Docker Networking and Compose|Kubernetes Architecture|Cluster Setup|Workloads and Deployments|Scheduling and Node Management|Application Lifecycle and Configurations|Cluster Maintenance and Upgrades|Security and RBAC|Storage and Networking in Kubernetes|Ingress and Gateway API|Autoscaling with HPA|Helm Introduction|Exam Simulation and Practice')
+  },
+  'certified-kubernetes-security-specialist': {
+    title: 'Certified Kubernetes Security Specialist (CKS)', shortTitle: 'Kubernetes CKS', label: 'Cyber Security',
+    modules: sourceModuleHeadings('Kubernetes Attack Surface|Hardening Kubernetes Clusters|Securing the Kubernetes Dashboard|Securing the Underlying System|System and Network Hardening|Techniques to Reduce Vulnerabilities|Managing Kubernetes Secrets|Importance of Securing the Supply Chain|Runtime Security|Hands-On Labs')
+  },
+  'python-programming-certificate': {
+    title: 'Python Programming & DSA Course', shortTitle: 'Python Programming & DSA', label: 'Programming Languages',
+    modules: sourceModuleHeadings('Introduction To Python & Setup|Python Installation and Environment Setup|Writing first program in python|Syntax of python|Data type and Data Structures|Advance Containers from collection module|Control Statements|Looping in Python|Functions in Python|Advance Functions in Python|Closures and Decorators in Python|OOPs|Advance OOPS|Implementation of Data Structures in Python|Generators & Iterators in Python|Exception Handling|File Handling|Data Serialization|Installing Third Party Modules in Python|Database Connectivity|Modules and Packages|Standard Library|Graphical User Interface using Tk|Virtual Environment')
+  },
+  'graphic-design-mastery': {
+    title: 'Graphic Design Mastery Program', shortTitle: 'Graphic Design Mastery', label: 'Graphic Designing',
+    modules: sourceModuleHeadings('ADOBE PHOTOSHOP PROGRAM|Design Foundations|Image Editing & Retouching|Photo Manipulation|Advanced Compositing|Typography & Layout in Photoshop|Branding Applications|Digital Painting & Creative Effects|Print & Export Workflow|Portfolio Development|Skills You Will Gain|Career Opportunity|ADOBE IIIUSTRATOR PROGRAM|Vector Design Foundations|Logo Design Fundamentals|Typography & Text Effects|Illustration & Digital Art|Infographics')
+  },
+  'graphic-design-essentials': {
+    title: 'Graphic Design Mastery Program', shortTitle: 'Graphic Design Essentials', label: 'Graphic Designing',
+    modules: sourceModuleHeadings('ADOBE PHOTOSHOP PROGRAM|Design Foundations|Image Editing & Retouching|Photo Manipulation|Advanced Compositing|Typography & Layout in Photoshop|Branding Applications|Digital Painting & Creative Effects|Print & Export Workflow|Portfolio Development|Skills You Will Gain|Career Opportunity|ADOBE IIIUSTRATOR PROGRAM|Vector Design Foundations|Logo Design Fundamentals|Typography & Text Effects|Illustration & Digital Art|Infographics')
+  },
+  'motion-graphics': {
+    title: 'Graphic Design Mastery Program', shortTitle: 'Multimedia & Motion Graphics', label: 'Graphic Designing',
+    modules: sourceModuleHeadings('ADOBE PREMIERE PRO PROGRAM|Video Editing Foundations|Transitions & Effects|Titles & Graphics|Color Correction & Grading|Hold frame and Adjustment layers|Special Effects Integration|Export & Delivery|Portfolio Development|Skills You Will Gain|Career Outcomes|ADOBE AFTER EFFECTS PROGRAM|Keyframes & Animation Basics|Object Animations|Text Animations|PSD & Vector Animations|Motion Graphics Projects|VFX & Compositing')
+  },
+  'data-science-machine-learning-genai': {
+    title: 'Data Science & Machine Learning with GenAI', shortTitle: 'Data Science & Machine Learning', label: 'Data Science',
+    tools: ['Ai', 'Data Analytics', 'Data Modeling', 'Data Visualization', 'Data-Engineering', 'Machine Learning', 'Math Algorithm', 'MLOps', 'NumPy', 'Pandas', 'Pyspark', 'Python'],
+    overview: 'Complete Data Science & AI Curriculum',
+    modules: sourceModuleHeadings('Understanding Database & Connectivity|Statistics & Mathematics|Data Science (Data Engineering, Analysis & Visualization)|Machine Learning|Natural Language Processing (NLP)|Deep Learning & Neural Networks|Generative AI (Including Retrieval-Augmented Generation – RAG)|Cloud Computing')
+  },
+  'data-structures-algorithms-bootcamp': {
+    title: 'Data Structures & Algorithms Bootcamp', shortTitle: 'Data Structures & Algorithms', label: 'Programming Languages',
+    tools: ['Data Science', 'Devops', 'Full Stack Develoment', 'Mobile App Development', 'Python'],
+    overview: 'DSA Course – Foundation is a comprehensive 8–12 week program designed to transform beginners into interview-ready software engineers with a strong command over algorithms and data structures.',
+    modules: sourceModuleHeadings('Introduction to Programming & Problem Solving|Data Structures & Algorithms|Recursion, Backtracking, and Dynamic Programming|Searching and sorting|Matrix Operations and Problem-Solving|OOPs and Advanced Data Structures|Advanced Data Structures with C++ STL|Tree Data Structures|Matrix|Greedy Algorithms, Tries, and Dynamic Programming|Interview Preparation and Mock Sessions')
+  },
+  'salesforce-admin-development': {
+    title: 'Become a Salesforce Expert', shortTitle: 'Salesforce Admin & Development', label: 'Salesforce',
+    tools: ['Admin', 'Apex Programming', 'Data Modeling', 'LWC'],
+    overview: 'Build practical Salesforce administration and development expertise through CRM configuration, automation, Apex programming, and Lightning Web Components.',
+    modules: sourceModuleHeadings('Overview of Salesforce and CRM|Cloud Computing|Sales App|Salesforce Data Modelling & Relationships|UI Customization in Lightning Experience|Data Managements Tools|Security and Access Management|Report and Dashboards|Automation Tools|Introduction about|Apex Programming Basics|Apex DML & Database Class Methods|SOQL & SOSL|Apex Trigger|Governor Limits & Batch Apex|Asynchronous Apex|Visualforce|Deployment Process')
+  },
+  'ai-powered-data-analytics': {
+    title: 'AI-Powered Data Analytics & Automation Master Program', shortTitle: 'AI-Powered Data Analytics', label: 'Data Analytics',
+    tools: ['Chat-GPT', 'Data Analytics', 'Data Visualization', 'Excel', 'Gemini', 'Google Sheets', 'Looker Studio', 'Matplotlib', 'NumPy', 'Pandas', 'Power Automate', 'PowerBi', 'Prompt Engineering', 'Python', 'R Programming', 'R Studio', 'Seaborn'],
+    overview: 'Master data analytics and automation through spreadsheets, SQL, BI tools, Python, R, AI-powered insights, and real-world case studies.',
+    modules: sourceModuleHeadings('Module 1 : Spreadsheet Intelligence – Excel & Google Sheets|Module 2 : DataSpeak – SQL & Database Management|Module 3 : Visual Minds – Power BI & Tableau|Module 4 : Insight Studio – Looker Studio|Module 5 : QueryAnalytics – Google BigQuery|Module 6 : FlowLogic – Power Automate|Module 7 : StatSense – Business Statistics & Insights|Module 8 : Py Analytics – Python for Data Analytics|Module 9 : R Analytics – R Programming for Analytics|Module 10 : AI Vision – Powered Analytics & Predictive Insights|Module 11 : PromptVerse – Prompt Engineering & Generative AI for Analysts|Module 12 : RealWorld Scenarios – Case Studies')
+  },
+  'communication-training': {
+    title: 'Soft Skill and Communication Training', shortTitle: 'Soft Skill and Communication', label: 'Soft Skills',
+    tools: ['Active Listening', 'Communication', 'Interpersonal', 'Presentation'],
+    overview: 'Develop practical communication, presentation, personality, accent, and interview skills for professional success.',
+    modules: sourceModuleHeadings('Grammar & Vocabulary|Communication – Part 1|Communication – Part 2|Accent Neutralisation|Personality Enhancement|Interview Skills|Voice & Accent Training / BPO Training')
+  },
+  'digital-marketing-professional': {
+    title: '360° Digital Marketing Professional Program', shortTitle: 'Digital Marketing', label: 'Digital Marketing',
+    tools: ['Content Marketing', 'Email Marketing', 'Search Engine Optimization (SEO)', 'Social Media Marketing (SMM)'],
+    overview: 'Build practical digital marketing expertise across SEO, paid advertising, social media, content, automation, analytics, creative strategy, and AI.',
+    modules: sourceModuleHeadings('Digital Marketing Foundation|Website, CMS & Conversion Optimization|Search Engine Optimization (SEO)|Performance Marketing (Paid Advertising)|Social Media Marketing|Content Marketing & Copywriting|Email, WhatsApp & Marketing Automation|Analytics, Tracking & Data|Creative & Design for Marketers|AI in Digital Marketing|Live Projects & Internship|Career, Freelancing & Agency Setup|Final Program Outcome')
+  }
+};
+
+function makeSourceFaqs(rows) {
+  return rows.trim().split('\n').map(row => {
+    const [cat, q, a] = row.split('|');
+    return { cat, q, a };
+  });
+}
+
+function sourceModuleHeadings(titles) {
+  return titles.split('|').map(title => ({ title, bullets: [] }));
+}
+
+// Source skill lists and course descriptions are applied independently of the
+// shared layout so every migrated page keeps its original course-specific copy.
+Object.assign(sourceCourseOverrides['advanced-penetration-testing'], { tools: ['Aircrack-ng', 'Burp Suite', 'Hashcat', 'John the Ripper', 'kali linux', 'Linux', 'Maltego', 'Metasploit Framework', 'Nikto', 'Nmap', 'OWASP ZAP', 'SET (Social Engineering Toolkit)', 'Shodan', 'SQLMap', 'VeraCrypt', 'Wireshark'], overview: 'This extensive course consists of 75–80 hours of comprehensive learning delivered through 72+ live technical sessions and 8 value-added sessions. The curriculum covers topics from networking fundamentals to advanced penetration techniques, delivered through practical labs and hands-on exercises for real-world readiness.' });
+Object.assign(sourceCourseOverrides['certified-kubernetes-administrator'], { tools: ['Cloud Security', 'Containerization', 'Kubernetes', 'Linux'], overview: 'Our comprehensive curriculum spans from container fundamentals to advanced Kubernetes operations, covering architecture, deployment, networking, security, and monitoring. The program is structured to progressively build expertise through hands-on labs and real-world scenarios, ensuring practical mastery of container orchestration.' });
+Object.assign(sourceCourseOverrides['certified-kubernetes-security-specialist'], { tools: ['Admin Roles', 'Associate', 'Kubernetes', 'Security and Recovery'], overview: 'Our Certified Kubernetes Security Specialist (CKS) program delivers a complete, job-ready learning experience designed to help you master Kubernetes security in real-world environments. Through immersive, hands-on training, you will gain practical expertise in securing Kubernetes clusters, workloads, container images, and cloud-native applications using industry-standard security practices.' });
+Object.assign(sourceCourseOverrides['python-programming-certificate'], { tools: ['BeautifulSoup', 'CSV', 'Docker', 'Flask', 'Git', 'Git-Hub', 'JSON', 'MLOps', 'MySQL', 'NumPy', 'Pandas', 'Pytest', 'Python', 'REST API', 'Tkinter'], overview: 'Master Python from basics to advanced development with data structures and algorithms. Learn Python fundamentals, control flow, functions, OOP, file handling, exception management, database connectivity, socket programming, Flask web development, and REST APIs. Implement searching, sorting, linked lists, stacks, queues, and advanced data structures with real-world problem-solving.' });
+Object.assign(sourceCourseOverrides['graphic-design-mastery'], { tools: ['Adobe Illustrator', 'Adobe Photoshop', 'Adobe-XD', 'Figma', 'Invision'], overview: 'Comprehensive hands-on training in Adobe Creative Suite covering graphic design, photo editing, vector illustration, video editing, and motion graphics through structured modules and practical projects.' });
+Object.assign(sourceCourseOverrides['graphic-design-essentials'], { tools: ['Adobe Illustrator', 'Adobe Photoshop'], overview: 'Comprehensive hands-on training in Adobe Creative Suite covering graphic design, photo editing, vector illustration, video editing, and motion graphics through structured modules and practical projects.' });
+Object.assign(sourceCourseOverrides['motion-graphics'], { tools: ['Adobe After effects', 'Adobe Premiere Pro'], overview: 'Comprehensive hands-on training in Adobe Creative Suite covering graphic design, photo editing, vector illustration, video editing, and motion graphics through structured modules and practical projects.' });
+Object.assign(sourceCourseOverrides['docker-containers'], { tools: ['Admin Roles', 'Associate', 'Containerization', 'Docker'], overview: 'Our Docker Containers Training program delivers a complete, job-ready learning experience designed to help you master containerization in real-world environments. Through immersive, hands-on training, you will gain practical expertise in building, running, managing, and troubleshooting Docker containers used in modern application deployment.' });
+Object.assign(sourceCourseOverrides['certified-terraform-associate'], { tools: ['Associate', 'Cloud', 'Devops', 'Terraform'], overview: 'Master Infrastructure-as-Code (IaC) using Terraform through a comprehensive and practical curriculum. This program covers cloud provisioning, automation workflows, Terraform state management, modules, CI/CD integration, and multi-cloud deployments. Designed with real-world DevOps scenarios, this course prepares you for modern cloud engineering and automation roles.' });
+Object.assign(sourceCourseOverrides['az-305-azure-infrastructure-solutions'], { tools: ['Admin Roles', 'Associate', 'Azure', 'Cloud'], overview: 'With advanced, architecture-focused training, this program prepares you to design enterprise-grade Azure infrastructure solutions. The curriculum includes instructor-led sessions, hands-on labs, and real-world design scenarios that build strong expertise in Azure identity, networking, storage, security, governance, high availability, and business continuity.' });
+Object.assign(sourceCourseOverrides['az-204-azure-developer-associate'], { tools: ['Admin Roles', 'Associate', 'Azure', 'Cloud'], overview: 'The Azure Developer Associate program prepares you to build, deploy, and maintain cloud-native applications on Microsoft Azure. The curriculum combines instructor-led sessions, practical labs, and real-world development scenarios to strengthen your skills in application development, APIs, serverless computing, and Azure integrations.' });
+Object.assign(sourceCourseOverrides['certified-devops-engineer'], { tools: ['Automation', 'Cloud', 'Monitoring', 'Orchestration'], overview: 'Our Certified DevOps Engineer program delivers a complete, job-ready learning experience designed to help you master modern DevOps tools and workflows. Through 26 weeks of immersive training, you’ll gain hands-on expertise in CI/CD pipelines, GitHub integration, Docker, Kubernetes, configuration management, infrastructure automation, and cloud DevOps practices used by top companies worldwide.' });
+Object.assign(sourceCourseOverrides['certified-aws-devops'], { tools: ['AWS', 'Docker', 'Git', 'Git Hub', 'Git Lab', 'Google Cloud Platform', 'Grafana', 'Kubernetes', 'open stack', 'Terraform'], overview: 'This AWS DevOps Engineer (DOP-C02) training program is a comprehensive, hands-on course designed to build real-world AWS DevOps expertise. The curriculum includes over 75 hours of instructor-led live training and practical labs, focusing on CI/CD pipelines, AWS DevOps tools, Infrastructure as Code, containers, and cloud-native DevOps practices.' });
+
+const sourceCareerRoles = {
+  'advanced-penetration-testing': ['Penetration Tester', 'Ethical Hacker', 'Red Team Specialist', 'Security Consultant'],
+  'certified-kubernetes-administrator': ['Kubernetes Administrator', 'Cloud Platform Engineer', 'DevOps Engineer', 'Site Reliability Engineer'],
+  'certified-kubernetes-security-specialist': ['Kubernetes Security Specialist', 'DevSecOps Engineer', 'Cloud Security Engineer', 'Container Security Engineer'],
+  'python-programming-certificate': ['Python Developer', 'Software Developer', 'Backend Developer', 'Data Analyst'],
+  'graphic-design-mastery': ['Graphic Designer', 'Visual Designer', 'Brand Identity Designer', 'UI Designer'],
+  'graphic-design-essentials': ['Graphic Designer', 'Visual Content Designer', 'Brand Designer', 'Creative Executive'],
+  'motion-graphics': ['Motion Graphics Designer', 'Video Editor', 'Multimedia Designer', 'Visual Effects Artist'],
+  'docker-containers': ['Docker Engineer', 'DevOps Engineer', 'Cloud Engineer', 'Platform Engineer'],
+  'certified-terraform-associate': ['Terraform Engineer', 'Cloud Automation Engineer', 'DevOps Engineer', 'Infrastructure Engineer'],
+  'az-305-azure-infrastructure-solutions': ['Azure Solutions Architect', 'Cloud Architect', 'Azure Infrastructure Engineer', 'Cloud Consultant'],
+  'az-204-azure-developer-associate': ['Azure Developer', 'Cloud Application Developer', 'Backend Developer', 'Cloud Solutions Engineer'],
+  'certified-devops-engineer': ['Azure DevOps Engineer', 'Cloud Automation Engineer', 'CI/CD Pipeline Specialist', 'Site Reliability Engineer (SRE)', 'Infrastructure as Code (IaC) Specialist', 'Release Manager'],
+  'certified-aws-devops': ['AWS DevOps Engineer', 'Cloud DevOps Engineer', 'CI/CD Engineer', 'Cloud Automation Engineer'],
+  'data-science-machine-learning-genai': ['Data Scientist', 'Machine Learning Engineer', 'AI Engineer', 'Data Analyst'],
+  'data-structures-algorithms-bootcamp': ['Software Engineer', 'Backend Developer', 'Full Stack Developer', 'Product Engineer'],
+  'salesforce-admin-development': ['Salesforce Administrator', 'Salesforce Developer', 'Salesforce Consultant', 'CRM Analyst']
+  , 'ai-powered-data-analytics': ['Data Analyst', 'Business Intelligence Analyst', 'Data Automation Specialist', 'Analytics Consultant']
+  , 'communication-training': ['Communication Specialist', 'Customer Success Executive', 'Corporate Trainer', 'Business Development Executive']
+  , 'digital-marketing-professional': ['Digital Marketing Specialist', 'SEO Specialist', 'Performance Marketer', 'Social Media Manager']
+};
+
+Object.entries(sourceCareerRoles).forEach(([key, roles]) => {
+  const course = sourceCourseOverrides[key];
+  course.careerHeading = `High-Paying Careers in ${course.shortTitle || course.title}`;
+  course.careerIntro = `Build the practical skills required for career paths in ${course.shortTitle || course.title}.`;
+  course.careers = roles.map((role, index) => ({
+    role,
+    range: 'Competitive industry salary',
+    salaryChart: { entryMin: 30 + index * 2, entryMax: 60 + index * 2, midMin: 65 + index * 2, midMax: 105 + index * 2, srMin: 110 + index * 2, srMax: 155 + index * 2 },
+    scopeText: `Applies ${course.shortTitle || course.title} skills to practical industry workflows and production environments.`
+  }));
+});
+
+// Never display inherited placeholder FAQs on a migrated course. A FAQ section
+// appears only when that course has an explicitly transcribed source dataset.
+Object.values(sourceCourseOverrides).forEach(course => {
+  if (!course.faqs) {
+    course.faqs = [];
+    course.faqCategories = [];
+  }
+});
+
 function ensureStylesheets() {
   const files = ['css/header-footer.css', 'courses/course-template.css'];
   files.forEach(href => {
@@ -1065,13 +1400,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const courseKey = page.dataset.course || new URLSearchParams(window.location.search).get('course') || 'advanced-mern-stack';
   const authoredTitle = document.title.replace(/\s*\|\s*SecureHub.*$/i, '').trim();
   const course = getCourse(courseKey);
+  if (sourceCourseOverrides[courseKey]) Object.assign(course, sourceCourseOverrides[courseKey]);
   if (!courseData[courseKey] && !course.metaTitle && authoredTitle && authoredTitle.toLowerCase() !== 'course') {
     course.title = authoredTitle;
   }
   course.key = courseKey;
   course.isWebDevelopment = webDevelopmentCourseKeys.has(courseKey);
   page.classList.toggle('course-page--web', course.isWebDevelopment);
-  page.classList.toggle('course-page--ethical-hacking', courseKey === 'ethical-hacking-cyber-security');
+  page.classList.add('course-page--ethical-hacking');
 
   document.title = `${course.metaTitle || course.title} | SecureHub`;
   page.innerHTML = renderCoursePage(course);
@@ -1092,9 +1428,7 @@ function arrangeCourseSections(page, course) {
     'why-choose-us',
     'roadmap-to-success'
   ];
-  const sectionOrder = course.isWebDevelopment || course.key === 'ethical-hacking-cyber-security'
-    ? [...sharedOrder, 'recommended-courses', 'faq-section']
-    : ['course-overview', 'recommended-courses', ...sharedOrder.slice(1), 'faq-section'];
+  const sectionOrder = [...sharedOrder, 'recommended-courses', 'faq-section'];
 
   sectionOrder.forEach(id => {
     const section = page.querySelector(`#${id}`);
@@ -1112,7 +1446,7 @@ function renderCoursePage(course) {
     : sourceFaqs;
   const initialFaqCategory = faqCategories[0] || 'all';
   const recommendedCourses = course.recommendedCourses || getRecommendedCourses(course.key);
-  const usesRecommendedCarousel = course.isWebDevelopment || course.key === 'ethical-hacking-cyber-security';
+  const usesRecommendedCarousel = true;
 
   const moduleMarkup = course.modules.map((m, index) => {
     const moduleItems = m.sections
@@ -1687,7 +2021,7 @@ function renderCoursePage(course) {
     </section>
 
     <!-- 11. FREQUENTLY ASKED QUESTIONS -->
-    <section class="course-section bg-alt" id="faq-section">
+    <section class="course-section bg-alt" id="faq-section" ${faqs.length ? '' : 'hidden aria-hidden="true"'}>
       <div class="course-shell">
         <div class="section-center-header">
           <span class="course-section-label">FREQUENTLY ASKED QUESTIONS</span>
