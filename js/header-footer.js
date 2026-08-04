@@ -60,10 +60,6 @@ function renderHeader() {
       <div class="sh-container">
         <div class="sh-topbar-left">
           <div class="sh-topbar-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <span>Inquiry Helpline: <strong>+91 98765 43210</strong></span>
-          </div>
-          <div class="sh-topbar-item">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             <span>admissions@securehub.in</span>
           </div>
@@ -327,6 +323,7 @@ function addExpandedCourseDomains() {
     'Certified Kubernetes Administrator (CKA)': 'assets/images/courses/official-logos/kubernetes-official.svg',
     'Ethical Hacking & Cyber Security': 'assets/images/courses/cybersecurity/ethical-hacking-cyber-security.jpg',
     'Advanced Penetration Testing': 'assets/images/courses/official-logos/advanced-pentest-square.svg',
+    'CEH v12 Master Program': 'assets/images/courses/ceh-v12.jpg',
     'Python Programming Certificate': 'assets/images/courses/official-logos/python-official.svg',
     'Multimedia & Motion Graphics': 'assets/images/courses/graphic-design/multimedia-motion-graphics.jpg',
     'Graphic Design Essentials': 'assets/images/courses/graphic-design/graphic-design-essentials.jpg',
@@ -414,6 +411,7 @@ function hydrateMegaMenuVisuals() {
     'Certified Kubernetes Administrator (CKA)': 'assets/images/courses/official-logos/kubernetes-official.svg',
     'Ethical Hacking & Cyber Security': 'assets/images/courses/cybersecurity/ethical-hacking-cyber-security.jpg',
     'Advanced Penetration Testing': 'assets/images/courses/official-logos/advanced-pentest-square.svg',
+    'CEH v12 Master Program': 'assets/images/courses/ceh-v12.jpg',
     'Python Programming Certificate': 'assets/images/courses/official-logos/python-official.svg',
     'Multimedia & Motion Graphics': 'assets/images/courses/graphic-design/multimedia-motion-graphics.jpg',
     'Graphic Design Essentials': 'assets/images/courses/graphic-design/graphic-design-essentials.jpg',
@@ -426,14 +424,7 @@ function hydrateMegaMenuVisuals() {
     'Salesforce Admin & Development': 'assets/images/courses/salesforce/salesforce-admin-development.jpg',
     'AI-Powered Data Analytics & Automation Master Program': 'assets/images/courses/data-analytics/ai-powered-data-analytics-automation.jpg',
     'Soft Skill and Communication Training': 'assets/images/courses/official-logos/softskills-official.svg',
-    '360° Digital Marketing Professional Program': 'assets/images/courses/official-logos/digital-marketing-official.svg',
-    'CEH v12 Master Program': 'assets/images/courses/cybersecurity/ethical-hacking-cyber-security.jpg',
-    'SOC Analyst (L1/L2)': 'assets/images/courses/cybersecurity/ethical-hacking-cyber-security.jpg',
-    'Web Application VPT': 'assets/images/courses/cybersecurity/advanced-penetration-testing.jpg',
-    'CompTIA Security+': 'assets/images/courses/cybersecurity/ethical-hacking-cyber-security.jpg',
-    'AWS DevOps Engineering': 'assets/images/courses/devops/certified-aws-devops-course.jpg',
-    'Certified DevOps Engineer': 'assets/images/courses/devops/certified-devops-engineer-course.jpg',
-    'Master Azure DevOps': 'assets/images/courses/devops/master-azure-devops.jpg'
+    '360° Digital Marketing Professional Program': 'assets/images/courses/official-logos/digital-marketing-official.svg'
   };
 
   document.querySelectorAll('.sh-mega-course-card').forEach(card => {

@@ -1,3 +1,70 @@
+
+function getCourseLogo(key) {
+  const logoMap = {
+    'advanced-mern-stack': 'assets/images/courses/web-development/advanced-mern-stack-development-program.webp',
+    'advanced-penetration-testing': 'assets/images/courses/official-logos/advanced-pentest-square.svg',
+    'ai-data-analytics': 'assets/images/courses/data-analytics/ai-powered-data-analytics-automation.jpg',
+    'ai-powered-data-analytics': 'assets/images/courses/data-analytics/ai-powered-data-analytics-automation.jpg',
+    'analytics': 'assets/images/courses/data-analytics/ai-powered-data-analytics-automation.jpg',
+    'aws-devops': 'assets/images/courses/official-logos/aws-devops-square.svg',
+    'az-104-azure-administrator': 'assets/images/courses/cloud/az-104-azure-administrator-associate.jpg',
+    'az-204-azure-developer-associate': 'assets/images/courses/cloud/az-204-azure-developer-associate.png',
+    'az-305-azure-infrastructure-solutions': 'assets/images/courses/cloud/az-305-azure-infrastructure-solutions.jpg',
+    'azure-admin': 'assets/images/courses/cloud/az-104-azure-administrator-associate.jpg',
+    'azure-infrastructure': 'assets/images/courses/cloud/az-305-azure-infrastructure-solutions.jpg',
+    'ccna': 'assets/images/courses/official-logos/devops-official.svg',
+    'ceh': 'assets/images/courses/ceh-v12.jpg',
+    'ceh-v12-master-program': 'assets/images/courses/ceh-v12.jpg',
+    'certified-aws-devops': 'assets/images/courses/official-logos/aws-devops-square.svg',
+    'certified-devops-engineer': 'assets/images/courses/official-logos/devops-official.svg',
+    'certified-kubernetes-administrator': 'assets/images/courses/official-logos/kubernetes-official.svg',
+    'certified-kubernetes-security-specialist': 'assets/images/courses/official-logos/kubernetes-official.svg',
+    'certified-terraform-associate': 'assets/images/courses/official-logos/terraform-official.svg',
+    'communication-training': 'assets/images/courses/official-logos/softskills-official.svg',
+    'comptia-security-plus': 'assets/images/courses/cybersecurity/ethical-hacking-cyber-security.jpg',
+    'data-science-genai': 'assets/images/courses/data-science/data-science-machine-learning-genai.webp',
+    'data-science-machine-learning-genai': 'assets/images/courses/data-science/data-science-machine-learning-genai.webp',
+    'data-structures-algorithms-bootcamp': 'assets/images/courses/official-logos/dsa-official.svg',
+    'digital-marketing-mastery': 'assets/images/courses/official-logos/digital-marketing-official.svg',
+    'digital-marketing-professional': 'assets/images/courses/official-logos/digital-marketing-official.svg',
+    'django': 'assets/images/courses/web-development/full-stack-python-django.jpg',
+    'docker-containers': 'assets/images/courses/official-logos/docker-official.svg',
+    'docker-containers-training': 'assets/images/courses/official-logos/docker-official.svg',
+    'dsa-bootcamp': 'assets/images/courses/official-logos/dsa-official.svg',
+    'ethical-hacking-cyber-security': 'assets/images/courses/cybersecurity/ethical-hacking-cyber-security.jpg',
+    'ethical-hacking-mastery': 'assets/images/courses/cybersecurity/ethical-hacking-cyber-security.jpg',
+    'graphic-design-essentials': 'assets/images/courses/graphic-design/graphic-design-essentials.jpg',
+    'graphic-design-mastery': 'assets/images/courses/graphic-design/graphic-design-mastery-program.jpg',
+    'java-programming': 'assets/images/courses/web-development/java-training-and-certification.webp',
+    'java-training': 'assets/images/courses/web-development/java-training-and-certification.webp',
+    'kubernetes-administration': 'assets/images/courses/official-logos/kubernetes-official.svg',
+    'kubernetes-cka': 'assets/images/courses/official-logos/kubernetes-official.svg',
+    'kubernetes-cks': 'assets/images/courses/official-logos/kubernetes-official.svg',
+    'machine-learning': 'assets/images/courses/data-science/data-science-machine-learning-genai.webp',
+    'master-azure-devops': 'assets/images/courses/devops/master-azure-devops.jpg',
+    'mern': 'assets/images/courses/web-development/advanced-mern-stack-development-program.webp',
+    'motion-graphics': 'assets/images/courses/graphic-design/multimedia-motion-graphics.jpg',
+    'python-django': 'assets/images/courses/web-development/full-stack-python-django.jpg',
+    'python-programming-certificate': 'assets/images/courses/official-logos/python-official.svg',
+    'react-development': 'assets/images/courses/web-development/frontend-development-with-react.jpg',
+    'redhat': 'assets/images/courses/official-logos/devops-official.svg',
+    'salesforce-admin': 'assets/images/courses/salesforce/salesforce-admin.jpg',
+    'salesforce-admin-dev': 'assets/images/courses/salesforce/salesforce-admin-development.jpg',
+    'salesforce-admin-development': 'assets/images/courses/salesforce/salesforce-admin-development.jpg',
+    'salesforce-development': 'assets/images/courses/salesforce/salesforce-development.jpg',
+    'security-plus': 'assets/images/courses/cybersecurity/ethical-hacking-cyber-security.jpg',
+    'soc': 'assets/images/courses/ceh-v12.jpg',
+    'soc-analyst-l1-l2': 'assets/images/courses/ceh-v12.jpg',
+    'soft-skills-mastery': 'assets/images/courses/official-logos/softskills-official.svg',
+    'terraform': 'assets/images/courses/official-logos/terraform-official.svg',
+    'ui-ux-front-end-integration': 'assets/images/courses/uiux/ui-ux-design-front-end-integration-mastery.png',
+    'uiux-design-mastery': 'assets/images/courses/uiux/ui-ux-design-front-end-integration-mastery.png',
+    'vpt': 'assets/images/courses/official-logos/advanced-pentest-square.svg',
+    'web-application-vpt': 'assets/images/courses/official-logos/advanced-pentest-square.svg'
+  };
+  return logoMap[key] || 'assets/images/courses/official-logos/devops-official.svg';
+}
+
 const courseData = {
   ceh: {
     title: 'CEH v12 Master Program', shortTitle: 'CEH v12 Master', label: 'Cyber Security', duration: '6 months', level: 'Intermediate', lab: 'Ethical hacking lab', practicalWork: '8 guided labs',
@@ -75,7 +142,9 @@ function getCourse(key) {
 document.addEventListener('DOMContentLoaded', () => {
   const page = document.getElementById('course-page');
   if (!page) return;
-  const course = getCourse(page.dataset.course);
+  const courseKey = page.dataset.course;
+  const course = getCourse(courseKey);
+  course.key = courseKey;
   if (!course) return;
 
   document.title = `${course.title} | SecureHub`;
@@ -92,10 +161,55 @@ function renderCoursePage(course) {
         <div class="course-hero-grid course-hero-with-form">
           <div class="course-hero-copy">
             <span class="course-eyebrow">${course.label} learning path</span>
-            <h1>${course.title}</h1>
+            <div class="course-hero-title-row">
+              <div class="course-hero-logo-box">
+                <img src="${getCourseLogo(course.key)}" alt="${course.title} Logo">
+              </div>
+              <h1>${course.title}</h1>
+            </div>
             <p>${course.subtitle}</p>
           </div>
-          <aside class="course-enquiry-card course-hero-enquiry" id="course-enquiry"><span>Speak with an advisor</span><h3>Find the right starting point.</h3><p>Share your details and our admissions team will explain the next available batch.</p><form class="course-enquiry-form"><label>Name<input required name="name" type="text" placeholder="Your name"></label><label>Phone<input required name="phone" type="tel" placeholder="Your phone number"></label><button type="submit">Request a callback</button><small class="course-form-message" aria-live="polite"></small></form></aside>
+          <aside class="course-hero-contact-card" id="course-enquiry">
+            <span class="course-eyebrow" style="margin-bottom: 6px;">GET IN TOUCH</span>
+            <div class="contact-card-header">
+              <div class="contact-brand-logo">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <h3 class="contact-brand-name">Secure<span>Hub</span></h3>
+                <p class="contact-brand-sub">Institute of Professional Training, IT &amp; Cyber Consultancy</p>
+              </div>
+            </div>
+            <div class="contact-details-body">
+              <div class="contact-info-block email-block">
+                <div class="contact-info-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <span class="contact-info-label">Admissions Email</span>
+                  <a href="mailto:admissions@securehub.in" class="contact-info-email">admissions@securehub.in</a>
+                </div>
+              </div>
+              <div class="contact-info-block">
+                <div class="contact-info-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <span class="contact-info-label">Hyderabad Campus</span>
+                  <p class="contact-info-address">4th floor, Rajapushpa Summit, Nanakramguda Rd, Financial District, Gachibowli, Hyderabad</p>
+                </div>
+              </div>
+              <div class="contact-info-block">
+                <div class="contact-info-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <span class="contact-info-label">Bengaluru Campus</span>
+                  <p class="contact-info-address">Hosur Rd, Kudlu Gate, Krishna Reddy Industrial Area, Novel Tech Park, H.S.R Extension, Bengaluru, Karnataka 560068</p>
+                </div>
+              </div>
+            </div>
+          </aside>
         </div>
         <div class="course-facts" aria-label="Course facts"><div><span>Duration</span><strong>${course.duration}</strong></div><div><span>Level</span><strong>${course.level}</strong></div><div><span>Learning format</span><strong>Live + lab practice</strong></div><div><span>Practical work</span><strong>${course.practicalWork.split(',').join('<br>')}</strong></div></div>
       </div>

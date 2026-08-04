@@ -167,3 +167,195 @@ body { background: #fffefd; color: var(--course-ink); }
 @keyframes course-about-rise { to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 850px) { .course-about-premium { grid-template-columns: 1fr; gap: 2rem; } .course-about-intro h2 { max-width: 17ch; } }
 @media (max-width: 600px) { .course-about-commitments { grid-template-columns: 1fr; } .course-about-commitment { min-height: 145px; } .course-about-commitment h3 { margin-top: 1.7rem; } }
+
+
+/* Course Hero Campus Contact Card System */
+.course-hero-contact-card {
+  padding: 24px 28px !important;
+  border: 1.5px solid #a9cbc9 !important;
+  border-radius: 18px !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 16px 36px rgba(20, 140, 135, 0.1) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.course-hero-contact-card .contact-card-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding-bottom: 12px !important;
+  border-bottom: 1px solid #dbe8e8 !important;
+}
+
+.course-hero-contact-card .contact-brand-logo {
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  border-radius: 12px !important;
+  background: linear-gradient(145deg, var(--course-teal), #237671) !important;
+  color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 6px 14px rgba(20, 140, 135, 0.2) !important;
+  flex-shrink: 0 !important;
+}
+
+.course-hero-contact-card .contact-brand-name {
+  margin: 0 !important;
+  font-family: 'Sora', sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  color: var(--course-ink) !important;
+}
+
+.course-hero-contact-card .contact-brand-name span {
+  color: var(--course-teal) !important;
+}
+
+.course-hero-contact-card .contact-brand-sub {
+  margin: 2px 0 0 !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  color: var(--course-muted) !important;
+  line-height: 1.3 !important;
+}
+
+.course-hero-contact-card .contact-details-body {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  width: 100% !important;
+}
+
+.course-hero-contact-card .contact-info-block {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  padding: 10px 14px !important;
+  border-radius: 10px !important;
+  background: #f1faf7 !important;
+  border: 1px solid #dbe8e8 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.course-hero-contact-card .contact-info-block.email-block {
+  background: #f2f8fb !important;
+  border-color: #d1e4ed !important;
+}
+
+.course-hero-contact-card .contact-info-icon {
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  border-radius: 8px !important;
+  background: rgba(20, 140, 135, 0.12) !important;
+  color: var(--course-teal) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.course-hero-contact-card .contact-info-label {
+  display: block !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  color: var(--course-teal) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 2px !important;
+}
+
+.course-hero-contact-card .contact-info-email {
+  font-size: 14.5px !important;
+  font-weight: 800 !important;
+  color: var(--course-teal) !important;
+  text-decoration: none !important;
+}
+
+.course-hero-contact-card .contact-info-email:hover {
+  text-decoration: underline !important;
+}
+
+.course-hero-contact-card .contact-info-address {
+  margin: 2px 0 0 !important;
+  font-size: 12.5px !important;
+  color: var(--course-ink) !important;
+  line-height: 1.4 !important;
+  font-weight: 650 !important;
+}
+
+@media (max-width: 900px) {
+  .course-hero-contact-card {
+    padding: 20px 16px !important;
+    border-radius: 14px !important;
+    margin-top: 16px !important;
+  }
+}
+
+
+/* Course Hero Title & Logo Icon Box System */
+.course-hero-title-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin: 0 0 16px !important;
+}
+
+.course-hero-logo-box {
+  width: 56px !important;
+  height: 56px !important;
+  min-width: 56px !important;
+  max-width: 56px !important;
+  min-height: 56px !important;
+  max-height: 56px !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 14px !important;
+  background: #ffffff !important;
+  border: 1px solid #dcebf0 !important;
+  box-shadow: 0 6px 18px rgba(20, 140, 135, 0.15) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 8px !important;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+  overflow: hidden !important;
+}
+
+.course-hero-logo-box img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: auto !important;
+}
+
+.course-hero-title-row h1 {
+  margin: 0 !important;
+  font-size: clamp(26px, 3.8vw, 44px) !important;
+  line-height: 1.15 !important;
+}
+
+@media (max-width: 600px) {
+  .course-hero-title-row {
+    flex-direction: row !important;
+    gap: 12px !important;
+  }
+  .course-hero-logo-box {
+    width: 46px !important;
+    height: 46px !important;
+    min-width: 46px !important;
+    min-height: 46px !important;
+    border-radius: 11px !important;
+    padding: 6px !important;
+  }
+}

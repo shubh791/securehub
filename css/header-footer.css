@@ -1154,3 +1154,281 @@ body { padding-top:126px; }
   pointer-events: auto !important;
   transform: translateY(0) !important;
 }
+
+
+/* =========================================================
+   SECUREHUB MOBILE RESPONSIVE NAVIGATION & DROPDOWNS SYSTEM
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  body {
+    padding-top: 78px !important;
+  }
+
+  .sh-topbar {
+    display: none !important;
+  }
+
+  .sh-header .sh-navbar {
+    height: 78px !important;
+    padding: 0 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .sh-mobile-toggle {
+    display: inline-flex !important;
+    width: 44px !important;
+    height: 44px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 1px solid #c9dfe9 !important;
+    border-radius: 12px !important;
+    background: #f5fbfd !important;
+    color: #197ba9 !important;
+    cursor: pointer !important;
+  }
+
+  .sh-nav-menu {
+    position: fixed !important;
+    top: 78px !important;
+    left: -100% !important;
+    width: min(340px, 100vw) !important;
+    height: calc(100dvh - 78px) !important;
+    background: #ffffff !important;
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.18) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 20px !important;
+    gap: 12px !important;
+    overflow-y: auto !important;
+    transition: left 0.3s ease, visibility 0.3s ease !important;
+    z-index: 9999 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    border-right: 1px solid #e2e8f0 !important;
+  }
+
+  #sh-nav-menu.sh-nav-menu.active,
+  #sh-nav-menu.sh-nav-menu.is-open {
+    left: 0 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+  }
+
+  .sh-nav-item.has-megamenu,
+  .sh-services-menu {
+    width: 100% !important;
+  }
+
+  .sh-courses-toggle,
+  .sh-services-toggle {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  /* Mobile Mega Menu Dropdown */
+  .sh-megamenu {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  .has-megamenu.is-open .sh-megamenu {
+    position: static !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    margin-top: 10px !important;
+    padding: 14px !important;
+    border-radius: 14px !important;
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+
+  .has-megamenu.is-open .sh-megamenu-sidebar {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    padding: 0 0 10px !important;
+    background: transparent !important;
+  }
+
+  .has-megamenu.is-open .sh-domain-list {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    width: max-content !important;
+  }
+
+  .has-megamenu.is-open .sh-domain-btn {
+    padding: 8px 12px !important;
+    font-size: 12.5px !important;
+    border-radius: 8px !important;
+    white-space: nowrap !important;
+  }
+
+  .has-megamenu.is-open .sh-megamenu-panes {
+    padding: 10px 0 0 !important;
+  }
+
+  .has-megamenu.is-open .sh-mega-courses-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .has-megamenu.is-open .sh-mega-course-card {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 10px 12px !important;
+    border-radius: 12px !important;
+  }
+
+  .has-megamenu.is-open .sh-mega-course-icon {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    border-radius: 10px !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding-top: 68px !important;
+  }
+
+  .sh-header .sh-navbar {
+    height: 68px !important;
+  }
+
+  .sh-nav-menu {
+    top: 68px !important;
+    height: calc(100dvh - 68px) !important;
+    width: 100vw !important;
+  }
+}
+
+
+/* Mobile Mega Menu: Show ONLY Domain Select Dropdown, Hide Training Domain Button List */
+@media (max-width: 1100px) {
+  .has-megamenu.is-open .sh-megamenu-title,
+  .has-megamenu.is-open .sh-domain-list,
+  .has-megamenu.is-open .sh-megamenu-sidebar {
+    display: none !important;
+  }
+
+  .has-megamenu.is-open .sh-mobile-domain-select {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 14px !important;
+  }
+
+  .has-megamenu.is-open .sh-mobile-domain-select select {
+    width: 100% !important;
+    min-height: 46px !important;
+    padding: 0 16px !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 10px !important;
+    font-size: 14px !important;
+    font-weight: 750 !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05) !important;
+    outline: none !important;
+  }
+}
+
+
+/* Mega Menu Dropdown 1:1 Square Logo Icon Box System */
+.sh-mega-course-card {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 12px 14px !important;
+}
+
+.sh-mega-course-icon {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  max-width: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 12px !important;
+  background: #f1faf7 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 6px !important;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+  overflow: hidden !important;
+}
+
+.sh-mega-course-img,
+.sh-mega-course-icon img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: auto !important;
+}
+
+
+/* Mega Menu Dropdown Course Images System */
+.sh-mega-course-card {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 12px 14px !important;
+}
+
+.sh-mega-course-icon {
+  width: 52px !important;
+  height: 52px !important;
+  min-width: 52px !important;
+  max-width: 52px !important;
+  min-height: 52px !important;
+  max-height: 52px !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 12px !important;
+  background: #f1faf7 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 4px !important;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+  overflow: hidden !important;
+}
+
+.sh-mega-course-img,
+.sh-mega-course-icon img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: auto !important;
+  border-radius: 8px !important;
+}
