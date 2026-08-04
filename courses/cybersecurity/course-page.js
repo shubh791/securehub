@@ -1231,6 +1231,13 @@ Support & Community|Q5. What makes Grras Solutions the best choice for DevOps tr
   },
   'docker-containers': {
     title: 'Docker Containers Training Course', shortTitle: 'Docker Containers', label: 'Docker & Kubernetes',
+    projectsHeading: 'Master Docker Containers Through Real Projects!',
+    projectsIntro: 'Build real industry experience by working on production-grade Docker projects. Each project strengthens your skills in container creation, image management, storage, networking, and troubleshooting—helping you become job-ready and confident in deploying containerized applications in real-world environments.',
+    projects: [
+      { num: '#01', title: 'Online Learning Management System', desc: 'Build an e-learning platform with role management, video integration, secure APIs, and payment and subscription models.', skills: ['Role Management', 'Video Integration', 'Secure APIs', 'Payment & Subscription Models'], tags: ['React', 'Tailwind', 'Node.js', 'Express.js', 'Mongo DB'] },
+      { num: '#02', title: 'Real-Time Monitoring and Logging with Prometheus, Grafana & ELK', desc: 'Set up monitoring and logging for a production-grade system with centralized metrics, dashboards, alerts, and performance optimization.', skills: ['System Monitoring & Observability', 'Centralized Logging & Visualization', 'Alerting & Notifications', 'Performance Optimization'], tags: ['Grafana', 'AWS', 'ELK', 'Loki'] },
+      { num: '#03', title: 'Analytics & Reporting Suite', desc: 'Create a configurable analytics suite with dynamic JSON-schema forms, runtime reporting, data visualization, and CSV, XLSX, and PDF exports.', skills: ['Dynamic Reactive Forms', 'Query Builder & Runtime Reporting', 'Data Visualization', 'Export Pipelines'], tags: ['Angular', 'JSON Schema', 'PDF/CSV exporters'] }
+    ],
     modules: sourceModuleHeadings('Introduction to Containerization|Docker Installation and Setup|Container Operations|Working with Docker Images|Docker Image Management|Dockerfile Concepts|Storage Management with Docker Volumes|Networking in Docker|Container Security Basics|Docker Workflow and Lifecycle|Docker Troubleshooting and Best Practices|Hands-On Docker Project')
   },
   'certified-terraform-associate': {
@@ -1380,6 +1387,44 @@ Object.values(sourceCourseOverrides).forEach(course => {
     course.faqCategories = [];
   }
 });
+
+function sourceProjectTitles(titles, tags) {
+  return titles.map((title, index) => ({ num: `#${String(index + 1).padStart(2, '0')}`, title, desc: '', skills: [], tags }));
+}
+
+Object.assign(sourceCourseOverrides['data-science-machine-learning-genai'], {
+  projects: sourceProjectTitles(['Car Price Predictor: Informed Valuations for the Used Car Market', 'LoanPredictor: Intelligent Loan Approval Estimator', 'Wine Quality Predictor: AI-Powered Wine Assessment', 'IPL Score Predictor: Smart Cricket Score Estimation', 'Movie Magic: AI-Powered Movie Recommendation System', 'E-Commerce Customer Spending Predictor: Data-Driven Insights for Business Growth', 'Diabetes Prediction: AI-Powered Health Risk Assessment', 'Arrhythmia Classification AI-Powered ECG-Based Heart Health Assessment'], ['Python', 'Machine Learning'])
+});
+Object.assign(sourceCourseOverrides['data-structures-algorithms-bootcamp'], {
+  projects: sourceProjectTitles(['AI Chatbot for Course Advising', 'Blogging Web Application', 'Business Report Analysis with API & Web Scraping', 'Alarm Clock', 'AI Chatbot & Recommendation System'], ['Python', 'Data Structures & Algorithms'])
+});
+Object.assign(sourceCourseOverrides['ai-powered-data-analytics'], {
+  projects: [
+    { num: '#01', title: 'Analytics & Reporting Suite', desc: 'Make a configurable analytics suite where administrators set up datasets and form schemas, with runtime reporting, data visualization, and export pipelines.', skills: ['Dynamic reactive forms from JSON schemas', 'Query builder and runtime reporting', 'Data visualization with charts & grids', 'Export pipelines (CSV, XLSX, PDF)'], tags: ['Angular', 'JSON Schema', 'PDF/CSV exporters'] },
+    { num: '#02', title: 'E-Commerce Product Catalog Database', desc: 'Create a scalable MongoDB database for an e-commerce product catalog with flexible schemas, searchable collections, analytics, and validation.', skills: ['CRUD operations for collections', 'Schema design for flexible catalogs', 'Indexing for search optimization', 'Aggregation pipelines for analytics'], tags: ['Mongo DB', 'MongoDB Atlas', 'Express.js'] },
+    { num: '#03', title: 'Healthcare Patient Insights Dashboard', desc: 'Build a Patient Insights Dashboard for hospitals and clinics to analyze demographics, readmission rates, treatment outcomes, and healthcare KPIs.', skills: ['Healthcare dataset modeling', 'Cohort analysis for patients', 'Hospital KPIs', 'Geographical heatmaps'], tags: ['Tableau', 'Healthcare CSV datasets', 'Maps integration'] }
+  ]
+});
+Object.assign(sourceCourseOverrides['digital-marketing-professional'], {
+  projects: [
+    { num: '#01', title: 'Analytics & Reporting Suite', desc: 'Create a configurable analytics suite with JSON-schema forms, runtime reporting, charts, grids, and CSV, XLSX, and PDF export pipelines.', skills: ['Dynamic reactive forms from JSON schemas', 'Query builder and runtime reporting', 'Data visualization with charts & grids', 'Export pipelines (CSV, XLSX, PDF)'], tags: ['Angular', 'JSON Schema', 'PDF/CSV exporters'] },
+    { num: '#02', title: 'Complete Brand Identity Design', desc: 'Create a full brand identity for a business or startup, including a professional logo, business card, brochure, and social media creatives.', skills: ['Logo Design', 'Branding', 'Typography', 'Color Theory'], tags: ['Adobe Illustrator', 'Adobe Photoshop', 'Adobe-XD'] },
+    { num: '#03', title: 'AI Chatbot for Course Advising', desc: 'Create an AI-powered chatbot that helps students choose courses and plan academic paths using real-time messaging and rule-based NLP.', skills: ['Python', 'Django Channels', 'JavaScript', 'API integration'], tags: ['Python', 'Django', 'REST API'] }
+  ]
+});
+Object.assign(sourceCourseOverrides['certified-devops-engineer'], { projects: [
+  { num: '#01', title: 'Real-Time Monitoring and Logging with Prometheus, Grafana & ELK', desc: 'Set up monitoring and centralized logging for a production-grade system using metrics, dashboards, alerts, and performance optimization.', skills: ['System monitoring & observability', 'Centralized logging & visualization', 'Alerting & notifications', 'Performance optimization'], tags: ['Grafana', 'AWS', 'ELK', 'Loki'] },
+  { num: '#02', title: 'Automating Cloud Infrastructure with Terraform and Ansible', desc: 'Use Terraform and Ansible to provision and manage scalable cloud infrastructure through declarative configuration and automated deployment.', skills: ['Infrastructure as Code (IaC)', 'Declarative configuration management', 'Automated provisioning', 'Scalable infrastructure deployment'], tags: ['Terraform', 'Ansible', 'AWS'] },
+  { num: '#03', title: 'Build and Deploy with Jenkins CI/CD Pipeline”', desc: 'Build a complete Jenkins CI/CD pipeline with GitHub repositories, automated builds, testing, and deployment.', skills: ['CI/CD fundamentals', 'Jenkins pipeline scripting', 'Git & version control integration', 'Automated testing & deployment'], tags: ['Docker', 'Git Hub', 'AWS'] },
+  { num: '#04', title: 'Automated Backup and Disaster Recovery Solution', desc: 'Create an automated backup and disaster recovery solution for dependable cloud operations.', skills: ['Backup automation', 'Disaster recovery', 'Cloud operations'], tags: ['AWS', 'DevOps'] }
+] });
+Object.assign(sourceCourseOverrides['certified-aws-devops'], { projects: sourceProjectTitles(['Real-Time Monitoring and Logging with Prometheus, Grafana & ELK', 'Automating Cloud Infrastructure with Terraform and Ansible', 'Build and Deploy with Jenkins CI/CD Pipeline”'], ['AWS', 'DevOps']) });
+Object.assign(sourceCourseOverrides['python-programming-certificate'], { projects: sourceProjectTitles(['Inventory Library Management System', 'Alarm Clock', 'Railway Ticket Booking System'], ['Python']) });
+Object.assign(sourceCourseOverrides['advanced-penetration-testing'], { projects: sourceProjectTitles(['Network Vulnerability Scanner', 'Web Application Penetration Testing Tool', 'Malware Analysis & Detection System', 'AI Chatbot & Recommendation System'], ['Cyber Security']) });
+Object.assign(sourceCourseOverrides['certified-terraform-associate'], { projects: sourceProjectTitles(['Automating Cloud Infrastructure with Terraform and Ansible', 'Infrastructure Automation with Terraform', 'Analytics & Reporting Suite'], ['Terraform']) });
+['az-204-azure-developer-associate', 'az-305-azure-infrastructure-solutions', 'certified-kubernetes-security-specialist'].forEach(key => Object.assign(sourceCourseOverrides[key], { projects: sourceProjectTitles(['Online Learning Management System', 'Real-Time Monitoring and Logging with Prometheus, Grafana & ELK', 'Analytics & Reporting Suite'], ['Cloud']) }));
+Object.assign(sourceCourseOverrides['salesforce-admin-development'], { projects: sourceProjectTitles(['CRM Setup and Customization', 'Workflow Automation for Sales Teams', 'Lightning Web Components (LWC) Application'], ['Salesforce']) });
+['graphic-design-mastery', 'graphic-design-essentials', 'motion-graphics'].forEach(key => Object.assign(sourceCourseOverrides[key], { projects: sourceProjectTitles(['Mobile App Design Prototype', 'Responsive Website Redesign', 'Dashboard Design for Web Application'], ['Design']) }));
 
 function ensureStylesheets() {
   const files = ['css/header-footer.css', 'courses/course-template.css'];
