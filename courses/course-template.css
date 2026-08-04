@@ -1,0 +1,1001 @@
+
+
+/* Senior 5+ Year Master Course Page & Hero Form Styling */
+.course-shell {
+  width: min(100% - 32px, 1180px) !important;
+  margin-inline: auto !important;
+  padding: 0 16px !important;
+  box-sizing: border-box !important;
+}
+
+.course-hero-enhanced {
+  padding: 50px 0 40px !important;
+  background: #f8fafc !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.course-hero-grid {
+  display: grid !important;
+  grid-template-columns: 1.15fr 0.85fr !important;
+  gap: 36px !important;
+  align-items: center !important;
+  margin-bottom: 32px !important;
+}
+
+.course-hero-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.course-hero-title-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin: 10px 0 14px !important;
+}
+
+.course-hero-logo-box {
+  flex: 0 0 58px !important;
+  width: 58px !important;
+  height: 58px !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 14px !important;
+  padding: 8px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+.course-hero-logo-box img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+.course-hero-copy h1 {
+  font-size: 1.95rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  line-height: 1.25 !important;
+  margin: 0 !important;
+}
+
+.course-hero-sub {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  color: #475569 !important;
+  margin-bottom: 20px !important;
+}
+
+.course-hero-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.btn-hero-primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 12px 24px !important;
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%) !important;
+  color: #ffffff !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 18px rgba(2, 132, 199, 0.35) !important;
+  transition: all 0.25s ease !important;
+}
+
+.btn-hero-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(2, 132, 199, 0.5) !important;
+}
+
+.btn-hero-secondary {
+  padding: 12px 20px !important;
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1.5px solid #cbd5e1 !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  text-decoration: none !important;
+  transition: all 0.25s ease !important;
+}
+
+/* Hero Right Column Lead Enquiry Card */
+.hero-enquiry-card {
+  background: #ffffff !important;
+  border: 1.5px solid #bae6fd !important;
+  border-radius: 20px !important;
+  padding: 28px !important;
+  box-shadow: 0 12px 36px rgba(2, 132, 199, 0.12) !important;
+  box-sizing: border-box !important;
+}
+
+.hero-form-header {
+  margin-bottom: 20px !important;
+}
+
+.form-tag {
+  display: inline-block !important;
+  font-size: 0.725rem !important;
+  font-weight: 800 !important;
+  color: #0284c7 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 4px !important;
+}
+
+.hero-form-header h3 {
+  font-size: 1.25rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin-bottom: 4px !important;
+}
+
+.hero-form-header p {
+  font-size: 0.85rem !important;
+  color: #64748b !important;
+  line-height: 1.45 !important;
+  margin: 0 !important;
+}
+
+.hero-lead-form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+}
+
+.hero-form-group {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.hero-form-group label {
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+}
+
+.hero-form-group input {
+  padding: 10px 14px !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  font-size: 0.875rem !important;
+  outline: none !important;
+  transition: border-color 0.2s ease !important;
+}
+
+.hero-form-group input:focus {
+  border-color: #0284c7 !important;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15) !important;
+}
+
+.btn-hero-submit {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 12px 24px !important;
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.3) !important;
+  transition: all 0.25s ease !important;
+  margin-top: 4px !important;
+}
+
+.btn-hero-submit:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.45) !important;
+}
+
+.hero-form-status {
+  font-size: 0.825rem !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  margin-top: 4px !important;
+}
+
+/* Fact Bar */
+.course-facts-bar {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 16px !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 16px !important;
+  padding: 18px 22px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03) !important;
+}
+
+.fact-item span {
+  display: block !important;
+  font-size: 0.75rem !important;
+  color: #64748b !important;
+  margin-bottom: 3px !important;
+}
+
+.fact-item strong {
+  font-size: 0.95rem !important;
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+.salary-highlight {
+  color: #059669 !important;
+}
+
+/* Overview Section */
+.course-overview-grid {
+  display: grid !important;
+  grid-template-columns: 1.15fr 0.85fr !important;
+  gap: 36px !important;
+}
+
+.course-lead-copy {
+  font-size: 1rem !important;
+  line-height: 1.65 !important;
+  color: #475569 !important;
+  margin-bottom: 20px !important;
+}
+
+.outcomes-list {
+  margin-top: 20px !important;
+}
+
+.outcome-bullet {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 10px !important;
+  margin-bottom: 10px !important;
+  font-size: 0.9rem !important;
+  color: #1e293b !important;
+}
+
+.tools-card, .audience-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 16px !important;
+  padding: 22px !important;
+  margin-bottom: 20px !important;
+}
+
+.tools-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-top: 10px !important;
+}
+
+.tool-tag {
+  padding: 5px 12px !important;
+  background: #f0f9ff !important;
+  border: 1px solid #bae6fd !important;
+  color: #0284c7 !important;
+  border-radius: 8px !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+}
+
+/* Accordions & FAQs */
+.course-module, .course-faq-item {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  margin-bottom: 10px !important;
+  overflow: hidden !important;
+}
+
+.course-module-toggle, .faq-toggle {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 16px 20px !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  text-align: left !important;
+}
+
+.course-module-body, .faq-body {
+  padding: 0 20px 16px !important;
+  color: #475569 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.55 !important;
+}
+
+@media (max-width: 900px) {
+  .course-hero-grid, .course-overview-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .course-facts-bar {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+
+/* Senior 5+ Year Ultra-Unique Program Overview & Tools Design System */
+.course-overview-grid {
+  display: grid !important;
+  grid-template-columns: 1.15fr 0.85fr !important;
+  gap: 36px !important;
+  align-items: start !important;
+}
+
+.overview-left {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.course-lead-copy {
+  font-size: 1.05rem !important;
+  line-height: 1.7 !important;
+  color: #475569 !important;
+  padding-left: 20px !important;
+  border-left: 3.5px solid #0284c7 !important;
+  margin-bottom: 28px !important;
+  background: linear-gradient(90deg, rgba(2, 132, 199, 0.04) 0%, transparent 100%) !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  border-radius: 0 12px 12px 0 !important;
+}
+
+/* Key Learning Outcomes Card */
+.outcomes-list {
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 20px !important;
+  padding: 28px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03) !important;
+  margin-top: 12px !important;
+}
+
+.outcomes-list h3 {
+  font-size: 1.2rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin-bottom: 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.outcomes-list h3::before {
+  content: '' !important;
+  display: inline-block !important;
+  width: 8px !important;
+  height: 20px !important;
+  background: #0284c7 !important;
+  border-radius: 4px !important;
+}
+
+.outcome-bullet {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 14px !important;
+  margin-bottom: 16px !important;
+  padding: 10px 14px !important;
+  border-radius: 12px !important;
+  background: #f8fafc !important;
+  border: 1px solid #f1f5f9 !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.outcome-bullet:hover {
+  background: #ffffff !important;
+  border-color: #bae6fd !important;
+  transform: translateX(6px) !important;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.08) !important;
+}
+
+.outcome-bullet svg {
+  flex-shrink: 0 !important;
+  margin-top: 2px !important;
+  padding: 4px !important;
+  background: #e0f2fe !important;
+  border-radius: 8px !important;
+}
+
+.outcome-bullet span {
+  font-size: 0.925rem !important;
+  font-weight: 600 !important;
+  color: #1e293b !important;
+  line-height: 1.5 !important;
+}
+
+/* Right Column: Glassmorphic Dark Tools Card */
+.tools-card {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+  color: #ffffff !important;
+  border-radius: 20px !important;
+  padding: 28px !important;
+  margin-bottom: 24px !important;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.tools-card::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -50px !important;
+  right: -50px !important;
+  width: 140px !important;
+  height: 140px !important;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, transparent 70%) !important;
+  pointer-events: none !important;
+}
+
+.tools-card h3 {
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin-bottom: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.tools-card h3::before {
+  content: '' !important;
+  display: inline-block !important;
+  width: 8px !important;
+  height: 8px !important;
+  background: #38bdf8 !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 10px #38bdf8 !important;
+}
+
+.tools-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+}
+
+.tool-tag {
+  padding: 8px 16px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #38bdf8 !important;
+  border-radius: 10px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  transition: all 0.25s ease !important;
+}
+
+.tool-tag:hover {
+  background: #0284c7 !important;
+  color: #ffffff !important;
+  border-color: #38bdf8 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.4) !important;
+}
+
+/* Who Should Enroll Card */
+.audience-card {
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 20px !important;
+  padding: 28px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03) !important;
+}
+
+.audience-card h3 {
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin-bottom: 16px !important;
+}
+
+.audience-card ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.audience-card li {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #334155 !important;
+  padding: 10px 14px !important;
+  background: #ecfdf5 !important;
+  border: 1px solid #a7f3d0 !important;
+  border-radius: 12px !important;
+  transition: transform 0.2s ease !important;
+}
+
+.audience-card li:hover {
+  transform: translateX(4px) !important;
+}
+
+.audience-card li::before {
+  content: '✓' !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 22px !important;
+  height: 22px !important;
+  background: #059669 !important;
+  color: #ffffff !important;
+  border-radius: 50% !important;
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  flex-shrink: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .course-overview-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+}
+
+
+/* Senior Product Designer Light Theme Tools & Premium Curriculum Breakdown System */
+
+/* Tools & Technologies Card - Pure Light Theme */
+.tools-card {
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 20px !important;
+  padding: 28px !important;
+  margin-bottom: 24px !important;
+  box-shadow: 0 10px 30px rgba(2, 132, 199, 0.05) !important;
+  color: #0f172a !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.tools-card::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 4px !important;
+  background: linear-gradient(90deg, #0284c7 0%, #2563eb 100%) !important;
+}
+
+.tools-card h3 {
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin-bottom: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.tools-card h3::before {
+  content: '' !important;
+  display: inline-block !important;
+  width: 8px !important;
+  height: 8px !important;
+  background: #0284c7 !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 8px rgba(2, 132, 199, 0.5) !important;
+}
+
+.tools-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+}
+
+.tool-tag {
+  padding: 8px 16px !important;
+  background: #f0f9ff !important;
+  border: 1.5px solid #bae6fd !important;
+  color: #0284c7 !important;
+  border-radius: 10px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.tool-tag:hover {
+  background: #0284c7 !important;
+  color: #ffffff !important;
+  border-color: #0284c7 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35) !important;
+}
+
+/* Premium Curriculum Breakdown Accordion Structure */
+.course-curriculum-block {
+  margin-top: 24px !important;
+}
+
+.course-module-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+}
+
+.course-module {
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02) !important;
+}
+
+.course-module:hover {
+  border-color: #bae6fd !important;
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.08) !important;
+}
+
+.course-module-toggle {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 18px 24px !important;
+  background: #ffffff !important;
+  border: none !important;
+  cursor: pointer !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  text-align: left !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.course-module-toggle:hover {
+  background: #f8fafc !important;
+}
+
+.course-module-toggle span b {
+  display: inline-block !important;
+  margin-right: 12px !important;
+  background: #e0f2fe !important;
+  color: #0284c7 !important;
+  font-size: 0.775rem !important;
+  font-weight: 800 !important;
+  padding: 4px 12px !important;
+  border-radius: 8px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+
+.course-module-plus {
+  font-size: 1.4rem !important;
+  font-weight: 400 !important;
+  color: #0284c7 !important;
+  transition: transform 0.3s ease !important;
+}
+
+.course-module-toggle[aria-expanded="true"] .course-module-plus {
+  transform: rotate(45deg) !important;
+}
+
+.course-module-body {
+  padding: 20px 24px 24px !important;
+  border-top: 1px solid #f1f5f9 !important;
+  background: #ffffff !important;
+  color: #475569 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.65 !important;
+}
+
+.course-module-body ul {
+  margin-top: 14px !important;
+  padding-left: 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.course-module-body li {
+  color: #1e293b !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+}
+
+
+/* Senior Product Designer Flexible Learning Modes & Career Pillars System */
+
+/* Informational Trust Pill (Non-Button) in Hero & Cards */
+.hero-trust-pill,
+.topchoice-trust-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 8px 16px !important;
+  background: #f0f9ff !important;
+  border: 1px solid #bae6fd !important;
+  border-radius: 9999px !important;
+  color: #0284c7 !important;
+  font-size: 0.825rem !important;
+  font-weight: 700 !important;
+}
+
+/* 4 Core Career Pillars Banner */
+.career-pillars-banner {
+  background: #0f172a !important;
+  color: #ffffff !important;
+  padding: 24px 0 !important;
+  border-top: 1px solid #1e293b !important;
+  border-bottom: 1px solid #1e293b !important;
+}
+
+.pillars-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px !important;
+  align-items: center !important;
+}
+
+.pillar-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  color: #f1f5f9 !important;
+}
+
+/* Flexible Learning Modes Grid */
+.learning-modes-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px !important;
+  margin-top: 32px !important;
+}
+
+.mode-card {
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 20px !important;
+  padding: 28px 24px !important;
+  text-align: center !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.mode-card:hover {
+  border-color: #0284c7 !important;
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 40px rgba(2, 132, 199, 0.12) !important;
+}
+
+.mode-icon {
+  font-size: 2.2rem !important;
+  margin-bottom: 14px !important;
+}
+
+.mode-card h3 {
+  font-size: 1.1rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin-bottom: 8px !important;
+}
+
+.mode-card p {
+  font-size: 0.875rem !important;
+  color: #64748b !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
+
+/* High-Paying Career Roles Grid */
+.career-roles-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 20px !important;
+  margin-top: 24px !important;
+}
+
+.career-role-card {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 16px !important;
+  padding: 20px 24px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02) !important;
+  transition: all 0.25s ease !important;
+}
+
+.career-role-card:hover {
+  border-color: #bae6fd !important;
+  transform: translateX(4px) !important;
+}
+
+.role-icon {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 12px !important;
+  background: #f0f9ff !important;
+  border: 1px solid #bae6fd !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.career-role-card h4 {
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin-bottom: 2px !important;
+}
+
+.role-pkg {
+  font-size: 0.85rem !important;
+  color: #64748b !important;
+}
+
+.role-pkg strong {
+  color: #059669 !important;
+  font-weight: 700 !important;
+}
+
+@media (max-width: 1024px) {
+  .pillars-grid, .learning-modes-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .pillars-grid, .learning-modes-grid, .career-roles-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* Senior Product Designer Large Left Hero Copy & Full Responsiveness */
+
+.course-hero-enhanced {
+  padding: 60px 0 45px !important;
+}
+
+.course-hero-grid {
+  display: grid !important;
+  grid-template-columns: 1.2fr 0.8fr !important;
+  gap: 40px !important;
+  align-items: stretch !important;
+}
+
+.course-hero-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.course-eyebrow {
+  display: inline-block !important;
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  color: #0284c7 !important;
+  background: #e0f2fe !important;
+  border: 1px solid #bae6fd !important;
+  padding: 6px 16px !important;
+  border-radius: 9999px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 14px !important;
+}
+
+.course-hero-title-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  margin-bottom: 16px !important;
+}
+
+.course-hero-logo-box {
+  flex: 0 0 72px !important;
+  width: 72px !important;
+  height: 72px !important;
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 18px !important;
+  padding: 10px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+.hero-large-title {
+  font-size: 2.35rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  line-height: 1.25 !important;
+  margin: 0 !important;
+}
+
+.large-hero-sub {
+  font-size: 1.125rem !important;
+  line-height: 1.7 !important;
+  color: #334155 !important;
+  margin-bottom: 26px !important;
+  max-width: 620px !important;
+}
+
+.hero-trust-badges-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  align-items: center !important;
+}
+
+.hero-trust-badge-large,
+.hero-trust-pill-large {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 10px 20px !important;
+  background: #ffffff !important;
+  border: 1.5px solid #bae6fd !important;
+  border-radius: 12px !important;
+  color: #0284c7 !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.06) !important;
+}
+
+/* Full Mobile Responsiveness System (< 1024px & < 768px) */
+@media (max-width: 1024px) {
+  .course-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .hero-large-title {
+    font-size: 1.95rem !important;
+  }
+  .large-hero-sub {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .course-hero-enhanced {
+    padding: 35px 0 25px !important;
+  }
+  .hero-large-title {
+    font-size: 1.65rem !important;
+  }
+  .course-hero-logo-box {
+    flex: 0 0 54px !important;
+    width: 54px !important;
+    height: 54px !important;
+    border-radius: 12px !important;
+  }
+  .hero-trust-badges-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .hero-trust-badge-large, .hero-trust-pill-large {
+    justify-content: center !important;
+  }
+}

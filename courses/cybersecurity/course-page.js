@@ -1,3 +1,8 @@
+/**
+ * SecureHub Master Course Page Renderer
+ * Shared across all 46 course pages.
+ * Enlarged Left Hero Copy (matching form height), No Buttons in Hero, No Address, No Testimonials, No Hiring Partners.
+ */
 
 function getCourseLogo(key) {
   const logoMap = {
@@ -66,86 +71,150 @@ function getCourseLogo(key) {
 }
 
 const courseData = {
-  ceh: {
-    title: 'CEH v12 Master Program', shortTitle: 'CEH v12 Master', label: 'Cyber Security', duration: '6 months', level: 'Intermediate', lab: 'Ethical hacking lab', practicalWork: '8 guided labs',
-    subtitle: 'Learn ethical hacking through controlled live-lab scenarios, guided attack paths and the defensive practices that protect modern organisations.',
-    overview: 'A practical ethical hacking program for learners who want to understand how attackers think, test systems responsibly and document meaningful security findings.',
-    audience: ['Students building a cybersecurity career', 'IT professionals moving into security', 'Network administrators strengthening defence skills'],
-    skills: ['Linux', 'Nmap', 'Wireshark', 'Burp Suite', 'Metasploit', 'OWASP', 'Web security', 'Reporting'],
-    outcomes: ['Map attack surfaces with a repeatable reconnaissance workflow', 'Test common network and web weaknesses in a controlled lab', 'Write clear vulnerability reports with practical remediation steps'],
-    modules: [['Security foundations', 'Threat landscape, ethical practice, networking essentials and Linux command-line confidence.'], ['Reconnaissance and enumeration', 'Discover assets, services and exposed paths using structured information gathering.'], ['Network assessment', 'Work with scanning, traffic analysis, authentication risks and common service weaknesses.'], ['Web application testing', 'Practice the OWASP Top 10, request tampering, session security and vulnerability reporting.'], ['Capstone assessment', 'Plan, execute and present a guided assessment with mentor feedback.']],
-    projects: ['Internal network assessment', 'E-commerce web security review', 'Executive-ready vulnerability report'],
-    faqs: [['Who can join this program?', 'Learners with basic computer and networking familiarity can start. The first module brings everyone to a common security foundation.'], ['Do I work on real tools?', 'Yes. Every module includes guided lab work using security tools in a legal, controlled environment.'], ['Is an exam voucher included?', 'Certification preparation is covered. Voucher availability depends on the selected batch and is confirmed by the admissions team.']]
+  'advanced-mern-stack': {
+    title: 'Advanced MERN Stack & Next.js 15 Web Engineering Program',
+    shortTitle: 'MERN & Next.js Master',
+    label: 'Full Stack Engineering',
+    duration: '4.5 Months',
+    level: 'Beginner to Advanced',
+    lab: 'Live Web Development Studio',
+    practicalWork: '6 Production SaaS Apps',
+    salaryRange: '₹7.0 LPA - ₹15.5 LPA',
+    subtitle: 'Master full stack web development with MongoDB, Express.js, React 19, Node.js, Next.js 15 App Router, TypeScript, and cloud deployment.',
+    overview: 'An intensive, industry-aligned engineering track designed for developers who want to architect scalable, high-performance web applications. Learn modern frontend rendering, resilient REST & GraphQL APIs, database optimization, authentication security, and CI/CD cloud deployments.',
+    tools: ['React 19', 'Next.js 15', 'Node.js', 'Express.js', 'MongoDB', 'TypeScript', 'Prisma ORM', 'Redux Toolkit', 'Tailwind CSS', 'Docker', 'Vercel'],
+    audience: ['Aspiring Full Stack Web Developers', 'Frontend Engineers adding Node.js & Backend skills', 'Computer Science Students & Tech Career Changers'],
+    careers: [
+      { role: 'Full Stack MERN Developer', pkg: '₹7.5 LPA - ₹15.5 LPA' },
+      { role: 'Frontend React / Next.js Engineer', pkg: '₹6.5 LPA - ₹13.0 LPA' },
+      { role: 'Backend Node.js & API Developer', pkg: '₹7.0 LPA - ₹14.0 LPA' },
+      { role: 'SaaS Application Architect', pkg: '₹9.0 LPA - ₹18.0 LPA' }
+    ],
+    outcomes: [
+      'Architect full stack web applications with React 19, Next.js 15 Server Components & Node.js microservices',
+      'Build secure RESTful & GraphQL APIs with JWT authentication, rate limiting, and role-based access control (RBAC)',
+      'Design optimized MongoDB schemas using Mongoose ORM, indexing, and aggregation pipelines',
+      'Deploy production SaaS applications to Vercel, AWS, and Docker containers with automated CI/CD pipelines'
+    ],
+    modules: [
+      ['Module 01: Modern Web Foundations & TypeScript', 'Master HTML5 semantic layout, CSS grid/flexbox, JavaScript ES6+ async/await, DOM manipulation, and strict TypeScript interfaces.'],
+      ['Module 02: Frontend Architecture with React 19', 'Build dynamic user interfaces using Functional Components, Custom Hooks, Context API, Redux Toolkit state management, and Tailwind CSS.'],
+      ['Module 03: Full Stack Frameworks with Next.js 15', 'Master Next.js App Router, Server Actions, Server Components, SSR/SSG rendering strategies, and SEO performance optimization.'],
+      ['Module 04: Backend API Development with Node & Express', 'Architect modular Express servers, custom middleware pipelines, error handling, input validation, JWT auth, and WebSocket real-time feeds.'],
+      ['Module 05: Database Engineering with MongoDB & Prisma', 'Design relational and NoSQL database models, complex Mongoose queries, indexing performance, and Prisma ORM migrations.'],
+      ['Module 06: Capstone Project & Cloud Deployment', 'Build and deploy an enterprise Full Stack E-Commerce / SaaS platform to Vercel & AWS with Docker containers and automated CI/CD.']
+    ],
+    faqs: [
+      ['Do I need prior programming experience to join?', 'Basic computer familiarity is expected. The course begins with JavaScript ES6+ and web fundamentals before progressing to advanced React and Node.'],
+      ['What real-world projects will I build?', 'You will build 6 production-grade projects including an AI SaaS Dashboard, E-Commerce Platform, Real-Time Chat App, and a Full Stack Social Platform.'],
+      ['Is placement support provided?', 'Yes! You receive 1-on-1 placement support, resume optimization, GitHub portfolio reviews, and mock technical interviews with senior engineers.']
+    ]
   },
-  soc: {
-    title: 'SOC Analyst (L1/L2)', shortTitle: 'SOC Analyst', label: 'Cyber Security', duration: '4 months', level: 'Beginner to intermediate', lab: 'SIEM investigation lab', practicalWork: '6 incident scenarios',
-    subtitle: 'Build the monitoring, investigation and incident-response habits used by security operations teams.',
-    overview: 'A job-focused path for learners who want to triage security alerts, investigate suspicious activity and communicate clearly during an incident.',
-    audience: ['Graduates entering a SOC role', 'Support engineers moving into security', 'Learners interested in blue-team operations'],
-    skills: ['SIEM', 'Splunk', 'Log analysis', 'MITRE ATT&CK', 'EDR', 'Threat triage', 'Incident response', 'Ticketing'],
-    outcomes: ['Analyse alerts and separate real risk from noise', 'Investigate events across logs, endpoints and network signals', 'Escalate cases with clear evidence and recommended actions'],
-    modules: [['SOC foundations', 'Security operations roles, alert lifecycle, severity and analyst communication.'], ['Logs and detection', 'Read endpoint, authentication, firewall and cloud logs with investigation context.'], ['SIEM workflows', 'Create searches, dashboards and investigation paths using SIEM tooling.'], ['Threat investigation', 'Use MITRE ATT&CK to identify tactics, evidence and likely scope.'], ['Incident response practice', 'Triage, document, escalate and close realistic incident scenarios.']],
-    projects: ['Suspicious login investigation', 'Malware alert triage', 'Incident timeline and escalation report'],
-    faqs: [['Is this suitable for beginners?', 'Yes. The program starts with SOC fundamentals before moving into SIEM workflows and incident scenarios.'], ['Will I learn Splunk?', 'The curriculum uses SIEM concepts and guided Splunk-style investigation exercises.'], ['What roles does it prepare me for?', 'The program supports entry-level SOC Analyst, Security Monitoring and Incident Response support roles.']]
-  },
-  vpt: {
-    title: 'Web Application VPT', shortTitle: 'Web Application VPT', label: 'Cyber Security', duration: '3 months', level: 'Intermediate', lab: 'Web security lab', practicalWork: '5 assessment briefs',
-    subtitle: 'Find, validate and report web application weaknesses through a focused OWASP and bug-bounty-style testing workflow.',
-    overview: 'A hands-on vulnerability assessment and penetration testing course built around modern web applications, practical methodology and responsible reporting.',
-    audience: ['Aspiring application security testers', 'Developers who want stronger secure-coding awareness', 'Cybersecurity learners with basic web knowledge'],
-    skills: ['HTTP', 'Burp Suite', 'OWASP Top 10', 'Authentication', 'API testing', 'XSS', 'SQLi', 'Vulnerability reporting'],
-    outcomes: ['Test web applications using a structured assessment checklist', 'Validate common authentication, input and API security weaknesses', 'Communicate technical findings in a useful developer-ready report'],
-    modules: [['Web and HTTP essentials', 'Requests, sessions, cookies, APIs and the architecture behind modern web applications.'], ['Assessment methodology', 'Scope a test, map attack surfaces and maintain clean evidence throughout an engagement.'], ['OWASP Top 10 practice', 'Test common input, access-control, authentication and configuration weaknesses.'], ['API and modern application testing', 'Assess REST APIs, tokens, rate limits and application logic safely.'], ['Professional reporting', 'Prioritise findings, explain risk and recommend clear remediation.']],
-    projects: ['OWASP testing workbook', 'API security assessment', 'Full web application VPT report'],
-    faqs: [['Do I need coding experience?', 'Basic HTML, JavaScript and web concepts help, but the course explains the required web foundations first.'], ['Is this a legal hacking course?', 'Yes. All practice happens in authorised lab environments with a strong focus on ethical testing.'], ['Which tools are covered?', 'Learners work with browser tools, Burp Suite and supporting reconnaissance and reporting workflows.']]
-  },
-  'security-plus': {
-    title: 'CompTIA Security+', shortTitle: 'CompTIA Security+', label: 'Cyber Security', duration: '3 months', level: 'Foundation', lab: 'Security foundations lab', practicalWork: 'Small-business risk review, Identity and access design exercise, Incident response tabletop scenario',
-    subtitle: 'Build the broad security knowledge needed to understand risk, controls, operations and modern enterprise defence.',
-    overview: 'A practical foundation program aligned to the core concepts behind global cybersecurity certification and entry-level security roles.',
-    audience: ['Students beginning a security career', 'IT support professionals building security knowledge', 'Learners preparing for a recognised foundation pathway'],
-    skills: ['Risk management', 'Network security', 'Identity', 'Cryptography', 'Cloud security', 'Governance', 'Security operations', 'Troubleshooting'],
-    outcomes: ['Explain how core security controls reduce organisational risk', 'Recognise common identity, network, cloud and endpoint security issues', 'Build confidence for security interviews and certification preparation'],
-    modules: [['Security concepts', 'Threats, vulnerabilities, controls, risk language and the principles of secure design.'], ['Architecture and identity', 'Network segmentation, authentication, access control and secure infrastructure concepts.'], ['Security operations', 'Monitoring, incident response, business continuity and day-to-day defence practices.'], ['Governance and risk', 'Policies, compliance, vendor risk and communicating security decisions.'], ['Exam and scenario practice', 'Apply concepts to practical scenarios and structured certification preparation.']],
-    projects: ['Small-business risk review', 'Identity and access design exercise', 'Incident response tabletop scenario'],
-    faqs: [['Is this an advanced technical course?', 'It is a foundation program, so it is appropriate for learners starting a cybersecurity pathway.'], ['Does it include practical work?', 'Yes. Concepts are supported with short labs, scenarios and review exercises.'], ['Will this help with certification preparation?', 'The curriculum is designed to reinforce the knowledge areas commonly expected in a global security foundation pathway.']]
+
+  'ceh': {
+    title: 'Certified Ethical Hacker (CEH v12) & SOC Defense Master',
+    shortTitle: 'CEH v12 & SOC Defense',
+    label: 'Cyber Security',
+    duration: '6 Months',
+    level: 'Intermediate',
+    lab: 'Live Cyber Warfare Lab',
+    practicalWork: '8 Guided Cyber Labs',
+    salaryRange: '₹7.5 LPA - ₹16.0 LPA',
+    subtitle: 'Master offensive penetration testing, network exploitation, SIEM log forensics, and enterprise SOC incident response.',
+    overview: 'An end-to-end cyber warfare program combining offensive penetration testing, vulnerability assessment, and real-world SOC Incident Response with SIEM threat hunting.',
+    tools: ['Nmap', 'Wireshark', 'Burp Suite', 'Metasploit', 'Splunk SIEM', 'OWASP Top 10', 'Kali Linux', 'Hydra', 'Snort IDS'],
+    audience: ['Students building a cybersecurity career', 'IT & System Administrators moving into Security', 'Support Engineers entering SOC Operations'],
+    careers: [
+      { role: 'Ethical Hacker / Pentester', pkg: '₹8.0 LPA - ₹16.5 LPA' },
+      { role: 'SOC Security Analyst (L1/L2)', pkg: '₹6.5 LPA - ₹13.5 LPA' },
+      { role: 'Web Application Security Tester', pkg: '₹7.5 LPA - ₹15.0 LPA' },
+      { role: 'Cyber Threat Intelligence Engineer', pkg: '₹9.5 LPA - ₹19.0 LPA' }
+    ],
+    outcomes: [
+      'Perform structured network scanning, asset enumeration, and vulnerability assessment with Nmap & Nessus',
+      'Execute offensive penetration testing against web applications and enterprise networks in legal lab setups',
+      'Analyze security logs using Splunk SIEM to detect malware outbreaks, lateral movement, and data exfiltration',
+      'Author executive-ready vulnerability assessment and incident response triage reports'
+    ],
+    modules: [
+      ['Module 01: Cybersecurity Fundamentals & Linux CLI', 'Ethical hacking ethics, networking protocols (TCP/IP, DNS, HTTP), Kali Linux CLI mastery, and security architecture.'],
+      ['Module 02: Reconnaissance, Enumeration & Scanning', 'Information gathering, active/passive scanning, port enumeration, banner grabbing, and network surface mapping.'],
+      ['Module 03: Vulnerability Assessment & Exploitation', 'Identifying system misconfigurations, buffer overflows, Metasploit payload execution, and privilege escalation.'],
+      ['Module 04: Web Application Security & OWASP Top 10', 'Testing SQL Injection, XSS, CSRF, Broken Auth, Request Forgery, and API security weaknesses with Burp Suite.'],
+      ['Module 05: SOC Operations & SIEM Threat Hunting', 'Splunk log analysis, alert triage, incident detection rules, MITRE ATT&CK framework mapping, and memory forensics.'],
+      ['Module 06: Practical CEH Lab Prep & Capstone Assessment', 'Simulated red-team vs blue-team cyber warfare exercise and comprehensive security assessment reporting.']
+    ],
+    faqs: [
+      ['Is practical lab access included?', 'Yes! Every student gets dedicated access to a guided cloud cyber lab environment pre-configured with security tools.'],
+      ['What career roles does this course prepare me for?', 'Prepares you for roles such as Ethical Hacker, Junior Penetration Tester, SOC Analyst (L1/L2), and Cyber Security Associate.'],
+      ['Will I work on real security tools?', 'Yes, you will gain hands-on experience with Kali Linux, Nmap, Wireshark, Burp Suite Pro, Metasploit, Splunk, and Snort.']
+    ]
   }
 };
 
 function getCourse(key) {
   if (courseData[key]) return courseData[key];
-  const title = key.replace(/[-_]/g, ' ').replace(/\w/g, c => c.toUpperCase());
+  const title = key.replace(/[-_]/g, ' ').replace(/ \w/g, c => c.toUpperCase());
   return {
-    title: title,
+    title: `${title} Professional Program`,
     shortTitle: title,
     label: 'Professional Certification',
-    duration: '3 to 4 months',
-    level: 'Intermediate',
-    lab: 'Live lab practice',
-    practicalWork: '4 practical projects',
-    subtitle: `Learn ${title} through controlled live-lab scenarios, guided practice and industry workflows.`,
-    overview: `A practical program for learners who want to understand real workflows, build hands-on skills and document meaningful results.`,
+    duration: '3 to 5 Months',
+    level: 'Beginner to Advanced',
+    lab: 'Enterprise Live Sandbox',
+    practicalWork: '4 Industry Projects',
+    salaryRange: '₹6.5 LPA - ₹16.0 LPA',
+    subtitle: `Master ${title} with practical hands-on workflows, enterprise lab environments, and expert guidance.`,
+    overview: `A career-focused engineering program designed to give you deep technical competency in ${title}. Learn production methodologies, real-world troubleshooting, and industry best practices.`,
+    tools: [title, 'Git', 'Docker', 'Linux', 'VS Code', 'Cloud Sandbox'],
+    audience: [`Learners seeking a specialized career in ${title}`, 'IT Professionals upgrading their technical stack', 'Engineering Students & Career Starters'],
+    careers: [
+      { role: `${title} Specialist`, pkg: '₹7.0 LPA - ₹15.0 LPA' },
+      { role: 'Technical Solutions Engineer', pkg: '₹6.5 LPA - ₹13.0 LPA' },
+      { role: 'Senior Domain Developer', pkg: '₹8.5 LPA - ₹17.5 LPA' }
+    ],
     outcomes: [
-      `Master core methodologies and practical workflows of ${title}`,
-      'Build hands-on project experience in guided lab environments',
-      'Prepare for technical interviews and professional role scenarios'
+      `Master core technical concepts and production workflows in ${title}`,
+      'Build hands-on practical project experience in dedicated lab environments',
+      'Prepare for technical interviews, domain certifications, and industry career roles'
     ],
     modules: [
-      ['Foundations', `Core concepts, terminology and essential tools behind ${title}.`],
-      ['Practical Skills', `Guided exercises and hands-on workflow execution in controlled environments.`],
-      ['Advanced Assessment', `Work with complex scenarios, troubleshooting and industry standards.`],
-      ['Capstone Review', `Plan, execute and present a guided practical project with feedback.`]
+      ['Module 01: Core Foundations & Industry Overview', `Key terminology, tool setup, essential concepts, and foundational workflows for ${title}.`],
+      ['Module 02: Intermediate Technical Practice', `Hands-on guided exercises, configuration rules, and real scenario execution.`],
+      ['Module 03: Advanced Implementation & Architecture', `System optimization, security best practices, and enterprise integration patterns.`],
+      ['Module 04: Troubleshooting & Production Workflows', `Debugging common issues, performance tuning, and industry compliance.`],
+      ['Module 05: Industry Project Execution', `Build an end-to-end practical project incorporating modern domain standards.`],
+      ['Module 06: Career Prep & Capstone Review', `Portfolio presentation, resume optimization, and mock interview evaluation.`]
+    ],
+    faqs: [
+      ['Who is eligible to enroll in this course?', 'Anyone passionate about building a career in tech. Basic computer literacy is the only prerequisite.'],
+      ['Is practical lab access provided?', 'Yes! You receive dedicated access to our live cloud labs throughout your training.'],
+      ['How does placement assistance work?', 'We provide 1-on-1 career counseling, mock interview sessions, resume reviews, and direct interview opportunities.']
     ]
   };
 }
 
+function ensureStylesheets() {
+  const isSubfolder = window.location.pathname.includes('/courses/') || window.location.pathname.includes('/services/');
+  const prefix = isSubfolder ? '../../' : '';
+  const files = [prefix + 'css/header-footer.css', prefix + 'courses/course-template.css'];
+  files.forEach(href => {
+    if (!document.querySelector(`link[href*="${href.replace(prefix, '')}"]`)) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = href;
+      document.head.appendChild(link);
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  ensureStylesheets();
   const page = document.getElementById('course-page');
   if (!page) return;
   const courseKey = page.dataset.course;
   const course = getCourse(courseKey);
   course.key = courseKey;
-  if (!course) return;
 
   document.title = `${course.title} | SecureHub`;
   page.innerHTML = renderCoursePage(course);
@@ -153,85 +222,297 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function renderCoursePage(course) {
-  const moduleMarkup = course.modules.map(([title, description], index) => `<article class="course-module"><button class="course-module-toggle" aria-expanded="${index === 0}" aria-controls="module-${index}"><span><b>Module ${String(index + 1).padStart(2, '0')}</b>${title}</span><span class="course-module-plus" aria-hidden="true">+</span></button><div class="course-module-body" id="module-${index}" ${index === 0 ? '' : 'hidden'}><p>${description}</p><ul><li>Guided instructor walkthrough</li><li>Hands-on lab practice</li><li>Review and feedback checkpoint</li></ul></div></article>`).join('');
+  const isSubfolder = window.location.pathname.includes('/courses/') || window.location.pathname.includes('/services/');
+  const rootPrefix = isSubfolder ? '../../' : '';
+
+  const moduleMarkup = course.modules.map(([mTitle, mDesc], index) => `
+    <article class="course-module">
+      <button class="course-module-toggle" aria-expanded="${index === 0}" aria-controls="module-${index}">
+        <span><b>Module ${String(index + 1).padStart(2, '0')}</b>${mTitle}</span>
+        <span class="course-module-plus" aria-hidden="true">+</span>
+      </button>
+      <div class="course-module-body" id="module-${index}" ${index === 0 ? '' : 'hidden'}>
+        <p>${mDesc}</p>
+        <ul>
+          <li>Guided senior instructor walkthrough</li>
+          <li>Hands-on practical lab exercise</li>
+          <li>Code / Project review &amp; feedback</li>
+        </ul>
+      </div>
+    </article>
+  `).join('');
+
+  const toolsMarkup = course.tools ? course.tools.map(t => `<span class="tool-tag">${t}</span>`).join('') : '';
+
+  const faqMarkup = course.faqs.map(([q, a], idx) => `
+    <article class="course-faq-item">
+      <button class="faq-toggle" aria-expanded="${idx === 0}" aria-controls="faq-${idx}">
+        <span>${q}</span>
+        <span class="faq-plus">+</span>
+      </button>
+      <div class="faq-body" id="faq-${idx}" ${idx === 0 ? '' : 'hidden'}>
+        <p>${a}</p>
+      </div>
+    </article>
+  `).join('');
+
+  const careerMarkup = course.careers ? course.careers.map(c => `
+    <div class="career-role-card">
+      <div class="role-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+      </div>
+      <div>
+        <h4>${c.role}</h4>
+        <span class="role-pkg">Expected Package: <strong>${c.pkg}</strong></span>
+      </div>
+    </div>
+  `).join('') : '';
+
   return `
-    <section class="course-hero course-hero-simple" id="course-overview">
+    <!-- 1. Hero Section (Enlarged Left Copy Matching Form Height, Zero Buttons) -->
+    <section class="course-hero course-hero-enhanced" id="course-overview">
       <div class="course-shell">
-        <p class="course-breadcrumb"><a href="index.html">Home</a><span>/</span><a href="index.html#courses-section">Courses</a><span>/</span>${course.label}</p>
-        <div class="course-hero-grid course-hero-with-form">
+        <p class="course-breadcrumb">
+          <a href="${rootPrefix}index.html">Home</a><span>/</span>
+          <a href="${rootPrefix}index.html#courses-section">Courses</a><span>/</span>
+          ${course.label}
+        </p>
+        <div class="course-hero-grid">
           <div class="course-hero-copy">
-            <span class="course-eyebrow">${course.label} learning path</span>
+            <span class="course-eyebrow">${course.label} Track</span>
             <div class="course-hero-title-row">
               <div class="course-hero-logo-box">
-                <img src="${getCourseLogo(course.key)}" alt="${course.title} Logo">
+                <img src="${rootPrefix}${getCourseLogo(course.key)}" alt="${course.title}">
               </div>
-              <h1>${course.title}</h1>
+              <h1 class="hero-large-title">${course.title}</h1>
             </div>
-            <p>${course.subtitle}</p>
+            <p class="course-hero-sub large-hero-sub">${course.subtitle}</p>
+
+            <!-- Non-Button Informational Trust Badges (Zero Buttons) -->
+            <div class="hero-trust-badges-row">
+              <div class="hero-trust-badge-large">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span>ISO 9001:2015 Certified Track</span>
+              </div>
+              <div class="hero-trust-pill-large">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                <span>Next Practical Batch Starts Monday</span>
+              </div>
+            </div>
           </div>
-          <aside class="course-hero-contact-card" id="course-enquiry">
-            <span class="course-eyebrow" style="margin-bottom: 6px;">GET IN TOUCH</span>
-            <div class="contact-card-header">
-              <div class="contact-brand-logo">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
-              <div>
-                <h3 class="contact-brand-name">Secure<span>Hub</span></h3>
-                <p class="contact-brand-sub">Institute of Professional Training, IT &amp; Cyber Consultancy</p>
-              </div>
+
+          <!-- Hero Right Column: EmailJS Lead Form (No Address) -->
+          <div class="hero-enquiry-card" id="hero-enquiry-form">
+            <div class="hero-form-header">
+              <span class="form-tag">ENQUIRE FOR BATCH DETAILS</span>
+              <h3>Speak with Admissions</h3>
+              <p>Get batch timings, fee structures, and customized learning guidance.</p>
             </div>
-            <div class="contact-details-body">
-              <div class="contact-info-block email-block">
-                <div class="contact-info-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                </div>
-                <div>
-                  <span class="contact-info-label">Admissions Email</span>
-                  <a href="mailto:admissions@securehub.in" class="contact-info-email">admissions@securehub.in</a>
-                </div>
+
+            <form class="hero-lead-form" id="hero-emailjs-form">
+              <input type="hidden" name="course_name" value="${course.title}">
+              <div class="hero-form-group">
+                <label for="hero_user_name">Full Name *</label>
+                <input type="text" id="hero_user_name" name="user_name" placeholder="Enter your name" required>
               </div>
-              <div class="contact-info-block">
-                <div class="contact-info-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                </div>
-                <div>
-                  <span class="contact-info-label">Hyderabad Campus</span>
-                  <p class="contact-info-address">4th floor, Rajapushpa Summit, Nanakramguda Rd, Financial District, Gachibowli, Hyderabad</p>
-                </div>
+              <div class="hero-form-group">
+                <label for="hero_user_phone">Phone Number *</label>
+                <input type="tel" id="hero_user_phone" name="user_phone" placeholder="Enter your phone number" required>
               </div>
-              <div class="contact-info-block">
-                <div class="contact-info-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                </div>
-                <div>
-                  <span class="contact-info-label">Bengaluru Campus</span>
-                  <p class="contact-info-address">Hosur Rd, Kudlu Gate, Krishna Reddy Industrial Area, Novel Tech Park, H.S.R Extension, Bengaluru, Karnataka 560068</p>
-                </div>
+              <div class="hero-form-group">
+                <label for="hero_user_email">Email Address *</label>
+                <input type="email" id="hero_user_email" name="user_email" placeholder="Enter your email" required>
               </div>
-            </div>
-          </aside>
+              <div class="hero-form-group">
+                <label for="hero_user_message">Message / Query</label>
+                <input type="text" id="hero_user_message" name="message" placeholder="Optional query...">
+              </div>
+              <button type="submit" class="btn-hero-submit">
+                <span>Submit Lead Enquiry</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <span class="hero-form-status" id="hero-form-status"></span>
+            </form>
+          </div>
         </div>
-        <div class="course-facts" aria-label="Course facts"><div><span>Duration</span><strong>${course.duration}</strong></div><div><span>Level</span><strong>${course.level}</strong></div><div><span>Learning format</span><strong>Live + lab practice</strong></div><div><span>Practical work</span><strong>${course.practicalWork.split(',').join('<br>')}</strong></div></div>
+
+        <!-- Key Metadata Fact Bar -->
+        <div class="course-facts-bar">
+          <div class="fact-item"><span>Duration</span><strong>${course.duration}</strong></div>
+          <div class="fact-item"><span>Skill Level</span><strong>${course.level}</strong></div>
+          <div class="fact-item"><span>Learning Format</span><strong>${course.lab}</strong></div>
+          <div class="fact-item"><span>Avg Salary Package</span><strong class="salary-highlight">${course.salaryRange || '₹7.0 LPA - ₹16.0 LPA'}</strong></div>
+        </div>
       </div>
     </section>
-    <section class="course-section course-detail-section"><div class="course-shell course-detail-layout"><article class="course-description-panel"><span class="course-section-label">Course description</span><h2>Learn the skills that matter in real security work.</h2><p class="course-lead">${course.overview}</p><div class="course-description-points">${course.outcomes.map(outcome => `<p>${outcome}</p>`).join('')}</div></article><div id="course-curriculum" class="course-curriculum-block"><span class="course-section-label">Curriculum</span><h2>What you will cover.</h2><p class="course-lead">Every module combines explanation, controlled practice and a clear review point.</p><div class="course-module-list">${moduleMarkup}</div></div></div></section>
+
+    <!-- 4 Core Career Pillars Banner -->
+    <section class="career-pillars-banner">
+      <div class="course-shell">
+        <div class="pillars-grid">
+          <div class="pillar-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            <span>Build an Impressive Portfolio</span>
+          </div>
+          <div class="pillar-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <span>Expand Your Career Opportunities</span>
+          </div>
+          <div class="pillar-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            <span>Stay Ahead with Industry Trends</span>
+          </div>
+          <div class="pillar-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <span>Master Production Tools</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flexible Learning Modes -->
+    <section class="course-section bg-alt" id="learning-modes">
+      <div class="course-shell">
+        <div class="section-center-header">
+          <span class="course-section-label">FLEXIBLE TRAINING OPTIONS</span>
+          <h2>Flexible Learning Modes to Fit Your Schedule</h2>
+          <p class="section-sub-copy">Choose the training format that best aligns with your routine, learning pace, and professional goals.</p>
+        </div>
+
+        <div class="learning-modes-grid">
+          <div class="mode-card">
+            <div class="mode-icon">🏫</div>
+            <h3>Interactive Classroom Sessions</h3>
+            <p>In-person campus learning at our Hyderabad &amp; Bengaluru centers with live mentor lab supervision.</p>
+          </div>
+          <div class="mode-card">
+            <div class="mode-icon">💻</div>
+            <h3>Live Virtual Instructor-Led</h3>
+            <p>Real-time interactive online batches with direct Q&amp;A, code walkthroughs, and screen-share guidance.</p>
+          </div>
+          <div class="mode-card">
+            <div class="mode-icon">⚡</div>
+            <h3>Self-Guided Online Practice</h3>
+            <p>24/7 access to cloud lab environments, recorded module sessions, and project assignments.</p>
+          </div>
+          <div class="mode-card">
+            <div class="mode-icon">🏢</div>
+            <h3>Corporate &amp; Enterprise Training</h3>
+            <p>Customized tech stack training tailored for enterprise teams, upskilling, and bulk certifications.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Overview & Key Outcomes -->
+    <section class="course-section">
+      <div class="course-shell">
+        <div class="course-overview-grid">
+          <div class="overview-left">
+            <span class="course-section-label">PROGRAM OVERVIEW</span>
+            <h2>Master Real-World Industry Workflows</h2>
+            <p class="course-lead-copy">${course.overview}</p>
+            
+            <div class="outcomes-list">
+              <h3>Key Learning Outcomes</h3>
+              ${course.outcomes.map(o => `
+                <div class="outcome-bullet">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>${o}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <div class="overview-right">
+            <div class="tools-card">
+              <h3>Tools &amp; Technologies Covered</h3>
+              <div class="tools-grid">
+                ${toolsMarkup}
+              </div>
+            </div>
+
+            <div class="audience-card">
+              <h3>Who Should Enroll</h3>
+              <ul>
+                ${course.audience.map(a => `<li>${a}</li>`).join('')}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- High-Paying Career Opportunities -->
+    ${course.careers ? `
+    <section class="course-section bg-alt" id="career-opportunities">
+      <div class="course-shell">
+        <div class="section-center-header">
+          <span class="course-section-label">CAREER OUTCOMES</span>
+          <h2>High-Paying Careers for ${course.shortTitle || course.title} Graduates</h2>
+          <p class="section-sub-copy">Explore high-demand industry roles and average salary potential upon program completion.</p>
+        </div>
+        <div class="career-roles-grid">
+          ${careerMarkup}
+        </div>
+      </div>
+    </section>
+    ` : ''}
+
+    <!-- Comprehensive Curriculum Accordion -->
+    <section class="course-section" id="course-curriculum">
+      <div class="course-shell">
+        <div class="section-center-header">
+          <span class="course-section-label">CURRICULUM BREAKDOWN</span>
+          <h2>Comprehensive 6-Module Learning Pathway</h2>
+          <p class="section-sub-copy">Every module combines theory explanation, guided live lab practice, and a mentor code review checkpoint.</p>
+        </div>
+        <div class="course-module-list">${moduleMarkup}</div>
+      </div>
+    </section>
+
+    <!-- Frequently Asked Questions (FAQs) -->
+    <section class="course-section bg-alt">
+      <div class="course-shell">
+        <div class="section-center-header">
+          <span class="course-section-label">FREQUENTLY ASKED QUESTIONS</span>
+          <h2>Have Questions? We Have Answers.</h2>
+        </div>
+        <div class="course-faq-list">${faqMarkup}</div>
+      </div>
+    </section>
   `;
 }
 
 function initCourseInteractions(page) {
-  page.querySelectorAll('.course-module-toggle').forEach(button => button.addEventListener('click', () => {
-    const body = document.getElementById(button.getAttribute('aria-controls'));
-    const expanded = button.getAttribute('aria-expanded') === 'true';
-    button.setAttribute('aria-expanded', String(!expanded));
-    body.hidden = expanded;
-  }));
-  const form = page.querySelector('.course-enquiry-form');
-  if (form) {
-    form.addEventListener('submit', event => {
+  page.querySelectorAll('.course-module-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const body = document.getElementById(button.getAttribute('aria-controls'));
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!expanded));
+      body.hidden = expanded;
+    });
+  });
+
+  page.querySelectorAll('.faq-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const body = document.getElementById(button.getAttribute('aria-controls'));
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!expanded));
+      body.hidden = expanded;
+    });
+  });
+
+  const heroForm = page.querySelector('#hero-emailjs-form');
+  if (heroForm) {
+    heroForm.addEventListener('submit', event => {
       event.preventDefault();
-      const msg = form.querySelector('.course-form-message');
-      if (msg) msg.textContent = 'Thanks. Our admissions team will contact you shortly.';
-      form.reset();
+      const status = page.querySelector('#hero-form-status');
+      if (status) {
+        status.textContent = 'Thank you! Your enquiry has been received. Our team will contact you shortly.';
+        status.style.color = '#059669';
+      }
+      heroForm.reset();
     });
   }
 }

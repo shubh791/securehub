@@ -134,237 +134,318 @@
   </section>
 
   <!-- 3. Top Choice Master Programs Section (Flawless Slider Layout with Header Arrows) -->
-  <section class="topchoice-section">
-    <div class="sh-container">
-      
-      <!-- Top Header Flex with Navigation Buttons -->
-      <div class="topchoice-header-flex">
-        <div class="header-text-left">
-          <span class="section-tag">Highly recommended courses</span>
-          <h2 class="section-title" style="margin-bottom:6px;">Career-ready learning, chosen for what it unlocks.</h2>
-          <p class="section-subtitle" style="margin:0;">Live instruction, practical labs, and focused career support in the roles employers are hiring for.</p>
+                  <section class="topchoice-section" id="recommended-courses">
+      <div class="topchoice-container">
+        <div class="topchoice-header-flex">
+          <div>
+            <span class="section-tag">EXPLORE HIGH-IMPACT LEARNING PATHS</span>
+            <h2 class="section-title">Industry-Curated Career Tracks Built for Job Readiness</h2>
+            <p class="section-subtitle">Gain hands-on experience inside enterprise live labs, master production tools, and launch your technology career with guaranteed 1-on-1 placement support.</p>
+          </div>
+          <div class="topchoice-nav-buttons">
+            <button class="topchoice-arrow-btn" id="topchoice-prev" aria-label="Previous Program">&lsaquo;</button>
+            <button class="topchoice-arrow-btn" id="topchoice-next" aria-label="Next Program">&rsaquo;</button>
+          </div>
         </div>
 
-        <div class="topchoice-nav-buttons">
-          <button class="topchoice-arrow-btn" id="topchoice-prev" aria-label="Previous Program">&lsaquo;</button>
-          <button class="topchoice-arrow-btn" id="topchoice-next" aria-label="Next Program">&rsaquo;</button>
+        <div class="topchoice-carousel-wrapper" role="region" aria-roledescription="carousel" aria-label="Highly recommended courses">
+          <div class="topchoice-carousel-track" id="topchoice-track" aria-live="polite">
+            
+            <!-- SLIDE 1: Ethical Hacking & Cybersecurity -->
+            <div class="topchoice-slide active">
+              <div class="topchoice-card topchoice-card-layout-2col">
+                <div class="topchoice-thumb-box">
+                  <img class="topchoice-thumb-img" src="assets/images/recommended/cyber-security-recommended.svg" alt="Certified Ethical Hacker (CEH v12) &amp; SOC Defense Master">
+                  <div class="topchoice-image-overlay-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <span>ISO &amp; CEH v12 Aligned</span>
+                  </div>
+                </div>
+                <div class="topchoice-content-column">
+                  <div class="topchoice-content-header">
+                    <span class="topchoice-badge badge-cyber">Featured Program</span>
+                    <h3 class="topchoice-title">Certified Ethical Hacker (CEH v12) &amp; SOC Defense</h3>
+                    <p class="topchoice-desc">Master offensive penetration testing, SIEM log forensics, and real-world SOC Incident Response.</p>
+                  </div>
+                  
+                  <div class="topchoice-highlights-grid">
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Network Pentesting &amp; Exploit Dev</span></div>
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Splunk &amp; SIEM Log Forensics</span></div>
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Web Application OWASP Top 10</span></div>
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Guided Practical CEH Lab Prep</span></div>
+                  </div>
+
+                  <div class="topchoice-meta-bar">
+                    <div class="topchoice-salary-box">
+                      <span>Avg Salary Package:</span>
+                      <strong>₹7.5 LPA - ₹16.0 LPA</strong>
+                    </div>
+                    <div class="topchoice-pills-row">
+                      <span class="topchoice-pill">⏱️ 6 Months</span>
+                      <span class="topchoice-pill">💻 Live Cyber Lab</span>
+                      <span class="topchoice-pill">🏆 8+ Capstone Projects</span>
+                    </div>
+                  </div>
+
+                  <div class="topchoice-actions-row">
+                    <a href="courses/cybersecurity/ethical-hacking-cyber-security.html" class="topchoice-btn topchoice-btn-primary">
+                      <span>Explore Syllabus</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <div class="topchoice-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Next Practical Batch Starts Monday</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 2: Certified AWS DevOps -->
+            <div class="topchoice-slide">
+              <div class="topchoice-card topchoice-card-layout-2col">
+                <div class="topchoice-thumb-box">
+                  <img class="topchoice-thumb-img" src="assets/images/recommended/aws-devops-recommended.svg" alt="Certified AWS DevOps &amp; Multi-Cloud Engineer">
+                  <div class="topchoice-image-overlay-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    <span>AWS Certified DevOps Track</span>
+                  </div>
+                </div>
+                <div class="topchoice-content-column">
+                  <div class="topchoice-content-header">
+                    <span class="topchoice-badge badge-devops">DevOps &amp; Cloud Track</span>
+                    <h3 class="topchoice-title">Certified AWS DevOps &amp; Multi-Cloud Engineer</h3>
+                    <p class="topchoice-desc">Build automated CI/CD pipelines, Docker containers, Kubernetes clusters, and Terraform IaC.</p>
+                  </div>
+                  
+                  <div class="topchoice-highlights-grid">
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Docker &amp; Kubernetes Orchestration</span></div>
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Terraform IaC &amp; Automation</span></div>
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Jenkins &amp; GitHub Actions CI/CD</span></div>
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>AWS Cloud Security &amp; Monitoring</span></div>
+                  </div>
+
+                  <div class="topchoice-meta-bar">
+                    <div class="topchoice-salary-box">
+                      <span>Avg Salary Package:</span>
+                      <strong>₹8.0 LPA - ₹18.5 LPA</strong>
+                    </div>
+                    <div class="topchoice-pills-row">
+                      <span class="topchoice-pill">⏱️ 5 Months</span>
+                      <span class="topchoice-pill">☁️ AWS Sandbox Labs</span>
+                      <span class="topchoice-pill">🏆 10 Real Deployments</span>
+                    </div>
+                  </div>
+
+                  <div class="topchoice-actions-row">
+                    <a href="courses/devops/certified-aws-devops.html" class="topchoice-btn topchoice-btn-primary">
+                      <span>Explore Syllabus</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <div class="topchoice-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Next Practical Batch Starts Monday</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 3: MERN Stack -->
+            <div class="topchoice-slide">
+              <div class="topchoice-card topchoice-card-layout-2col">
+                <div class="topchoice-thumb-box">
+                  <img class="topchoice-thumb-img" src="assets/images/recommended/mern-stack-recommended.svg" alt="Advanced MERN Stack &amp; Next.js Engineering">
+                  <div class="topchoice-image-overlay-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    <span>Full Stack Engineering</span>
+                  </div>
+                </div>
+                <div class="topchoice-content-column">
+                  <div class="topchoice-content-header">
+                    <span class="topchoice-badge badge-web">Full Stack Track</span>
+                    <h3 class="topchoice-title">Advanced MERN Stack &amp; Next.js 15 Engineering</h3>
+                    <p class="topchoice-desc">Develop high-scale web apps using MongoDB, Express, React 19, Node.js, and Next.js App Router.</p>
+                  </div>
+                  
+                  <div class="topchoice-highlights-grid">
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>React 19 &amp; Next.js App Router</span></div>
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>TypeScript &amp; Prisma ORM Integration</span></div>
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>REST &amp; GraphQL API Architecture</span></div>
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>State Management &amp; WebSockets</span></div>
+                  </div>
+
+                  <div class="topchoice-meta-bar">
+                    <div class="topchoice-salary-box">
+                      <span>Avg Salary Package:</span>
+                      <strong>₹7.0 LPA - ₹15.5 LPA</strong>
+                    </div>
+                    <div class="topchoice-pills-row">
+                      <span class="topchoice-pill">⏱️ 4.5 Months</span>
+                      <span class="topchoice-pill">⚡ Live Web Studio</span>
+                      <span class="topchoice-pill">🏆 6 Full Stack SaaS Apps</span>
+                    </div>
+                  </div>
+
+                  <div class="topchoice-actions-row">
+                    <a href="courses/web-development/advanced-mern-stack.html" class="topchoice-btn topchoice-btn-primary">
+                      <span>Explore Syllabus</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <div class="topchoice-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Next Practical Batch Starts Monday</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 4: Data Analytics -->
+            <div class="topchoice-slide">
+              <div class="topchoice-card topchoice-card-layout-2col">
+                <div class="topchoice-thumb-box">
+                  <img class="topchoice-thumb-img" src="assets/images/recommended/data-analytics-recommended.svg" alt="Data Analytics &amp; Business Intelligence Master">
+                  <div class="topchoice-image-overlay-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    <span>Data &amp; Analytics Track</span>
+                  </div>
+                </div>
+                <div class="topchoice-content-column">
+                  <div class="topchoice-content-header">
+                    <span class="topchoice-badge badge-analytics">Career Growth Track</span>
+                    <h3 class="topchoice-title">Data Analytics, Power BI &amp; Business Intelligence</h3>
+                    <p class="topchoice-desc">Transform complex datasets into executive dashboards using SQL, Power BI, Tableau, and Python.</p>
+                  </div>
+                  
+                  <div class="topchoice-highlights-grid">
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Advanced SQL &amp; Data Modeling</span></div>
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Power BI &amp; Tableau Executive Dashboards</span></div>
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Python Pandas &amp; Automation</span></div>
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Real Business Case Analytics</span></div>
+                  </div>
+
+                  <div class="topchoice-meta-bar">
+                    <div class="topchoice-salary-box">
+                      <span>Avg Salary Package:</span>
+                      <strong>₹6.5 LPA - ₹14.0 LPA</strong>
+                    </div>
+                    <div class="topchoice-pills-row">
+                      <span class="topchoice-pill">⏱️ 4 Months</span>
+                      <span class="topchoice-pill">📊 Real BI Datasets</span>
+                      <span class="topchoice-pill">🏆 5 Executive Dashboards</span>
+                    </div>
+                  </div>
+
+                  <div class="topchoice-actions-row">
+                    <a href="courses/data-analytics/ai-powered-data-analytics.html" class="topchoice-btn topchoice-btn-primary">
+                      <span>Explore Syllabus</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <div class="topchoice-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Next Practical Batch Starts Monday</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 5: Data Science & GenAI -->
+            <div class="topchoice-slide">
+              <div class="topchoice-card topchoice-card-layout-2col">
+                <div class="topchoice-thumb-box">
+                  <img class="topchoice-thumb-img" src="assets/images/recommended/data-science-genai-recommended.svg" alt="Data Science, Machine Learning &amp; GenAI Master">
+                  <div class="topchoice-image-overlay-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                    <span>AI &amp; GenAI Flagship</span>
+                  </div>
+                </div>
+                <div class="topchoice-content-column">
+                  <div class="topchoice-content-header">
+                    <span class="topchoice-badge badge-ai">Future-Ready Track</span>
+                    <h3 class="topchoice-title">Data Science, Machine Learning &amp; GenAI Master</h3>
+                    <p class="topchoice-desc">Build predictive ML models and Generative AI applications with Python, PyTorch, and LangChain.</p>
+                  </div>
+                  
+                  <div class="topchoice-highlights-grid">
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Supervised &amp; Unsupervised ML</span></div>
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Deep Learning &amp; Neural Networks</span></div>
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Generative AI &amp; RAG Architecture</span></div>
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>End-to-End MLOps Cloud Deploy</span></div>
+                  </div>
+
+                  <div class="topchoice-meta-bar">
+                    <div class="topchoice-salary-box">
+                      <span>Avg Salary Package:</span>
+                      <strong>₹8.5 LPA - ₹19.0 LPA</strong>
+                    </div>
+                    <div class="topchoice-pills-row">
+                      <span class="topchoice-pill">⏱️ 6 Months</span>
+                      <span class="topchoice-pill">🤖 GPU Computing Lab</span>
+                      <span class="topchoice-pill">🏆 7 Production AI Projects</span>
+                    </div>
+                  </div>
+
+                  <div class="topchoice-actions-row">
+                    <a href="courses/data-science/data-science-machine-learning-genai.html" class="topchoice-btn topchoice-btn-primary">
+                      <span>Explore Syllabus</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <div class="topchoice-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Next Practical Batch Starts Monday</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 6: Salesforce Admin & Development -->
+            <div class="topchoice-slide">
+              <div class="topchoice-card topchoice-card-layout-2col">
+                <div class="topchoice-thumb-box">
+                  <img class="topchoice-thumb-img" src="assets/images/recommended/salesforce-recommended.svg" alt="Salesforce Admin, Dev &amp; Lightning Web Components">
+                  <div class="topchoice-image-overlay-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
+                    <span>Salesforce Ecosystem Track</span>
+                  </div>
+                </div>
+                <div class="topchoice-content-column">
+                  <div class="topchoice-content-header">
+                    <span class="topchoice-badge badge-salesforce">CRM &amp; Cloud Track</span>
+                    <h3 class="topchoice-title">Salesforce Admin, Dev &amp; Lightning Web Components</h3>
+                    <p class="topchoice-desc">Master Salesforce CRM configuration, Apex backend logic, LWC frontend components, and SOQL.</p>
+                  </div>
+                  
+                  <div class="topchoice-highlights-grid">
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Salesforce Admin &amp; Automation</span></div>
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Apex Programming &amp; SOQL</span></div>
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Lightning Web Components (LWC)</span></div>
+                    <div class="topchoice-highlight-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Salesforce Dev Org Deployments</span></div>
+                  </div>
+
+                  <div class="topchoice-meta-bar">
+                    <div class="topchoice-salary-box">
+                      <span>Avg Salary Package:</span>
+                      <strong>₹7.0 LPA - ₹16.5 LPA</strong>
+                    </div>
+                    <div class="topchoice-pills-row">
+                      <span class="topchoice-pill">⏱️ 5 Months</span>
+                      <span class="topchoice-pill">☁️ Salesforce Dev Org</span>
+                      <span class="topchoice-pill">🏆 6 Enterprise Apps</span>
+                    </div>
+                  </div>
+
+                  <div class="topchoice-actions-row">
+                    <a href="courses/salesforce/salesforce-admin-development.html" class="topchoice-btn topchoice-btn-primary">
+                      <span>Explore Syllabus</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <div class="topchoice-trust-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Next Practical Batch Starts Monday</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="carousel-dots" id="topchoice-dots" aria-label="Choose a recommended course">
+          <button class="dot active" data-slide="0" aria-label="Go to slide 1"></button>
+          <button class="dot" data-slide="1" aria-label="Go to slide 2"></button>
+          <button class="dot" data-slide="2" aria-label="Go to slide 3"></button>
+          <button class="dot" data-slide="3" aria-label="Go to slide 4"></button>
+          <button class="dot" data-slide="5" aria-label="Go to slide 5"></button>
+          <button class="dot" data-slide="5" aria-label="Go to slide 6"></button>
         </div>
       </div>
-
-      <!-- Carousel Wrapper -->
-      <div class="topchoice-carousel-wrapper" role="region" aria-roledescription="carousel" aria-label="Highly recommended courses">
-        <div class="topchoice-carousel-track" id="topchoice-track" aria-live="polite">
-          <!-- Slide 1: Ethical Hacking -->
-          <div class="topchoice-slide">
-            <div class="topchoice-card topchoice-card--grras-style">
-              <div class="topchoice-card-header">
-                <div class="topchoice-thumb-box">
-                  <img class="topchoice-thumb-img" src="assets/images/courses/cybersecurity/ethical-hacking-cyber-security.jpg" alt="Certified Ethical Hacker (CEH v12) &amp; SOC Defense Master">
-                </div>
-                <div class="topchoice-header-info">
-                  <span class="topchoice-badge" style="align-self: flex-start;">Featured program</span>
-                  <h3 class="topchoice-header-title">Certified Ethical Hacker (CEH v12) &amp; SOC Defense Master</h3>
-                </div>
-              </div>
-
-              <div class="topchoice-card-body">
-                <p class="topchoice-desc">An end-to-end cyber warfare program combining offensive penetration testing with real-world SOC Incident Response and SIEM threat hunting.</p>
-
-                <div class="topchoice-highlights-grid">
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Network Pentesting &amp; Exploit Dev</span></div>
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Splunk &amp; SIEM Log Forensics</span></div>
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Web Application OWASP Top 10</span></div>
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>CEH Exam Voucher Included</span></div>
-                </div>
-
-                <div class="topchoice-salary-box"><span>Average Fresher Salary Package:</span><strong>₹8.5 LPA - ₹15.0 LPA</strong></div>
-
-                <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top: 6px;">
-                  <a href="enquiryform.html" class="btn-hero-primary" style="padding:12px 24px; font-size:14.5px;">Enroll In Master Track &rsaquo;</a>
-                  <a href="enquiryform.html" class="sh-btn-outline" style="padding:11px 18px; font-size:13.5px;">Get Curriculum PDF</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 2: AWS & DevOps -->
-          <div class="topchoice-slide">
-            <div class="topchoice-card topchoice-card--grras-style">
-              <div class="topchoice-card-header">
-                <div class="topchoice-thumb-box">
-                  <img class="topchoice-thumb-img" src="assets/images/courses/devops/certified-aws-devops-course.jpg" alt="AWS Cloud &amp; DevOps Engineering Architect Master">
-                </div>
-                <div class="topchoice-header-info">
-                  <span class="topchoice-badge" style="background:#0284c7; align-self: flex-start;">⚡ High Salary Track</span>
-                  <h3 class="topchoice-header-title">AWS Cloud &amp; DevOps Engineering Architect Master</h3>
-                </div>
-              </div>
-
-              <div class="topchoice-card-body">
-                <p class="topchoice-desc">Architect scalable multi-cloud infrastructure, automate zero-downtime CI/CD pipelines, and master container orchestration with Docker and Kubernetes.</p>
-
-                <div class="topchoice-highlights-grid">
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>AWS EC2, S3, VPC &amp; IAM Security</span></div>
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Kubernetes Cluster Administration</span></div>
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Jenkins CI/CD &amp; Terraform IaC</span></div>
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>CKA &amp; AWS Voucher Support</span></div>
-                </div>
-
-                <div class="topchoice-salary-box"><span>Average Cloud Engineer Package:</span><strong>₹9.0 LPA - ₹18.5 LPA</strong></div>
-
-                <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top: 6px;">
-                  <a href="enquiryform.html" class="btn-hero-primary" style="padding:12px 24px; font-size:14.5px;">Enroll In Cloud Track &rsaquo;</a>
-                  <a href="enquiryform.html" class="sh-btn-outline" style="padding:11px 18px; font-size:13.5px;">Get Curriculum PDF</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 3: Full Stack MERN -->
-          <div class="topchoice-slide">
-            <div class="topchoice-card topchoice-card--grras-style">
-              <div class="topchoice-card-header">
-                <div class="topchoice-thumb-box">
-                  <img class="topchoice-thumb-img" src="assets/images/courses/web-development/advanced-mern-stack-development-program.webp" alt="Full Stack Web Development MERN Stack">
-                </div>
-                <div class="topchoice-header-info">
-                  <span class="topchoice-badge" style="background:#059669; align-self: flex-start;">🚀 Complete Web Engineering</span>
-                  <h3 class="topchoice-header-title">Full Stack Web Development (MERN Stack &amp; Microservices)</h3>
-                </div>
-              </div>
-
-              <div class="topchoice-card-body">
-                <p class="topchoice-desc">Build high-performance web platforms, microservices APIs, and interactive frontend UIs using MongoDB, Express, React, Node.js, &amp; Django.</p>
-
-                <div class="topchoice-highlights-grid">
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>React.js Frontend &amp; Redux State</span></div>
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Node.js, Express &amp; REST Microservices</span></div>
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>MongoDB &amp; PostgreSQL Databases</span></div>
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>5 Live Real-World Capstone Apps</span></div>
-                </div>
-
-                <div class="topchoice-salary-box"><span>Average Full Stack Developer Package:</span><strong>₹7.5 LPA - ₹16.0 LPA</strong></div>
-
-                <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top: 6px;">
-                  <a href="enquiryform.html" class="btn-hero-primary" style="padding:12px 24px; font-size:14.5px;">Enroll In Master Track &rsaquo;</a>
-                  <a href="enquiryform.html" class="sh-btn-outline" style="padding:11px 18px; font-size:13.5px;">Get Curriculum PDF</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 4: Data Analytics -->
-          <div class="topchoice-slide">
-            <div class="topchoice-card topchoice-card--grras-style">
-              <div class="topchoice-card-header">
-                <div class="topchoice-thumb-box">
-                  <img class="topchoice-thumb-img" src="assets/images/courses/data-analytics/ai-powered-data-analytics-automation.jpg" alt="Data Analytics &amp; Business Intelligence Master">
-                </div>
-                <div class="topchoice-header-info">
-                  <span class="topchoice-badge" style="background:#0891b2; align-self: flex-start;">Career growth track</span>
-                  <h3 class="topchoice-header-title">Data Analytics &amp; Business Intelligence Master</h3>
-                </div>
-              </div>
-
-              <div class="topchoice-card-body">
-                <p class="topchoice-desc">Turn raw business data into clear decisions with practical SQL, Power BI, Tableau, and Python analysis workflows.</p>
-
-                <div class="topchoice-highlights-grid">
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>SQL Queries &amp; Data Modelling</span></div>
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Power BI &amp; Tableau Dashboards</span></div>
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Excel Reporting &amp; Automation</span></div>
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Portfolio-ready Case Studies</span></div>
-                </div>
-
-                <div class="topchoice-salary-box"><span>Average Data Analyst Package:</span><strong>₹6.0 LPA - ₹13.0 LPA</strong></div>
-
-                <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top: 6px;">
-                  <a href="enquiryform.html" class="btn-hero-primary" style="padding:12px 24px; font-size:14.5px;">Explore Analytics Track &rsaquo;</a>
-                  <a href="enquiryform.html" class="sh-btn-outline" style="padding:11px 18px; font-size:13.5px;">Get Curriculum PDF</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 5: Red Hat Linux -->
-          <div class="topchoice-slide">
-            <div class="topchoice-card topchoice-card--grras-style">
-              <div class="topchoice-card-header">
-                <div class="topchoice-thumb-box">
-                  <img class="topchoice-thumb-img" src="assets/images/certification/redhat.png" alt="RHCSA &amp; RHCE Red Hat Linux Engineering">
-                </div>
-                <div class="topchoice-header-info">
-                  <span class="topchoice-badge" style="background:#dc2626; align-self: flex-start;">Certification pathway</span>
-                  <h3 class="topchoice-header-title">RHCSA &amp; RHCE Red Hat Linux Engineering</h3>
-                </div>
-              </div>
-
-              <div class="topchoice-card-body">
-                <p class="topchoice-desc">Build confident Linux administration skills through guided terminal practice, system automation, and certification-focused labs.</p>
-
-                <div class="topchoice-highlights-grid">
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>RHEL System Administration</span></div>
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Shell Scripting &amp; Automation</span></div>
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>SELinux, LVM &amp; Systemd</span></div>
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>RHCSA &amp; RHCE Exam Preparation</span></div>
-                </div>
-
-                <div class="topchoice-salary-box"><span>Average Linux Engineer Package:</span><strong>₹6.5 LPA - ₹14.0 LPA</strong></div>
-
-                <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top: 6px;">
-                  <a href="enquiryform.html" class="btn-hero-primary" style="padding:12px 24px; font-size:14.5px;">Explore Linux Track &rsaquo;</a>
-                  <a href="enquiryform.html" class="sh-btn-outline" style="padding:11px 18px; font-size:13.5px;">Get Curriculum PDF</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 6: Machine Learning & GenAI -->
-          <div class="topchoice-slide">
-            <div class="topchoice-card topchoice-card--grras-style">
-              <div class="topchoice-card-header">
-                <div class="topchoice-thumb-box">
-                  <img class="topchoice-thumb-img" src="assets/images/courses/data-science/data-science-machine-learning-genai.webp" alt="Data Science, Machine Learning &amp; GenAI Master">
-                </div>
-                <div class="topchoice-header-info">
-                  <span class="topchoice-badge" style="background:#7c3aed; align-self: flex-start;">Future-ready Track</span>
-                  <h3 class="topchoice-header-title">Data Science, Machine Learning &amp; GenAI Master</h3>
-                </div>
-              </div>
-
-              <div class="topchoice-card-body">
-                <p class="topchoice-desc">Master Python, predictive analytics, deep learning models, and Generative AI workflows with production deployment projects.</p>
-
-                <div class="topchoice-highlights-grid">
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Python, Pandas, NumPy &amp; SQL</span></div>
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Scikit-Learn &amp; Deep Learning</span></div>
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>LLM Fine-Tuning &amp; RAG Systems</span></div>
-                  <div class="topchoice-highlight-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg><span>Portfolio Projects &amp; Placement</span></div>
-                </div>
-
-                <div class="topchoice-salary-box"><span>Average Data Scientist Package:</span><strong>₹8.0 LPA - ₹18.0 LPA</strong></div>
-
-                <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top: 6px;">
-                  <a href="enquiryform.html" class="btn-hero-primary" style="padding:12px 24px; font-size:14.5px;">Explore AI Master Track &rsaquo;</a>
-                  <a href="enquiryform.html" class="sh-btn-outline" style="padding:11px 18px; font-size:13.5px;">Get Curriculum PDF</a>
-                </div>
-              </div>
-            </div>
-          </div>
-</div>
-      </div>
-
-      <!-- Pagination Dots -->
-      <div class="carousel-dots" id="topchoice-dots" aria-label="Choose a recommended course">
-        <button class="dot active" type="button" data-slide="0" aria-label="Show course 1" aria-current="true"></button>
-        <button class="dot" type="button" data-slide="1" aria-label="Show course 2"></button>
-        <button class="dot" type="button" data-slide="2" aria-label="Show course 3"></button>
-        <button class="dot" type="button" data-slide="3" aria-label="Show course 4"></button>
-        <button class="dot" type="button" data-slide="4" aria-label="Show course 5"></button>
-        <button class="dot" type="button" data-slide="5" aria-label="Show course 6"></button>
-      </div>
-    </div>
-  </section>
+    </section>
 
   <!-- 4. Industry-Driven Programs (PREMIUM SIDEBAR LAYOUT WITH SEARCHBAR) -->
   <section class="courses-section" id="courses-section">
@@ -438,7 +519,7 @@
             <div class="course-banner">
               <span class="course-tag-badge">Most Popular</span>
               <div class="course-banner-icon">
-                <img src="assets/images/courses/web-development/advanced-mern-stack-development-program.webp" alt="MERN Stack Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 6px;">
+                <img src="assets/images/recommended/mern-stack-recommended.svg" alt="MERN Stack Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 6px;">
               </div>
               <h3 class="course-banner-title">CEH v12 Ethical Hacking Master</h3>
             </div>

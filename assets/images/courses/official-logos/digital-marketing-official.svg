@@ -1,8 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <rect width="100" height="100" rx="20" fill="#fff7ed"/>
-  <g transform="translate(16, 16) scale(0.68)">
-    <path fill="#ea580c" d="M70 15L25 35H10c-2.76 0-5 2.24-5 5v20c0 2.76 2.24 5 5 5h15l45 20V15z"/>
-    <path fill="#ea580c" opacity="0.6" d="M82 25c4.5 4.5 7 10.5 7 17s-2.5 12.5-7 17"/>
-    <path fill="#ea580c" opacity="0.8" d="M75 32c2.5 2.5 4 6 4 10s-1.5 7.5-4 10"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="marketingBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="36" fill="url(#marketingBlueGrad)" />
+  
+  <!-- Megaphone & Analytics Growth Arrow -->
+  <path d="M50 90 L85 90 L130 55 V145 L85 110 H50 Z" fill="#ffffff" />
+  <rect x="60" y="110" width="16" height="40" rx="4" fill="#38bdf8" transform="rotate(15 60 110)" />
+  
+  <!-- Sound Waves / Analytics Growth Line -->
+  <path d="M145 75 Q165 100 145 125" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" />
+  <path d="M160 60 Q190 100 160 140" fill="none" stroke="#38bdf8" stroke-width="8" stroke-linecap="round" />
 </svg>

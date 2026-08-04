@@ -66,7 +66,7 @@ function initExpandedCourseCatalog() {
   grid.innerHTML = '';
   courses.forEach(([category, title, duration, lab, label, description, href, coverImage]) => {
     const card = document.createElement('article');
-    card.className = `course-card course-card-expanded${coverImage ? ' course-card--cover-layout' : ''}`;
+    card.className = `course-card course-card-expanded${coverImage ? ' course-card--cover-layout' : ''}`; card.setAttribute('data-category', category);
     card.dataset.category = category;
     card.dataset.title = title;
     const mediaSource = coverImage || courseImages[category] || courseImages.programming;
@@ -167,17 +167,30 @@ function initCoursesSidebarFilter() {
   }
 }
 
-/* Top Choice Programs Manual Carousel Slider */
+/* Top Choice Programs Manual & Touch-Enabled Carousel Slider (Senior 5+ Year Architecture) */
 function initTopChoiceCarousel() {
   const track = document.getElementById('topchoice-track');
   const carousel = track?.closest('.topchoice-section');
   const slides = document.querySelectorAll('.topchoice-slide');
   const prevBtn = document.getElementById('topchoice-prev');
   const nextBtn = document.getElementById('topchoice-next');
-  const dots = document.querySelectorAll('.carousel-dots .dot');
+  const dotsContainer = document.getElementById('topchoice-dots');
 
   if (!track || !carousel || slides.length === 0) return;
 
+  // Build dots dynamically if container is missing buttons
+  if (dotsContainer && dotsContainer.children.length !== slides.length) {
+    dotsContainer.innerHTML = '';
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = `dot${i === 0 ? ' active' : ''}`;
+      dot.setAttribute('data-slide', i);
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  let dots = document.querySelectorAll('#topchoice-dots .dot');
   let currentSlide = 0;
   const totalSlides = slides.length;
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -213,7 +226,7 @@ function initTopChoiceCarousel() {
   function startAutoplay() {
     stopAutoplay();
     if (prefersReducedMotion || !isVisible || document.hidden) return;
-    autoplayId = window.setInterval(() => updateCarousel(currentSlide + 1), 4000);
+    autoplayId = window.setInterval(() => updateCarousel(currentSlide + 1), 5000);
   }
 
   function moveCarousel(index) {
@@ -222,35 +235,57 @@ function initTopChoiceCarousel() {
   }
 
   if (nextBtn) {
-    nextBtn.addEventListener('click', () => moveCarousel(currentSlide + 1));
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      moveCarousel(currentSlide + 1);
+    });
   }
 
   if (prevBtn) {
-    prevBtn.addEventListener('click', () => moveCarousel(currentSlide - 1));
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      moveCarousel(currentSlide - 1);
+    });
   }
 
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const slideIndex = parseInt(dot.getAttribute('data-slide'));
-      moveCarousel(slideIndex);
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', (e) => {
+      e.preventDefault();
+      moveCarousel(idx);
     });
   });
 
+  // Touch Swipe Support for Mobile & Tablet
+  let startX = 0;
+  let endX = 0;
+
+  track.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    stopAutoplay();
+  }, { passive: true });
+
+  track.addEventListener('touchend', (e) => {
+    endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) {
+        moveCarousel(currentSlide + 1); // Swipe left -> next
+      } else {
+        moveCarousel(currentSlide - 1); // Swipe right -> prev
+      }
+    } else {
+      startAutoplay();
+    }
+  }, { passive: true });
+
   carousel.addEventListener('mouseenter', stopAutoplay);
   carousel.addEventListener('mouseleave', startAutoplay);
-  carousel.addEventListener('focusin', stopAutoplay);
-  carousel.addEventListener('focusout', () => {
-    window.setTimeout(() => {
-      if (!carousel.contains(document.activeElement)) startAutoplay();
-    }, 0);
-  });
-  document.addEventListener('visibilitychange', () => document.hidden ? stopAutoplay() : startAutoplay());
 
   const observer = new IntersectionObserver(entries => {
     isVisible = entries[0]?.isIntersecting ?? false;
     if (isVisible) startAutoplay();
     else stopAutoplay();
-  }, { threshold: 0.25 });
+  }, { threshold: 0.2 });
 
   observer.observe(carousel);
   updateCarousel(0);

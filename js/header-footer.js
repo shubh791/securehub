@@ -49,7 +49,7 @@ function renderHeader() {
   const isCoursePage = Boolean(document.getElementById('course-page'));
   const isHomePage = /(?:^|\/)index\.html$/i.test(window.location.pathname) || window.location.pathname.endsWith('/');
   const sectionLinks = isCoursePage
-    ? { certifications: '#', about: '#course-about', faqs: '#course-faqs' }
+    ? { certifications: '#', about: isSubfolder ? '../../about.html' : 'about.html', faqs: '#course-faqs' }
     : { certifications: '#', about: 'about.html', faqs: '#' };
   const coursesLink = isCoursePage ? '#course-page' : (isHomePage ? '#courses-section' : 'index.html#courses-section');
   const enquiryLink = isCoursePage ? '#course-enquiry' : 'enquiryform.html';
@@ -278,7 +278,7 @@ function renderHeader() {
               </div>
             </li>
             <li class="sh-nav-item"><a href="placementsupport.html" class="sh-nav-link">Placement Support</a></li>
-            <li class="sh-nav-item"><a href="${sectionLinks.about}" class="sh-nav-link" data-course-section="about">About Us</a></li>
+            <li class="sh-nav-item"><a href="${sectionLinks.about}" class="sh-nav-link" >About Us</a></li>
           </ul>
 
           <!-- Nav Right Action Buttons (Search Bar removed as requested) -->
@@ -445,7 +445,7 @@ function renderFooter() {
   const isCoursePage = Boolean(document.getElementById('course-page'));
   const isHomePage = /(?:^|\/)index\.html$/i.test(window.location.pathname) || window.location.pathname.endsWith('/');
   const sectionLinks = isCoursePage
-    ? { certifications: '#course-certifications', about: '#course-about', courses: '#course-page' }
+    ? { certifications: '#course-certifications', about: isSubfolder ? '../../about.html' : 'about.html', courses: '#course-page' }
     : { certifications: isHomePage ? '#certifications-section' : 'index.html#certifications-section', about: 'about.html', courses: isHomePage ? '#courses-section' : 'index.html#courses-section' };
   const enquiryLink = isCoursePage ? '#course-enquiry' : 'enquiryform.html';
 
@@ -470,7 +470,7 @@ function renderFooter() {
             <h4 class="sh-footer-title">Navigation</h4>
             <ul class="sh-footer-links">
               <li><a href="index.html">&rsaquo; SecureHub Home</a></li>
-              <li><a href="${sectionLinks.about}" data-course-section="about">&rsaquo; About SecureHub</a></li>
+              <li><a href="${sectionLinks.about}" >&rsaquo; About SecureHub</a></li>
               <li><a href="${sectionLinks.courses}">&rsaquo; All Courses</a></li>
               <li><a href="${sectionLinks.certifications}">&rsaquo; Certifications</a></li>
               <li><a href="${enquiryLink}">&rsaquo; Contact & Admissions</a></li>
@@ -803,3 +803,21 @@ function initThemePreview() {
       megamenu.classList.remove('is-open');
     }
   });
+
+  // Adjust relative links for subfolder pages
+  const isSubfolder = window.location.pathname.includes('/courses/') || window.location.pathname.includes('/services/');
+  const aboutPath = isSubfolder ? '../../about.html' : 'about.html';
+  const homePath = isSubfolder ? '../../index.html' : 'index.html';
+  
+  document.querySelectorAll('a[href="about.html"]').forEach(a => a.href = aboutPath);
+
+// Force all About links to point strictly to about.html
+document.addEventListener('DOMContentLoaded', () => {
+  const isSubfolder = window.location.pathname.includes('/courses/') || window.location.pathname.includes('/services/');
+  const targetAbout = isSubfolder ? '../../about.html' : 'about.html';
+  document.querySelectorAll('a[href*="about"]').forEach(a => {
+    if (!a.href.endsWith('.html') && !a.href.includes('about.html')) {
+      a.href = targetAbout;
+    }
+  });
+});
