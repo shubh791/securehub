@@ -1,11 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="256" height="256">
   <defs>
-    <linearGradient id="securehub-mark" x1="8" y1="6" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+    <linearGradient id="securehub-mark" x1="2" y1="1" x2="22" y2="23" gradientUnits="userSpaceOnUse">
       <stop stop-color="#197BA9"/>
       <stop offset="1" stop-color="#63B5D4"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="16" fill="url(#securehub-mark)"/>
-  <path d="M32 51S47 43.2 47 30.4V18.1L32 12 17 18.1v12.3C17 43.2 32 51 32 51Z" fill="none" stroke="#FFF" stroke-width="4" stroke-linejoin="round"/>
-  <path d="m24.5 31.6 5 5 10.3-11.3" fill="none" stroke="#FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect width="24" height="24" rx="6" fill="url(#securehub-mark)"/>
+  <path d="M12 21.2s7-3.5 7-8.75V5.9L12 3.28 5 5.9v6.55c0 5.25 7 8.75 7 8.75z" fill="none" stroke="#FFF" stroke-width="2.1" stroke-linejoin="round"/>
 </svg>
