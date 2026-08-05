@@ -13,6 +13,8 @@ const SERVICES = {
     title: 'Corporate Training',
     titleGrad: 'That Drives Real Results',
     desc: 'Bespoke technology upskilling programmes built around your team\'s existing stack, business goals, and delivery timelines. From individual contributors to entire engineering divisions.',
+    heroImage: 'assets/images/services/corporate-training.jpg',
+    heroImageAlt: 'Corporate training session in a modern conference room',
     heroStats: [
       { icon: '🏢', name: 'Enterprise Clients Served', val: '180+ Companies', badge: 'Active', badgeType: 'green' },
       { icon: '👥', name: 'Avg Team Batch Size',       val: '20–80 Learners',  badge: 'Flexible', badgeType: 'blue' },
@@ -64,6 +66,8 @@ const SERVICES = {
     title: 'Professional Training Programs',
     titleGrad: 'Built for Job Readiness',
     desc: 'Structured, industry-aligned certification tracks that take you from fundamentals to job-ready practitioner. Every programme is built around real tools, live labs, and 1-on-1 placement support.',
+    heroImage: 'assets/images/services/training-programs.jpg',
+    heroImageAlt: 'Students learning in a modern tech training lab',
     heroStats: [
       { icon: '📚', name: 'Active Training Tracks', val: '25+ Programs',      badge: 'Enrolling', badgeType: 'green' },
       { icon: '👨‍💻', name: 'Active Learners',         val: '2,400+ Students',  badge: 'Live',      badgeType: 'blue' },
@@ -115,6 +119,8 @@ const SERVICES = {
     title: 'Internship Programme',
     titleGrad: 'Where Learners Become Practitioners',
     desc: 'Guided, mentor-driven internship experiences that give you real project work, a credible portfolio, and a professional story to present at your first technical interview.',
+    heroImage: 'assets/images/services/internship-program.jpg',
+    heroImageAlt: 'Mentor guiding an intern at a modern workstation',
     heroStats: [
       { icon: '🎓', name: 'Interns per Cohort',    val: 'Up to 40 Interns',  badge: 'Enrolling', badgeType: 'green' },
       { icon: '📁', name: 'Portfolio Projects',    val: '3–5 Live Projects', badge: 'Real Work', badgeType: 'blue' },
@@ -166,6 +172,8 @@ const SERVICES = {
     title: 'Live Tech Masterclasses',
     titleGrad: 'Deep Dives with Senior Practitioners',
     desc: 'Focused, 3–6 hour live sessions on the most in-demand topics in cloud, cybersecurity, AI, and full-stack engineering. Join as an individual or book a private batch for your team.',
+    heroImage: 'assets/images/services/masterclass-session.jpg',
+    heroImageAlt: 'Expert presenting a live tech masterclass to an audience',
     heroStats: [
       { icon: '📅', name: 'Sessions Per Month',  val: '12+ Live Classes',  badge: 'Scheduled', badgeType: 'green' },
       { icon: '⏱️', name: 'Session Duration',    val: '3–6 Hours Live',    badge: 'Deep Dive',  badgeType: 'blue' },
@@ -229,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.title = `${s.title} | SecureHub`;
 
-  root.innerHTML = buildHero(s) + buildTrustBar(s) + buildFeatures(s)
+  root.innerHTML = buildHero(s) + buildTrustBar(s) + buildShowcase(s) + buildFeatures(s)
                  + buildProcess(s) + buildMetrics(s) + buildBento(s) + buildCTA(s);
 });
 
@@ -262,6 +270,7 @@ function buildHero(s) {
           </div>
         </div>
         <div class="sv-hero-panel sv-animate sv-d1">
+          <img class="sv-hero-image" src="${s.heroImage}" alt="${s.heroImageAlt}" loading="eager">
           <p class="sv-hero-panel-label">Live Programme Snapshot</p>
           <div class="sv-stat-rows">${stats}</div>
         </div>
@@ -271,9 +280,45 @@ function buildHero(s) {
 }
 
 function buildTrustBar(s) {
-  const items = s.trustItems.map(t =>
-    `<div class="sv-trust-item">${ICONS[t.icon]}<span>${t.label}</span></div>`).join('');
-  return `<section class="sv-trust-bar"><div class="sv-shell"><div class="sv-trust-inner">${items}</div></div></section>`;
+  const highlightIcons = {
+    shield: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    users:  `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>`,
+    clock:  `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+    chart:  `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+    star:   `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+  };
+  const cards = s.trustItems.map((t, i) => `
+    <div class="sv-highlight-card" style="animation-delay:${i * 0.1}s">
+      <div class="sv-highlight-icon-ring">
+        ${highlightIcons[t.icon] || highlightIcons.star}
+      </div>
+      <span class="sv-highlight-num">0${i + 1}</span>
+      <p class="sv-highlight-label">${t.label}</p>
+      <div class="sv-highlight-accent"></div>
+    </div>`).join('');
+
+  return `
+  <section class="sv-highlights-section">
+    <div class="sv-shell">
+      <div class="sv-highlights-grid">${cards}</div>
+    </div>
+  </section>`;
+}
+
+function buildShowcase(s) {
+  return `
+  <section class="sv-showcase-section">
+    <div class="sv-shell">
+      <div class="sv-showcase-card">
+        <img class="sv-showcase-img" src="${s.heroImage}" alt="${s.heroImageAlt}" loading="lazy">
+        <div class="sv-showcase-overlay">
+          <span class="sv-eyebrow">${s.tag.toUpperCase()}</span>
+          <h2 class="sv-showcase-title">${s.title}</h2>
+          <p class="sv-showcase-desc">${s.desc}</p>
+        </div>
+      </div>
+    </div>
+  </section>`;
 }
 
 function buildFeatures(s) {

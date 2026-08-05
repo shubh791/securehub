@@ -189,6 +189,20 @@ function getRecommendedCourses(currentKey) {
 
 function getTechIcon(name) {
   const iconMap = {
+    'Angular': '<svg viewBox="0 0 24 24" fill="none" stroke="#dd0031" stroke-width="2"><path d="M12 2 3.5 5l1.3 11L12 22l7.2-6 1.3-11z"/><path d="m8 16 4-9 4 9M9.5 13h5"/></svg>',
+    'Bootstrap': '<svg viewBox="0 0 24 24" fill="none" stroke="#7952b3" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="4"/><path d="M9 8h4a2.5 2.5 0 0 1 0 5H9zm0 5h4.5a2.5 2.5 0 0 1 0 5H9z"/></svg>',
+    'JavaScript': '<svg viewBox="0 0 24 24" fill="none" stroke="#b68b00" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 8v7c0 2-1 3-3 2M13 16c1.5 1.5 4 1 4-1 0-3-4-1.5-4-4 0-2 2.5-2.5 4-1"/></svg>',
+    'JavaScript ES6+': '<svg viewBox="0 0 24 24" fill="none" stroke="#b68b00" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 8v7c0 2-1 3-3 2M13 16c1.5 1.5 4 1 4-1 0-3-4-1.5-4-4 0-2 2.5-2.5 4-1"/></svg>',
+    'Python': '<svg viewBox="0 0 24 24" fill="none" stroke="#3776ab" stroke-width="2"><path d="M12 3H8a4 4 0 0 0-4 4v4h8v2H7a4 4 0 0 0-4 4v1a3 3 0 0 0 3 3h3v-3"/><path d="M12 21h4a4 4 0 0 0 4-4v-4h-8v-2h5a4 4 0 0 0 4-4V6a3 3 0 0 0-3-3h-3v3"/><circle cx="9" cy="6.5" r=".7" fill="#3776ab"/><circle cx="15" cy="17.5" r=".7" fill="#3776ab"/></svg>',
+    'Java': '<svg viewBox="0 0 24 24" fill="none" stroke="#e76f00" stroke-width="2"><path d="M8 17c-3 1-2 3 4 3s7-2 4-3M7 14h10l-1 3H8zM10 3c4 2-2 4 2 6M14 2c3 3-3 5 0 8"/></svg>',
+    'MySQL': '<svg viewBox="0 0 24 24" fill="none" stroke="#00758f" stroke-width="2"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>',
+    'PostgreSQL': '<svg viewBox="0 0 24 24" fill="none" stroke="#336791" stroke-width="2"><path d="M6 5c3-3 9-3 12 0 2 2 1 9-1 12-1 2-3 1-3-1v-3c-1 2-4 2-6 0-3-3-4-6-2-8z"/><path d="M10 8c1-1 3-1 4 0M14 13c2 0 4 1 5 3"/></svg>',
+    'Postman': '<svg viewBox="0 0 24 24" fill="none" stroke="#ff6c37" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m8 15 7-7 2 2-7 7-3 1zM13.5 9.5l2 2"/></svg>',
+    'Figma': '<svg viewBox="0 0 24 24" fill="none" stroke="#a259ff" stroke-width="2"><path d="M8 3h4v6H8a3 3 0 0 1 0-6zM12 3h4a3 3 0 0 1 0 6h-4zM8 9h4v6H8a3 3 0 0 1 0-6zM12 9h4a3 3 0 1 1-4 0zM8 15h4v3a3 3 0 1 1-4-3z"/></svg>',
+    'AWS': '<svg viewBox="0 0 24 24" fill="none" stroke="#e8751a" stroke-width="2"><path d="M4 15 8 5l4 10M6 11h4M13 6l2 9 2-6 2 6 2-9M4 19c5 2 11 2 16-1"/></svg>',
+    'Azure': '<svg viewBox="0 0 24 24" fill="none" stroke="#0078d4" stroke-width="2"><path d="m12 3-7 14h6l2 4 7-2-5-8 3-8zM9 17h8"/></svg>',
+    'Kubernetes': '<svg viewBox="0 0 24 24" fill="none" stroke="#326ce5" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v7M12 15v7M2 12h7M15 12h7M5 5l5 5M14 14l5 5M19 5l-5 5M10 14l-5 5"/></svg>',
+    'Terraform': '<svg viewBox="0 0 24 24" fill="none" stroke="#7b42bc" stroke-width="2"><path d="m4 5 6 3.5v7L4 12zM11 9l6 3.5v7L11 16zM11 2l6 3.5v5L11 7z"/></svg>',
     'React': '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"><ellipse cx="12" cy="12" rx="10" ry="4.5"/><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(120 12 12)"/><circle cx="12" cy="12" r="2" fill="#0284c7"/></svg>',
     'React 19': '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"><ellipse cx="12" cy="12" rx="10" ry="4.5"/><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(120 12 12)"/><circle cx="12" cy="12" r="2" fill="#0284c7"/></svg>',
     'Next.js': '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 16V8l8 9.5V8"/></svg>',
@@ -1531,7 +1545,8 @@ function renderCoursePage(course) {
   }).join('');
 
   // Skill Pills WITH Tech SVG Icons
-  const toolsMarkup = course.tools ? course.tools.map(t => `<span class="tool-tag">${getTechIcon(t)} <span>${t}</span></span>`).join('') : '';
+  const skillIcon = skill => `<span class="skill-icon" aria-hidden="true">${getTechIcon(skill)}</span>`;
+  const toolsMarkup = course.tools ? course.tools.map(t => `<span class="tool-tag">${skillIcon(t)}<span>${t}</span></span>`).join('') : '';
 
   const projectsMarkup = course.projects ? course.projects.map(p => `
     <div class="real-project-card">
@@ -1542,7 +1557,7 @@ function renderCoursePage(course) {
         <strong>Skills:</strong> ${p.skills.join(', ')}
       </div>
       <div class="project-tags-row">
-        ${p.tags.map(t => `<span class="pj-tag">${getTechIcon(t)} ${t}</span>`).join('')}
+        ${p.tags.map(t => `<span class="pj-tag">${skillIcon(t)}<span>${t}</span></span>`).join('')}
       </div>
     </div>
   `).join('') : '';

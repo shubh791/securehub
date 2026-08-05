@@ -538,3 +538,196 @@ body { font-family: var(--sv-font); color: var(--sv-slate-700); background: var(
   .sv-cta-card    { padding: 30px 24px; }
   .sv-trust-inner { gap: 12px; }
 }
+
+/* ══════════════════════════════════
+   HERO IMAGE (inside stats panel)
+══════════════════════════════════ */
+.sv-hero-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255,255,255,.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,.25);
+}
+
+/* ══════════════════════════════════
+   SHOWCASE SECTION (full-width image)
+══════════════════════════════════ */
+.sv-showcase-section {
+  padding: 56px 0;
+  background: var(--sv-white);
+}
+.sv-showcase-card {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.12);
+}
+.sv-showcase-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s cubic-bezier(.16,1,.3,1);
+}
+.sv-showcase-card:hover .sv-showcase-img {
+  transform: scale(1.03);
+}
+.sv-showcase-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 44px 40px 36px;
+  background: linear-gradient(0deg, rgba(10,22,40,.92) 0%, rgba(10,22,40,.6) 60%, transparent 100%);
+  color: #fff;
+}
+.sv-showcase-overlay .sv-eyebrow {
+  color: var(--sv-sky);
+  margin-bottom: 8px;
+}
+.sv-showcase-title {
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+  letter-spacing: -.02em;
+}
+.sv-showcase-desc {
+  font-size: .92rem;
+  color: #cbd5e1;
+  line-height: 1.65;
+  max-width: 580px;
+}
+
+@media (max-width: 640px) {
+  .sv-showcase-img {
+    height: 260px;
+  }
+  .sv-showcase-overlay {
+    padding: 28px 20px 24px;
+  }
+  .sv-hero-image {
+    height: 160px;
+  }
+}
+
+/* ══════════════════════════════════
+   ANIMATED HIGHLIGHTS STRIP
+   Replaces the old inline trust bar
+══════════════════════════════════ */
+.sv-highlights-section {
+  padding: 52px 0;
+  background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+  border-top: 1px solid #e0f2fe;
+  border-bottom: 1px solid #e0f2fe;
+  overflow: hidden;
+}
+.sv-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+/* ── Individual Card ── */
+.sv-highlight-card {
+  position: relative;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 26px 20px 22px;
+  text-align: center;
+  overflow: hidden;
+  transition: all .35s cubic-bezier(.16,1,.3,1);
+
+  /* Entrance animation */
+  animation: sv-highlightSlideUp .65s ease both;
+}
+@keyframes sv-highlightSlideUp {
+  0%   { opacity: 0; transform: translateY(32px) scale(.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.sv-highlight-card:hover {
+  transform: translateY(-6px);
+  border-color: #bae6fd;
+  box-shadow:
+    0 12px 36px rgba(2,132,199,.12),
+    0 0 0 1px rgba(56,189,248,.15);
+}
+
+/* Icon ring */
+.sv-highlight-icon-ring {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #eff6ff, #f0f9ff);
+  border: 2px solid #bae6fd;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 12px;
+  color: #0284c7;
+  transition: all .3s ease;
+}
+.sv-highlight-card:hover .sv-highlight-icon-ring {
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  border-color: #0284c7;
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 0 0 6px rgba(2,132,199,.12);
+}
+
+/* Step number */
+.sv-highlight-num {
+  display: block;
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+
+/* Label */
+.sv-highlight-label {
+  font-size: .88rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.38;
+  margin: 0;
+}
+
+/* Bottom accent bar */
+.sv-highlight-accent {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0284c7, #38bdf8);
+  transform: scaleX(0);
+  transition: transform .3s ease;
+  transform-origin: left;
+}
+.sv-highlight-card:hover .sv-highlight-accent {
+  transform: scaleX(1);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .sv-highlights-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .sv-highlights-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .sv-highlight-card {
+    padding: 20px 14px 18px;
+  }
+  .sv-highlight-icon-ring {
+    width: 44px; height: 44px;
+  }
+  .sv-highlight-label {
+    font-size: .82rem;
+  }
+  .sv-highlights-section {
+    padding: 36px 0;
+  }
+}

@@ -166,9 +166,15 @@
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 24px;
-      padding: 28px;
+      padding: 0;
+      overflow: hidden;
       backdrop-filter: blur(12px);
+      box-shadow: 0 28px 60px rgba(0,0,0,.2);
     }
+    .ps-hero-image { position:relative; height:210px; overflow:hidden; border-bottom:1px solid rgba(255,255,255,.1); }
+    .ps-hero-image::after { position:absolute; inset:0; content:""; background:linear-gradient(180deg,transparent 48%,rgba(7,21,32,.7)); }
+    .ps-hero-image img { display:block; width:100%; height:100%; object-fit:cover; object-position:67% center; }
+    .ps-hero-activity { padding:24px; }
     .ps-hero-visual-title {
       font-size: 0.75rem;
       font-weight: 700;
@@ -523,44 +529,6 @@
     }
     .ps-bento-card.dark-card p { color: #94a3b8; }
 
-    /* ── HIRING PARTNERS MARQUEE ── */
-    .ps-partners-section {
-      background: var(--ps-slate-50);
-      padding: 48px 0;
-      overflow: hidden;
-    }
-    .ps-partners-label {
-      text-align: center;
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--ps-slate-500);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-    }
-    .ps-marquee-outer { overflow: hidden; position: relative; }
-    .ps-marquee-track {
-      display: flex;
-      gap: 40px;
-      animation: marquee 25s linear infinite;
-      width: max-content;
-    }
-    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-    .ps-marquee-pill {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--ps-white);
-      border: 1.5px solid var(--ps-slate-200);
-      border-radius: 12px;
-      padding: 10px 20px;
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--ps-slate-700);
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
     /* ── SUCCESS METRICS ── */
     .ps-metrics-grid {
       display: grid;
@@ -625,6 +593,19 @@
       .ps-cta-card { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
+      .ps-shell { width: min(calc(100% - 32px), 1140px); }
+      .ps-hero { padding: 56px 0 48px; }
+      .ps-hero-grid > * { min-width: 0; }
+      .ps-hero-title { font-size: clamp(2rem, 10vw, 2.55rem); overflow-wrap: anywhere; }
+      .ps-hero-title .gradient-text { display: block; }
+      .ps-hero-sub { max-width: 100%; font-size: .98rem; overflow-wrap: anywhere; }
+      .ps-hero-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .ps-hero-stat { text-align: left; }
+      .ps-hero-actions { display: grid; grid-template-columns: 1fr; }
+      .ps-hero-actions a { justify-content: center; }
+      .ps-hero-visual { min-width: 0; padding: 0; }
+      .ps-hero-image { height:190px; }
+      .ps-hero-activity { padding:20px 16px; }
       .ps-process-grid { grid-template-columns: 1fr; }
       .ps-salary-grid { grid-template-columns: 1fr; }
       .ps-metrics-grid { grid-template-columns: 1fr 1fr; }
@@ -652,6 +633,22 @@
     .ps-animate-delay-1 { animation-delay: 0.1s; }
     .ps-animate-delay-2 { animation-delay: 0.2s; }
     .ps-animate-delay-3 { animation-delay: 0.3s; }
+    .ps-people-section { padding: 88px 0; background: #fff; }
+    .ps-people-grid { display:grid; grid-template-columns: .88fr 1.12fr; gap:32px; align-items:stretch; }
+    .ps-people-copy { padding:clamp(28px,4vw,52px); background:#edf8f7; border:1px solid #d7ece8; border-radius:22px; }
+    .ps-people-copy h2 { margin:10px 0 16px; color:var(--ps-slate-900); font-size:clamp(1.8rem,3vw,2.7rem); line-height:1.18; letter-spacing:-.045em; }
+    .ps-people-copy p { color:var(--ps-slate-500); max-width:45ch; }
+    .ps-people-points { display:grid; gap:12px; margin-top:26px; }
+    .ps-people-points span { display:flex; align-items:center; gap:10px; color:var(--ps-slate-700); font-size:.9rem; font-weight:700; }
+    .ps-people-points i { display:grid; width:22px; height:22px; place-items:center; border-radius:50%; background:#d5f1e8; color:#057458; font-style:normal; font-size:.75rem; }
+    .ps-people-media { display:grid; grid-template-columns:1.2fr .8fr; grid-template-rows:1fr 1fr; gap:14px; min-height:460px; }
+    .ps-people-photo { position:relative; min-height:0; overflow:hidden; border-radius:18px; background:#e2edf1; box-shadow:0 16px 36px rgba(23,56,72,.12); }
+    .ps-people-photo img { width:100%; height:100%; object-fit:cover; display:block; }
+    .ps-people-photo-main { grid-row:1 / -1; border-radius:22px; }
+    .ps-people-photo-main img { object-position:62% center; }
+    .ps-people-photo-side img { object-position:68% center; }
+    .ps-people-caption { position:absolute; right:14px; bottom:14px; left:14px; padding:10px 12px; background:rgba(15,23,42,.82); color:#fff; border-radius:10px; font-size:.76rem; font-weight:700; line-height:1.4; }
+    @media (max-width: 760px) { .ps-people-section{padding:64px 0}.ps-people-grid{grid-template-columns:1fr}.ps-people-media{grid-template-columns:1fr 1fr;grid-template-rows:260px 170px;min-height:0}.ps-people-photo-main{grid-column:1/-1;grid-row:auto}.ps-people-photo{border-radius:15px}.ps-people-copy{border-radius:18px}.ps-people-caption{font-size:.7rem} }
   </style>
 </head>
 <body>
@@ -708,8 +705,10 @@
 
           <!-- Visual panel -->
           <div class="ps-hero-visual ps-animate ps-animate-delay-1">
-            <p class="ps-hero-visual-title">Live Placement Activity</p>
-            <div class="ps-placement-metric-list">
+            <div class="ps-hero-image"><img src="assets/images/services/corporate-training.png" alt="Career mentor reviewing professional work with learners" decoding="async"></div>
+            <div class="ps-hero-activity">
+              <p class="ps-hero-visual-title">Live Placement Activity</p>
+              <div class="ps-placement-metric-list">
               <div class="ps-placement-metric">
                 <div class="ps-placement-metric-left">
                   <div class="ps-pm-icon" style="background:rgba(56,189,248,0.1);">🎯</div>
@@ -749,6 +748,7 @@
                   </div>
                 </div>
                 <span class="ps-pm-badge badge-blue">Aug 2026</span>
+              </div>
               </div>
             </div>
           </div>
@@ -903,45 +903,24 @@
       </div>
     </section>
 
-    <!-- ══════════════════ HIRING PARTNERS MARQUEE ══════════════════ -->
-    <section class="ps-partners-section">
+    <section class="ps-people-section" aria-labelledby="placement-people-title">
       <div class="ps-shell">
-        <p class="ps-partners-label">600+ Hiring Partners Across India & Global Tech Companies</p>
-      </div>
-      <div class="ps-marquee-outer">
-        <div class="ps-marquee-track">
-          <span class="ps-marquee-pill">🔵 Tata Consultancy Services</span>
-          <span class="ps-marquee-pill">🟣 Wipro Technologies</span>
-          <span class="ps-marquee-pill">🔶 Infosys</span>
-          <span class="ps-marquee-pill">🔷 Accenture</span>
-          <span class="ps-marquee-pill">🛡️ Palo Alto Networks</span>
-          <span class="ps-marquee-pill">🔴 Cisco Systems</span>
-          <span class="ps-marquee-pill">☁️ Amazon Web Services</span>
-          <span class="ps-marquee-pill">🟦 Microsoft</span>
-          <span class="ps-marquee-pill">🟢 Freshworks</span>
-          <span class="ps-marquee-pill">🔵 HCL Technologies</span>
-          <span class="ps-marquee-pill">🔴 Fortinet</span>
-          <span class="ps-marquee-pill">🟠 Razorpay</span>
-          <span class="ps-marquee-pill">🟢 Zepto</span>
-          <span class="ps-marquee-pill">🔵 Swiggy</span>
-          <span class="ps-marquee-pill">🟠 Zomato</span>
-          <span class="ps-marquee-pill">🛡️ CrowdStrike</span>
-          <span class="ps-marquee-pill">🔵 Tata Consultancy Services</span>
-          <span class="ps-marquee-pill">🟣 Wipro Technologies</span>
-          <span class="ps-marquee-pill">🔶 Infosys</span>
-          <span class="ps-marquee-pill">🔷 Accenture</span>
-          <span class="ps-marquee-pill">🛡️ Palo Alto Networks</span>
-          <span class="ps-marquee-pill">🔴 Cisco Systems</span>
-          <span class="ps-marquee-pill">☁️ Amazon Web Services</span>
-          <span class="ps-marquee-pill">🟦 Microsoft</span>
-          <span class="ps-marquee-pill">🟢 Freshworks</span>
-          <span class="ps-marquee-pill">🔵 HCL Technologies</span>
-          <span class="ps-marquee-pill">🔴 Fortinet</span>
-          <span class="ps-marquee-pill">🟠 Razorpay</span>
-          <span class="ps-marquee-pill">🟢 Zepto</span>
-          <span class="ps-marquee-pill">🔵 Swiggy</span>
-          <span class="ps-marquee-pill">🟠 Zomato</span>
-          <span class="ps-marquee-pill">🛡️ CrowdStrike</span>
+        <div class="ps-people-grid">
+          <div class="ps-people-copy">
+            <span class="ps-eyebrow">CAREER SUPPORT, IN PERSON</span>
+            <h2 id="placement-people-title">Feedback you can act on.</h2>
+            <p>Placement preparation is practical and personal. Advisors help learners translate their work into stronger profiles, clearer interview stories and focused next steps.</p>
+            <div class="ps-people-points" aria-label="Placement support touchpoints">
+              <span><i>✓</i> Profile reviews built around your target role</span>
+              <span><i>✓</i> Structured mock-interview feedback</span>
+              <span><i>✓</i> Guidance from application to offer decision</span>
+            </div>
+          </div>
+          <div class="ps-people-media">
+            <figure class="ps-people-photo ps-people-photo-main"><img src="assets/images/placement/placement-career-advisor-workshop.png" alt="Learners taking part in a SecureHub career advisor workshop" loading="lazy" decoding="async"><figcaption class="ps-people-caption">Career workshops turn preparation into a repeatable practice.</figcaption></figure>
+            <figure class="ps-people-photo ps-people-photo-side"><img src="assets/images/about/securehub-learning-studio.png" alt="SecureHub learners in a collaborative learning studio" loading="lazy" decoding="async"><figcaption class="ps-people-caption">Build work you can explain with confidence.</figcaption></figure>
+            <figure class="ps-people-photo ps-people-photo-side"><img src="assets/images/services/training-programs.png" alt="Instructor supporting learners during a practical technology session" loading="lazy" decoding="async"></figure>
+          </div>
         </div>
       </div>
     </section>

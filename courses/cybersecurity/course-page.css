@@ -696,10 +696,33 @@ body { background: #fffefd; color: var(--course-ink); }
 #course-snapshot .tools-grid { gap: 9px !important; margin-top: 6px !important; }
 
 #course-snapshot .tool-tag {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px !important;
+  min-height: 38px;
+  padding: 7px 11px !important;
   border-color: #d2e5e5 !important;
   border-radius: 8px !important;
   background: rgba(255, 255, 255, .82) !important;
   box-shadow: none !important;
+}
+
+.skill-icon {
+  display: inline-grid;
+  flex: 0 0 25px;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  border: 1px solid rgba(94, 151, 158, .16);
+  border-radius: 7px;
+  background: #ffffff;
+  box-shadow: 0 2px 7px rgba(25, 79, 89, .06);
+}
+
+.skill-icon svg {
+  display: block;
+  width: 16px;
+  height: 16px;
 }
 
 #course-snapshot .snapshot-details-grid {
@@ -849,8 +872,10 @@ body { background: #fffefd; color: var(--course-ink); }
 }
 
 #real-projects .project-desc { color: #607b83 !important; font-size: 13px !important; line-height: 1.65 !important; }
-#real-projects .project-skills-list { margin-top: auto; color: #45636b !important; font-size: 12px !important; border-top-color: #e5eeee !important; }
-#real-projects .pj-tag { display: inline-flex; align-items: center; gap: 5px; border-color: #d2e7e5 !important; border-radius: 6px !important; background: #f1faf8 !important; color: #167d79 !important; }
+#real-projects .project-skills-list { margin-top:auto; color:#45636b !important; font-size:12px !important; line-height:1.65; border-top-color:#e5eeee !important; }
+#real-projects .pj-tag { display:inline-flex; align-items:center; gap:6px; min-height:32px; padding:3px 8px 3px 4px; border:1px solid #d2e7e5; border-radius:7px; background:#f1faf8; color:#167d79; font-size:11px; font-weight:750; line-height:1.3; }
+#real-projects .pj-tag .skill-icon { flex-basis:22px; width:22px; height:22px; border-radius:5px; box-shadow:none; }
+#real-projects .pj-tag .skill-icon svg { width:14px; height:14px; }
 
 /* Career outcomes: an editorial career dashboard with a readable salary story. */
 #career-opportunities {
@@ -1821,6 +1846,136 @@ body { background: #fffefd; color: var(--course-ink); }
   .career-pillars-banner .pillar-item-featured h3 { font-size: 1.75rem; }
 }
 
+/* Shared career-proof composition */
+.career-pillars-banner,
+.course-page--ethical-hacking .career-pillars-banner {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(4.5rem, 8vw, 7.5rem) 0 !important;
+  border-top: 1px solid #d9e8ee !important;
+  border-bottom: 1px solid #d9e8ee !important;
+  background: linear-gradient(120deg, #f7fbfc 0%, #ffffff 55%, #f0f8f5 100%) !important;
+}
+
+.career-pillars-banner::before {
+  position: absolute;
+  top: -10rem;
+  right: -8rem;
+  width: 28rem;
+  height: 28rem;
+  border: 1px solid rgba(25, 123, 169, .1);
+  border-radius: 50%;
+  content: '';
+  box-shadow: 0 0 0 4rem rgba(59, 156, 155, .035);
+  pointer-events: none;
+}
+
+.career-pillars-banner .benefits-section-heading,
+.course-page--ethical-hacking .benefits-section-heading {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: minmax(180px, .28fr) minmax(0, .72fr);
+  margin-bottom: clamp(2rem, 4vw, 3.25rem);
+  padding-bottom: 1.75rem;
+  border-bottom-color: #d6e5eb;
+}
+
+.career-pillars-banner .benefits-section-heading .course-section-label,
+.career-pillars-banner .pillar-kicker,
+.course-page--ethical-hacking .benefits-section-heading .course-section-label,
+.course-page--ethical-hacking .pillar-kicker { color: #197ba9 !important; }
+
+.career-pillars-banner .benefits-section-heading h2,
+.course-page--ethical-hacking .benefits-section-heading h2 {
+  max-width: 760px;
+  color: #173848 !important;
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.career-pillars-banner .pillars-grid,
+.course-page--ethical-hacking .career-pillars-banner .pillars-grid {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: minmax(0, 1.18fr) minmax(300px, .82fr) !important;
+  gap: 14px !important;
+}
+
+.career-pillars-banner .pillar-item,
+.course-page--ethical-hacking .career-pillars-banner .pillar-item {
+  position: relative;
+  min-height: 112px;
+  padding: 22px 24px !important;
+  border-color: #d7e6eb;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, .88);
+  color: #35475a !important;
+  box-shadow: 0 12px 30px rgba(23, 56, 72, .055);
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.career-pillars-banner .pillar-item:not(.pillar-item-featured)::after {
+  position: absolute;
+  top: 20px;
+  right: 21px;
+  color: #bdd1d9;
+  content: '0' counter(proof-item);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.career-pillars-banner .pillars-grid { counter-reset: proof-item; }
+.career-pillars-banner .pillar-item:not(.pillar-item-featured) { counter-increment: proof-item; }
+.career-pillars-banner .pillar-item:hover { transform: translateY(-3px); border-color: #afd4df; box-shadow: 0 18px 38px rgba(23, 56, 72, .09); }
+
+.career-pillars-banner .pillar-item-featured,
+.course-page--ethical-hacking .career-pillars-banner .pillar-item-featured {
+  min-height: 364px;
+  padding: clamp(2.25rem, 4vw, 3.75rem) !important;
+  border-color: #bee0df;
+  background: linear-gradient(145deg, #dff4f0 0%, #edf7fb 100%);
+  box-shadow: 0 22px 50px rgba(23, 88, 104, .1);
+}
+
+.career-pillars-banner .pillar-icon,
+.course-page--ethical-hacking .career-pillars-banner .pillar-icon {
+  border-color: #bcdde1;
+  background: rgba(255, 255, 255, .72);
+  color: #197b8a;
+}
+
+.career-pillars-banner .pillar-item h3,
+.course-page--ethical-hacking .career-pillars-banner .pillar-item h3 { color: #173848 !important; }
+.career-pillars-banner .pillar-item p,
+.career-pillars-banner .pillar-item-featured p,
+.course-page--ethical-hacking .career-pillars-banner .pillar-item p,
+.course-page--ethical-hacking .career-pillars-banner .pillar-item-featured p { color: #5c7480 !important; }
+
+@media (max-width: 900px) {
+  .career-pillars-banner .benefits-section-heading { grid-template-columns: 1fr; align-items: start; }
+  .career-pillars-banner .pillars-grid,
+  .course-page--ethical-hacking .career-pillars-banner .pillars-grid { grid-template-columns: 1fr !important; }
+  .career-pillars-banner .pillar-item-featured,
+  .course-page--ethical-hacking .career-pillars-banner .pillar-item-featured { min-height: 280px; }
+}
+
+@media (max-width: 640px) {
+  .career-pillars-banner,
+  .course-page--ethical-hacking .career-pillars-banner { padding: 4rem 0 !important; }
+  .career-pillars-banner .pillar-item,
+  .career-pillars-banner .pillar-item-featured,
+  .course-page--ethical-hacking .career-pillars-banner .pillar-item,
+  .course-page--ethical-hacking .career-pillars-banner .pillar-item-featured { padding: 20px !important; }
+  .career-pillars-banner .pillar-item:not(.pillar-item-featured)::after { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .career-pillars-banner .pillar-item { transition: none; }
+  .career-pillars-banner .pillar-item:hover { transform: none; }
+}
+
 @media (max-width: 390px) {
   .recommended-course-card { grid-template-columns: 58px minmax(0, 1fr); }
   .recommended-course-arrow { display: none; }
@@ -2286,4 +2441,42 @@ body { background: #fffefd; color: var(--course-ink); }
   border-color: rgba(255, 255, 255, .28);
   background: rgba(255, 255, 255, .15);
   color: #ffffff;
+}
+
+/* Keep the shared proof composition consistent on the ethical-hacking variant. */
+.course-page--ethical-hacking .career-pillars-banner {
+  background: linear-gradient(120deg, #f7fbfc 0%, #ffffff 55%, #f0f8f5 100%) !important;
+}
+
+.course-page--ethical-hacking .benefits-section-heading {
+  grid-template-columns: minmax(180px, .28fr) minmax(0, .72fr);
+  margin-bottom: clamp(2rem, 4vw, 3.25rem);
+  padding-bottom: 1.75rem;
+}
+
+.course-page--ethical-hacking .career-pillars-banner .pillar-item {
+  min-height: 112px;
+  padding: 22px 24px !important;
+  border-color: #d7e6eb;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, .88);
+  box-shadow: 0 12px 30px rgba(23, 56, 72, .055);
+}
+
+.course-page--ethical-hacking .career-pillars-banner .pillar-item-featured {
+  min-height: 364px;
+  padding: clamp(2.25rem, 4vw, 3.75rem) !important;
+  border-color: #bee0df;
+  background: linear-gradient(145deg, #dff4f0 0%, #edf7fb 100%);
+  box-shadow: 0 22px 50px rgba(23, 88, 104, .1);
+}
+
+@media (max-width: 900px) {
+  .course-page--ethical-hacking .benefits-section-heading { grid-template-columns: 1fr; }
+  .course-page--ethical-hacking .career-pillars-banner .pillar-item-featured { min-height: 280px; }
+}
+
+@media (max-width: 640px) {
+  .course-page--ethical-hacking .career-pillars-banner .pillar-item,
+  .course-page--ethical-hacking .career-pillars-banner .pillar-item-featured { padding: 20px !important; }
 }
