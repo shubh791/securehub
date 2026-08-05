@@ -116,6 +116,24 @@ const recommendedCourseCatalog = [
     duration: '6 months',
     rating: '4.7/5',
     href: 'courses/uiux/ui-ux-front-end-integration.html'
+  },
+  {
+    key: 'salesforce-admin-development',
+    category: 'Salesforce & CRM',
+    title: 'Salesforce Admin & Development Program',
+    summary: 'Master Salesforce Admin, Apex, SOQL, and Lightning Web Components.',
+    duration: '6 months',
+    rating: '4.8/5',
+    href: 'courses/salesforce/salesforce-admin-development.html'
+  },
+  {
+    key: 'ai-powered-data-analytics',
+    category: 'Data Analytics',
+    title: 'AI-Powered Data Analytics & Business Intelligence',
+    summary: 'Transform raw data into executive dashboards with SQL, Power BI & Python.',
+    duration: '6 months',
+    rating: '4.9/5',
+    href: 'courses/data-analytics/ai-powered-data-analytics.html'
   }
 ];
 
@@ -166,7 +184,7 @@ const sharedWebCourseFaqs = [
 ];
 
 function getRecommendedCourses(currentKey) {
-  return recommendedCourseCatalog.filter(course => course.key !== currentKey).slice(0, 4);
+  return recommendedCourseCatalog.filter(course => course.key !== currentKey).slice(0, 6);
 }
 
 function getTechIcon(name) {
